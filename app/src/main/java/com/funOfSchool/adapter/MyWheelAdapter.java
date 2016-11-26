@@ -22,7 +22,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.funOfSchool.R;
-import com.funOfSchool.util.wheelview.adapter.BaseWheelAdapter;
+import com.wx.wheelview.adapter.BaseWheelAdapter;
+
 
 /**
  * Demo

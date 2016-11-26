@@ -19,8 +19,8 @@ import android.widget.Toast;
 
 import com.funOfSchool.R;
 import com.funOfSchool.adapter.ConstellationAdapter;
-import com.funOfSchool.util.wheelview.adapter.ArrayWheelAdapter;
-import com.funOfSchool.util.wheelview.widget.WheelView;
+import com.wx.wheelview.adapter.ArrayWheelAdapter;
+import com.wx.wheelview.widget.WheelView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -341,7 +341,7 @@ public class SelectActivity extends Activity {
 
         WheelView minAgeWheelView = (WheelView)dialogLayout.findViewById(R.id.age_wheelview_min);
         minAgeWheelView.setWheelAdapter(new ArrayWheelAdapter(SelectActivity.this));
-        minAgeWheelView.setSkin(com.funOfSchool.util.wheelview.widget.WheelView.Skin.Holo);
+        minAgeWheelView.setSkin(com.wx.wheelview.widget.WheelView.Skin.Holo);
         minAgeWheelView.setWheelData(ageList);
         minAgeWheelView.setExtraText("最小年龄", Color.parseColor("#0288ce"), 24, -80);
         minAgeWheelView.setOnWheelItemSelectedListener(new WheelView.OnWheelItemSelectedListener() {
@@ -353,7 +353,7 @@ public class SelectActivity extends Activity {
 
         WheelView maxAgeWheelView = (WheelView)dialogLayout.findViewById(R.id.age_wheelview_max);
         maxAgeWheelView.setWheelAdapter(new ArrayWheelAdapter(SelectActivity.this));
-        maxAgeWheelView.setSkin(com.funOfSchool.util.wheelview.widget.WheelView.Skin.Holo);
+        maxAgeWheelView.setSkin(com.wx.wheelview.widget.WheelView.Skin.Holo);
         maxAgeWheelView.setWheelData(ageList);
         maxAgeWheelView.setExtraText("最大年龄", Color.parseColor("#0288ce"), 24, -80);
         maxAgeWheelView.setOnWheelItemSelectedListener(new WheelView.OnWheelItemSelectedListener() {
