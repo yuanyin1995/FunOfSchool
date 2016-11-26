@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.funOfSchool.util.wheelview.widget.WheelView
+    <com.wx.wheelview.widget.WheelView
         android:id="@+id/age_wheelview_min"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="1dp"
         android:layout_weight="1"/>
 
-    <com.funOfSchool.util.wheelview.widget.WheelView
+    <com.wx.wheelview.widget.WheelView
         android:id="@+id/age_wheelview_max"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
