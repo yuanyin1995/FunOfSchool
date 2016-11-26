@@ -1,9 +1,10 @@
 package com.funOfSchool.ui;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -14,13 +15,17 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.funOfSchool.R;
 import com.funOfSchool.adapter.ConstellationAdapter;
+import com.funOfSchool.util.wheelview.adapter.ArrayWheelAdapter;
+import com.funOfSchool.util.wheelview.widget.WheelView;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
-public class SelectActivity extends AppCompatActivity {
+public class SelectActivity extends Activity {
 
     private RelativeLayout selectDate;
     private RelativeLayout selectSex;
@@ -49,6 +54,11 @@ public class SelectActivity extends AppCompatActivity {
     private String enrollYear;
     // 记录用户所选星座的变量
     private String constellation;
+    // 记录用户所选年龄段的变量
+    private int minAge;
+    private int maxAge;
+    // 记录用户所填备注的变量
+    private String remark;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,10 +103,26 @@ public class SelectActivity extends AppCompatActivity {
         selectYear.setOnClickListener(listener);
         selectConstellation.setOnClickListener(listener);
         selectAge.setOnClickListener(listener);
-        selectRemark.setOnClickListener(listener);
         selectBtnAccept.setOnClickListener(listener);
         selectBtnRefuse.setOnClickListener(listener);
         selectBtnTochat.setOnClickListener(listener);
+
+        selectRemark.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                remark = selectRemark.getText().toString();
+            }
+        });
     }
 
     /**
@@ -119,7 +145,9 @@ public class SelectActivity extends AppCompatActivity {
                 case R.id.select_constellation:
                     setConstellationDialog();
                     break;
-
+                case R.id.select_age:
+                    setAgeDialog();
+                    break;
             }
         }
     }
@@ -280,7 +308,76 @@ public class SelectActivity extends AppCompatActivity {
         builder.setAdapter(adapter,new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                selectResultConstellation.setText(adapter.getItem(i).toString());
+                constellation = adapter.getItem(i).toString();
+                selectResultConstellation.setText(constellation);
+            }
+        });
+
+        // 创建并显示对话框
+        builder.create();
+        builder.show();
+    }
+
+    /**
+     * 设置年龄段对话框
+     */
+    private void setAgeDialog(){
+        // 创建对话框 Builder
+        AlertDialog.Builder builder = new AlertDialog.Builder(SelectActivity.this);
+
+        // 设置对话框标题
+        builder.setTitle("选择年龄段");
+
+        // 加载对话框布局
+        final View dialogLayout =
+                getLayoutInflater().inflate(R.layout.dialog_age,null);
+        builder.setView(dialogLayout);
+
+        // 创建数据列表
+        final ArrayList<String> ageList = new ArrayList<String>();
+        for (int i = 1; i < 100; i++) {
+            ageList.add(i+"");
+        }
+
+        WheelView minAgeWheelView = (WheelView)dialogLayout.findViewById(R.id.age_wheelview_min);
+        minAgeWheelView.setWheelAdapter(new ArrayWheelAdapter(SelectActivity.this));
+        minAgeWheelView.setSkin(com.funOfSchool.util.wheelview.widget.WheelView.Skin.Holo);
+        minAgeWheelView.setWheelData(ageList);
+        minAgeWheelView.setExtraText("最小年龄", Color.parseColor("#0288ce"), 24, -80);
+        minAgeWheelView.setOnWheelItemSelectedListener(new WheelView.OnWheelItemSelectedListener() {
+            @Override
+            public void onItemSelected(int position, Object o) {
+                minAge = Integer.parseInt(ageList.get(position));
+            }
+        });
+
+        WheelView maxAgeWheelView = (WheelView)dialogLayout.findViewById(R.id.age_wheelview_max);
+        maxAgeWheelView.setWheelAdapter(new ArrayWheelAdapter(SelectActivity.this));
+        maxAgeWheelView.setSkin(com.funOfSchool.util.wheelview.widget.WheelView.Skin.Holo);
+        maxAgeWheelView.setWheelData(ageList);
+        maxAgeWheelView.setExtraText("最大年龄", Color.parseColor("#0288ce"), 24, -80);
+        maxAgeWheelView.setOnWheelItemSelectedListener(new WheelView.OnWheelItemSelectedListener() {
+            @Override
+            public void onItemSelected(int position, Object o) {
+                maxAge = Integer.parseInt(ageList.get(position));
+            }
+        });
+
+        // 点击确定按钮时更新用户选择
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if (minAge < maxAge){
+                    selectResultAge.setText(minAge+"~"+maxAge);
+                }
+                else if(minAge == maxAge){
+                    selectResultAge.setText(minAge);
+                }
+                else {
+                    Toast.makeText(SelectActivity.this,
+                            "最大年龄必须大于最小年龄，请重新选择",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

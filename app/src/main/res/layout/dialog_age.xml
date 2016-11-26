@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.funOfSchool.util.wheelview.widget.WheelView
+        android:id="@+id/age_wheelview_min"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:layout_weight="1"/>
+
+    <com.funOfSchool.util.wheelview.widget.WheelView
+        android:id="@+id/age_wheelview_max"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>
