@@ -2,53 +2,53 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
-        <dex dex="C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.4.0_658a50f960bfce2ebc655bd3388d6acbe96d433c.jar" />
-    </item>
-    <item
-        jar="C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
-        <dex dex="C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.4.0_6f0b1b8a70fc1d30adf3cdab9fb53980c3ab5301.jar" />
-    </item>
-    <item
-        jar="C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
-        <dex dex="C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.4.0_e8c5f83385ee7ef40cad170a4f4bfbc3e136512d.jar" />
-    </item>
-    <item
-        jar="C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\libs\wheelview_1.3.3.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="0e633a5cb4196f2e0757686240d3ac3a1b7a2013">
-        <dex dex="C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\build\intermediates\pre-dexed\debug\wheelview_1.3.3_c56149cbba43bfd18acdc554dba7feac4d4fea58.jar" />
-    </item>
-    <item
-        jar="E:\StudyTool\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
-        <dex dex="C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\build\intermediates\pre-dexed\debug\support-annotations-23.4.0_b1b56dcd33773e2ed9593b08138cc93149978bf3.jar" />
-    </item>
-    <item
-        jar="C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.4.0_86a6e2a9a754e06958544459fe496afdd8719a58.jar" />
-    </item>
-    <item
-        jar="C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jar="D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\build\intermediates\pre-dexed\debug\internal_impl-23.4.0_b10b97877d7e7a0b4f28fb83a7080113c82a072c.jar" />
+        <dex dex="D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\pre-dexed\release\internal_impl-23.4.0_9cbe685da8f2741146abcc187a521743acf45817.jar" />
+    </item>
+    <item
+        jar="D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\pre-dexed\release\com.android.support-support-v4-23.4.0_0448914ef0af7887be6a3c5482b11940cbf55f92.jar" />
+    </item>
+    <item
+        jar="D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\pre-dexed\release\com.android.support-appcompat-v7-23.4.0_ad9e6d61bfda629f3638f728391639fafb6471e2.jar" />
+    </item>
+    <item
+        jar="D:\android-sdk-windows\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\pre-dexed\release\support-annotations-23.4.0_6fa9d219412d42fd16071f6b7127e334e3680a1e.jar" />
+    </item>
+    <item
+        jar="D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\pre-dexed\release\com.android.support-animated-vector-drawable-23.4.0_e9742dd18d35d8c79fa3e50a42353de8cd4ebbc0.jar" />
+    </item>
+    <item
+        jar="D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\pre-dexed\release\com.android.support-support-vector-drawable-23.4.0_bf8a11eb228221015246025a55ed8e03fe92460d.jar" />
+    </item>
+    <item
+        jar="D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\libs\wheelview_1.3.3.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="0e633a5cb4196f2e0757686240d3ac3a1b7a2013">
+        <dex dex="D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\pre-dexed\release\wheelview_1.3.3_9e4fd4f5c81deaa2a4b2c8c09c86dca07fd8bd99.jar" />
     </item>
 
 </items>
