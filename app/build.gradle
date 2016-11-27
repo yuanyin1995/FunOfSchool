@@ -1,21 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['libs']
-        }
-    }
-    signingConfigs {
-        config {
-            keyAlias 'Key'
-            keyPassword 'mayday'
-            storeFile file('D:/1A/2016-2017(1)/xiaolian/keystore.jks')
-            storePassword 'mayday'
-        }
-    }
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
+
+    /*sourceSets{
+        main{
+            jniLibs.srcDirs = ['libs']
+        }
+    }*/
+
     defaultConfig {
         applicationId "com.funofschool"
         minSdkVersion 19
@@ -36,5 +30,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile files('libs/wheelview_1.3.3.jar')
-    compile files('libs/AMap3DMap_4.1.2_AMapNavi_1.9.3_AMapSearch_3.6.1_AMapLocation_3.1.0_20161122.jar')
+    compile files('libs/Android_Map3D_SDK_V4.1.2_20161104.jar')
+    compile files('libs/Amap_2DMap_V2.9.2_20161026.jar')
 }
