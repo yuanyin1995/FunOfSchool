@@ -29,17 +29,18 @@
         android:theme="@style/AppTheme" >
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="bfb3072ea840e301f6063f0207fcfc77" >
-        </meta-data>
+            android:value="bfb3072ea840e301f6063f0207fcfc77" />
 
         <activity android:name="com.funOfSchool.ui.MainActivity" >
+        </activity>
+        <activity android:name="com.funOfSchool.ui.SelectActivity" >
+        </activity>
+        <activity android:name="com.funOfSchool.ui.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name="com.funOfSchool.ui.SelectActivity" >
         </activity>
     </application>
 
