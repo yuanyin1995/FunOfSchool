@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FunOfSchool</string>
+    <string name="chat_refuse">拒绝</string>
+    <string name="chat_accept">接受</string>
 </resources>
