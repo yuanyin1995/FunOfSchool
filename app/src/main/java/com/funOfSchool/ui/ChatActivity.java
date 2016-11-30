@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.funOfSchool.R;
 import com.hyphenate.easeui.EaseConstant;
-import com.hyphenate.easeui.ui.EaseChatFragment;
 
 /**
  * Created by Aiome on 2016/11/29.
@@ -18,7 +17,7 @@ public class ChatActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
         //初始化聊天界面
-        EaseChatFragment chatFragment = new EaseChatFragment();
+        ChatFragment chatFragment = new ChatFragment();
         //将参数传递给聊天界面
         Bundle args = new Bundle();
         args.putInt(EaseConstant.EXTRA_CHAT_TYPE, EaseConstant.CHATTYPE_SINGLE);

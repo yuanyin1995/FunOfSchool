@@ -60,12 +60,12 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\layout\\ease_row_received_video.xml"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ease_activity_show_big_image.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\layout\\ease_activity_show_big_image.xml"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ease_activity_show_big_image.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\layout\\ease_activity_show_big_image.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
@@ -152,24 +152,24 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_chat.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\layout\\activity_chat.xml"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_chat.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\layout\\activity_chat.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_screen_simple.xml"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_template_part_chronometer.xml"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_media_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
@@ -196,12 +196,12 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_voice_recorder.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\layout\\ease_widget_voice_recorder.xml"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_voice_recorder.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\layout\\ease_widget_voice_recorder.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ease_scroll_tab_item.xml",
@@ -272,12 +272,12 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\layout\\ease_row_received_bigexpression.xml"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ease_layout_chat_primary_menu.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\layout\\ease_layout_chat_primary_menu.xml"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_sex.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\layout\\dialog_sex.xml"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ease_layout_chat_primary_menu.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\layout\\ease_layout_chat_primary_menu.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_picture.xml",
@@ -288,12 +288,12 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\layout\\ease_search_bar.xml"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_big_expression.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\layout\\ease_row_big_expression.xml"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ease_emojicon.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\layout\\ease_emojicon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_big_expression.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\layout\\ease_row_big_expression.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
@@ -324,12 +324,12 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_template_media.xml"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_video_call.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\layout\\ease_row_sent_video_call.xml"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ease_commom_back_btn.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\layout\\ease_commom_back_btn.xml"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_video_call.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\layout\\ease_row_sent_video_call.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",

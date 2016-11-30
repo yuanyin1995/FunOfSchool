@@ -16,12 +16,12 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\market.png"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\invite_index.png",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\invite_index.png"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\background.jpg",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\background.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\invite_index.png",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\invite_index.png"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\open.png",
@@ -72,12 +72,12 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\star.png"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\year.png",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\year.png"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\shuangzizuo.png",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\shuangzizuo.png"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\year.png",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\year.png"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\shuangyuzuo.png",
@@ -172,12 +172,12 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\major.png"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\shuipingzuo.png",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\shuipingzuo.png"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\comment.png",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\comment.png"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\shuipingzuo.png",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\shuipingzuo.png"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\juxiezuo.png",
@@ -192,12 +192,12 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\msg.png",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\msg.png"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\age.png",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\age.png"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\msg.png",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\msg.png"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\school.png",
