@@ -52,12 +52,12 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\slide_out_to_right.xml"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\slide_out_to_left.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\slide_out_to_left.xml"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\slide_in_from_left.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\slide_in_from_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\slide_out_to_left.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\slide_out_to_left.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\hold.xml",

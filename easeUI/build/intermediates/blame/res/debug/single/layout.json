@@ -84,12 +84,12 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_alert_dialog.xml"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_emojicon.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_emojicon.xml"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_picture.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_picture.xml"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_emojicon.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_emojicon.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_voice.xml",

@@ -1,35 +1,35 @@
 [
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_item_background_holo_dark.xml"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_mm_listitem.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\ease_mm_listitem.xml"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_list_selector_holo_light.xml"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_timestampe_bg.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\ease_timestampe_bg.xml"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_recording_text_hint_bg.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\ease_recording_text_hint_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_timestampe_bg.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\ease_timestampe_bg.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_item_background_holo_light.xml"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_mm_listitem_grey.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\ease_mm_listitem_grey.xml"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_item_background_holo_light.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_type_select_btn.xml",
@@ -52,12 +52,12 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_btn_borderless_material.xml"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\search_bg.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\drawable\\search_bg.xml"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\search_bg.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\drawable\\search_bg.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_chatfrom_bg.xml",
@@ -88,12 +88,12 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_chat_press_speak_btn.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\ease_chat_press_speak_btn.xml"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\login_bg.xml",
@@ -200,16 +200,16 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\ease_recording_hint_bg.xml"
     },
     {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_btn_blue_normal_shape.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\ease_btn_blue_normal_shape.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_cab_background_top_material.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_chat_location_selector.xml",

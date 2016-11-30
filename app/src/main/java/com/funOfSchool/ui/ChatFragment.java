@@ -85,7 +85,7 @@ public class ChatFragment extends EaseChatFragment {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        startActivity(new Intent(getContext(),MainActivity.class));
     }
 
     @Override

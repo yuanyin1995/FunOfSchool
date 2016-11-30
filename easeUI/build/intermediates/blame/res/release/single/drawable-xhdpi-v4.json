@@ -4,12 +4,12 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable-xhdpi\\ease_blue_add.png"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\ease_chat_send_btn_normal.9.png",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable-xhdpi\\ease_chat_send_btn_normal.9.png"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\ease_new_friends_icon.png",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable-xhdpi\\ease_new_friends_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\ease_chat_send_btn_normal.9.png",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable-xhdpi\\ease_chat_send_btn_normal.9.png"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\ease_chat_voice_call_self.png",

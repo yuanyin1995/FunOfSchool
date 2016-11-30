@@ -219,6 +219,7 @@ ADDED from C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\src\main\AndroidManif
 		ADDED from C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\src\main\AndroidManifest.xml:94:25-74
 uses-sdk
 INJECTED from C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:multidex:1.0.1] C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\AndroidManifest.xml:18:5-42
 MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\AndroidManifest.xml:5:5-44
 MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\AndroidManifest.xml:5:5-43
