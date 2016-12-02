@@ -428,7 +428,9 @@
     <string name="change_the_group_name_failed_please">Failed to change the group name, please check the network or try again later</string>
     <string name="chat_accept">接受</string>
     <string name="chat_refuse">拒绝</string>
+    <string name="chat_remark">备注:</string>
     <string name="chat_room">Chat room</string>
+    <string name="chat_time">时间:</string>
     <string name="chatroom_allow_owner_leave">Allow chatroom owner leave</string>
     <string name="chatset">Chat settings</string>
     <string name="chatting_is_dissolution">Dismissing group</string>

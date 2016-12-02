@@ -290,7 +290,7 @@ public final class R {
 		public static final int ee_7 = 0x7f0200ef;
 		public static final int ee_8 = 0x7f0200f0;
 		public static final int ee_9 = 0x7f0200f1;
-		public static final int ic_launcher = 0x7f0200f2;
+		public static final int ic_launcher = 0x7f0200f3;
 	}
 	public static final class id {
 		public static final int alert_message = 0x7f0c008a;
@@ -659,7 +659,7 @@ public final class R {
 		public static final int is_down_please_wait = 0x7f060059;
 		public static final int is_modify_the_group_name = 0x7f06010b;
 		public static final int is_quit_the_group_chat = 0x7f06010c;
-		public static final int join_public_group = 0x7f060143;
+		public static final int join_public_group = 0x7f060145;
 		public static final int list_is_for = 0x7f06010d;
 		public static final int location_message = 0x7f06005a;
 		public static final int location_prefix = 0x7f06005b;

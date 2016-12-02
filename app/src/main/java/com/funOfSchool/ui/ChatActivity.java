@@ -21,7 +21,7 @@ public class ChatActivity extends AppCompatActivity{
         //将参数传递给聊天界面
         Bundle args = new Bundle();
         args.putInt(EaseConstant.EXTRA_CHAT_TYPE, EaseConstant.CHATTYPE_SINGLE);
-        args.putString(EaseConstant.EXTRA_USER_ID, "test2");
+        args.putString(EaseConstant.EXTRA_USER_ID, "test1");
         chatFragment.setArguments(args);
 
         //加载EaseUI封装的聊天界面Fragment
