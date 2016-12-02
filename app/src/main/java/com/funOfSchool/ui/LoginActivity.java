@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
 
-                startActivity(new Intent(LoginActivity.this,ChatActivity.class));
+                startActivity(new Intent(LoginActivity.this,ConversationListActivity.class));
             }
 
             @Override

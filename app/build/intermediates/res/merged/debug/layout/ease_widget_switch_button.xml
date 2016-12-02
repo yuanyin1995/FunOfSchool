@@ -8,12 +8,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/ease_open_icon"
-        android:visibility="visible" />
+    android:visibility="visible" />
 
-    <ImageView
-        android:id="@+id/iv_switch_close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/ease_close_icon"
-        android:visibility="invisible" />
-</FrameLayout>
+<ImageView
+android:id="@+id/iv_switch_close"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:background="@drawable/ease_close_icon"
+android:visibility="invisible" />
+    </FrameLayout>

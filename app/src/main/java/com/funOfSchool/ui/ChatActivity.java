@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.funOfSchool.R;
-import com.hyphenate.easeui.EaseConstant;
 
 /**
  * Created by Aiome on 2016/11/29.
@@ -19,13 +18,10 @@ public class ChatActivity extends AppCompatActivity{
         //初始化聊天界面
         ChatFragment chatFragment = new ChatFragment();
         //将参数传递给聊天界面
-        Bundle args = new Bundle();
-        args.putInt(EaseConstant.EXTRA_CHAT_TYPE, EaseConstant.CHATTYPE_SINGLE);
-        args.putString(EaseConstant.EXTRA_USER_ID, "test1");
-        chatFragment.setArguments(args);
+        chatFragment.setArguments(getIntent().getExtras());
 
         //加载EaseUI封装的聊天界面Fragment
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.ec_layout_container, chatFragment).commit();
+                .add(R.id.activity_chat, chatFragment).commit();
     }
 }

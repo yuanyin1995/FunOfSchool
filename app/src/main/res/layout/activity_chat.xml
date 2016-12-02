@@ -6,7 +6,7 @@
 
     <!--控件集装箱，用来替换聊天界面-->
     <RelativeLayout
-        android:id="@+id/ec_layout_container"
+        android:id="@+id/activity_chat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
