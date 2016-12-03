@@ -1,6 +1,7 @@
 package com.funOfSchool.ui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -10,7 +11,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -68,6 +68,8 @@ public class MainActivity extends Activity {
     /*  所选学校名称  */
     String collegeName;
     private ArrayAdapter<String> ada;
+    /*  消息  */
+    private ImageView btnMsg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +101,7 @@ public class MainActivity extends Activity {
                 btnStatus.setImageResource(R.mipmap.invite_index);
                 // 根据关键词获取学校下拉列表
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = "http://172.16.23.240/api/college/searchCollege";
+                String url = "http://192.168.178.2/api/college/searchCollege";
                 // 请求参数：关键词
                 RequestParams param = new RequestParams();
                 param.put("keyWord",etSearch.getText());
@@ -158,7 +160,7 @@ public class MainActivity extends Activity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 // 根据学校名称，获得所选学校的经纬度
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = "http://172.16.23.240/api/college/searchLaAndLo";
+                String url = "http://192.168.178.2/api/college/searchLaAndLo";
                 // 请求参数：学校名称
                 RequestParams param = new RequestParams();
                 param.put("collegeName",collegeName);
@@ -199,9 +201,17 @@ public class MainActivity extends Activity {
         });
     }
 
+
     private void findView() {
         etSearch = (AutoCompleteTextView)findViewById(R.id.map_et_search);
         btnStatus = (ImageView)findViewById(R.id.map_change_status);
+        btnMsg = (ImageView) findViewById(R.id.map_msg);
+        btnMsg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,LoginActivity.class));
+            }
+        });
     }
 
     /**
