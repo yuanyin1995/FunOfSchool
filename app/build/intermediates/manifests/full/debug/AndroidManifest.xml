@@ -50,15 +50,15 @@
         <activity android:name="com.funOfSchool.ui.ChatActivity" >
         </activity>
         <activity android:name="com.funOfSchool.ui.MainActivity" >
-        </activity>
-        <activity android:name="com.funOfSchool.ui.SelectActivity" >
-        </activity>
-        <activity android:name="com.funOfSchool.ui.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="com.funOfSchool.ui.SelectActivity" >
+        </activity>
+        <activity android:name="com.funOfSchool.ui.LoginActivity" >
         </activity>
         <!-- 高德地图相关 -->
         <meta-data

@@ -24,7 +24,8 @@
             android:src="@mipmap/me"
             android:layout_weight="1"/>
 
-        <EditText
+        <AutoCompleteTextView
+            android:id="@+id/map_et_search"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="请输入目标学校"
@@ -56,6 +57,7 @@
             android:clickable="true" />
 
         <ImageView
+            android:id="@+id/map_change_status"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:src="@mipmap/invite_index"

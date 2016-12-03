@@ -2,6 +2,15 @@ package com.funOfSchool.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -16,6 +25,17 @@ import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.map.TextureMapView;
 import com.baidu.mapapi.model.LatLng;
 import com.funOfSchool.R;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.apache.http.Header;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends Activity {
     /*  地图控件 */
@@ -35,6 +55,20 @@ public class MainActivity extends Activity {
     private double mCurrentLantitude;
     private double mCurrentLongitude;
 
+    /* 当前学校的经纬度 */
+    private double collegeLantitude;
+    private double collegeLongitude;
+
+    /*  搜索栏 */
+    private AutoCompleteTextView etSearch;
+    /*  按钮  */
+    private ImageView btnStatus;
+    /*  学校名称列表  */
+    private List<String> collegeNameList = new ArrayList<String>();
+    /*  所选学校名称  */
+    String collegeName;
+    private ArrayAdapter<String> ada;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +81,127 @@ public class MainActivity extends Activity {
         initBaiduMap();
         //  初始化百度定位客户端
         initMyLocation();
+        //  获得各控件
+        findView();
+        //  搜索大学
+        searchCollege();
+    }
+
+    private void searchCollege() {
+        etSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                btnStatus.setImageResource(R.mipmap.invite_index);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                btnStatus.setImageResource(R.mipmap.invite_index);
+                // 根据关键词获取学校下拉列表
+                AsyncHttpClient client = new AsyncHttpClient();
+                String url = "http://172.16.23.240/api/college/searchCollege";
+                // 请求参数：关键词
+                RequestParams param = new RequestParams();
+                param.put("keyWord",etSearch.getText());
+                // 发送网络请求
+                client.post(url, param, new JsonHttpResponseHandler() {
+                    // 发出网络请求前绑定adapter
+                    @Override
+                    public void onStart() {
+                        super.onStart();
+                        ada = new ArrayAdapter<String>(
+                                getApplicationContext(),
+                                R.layout.college_dropdown_item,
+                                collegeNameList);
+                        etSearch.setAdapter(ada);
+                        ada.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onSuccess(int i, Header[] headers, JSONObject response) {
+                        Log.e("SUCCESS","发送成功!");
+                        // response为返回的JSON对象
+                        Log.e("Response:", response.toString());
+
+                        JSONObject collegeNameListJO = null;
+                        try {
+                            // 获取JSONObject
+                            collegeNameListJO = new JSONObject(response.toString());
+                            // 获取JSONArray
+                            JSONArray collegeNameListJA = collegeNameListJO.getJSONArray("datum");
+                            // 给学校名列表赋值
+                            for (int j=0; j<collegeNameListJA.length();j++){
+                                collegeNameList.add(j,collegeNameListJA.getJSONObject(j).getString("name"));
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        // 更新列表
+                        ada.notifyDataSetChanged();
+                    }
+                });
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                btnStatus.setImageResource(R.mipmap.invite_index);
+                // 获取最终学校名称
+                collegeName = etSearch.getText().toString();
+                // 清除上次请求的学校
+                collegeNameList.clear();
+            }
+        });
+
+        // 设置学校下拉列表项点击监听
+        etSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                // 根据学校名称，获得所选学校的经纬度
+                AsyncHttpClient client = new AsyncHttpClient();
+                String url = "http://172.16.23.240/api/college/searchLaAndLo";
+                // 请求参数：学校名称
+                RequestParams param = new RequestParams();
+                param.put("collegeName",collegeName);
+                // 发送网络请求
+                client.post(url, param, new JsonHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                        Log.e("SUCCESS","发送成功!");
+                        Log.e("RC",response.toString());
+
+                        JSONObject collegeNameJO = null;
+                        try {
+                            // 获取JSONObject
+                            collegeNameJO = new JSONObject(response.toString());
+                            // 获取JSONArray
+                            JSONArray collegeNameJA = collegeNameJO.getJSONArray("datum");
+                            // 给所选学校经纬度赋值
+                            for (int j=0; j<collegeNameJA.length();j++){
+                                collegeLantitude = collegeNameJA.getJSONObject(j).getDouble("lantitude");
+                                collegeLongitude = collegeNameJA.getJSONObject(j).getDouble("longitude");
+                            }
+
+                            Log.e("LL:",collegeLantitude+"-"+collegeLongitude);
+
+                            // 创建 LatLng 对象
+                            LatLng ll = new LatLng(collegeLantitude, collegeLongitude);
+                            // 设置所选学校位置为地图中心点，并移动到定位位置
+                            MapStatusUpdate u = MapStatusUpdateFactory.newLatLng(ll);
+                            mBaiduMap.animateMapStatus(u);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                //  改变状态图标
+                btnStatus.setImageResource(R.mipmap.invite);
+            }
+        });
+    }
+
+    private void findView() {
+        etSearch = (AutoCompleteTextView)findViewById(R.id.map_et_search);
+        btnStatus = (ImageView)findViewById(R.id.map_change_status);
     }
 
     /**
