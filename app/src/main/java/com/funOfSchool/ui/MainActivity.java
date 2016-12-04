@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -61,15 +62,21 @@ public class MainActivity extends Activity {
 
     /*  搜索栏 */
     private AutoCompleteTextView etSearch;
-    /*  按钮  */
-    private ImageView btnStatus;
+    /*  不可发送请求按钮  */
+    private ImageView btnCannotInvite;
+    /*  可发送请求按钮  */
+    private ImageView btnCanInvite;
     /*  学校名称列表  */
     private List<String> collegeNameList = new ArrayList<String>();
     /*  所选学校名称  */
     String collegeName;
+    /*  所选学校ID  */
+    int collegeId;
     private ArrayAdapter<String> ada;
     /*  消息  */
     private ImageView btnMsg;
+    /*  个人信息 */
+    private ImageView btnMe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +92,8 @@ public class MainActivity extends Activity {
         initMyLocation();
         //  获得各控件
         findView();
+        //  为各按钮设置监听器
+        setListener();
         //  搜索大学
         searchCollege();
     }
@@ -93,15 +102,17 @@ public class MainActivity extends Activity {
         etSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                btnStatus.setImageResource(R.mipmap.invite_index);
+                btnCannotInvite.setVisibility(View.VISIBLE);
+                btnCanInvite.setVisibility(View.INVISIBLE);
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                btnStatus.setImageResource(R.mipmap.invite_index);
+                btnCannotInvite.setVisibility(View.VISIBLE);
+                btnCanInvite.setVisibility(View.INVISIBLE);
                 // 根据关键词获取学校下拉列表
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = "http://192.168.178.2/api/college/searchCollege";
+                String url = "http://172.16.22.229/api/college/searchCollege";
                 // 请求参数：关键词
                 RequestParams param = new RequestParams();
                 param.put("keyWord",etSearch.getText());
@@ -146,7 +157,8 @@ public class MainActivity extends Activity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                btnStatus.setImageResource(R.mipmap.invite_index);
+                btnCannotInvite.setVisibility(View.VISIBLE);
+                btnCanInvite.setVisibility(View.INVISIBLE);
                 // 获取最终学校名称
                 collegeName = etSearch.getText().toString();
                 // 清除上次请求的学校
@@ -158,9 +170,9 @@ public class MainActivity extends Activity {
         etSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                // 根据学校名称，获得所选学校的经纬度
+                // 根据学校名称，获得所选学校的经纬度和ID
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = "http://192.168.178.2/api/college/searchLaAndLo";
+                String url = "http://172.16.22.229/api/college/searchLaAndLo";
                 // 请求参数：学校名称
                 RequestParams param = new RequestParams();
                 param.put("collegeName",collegeName);
@@ -177,11 +189,10 @@ public class MainActivity extends Activity {
                             collegeNameJO = new JSONObject(response.toString());
                             // 获取JSONArray
                             JSONArray collegeNameJA = collegeNameJO.getJSONArray("datum");
-                            // 给所选学校经纬度赋值
-                            for (int j=0; j<collegeNameJA.length();j++){
-                                collegeLantitude = collegeNameJA.getJSONObject(j).getDouble("lantitude");
-                                collegeLongitude = collegeNameJA.getJSONObject(j).getDouble("longitude");
-                            }
+                            // 给所选学校经纬度和ID赋值
+                            collegeId = collegeNameJA.getJSONObject(0).getInt("coid");
+                            collegeLantitude = collegeNameJA.getJSONObject(0).getDouble("lantitude");
+                            collegeLongitude = collegeNameJA.getJSONObject(0).getDouble("longitude");
 
                             Log.e("LL:",collegeLantitude+"-"+collegeLongitude);
 
@@ -196,7 +207,8 @@ public class MainActivity extends Activity {
                     }
                 });
                 //  改变状态图标
-                btnStatus.setImageResource(R.mipmap.invite);
+                btnCannotInvite.setVisibility(View.INVISIBLE);
+                btnCanInvite.setVisibility(View.VISIBLE);
             }
         });
     }
@@ -204,14 +216,46 @@ public class MainActivity extends Activity {
 
     private void findView() {
         etSearch = (AutoCompleteTextView)findViewById(R.id.map_et_search);
-        btnStatus = (ImageView)findViewById(R.id.map_change_status);
-        btnMsg = (ImageView) findViewById(R.id.map_msg);
-        btnMsg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,LoginActivity.class));
+        btnMsg = (ImageView) findViewById(R.id.index_msg);
+        btnMe = (ImageView)findViewById(R.id.index_me);
+        btnCannotInvite = (ImageView)findViewById(R.id.map_cannot_invite);
+        btnCanInvite = (ImageView)findViewById(R.id.map_can_invite);
+    }
+
+    private void setListener() {
+        MapListener mapListener = new MapListener();
+        btnMe.setOnClickListener(mapListener);
+        btnMsg.setOnClickListener(mapListener);
+        btnCannotInvite.setOnClickListener(mapListener);
+        btnCanInvite.setOnClickListener(mapListener);
+    }
+
+    private class MapListener implements View.OnClickListener{
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()){
+                case R.id.index_msg:
+                    startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                    break;
+                case R.id.map_cannot_invite:
+                    Toast.makeText(MainActivity.this,
+                            R.string.cannot_invite_warn,
+                            Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.map_can_invite:
+                    Intent intent = new Intent(MainActivity.this,SelectActivity.class);
+                    intent.putExtra("scid",collegeId);
+                    startActivity(intent);
+                    break;
             }
-        });
+        }
+    }
+
+    /**
+     * 如果当前为可发送邀请状态，则点击按钮可发送邀请
+     */
+    private void sendInvitation() {
+
     }
 
     /**
