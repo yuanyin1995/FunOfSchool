@@ -3,9 +3,11 @@ package com.funOfSchool.ui;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -70,6 +72,10 @@ public class MainActivity extends Activity {
     private ArrayAdapter<String> ada;
     /*  消息  */
     private ImageView btnMsg;
+    //侧拉菜单对象
+    DrawerLayout drawerLayout;
+    //个人中心按钮
+    private ImageView btnme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +94,7 @@ public class MainActivity extends Activity {
         //  搜索大学
         searchCollege();
     }
+
 
     private void searchCollege() {
         etSearch.addTextChangedListener(new TextWatcher() {
@@ -210,6 +217,14 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,LoginActivity.class));
+            }
+        });
+        btnme = (ImageView) findViewById(R.id.me);
+        btnme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout = (DrawerLayout)findViewById(R.id.drawerlayout);
+                drawerLayout.openDrawer(Gravity.LEFT);
             }
         });
     }
