@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F0F0F2"
-    tools:context="com.example.administrator.evaluate.MainActivity">
+    android:background="#F0F0F2">
 
     <LinearLayout
         android:id="@+id/LL_evaluate_title"
