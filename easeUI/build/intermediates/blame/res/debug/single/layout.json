@@ -4,6 +4,10 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_search_bar.xml"
     },
     {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_video.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_received_video.xml"
+    },
+    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_fragment_chat.xml",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_fragment_chat.xml"
     },
@@ -14,6 +18,18 @@
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_voice_recorder.xml",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_voice_recorder.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_file.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_received_file.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_activity_show_big_image.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_activity_show_big_image.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_chat_menu_item.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_chat_menu_item.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_search_bar.xml",
@@ -28,12 +44,24 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_received_location.xml"
     },
     {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_contact_list.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_contact_list.xml"
+    },
+    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_switch_button.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_switch_button.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_file.xml",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_file.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_picture.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_picture.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_title_bar.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_title_bar.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_video_call.xml",
@@ -52,16 +80,24 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_voice_call.xml"
     },
     {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_picture.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_received_picture.xml"
+    },
+    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_bigexpression.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_received_bigexpression.xml"
+    },
+    {
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_activity_show_big_image.xml",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_activity_show_big_image.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_voice_call.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_voice_call.xml"
     },
     {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_activity_show_big_image.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_activity_show_big_image.xml"
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_bigexpression.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_received_bigexpression.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_chat_menu_item.xml",
@@ -84,16 +120,24 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_emojicon_tab_bar.xml"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_voice.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_voice.xml"
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_picture.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_picture.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_emojicon.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_emojicon.xml"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_picture.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_picture.xml"
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_voice.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_voice.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_voice_call.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_voice_call.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_conversation_item.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_conversation_item.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_switch_button.xml",
@@ -104,6 +148,10 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_activity_baidumap.xml"
     },
     {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_voice_recorder.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_voice_recorder.xml"
+    },
+    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_voice.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_received_voice.xml"
     },
@@ -112,8 +160,20 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_received_video_call.xml"
     },
     {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_bigexpression.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_bigexpression.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_fragment_contact_list.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_fragment_contact_list.xml"
+    },
+    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_expression_gridview.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_expression_gridview.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_search_bar_with_padding.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_search_bar_with_padding.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_message.xml",
@@ -128,20 +188,20 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_expression_gridview.xml"
     },
     {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_chat_primary_menu.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_chat_primary_menu.xml"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_picture.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_received_picture.xml"
     },
     {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_chat_input_menu.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_chat_input_menu.xml"
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_chat_primary_menu.xml",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_chat_primary_menu.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_fragment_contact_list.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_fragment_contact_list.xml"
+    },
+    {
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_chat_input_menu.xml",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_chat_input_menu.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_video.xml",
@@ -164,12 +224,24 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_expression.xml"
     },
     {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_showvideo_activity.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_showvideo_activity.xml"
+    },
+    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_bigexpression.xml",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_bigexpression.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_file.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_file.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_chat_input_menu.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_chat_input_menu.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_big_expression.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_big_expression.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_message.xml",
@@ -188,12 +260,36 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_layout_chat_primary_menu.xml"
     },
     {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_commom_back_btn.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_commom_back_btn.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_activity_show_file.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_activity_show_file.xml"
+    },
+    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_location.xml",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_location.xml"
     },
     {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_voice.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_voice.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_message.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_received_message.xml"
+    },
+    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_voice_call.xml",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_received_voice_call.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_fragment_chat.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_fragment_chat.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_voice_call.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_received_voice_call.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_picture.xml",
@@ -204,12 +300,36 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_big_expression.xml"
     },
     {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_expression_gridview.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_expression_gridview.xml"
+    },
+    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_video.xml",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_received_video.xml"
     },
     {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_voice.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_received_voice.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_layout_emojicon_menu.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_layout_emojicon_menu.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_expression.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_expression.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_message.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_message.xml"
+    },
+    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_activity_baidumap.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_activity_baidumap.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_fragment_conversation_list.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_fragment_conversation_list.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_scroll_tab_item.xml",
@@ -228,12 +348,24 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_voice_recorder.xml"
     },
     {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_scroll_tab_item.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_scroll_tab_item.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_chat_history.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_chat_history.xml"
+    },
+    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_location.xml",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_received_location.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_chat_menu_item.xml",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_chat_menu_item.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_video_call.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_video_call.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_video_call.xml",
@@ -264,12 +396,28 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_voice.xml"
     },
     {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_video.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_video.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_location.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_location.xml"
+    },
+    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_alert_dialog.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_alert_dialog.xml"
     },
     {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_chat_primary_menu.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_chat_primary_menu.xml"
+    },
+    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_file.xml",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_received_file.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_search_bar.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_search_bar.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_title_bar.xml",
@@ -280,8 +428,20 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_chat_history.xml"
     },
     {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_emojicon_tab_bar.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_emojicon_tab_bar.xml"
+    },
+    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_fragment_contact_list.xml",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_fragment_contact_list.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_chat_message_list.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_chat_message_list.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_emojicon.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_emojicon.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_picture.xml",
@@ -312,8 +472,20 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_search_bar_with_padding.xml"
     },
     {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_contact.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_contact.xml"
+    },
+    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_location.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_location.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_video_call.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_received_video_call.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_switch_button.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_switch_button.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_emojicon.xml",
@@ -330,6 +502,14 @@
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_layout_emojicon_menu.xml",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_layout_emojicon_menu.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_layout_chat_primary_menu.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_layout_chat_primary_menu.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_file.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_sent_file.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_chat_message_list.xml",
@@ -352,6 +532,10 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_chat_input_menu.xml"
     },
     {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_location.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_row_received_location.xml"
+    },
+    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_showvideo_activity.xml",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_showvideo_activity.xml"
     },
@@ -364,6 +548,10 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_emojicon.xml"
     },
     {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_activity_baidumap.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_activity_baidumap.xml"
+    },
+    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_commom_back_btn.xml",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_commom_back_btn.xml"
     },
@@ -372,12 +560,20 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_showvideo_activity.xml"
     },
     {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_alert_dialog.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_alert_dialog.xml"
+    },
+    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_contact_list.xml",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_contact_list.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_chat_primary_menu.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_chat_primary_menu.xml"
+    },
+    {
+        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_emojicon.xml",
+        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\layout\\ease_widget_emojicon.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_video.xml",
