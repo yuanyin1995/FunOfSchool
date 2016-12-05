@@ -1,0 +1,24 @@
+-keep class com.funOfSchool.MyApplication {
+    <init>();
+    void attachBaseContext(android.content.Context);
+}
+-keep class com.funOfSchool.ui.ConversationListActivity { <init>(); }
+-keep class com.funOfSchool.ui.ChatActivity { <init>(); }
+-keep class com.funOfSchool.ui.MainActivity { <init>(); }
+-keep class com.funOfSchool.ui.SelectActivity { <init>(); }
+-keep class com.funOfSchool.ui.LoginActivity { <init>(); }
+-keep class com.hyphenate.chat.EMChatService { <init>(); }
+-keep class com.hyphenate.easeui.ui.EaseShowBigImageActivity { <init>(); }
+-keep class com.hyphenate.easeui.ui.EaseBaiduMapActivity { <init>(); }
+-keep class com.baidu.location.f { <init>(); }
+-keep class com.hyphenate.chat.EMMonitorReceiver { <init>(); }
+-keep public class * extends android.app.backup.BackupAgent {
+    <init>();
+}
+-keep public class * extends java.lang.annotation.Annotation {
+    *;
+}
+-keep class com.android.tools.fd.** {
+    *;
+}
+-dontnote com.android.tools.fd.**,android.support.multidex.MultiDexExtractor
