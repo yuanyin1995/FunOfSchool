@@ -62,7 +62,7 @@
                         android:layout_margin="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/evaluate_photo_before"
+                        android:src="@mipmap/evaluate_photo_before"
                         android:background="@android:color/transparent"/>
                 </RelativeLayout>
                 <RelativeLayout
@@ -148,7 +148,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:src="@drawable/evaluate_grade"/>
+                    android:src="@mipmap/evaluate_grade"/>
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent">

@@ -39,6 +39,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.EvaluateActivity">
+        </activity>
         <activity android:name=".ui.ConversationListActivity">
         </activity>
         <activity android:name=".ui.ChatActivity">
@@ -76,6 +78,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/horizontal_slide"></activity>
         <!--集成聊天位置信息-->
+
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"

@@ -1,4 +1,4 @@
-package com.hyphenate.easeui.ui;
+package com.funOfSchool.ui;
 
 import android.app.Activity;
 import android.content.Context;
@@ -174,7 +174,7 @@ public class EvaluateActivity extends Activity {
          * SimpleAdapter参数imageItem为数据源 R.layout.griditem_addpic为布局
          */
         //获取资源图片加号
-        bmp = BitmapFactory.decodeResource(getResources(), R.drawable.evaluate_add_photo);
+        bmp = BitmapFactory.decodeResource(getResources(), R.mipmap.evaluate_add_photo);
         imageItem = new ArrayList<HashMap<String, Object>>();
         HashMap<String, Object> map = new HashMap<String, Object>();
         map.put("itemImage", bmp);
