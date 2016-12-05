@@ -9,7 +9,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="#4E6CEF" />
+        android:background="@color/gray_normal" />
 
     <LinearLayout
         android:id="@+id/rl_bottom"
