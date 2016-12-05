@@ -753,6 +753,7 @@ org/apache/http/ProtocolException.class
 org/apache/http/message/BasicNameValuePair.class
 org/apache/http/impl/conn/AbstractPooledConnAdapter.class
 org/apache/commons/codec/language/Soundex.class
+com/funOfSchool/ui/MainActivity$4.class
 org/apache/commons/codec/language/RefinedSoundex.class
 android/support/v4/view/ViewCompat$ScrollIndicators.class
 org/apache/http/impl/cookie/NetscapeDraftSpecFactory.class

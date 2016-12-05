@@ -1,7 +1,7 @@
--injars 'D:\FunOfSchool\app\build\intermediates\transforms\jarMerging\debug\jars\1\1f\combined.jar'
--outjars 'D:\FunOfSchool\app\build\intermediates\multi-dex\debug\componentClasses.jar'
+-injars 'C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\build\intermediates\transforms\jarMerging\debug\jars\1\1f\combined.jar'
+-outjars 'C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\build\intermediates\multi-dex\debug\componentClasses.jar'
 
--libraryjars 'C:\Users\Administrator\AppData\Local\Android\Sdk\build-tools\23.0.2\lib\shrinkedAndroid.jar'
+-libraryjars 'E:\StudyTool\Android\sdk\build-tools\23.0.2\lib\shrinkedAndroid.jar'
 
 -forceprocessing
 -dontoptimize
@@ -10,7 +10,7 @@
 -dontpreverify
 -dontnote **,com.android.tools.fd.**,android.support.multidex.MultiDexExtractor
 -dontwarn **
--printconfiguration 'D:\FunOfSchool\app\build\intermediates\multi-dex\debug\components.flags'
+-printconfiguration 'C:\Users\Aiome\Desktop\xiaolian\FunOfSchool\app\build\intermediates\multi-dex\debug\components.flags'
 
 
 -keep class com.funOfSchool.MyApplication {

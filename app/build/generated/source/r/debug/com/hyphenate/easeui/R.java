@@ -124,8 +124,7 @@ public final class R {
 		public static final int size_avatar = 0x7f08005b;
 	}
 	public static final class drawable {
-		public static final int bg = 0x7f02004b;
-		public static final int doctoradvice2 = 0x7f02004d;
+		public static final int college_hbsd = 0x7f02004d;
 		public static final int ease_app_panel_video_icon = 0x7f02004e;
 		public static final int ease_appitem_del_btn_normal = 0x7f02004f;
 		public static final int ease_appitem_del_btn_pressed = 0x7f020050;
@@ -292,23 +291,6 @@ public final class R {
 		public static final int ee_7 = 0x7f0200f1;
 		public static final int ee_8 = 0x7f0200f2;
 		public static final int ee_9 = 0x7f0200f3;
-		public static final int ic_launcher = 0x7f0200f5;
-		public static final int infusion_selected = 0x7f0200f6;
-		public static final int level_bg = 0x7f0200f7;
-		public static final int market = 0x7f0200fa;
-		public static final int menu = 0x7f0200fb;
-		public static final int mypatient_selected = 0x7f0200fc;
-		public static final int myprize = 0x7f0200fd;
-		public static final int mywork_selected = 0x7f0200fe;
-		public static final int nursingcareplan2 = 0x7f0200ff;
-		public static final int p_center = 0x7f020100;
-		public static final int p_pic = 0x7f020101;
-		public static final int personal_selected = 0x7f020102;
-		public static final int personinfo = 0x7f020103;
-		public static final int set = 0x7f020106;
-		public static final int travellist = 0x7f020107;
-		public static final int we = 0x7f020108;
-		public static final int yuan = 0x7f020109;
 	}
 	public static final class id {
 		public static final int alert_message = 0x7f0c0097;
