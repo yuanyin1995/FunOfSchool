@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.funOfSchool.R;
 import com.funOfSchool.adapter.ConstellationAdapter;
+import com.funOfSchool.adapter.MajorAdapter;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -53,15 +54,19 @@ public class SelectActivity extends Activity {
     private TextView selectResultYear;
     private TextView selectResultConstellation;
     private TextView selectResultAge;
+
     // 定义记录用户所选日期的变量
     private int year;
     private int month;
     private int day;
+    private String travelDate = null;
     // 记录用户所选性别的变量
     private int sexRBId;
     private String sex;
-    // 记录用户所选专业的便令
+    private int sexCode;
+    // 记录用户所选专业的变量
     private String majorName;
+    private int majorId;
     // 记录用户所选入学年份的变量
     private String enrollYear;
     // 记录用户所选星座的变量
@@ -69,10 +74,19 @@ public class SelectActivity extends Activity {
     // 记录用户所选年龄段的变量
     private int minAge;
     private int maxAge;
+    private String minBirthYear;
+    private String maxBirthYear;
     // 记录用户所填备注的变量
     private String remark;
     // 所选学校的ID
     private int selectCollegeId;
+    // 记录服务器返回code
+    private String statusCode;
+
+    MajorAdapter adapter;
+    // 创建专业数据列表
+    private ArrayList<String> majorNameList = new ArrayList<String>();
+    private ArrayList<Integer> majorIdList = new ArrayList<Integer>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,6 +130,7 @@ public class SelectActivity extends Activity {
         selectYear.setOnClickListener(listener);
         selectConstellation.setOnClickListener(listener);
         selectAge.setOnClickListener(listener);
+        selectBtnSendInvite.setOnClickListener(listener);
 
         selectRemark.addTextChangedListener(new TextWatcher() {
             @Override
@@ -161,8 +176,68 @@ public class SelectActivity extends Activity {
                 case R.id.select_age:
                     setAgeDialog();
                     break;
+                case R.id.select_btn_sendinvite:
+                    sendInvite();
             }
         }
+    }
+
+    /**
+     * 向服务器发送请求，并根据服务器返回结果做出响应
+     */
+    private void sendInvite() {
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = "http://10.141.228.228/api/match/start";
+        // 请求参数
+        RequestParams param = new RequestParams();
+        param.put("sex",sexCode);
+        param.put("schoolId",selectCollegeId+"");
+        param.put("majorId",majorId+"");
+        param.put("enrollment",enrollYear);
+        param.put("constellation",constellation);
+        param.put("birthdayMin",minBirthYear);
+        param.put("birthdayMax",maxBirthYear);
+        param.put("remark",remark);
+        param.put("time",travelDate);
+        param.put("token","c8a2171dd8354a5ca1b05d51200cc065RyJtnp");
+        // 发送网络请求
+        client.post(url, param, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                Log.e("SUCCESS","发送成功!");
+                Log.e("response",response.toString());
+
+                JSONObject matchJO = null;
+                try {
+                    // 获取 JSONObject
+                    matchJO = new JSONObject(response.toString());
+                    statusCode = matchJO.getInt("code");
+                    Log.e("statusCode",statusCode+"");
+                    if (statusCode == 1){
+                        Toast.makeText(SelectActivity.this,
+                                "发送成功 :)",
+                                Toast.LENGTH_LONG).show();
+                    }
+                    else if (statusCode == 2){
+                        Toast.makeText(SelectActivity.this,
+                                "不能不填时间 :(",
+                                Toast.LENGTH_LONG).show();
+                    }
+                    else if (statusCode == 5){
+                        Toast.makeText(SelectActivity.this,
+                                "没有符合条件的导游 :(",
+                                Toast.LENGTH_LONG).show();
+                    }
+                    else if (statusCode == 6){
+                        Toast.makeText(SelectActivity.this,
+                                "正在匹配中 :(",
+                                Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     /**
@@ -199,7 +274,8 @@ public class SelectActivity extends Activity {
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                selectResultDate.setText(year+"-"+month+"-"+day);
+                travelDate = year+"-"+month+"-"+day;
+                selectResultDate.setText(travelDate);
             }
         });
 
@@ -240,6 +316,12 @@ public class SelectActivity extends Activity {
                 RadioButton checkedRB = (RadioButton)dialogLayout.findViewById(sexRBId);
                 sex = checkedRB.getText().toString();
                 selectResultSex.setText(sex);
+                if (sex.equals("男")){
+                    sexCode = 0;
+                }
+                else {
+                    sexCode = 1;
+                }
             }
         });
 
@@ -257,28 +339,22 @@ public class SelectActivity extends Activity {
         selectCollegeId = intent.getIntExtra("scid",1001);
         Toast.makeText(SelectActivity.this,selectCollegeId+"",Toast.LENGTH_SHORT).show();
 
-        // 创建对话框 Builder
-        final AlertDialog.Builder builder = new AlertDialog.Builder(SelectActivity.this);
-
-        // 设置对话框标题
-        builder.setTitle("选择专业");
-
-        // 加载对话框布局
-        final View dialogLayout =
-                getLayoutInflater().inflate(R.layout.dialog_major,null);
-        builder.setView(dialogLayout);
-
-        // 创建专业数据列表
-        final ArrayList<String> majorNameList = new ArrayList<String>();
-
         // 根据学校ID，发送网络请求，获得专业列表
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://172.16.22.229/api/college/searchMajor";
+        String url = "http://10.141.228.228/api/college/searchMajor";
         // 请求参数：关键词
         RequestParams param = new RequestParams();
         param.put("collegeId",selectCollegeId);
         // 发送网络请求
         client.post(url, param, new JsonHttpResponseHandler() {
+            // 发出网络请求前绑定adapter
+            @Override
+            public void onStart() {
+                super.onStart();
+                adapter = new MajorAdapter(SelectActivity.this,majorNameList);
+                adapter.notifyDataSetChanged();
+            }
+
             @Override
             public void onSuccess(int i, Header[] headers, JSONObject response) {
                 Log.e("SUCCESS","发送成功!");
@@ -291,40 +367,47 @@ public class SelectActivity extends Activity {
                     majorNameListJO = new JSONObject(response.toString());
                     // 获取JSONArray
                     JSONArray majorNameListJA = majorNameListJO.getJSONArray("datum");
-                    // 给学校名列表赋值
+                    // 给专业名列表赋值
                     for (int j=0; j<majorNameListJA.length();j++){
                         majorNameList.add(j,majorNameListJA.getJSONObject(j).getString("name"));
+                        majorIdList.add(j,majorNameListJA.getJSONObject(j).getInt("scid"));
                     }
                     Log.e("MAJOR", majorNameList.toString());
+                    Log.e("MAJORID", majorIdList.toString());
 
-                    // 设置对话框列表内容
-                    WheelView majorWheelView = (WheelView)dialogLayout.findViewById(R.id.major_wheelview);
-                    majorWheelView.setWheelAdapter(new ArrayWheelAdapter(SelectActivity.this));
-                    majorWheelView.setSkin(com.wx.wheelview.widget.WheelView.Skin.Holo);
-                    majorWheelView.setWheelData(majorNameList);
-                    majorWheelView.setOnWheelItemSelectedListener(new WheelView.OnWheelItemSelectedListener() {
+                    // 创建对话框 Builder
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(SelectActivity.this);
+
+                    // 设置对话框标题
+                    builder.setTitle("选择专业");
+
+                    // 加载对话框布局
+                    final View dialogLayout =
+                            getLayoutInflater().inflate(R.layout.dialog_major,null);
+                    builder.setView(dialogLayout);
+
+                    Log.e("acount", adapter.getCount()+"");
+                    Log.e("aitem", adapter.getItem(1).toString());
+                    builder.setAdapter(adapter,new DialogInterface.OnClickListener() {
                         @Override
-                        public void onItemSelected(int position, Object o) {
-                            majorName = majorNameList.get(position);
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            majorName = adapter.getItem(i).toString();
+                            majorId = majorIdList.get(i);
+                            Toast.makeText(SelectActivity.this,majorId+"",Toast.LENGTH_SHORT).show();
+                            selectResultMajor.setText(majorName);
                         }
                     });
+
+
+                    // 创建并显示对话框
+                    builder.create();
+                    builder.show();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
         });
 
-        // 点击确定按钮时更新用户选择
-        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                selectResultMajor.setText(majorName);
-            }
-        });
-
-        // 创建并显示对话框
-        builder.create();
-        builder.show();
     }
 
     /**
@@ -457,9 +540,13 @@ public class SelectActivity extends Activity {
             public void onClick(DialogInterface dialogInterface, int i) {
                 if (minAge < maxAge){
                     selectResultAge.setText(minAge+"~"+maxAge);
+                    minBirthYear = (2016-maxAge)+"-1-1";
+                    Log.e("miny",minBirthYear);
+                    maxBirthYear = (2016-minAge)+"-12-31";
+                    Log.e("maxy",maxBirthYear);
                 }
                 else if(minAge == maxAge){
-                    selectResultAge.setText(minAge);
+                    selectResultAge.setText(minAge+"");
                 }
                 else {
                     Toast.makeText(SelectActivity.this,

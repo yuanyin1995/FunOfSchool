@@ -32,6 +32,14 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\sheshouzuo.png"
     },
     {
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\bg.png",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\bg.png"
+    },
+    {
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\level_bg.xml",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\level_bg.xml"
+    },
+    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\logo.png",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\logo.png"
     },
@@ -62,6 +70,10 @@
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\background.jpg",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\background.jpg"
+    },
+    {
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\yuan.jpg",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\yuan.jpg"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
@@ -178,6 +190,10 @@
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\me.png",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\me.png"
+    },
+    {
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\menu.png",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\menu.png"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\end_travel.png",

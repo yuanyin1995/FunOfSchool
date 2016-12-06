@@ -39,33 +39,32 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.ConversationListActivity">
-        </activity>
-        <activity android:name=".ui.ChatActivity">
-        </activity>
+        <activity android:name=".ui.ConversationListActivity"></activity>
+        <activity android:name=".ui.ChatActivity"></activity>
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".ui.SelectActivity">
-        </activity>
-        <activity android:name=".ui.LoginActivity">
-        </activity>
-        <!--高德地图相关-->
+        <activity android:name=".ui.SelectActivity"></activity>
+        <activity android:name=".ui.LoginActivity"></activity>
+        <!-- 高德地图相关 -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="bfb3072ea840e301f6063f0207fcfc77"></meta-data>
+            android:value="bfb3072ea840e301f6063f0207fcfc77" />
 
-        <!--聊天相关-->
+        <!-- 聊天相关 -->
         <!-- 设置环信应用的AppKey -->
-        <meta-data android:name="EASEMOB_APPKEY"  android:value="1112161115178527#xiaolian" />
-        <!-- 声明SDK所需的service SDK核心功能-->
-        <service android:name="com.hyphenate.chat.EMChatService" android:exported="true"/>
-        <!--查看大图-->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="1112161115178527#xiaolian" />
+        <!-- 声明SDK所需的service SDK核心功能 -->
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true" />
+        <!-- 查看大图 -->
         <activity
             android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity"
             android:screenOrientation="portrait"
@@ -74,12 +73,13 @@
         <activity
             android:name="com.hyphenate.easeui.ui.EaseBaiduMapActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/horizontal_slide"></activity>
-        <!--集成聊天位置信息-->
+            android:theme="@style/horizontal_slide" />
+        <!-- 集成聊天位置信息 -->
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
             android:process=":remote" />
+
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="YeB0YmGWiXxgq0eC1UdEviO7aYcK2Ltc" />
@@ -87,15 +87,18 @@
         <!-- 声明SDK所需的receiver -->
         <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
-                <data android:scheme="package"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
             </intent-filter>
             <!-- 可选filter -->
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.USER_PRESENT" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".ui.ReceiveInviteActivity"></activity>
     </application>
 
 </manifest>

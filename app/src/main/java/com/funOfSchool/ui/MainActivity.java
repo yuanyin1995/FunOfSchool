@@ -3,9 +3,11 @@ package com.funOfSchool.ui;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -77,6 +79,8 @@ public class MainActivity extends Activity {
     private ImageView btnMsg;
     /*  个人信息 */
     private ImageView btnMe;
+    //侧拉菜单对象
+    DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,7 +116,7 @@ public class MainActivity extends Activity {
                 btnCanInvite.setVisibility(View.INVISIBLE);
                 // 根据关键词获取学校下拉列表
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = "http://172.16.22.229/api/college/searchCollege";
+                String url = "http://10.141.228.228/api/college/searchCollege";
                 // 请求参数：关键词
                 RequestParams param = new RequestParams();
                 param.put("keyWord",etSearch.getText());
@@ -172,7 +176,7 @@ public class MainActivity extends Activity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 // 根据学校名称，获得所选学校的经纬度和ID
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = "http://172.16.22.229/api/college/searchLaAndLo";
+                String url = "http://10.141.228.228/api/college/searchLaAndLo";
                 // 请求参数：学校名称
                 RequestParams param = new RequestParams();
                 param.put("collegeName",collegeName);
@@ -234,6 +238,10 @@ public class MainActivity extends Activity {
         @Override
         public void onClick(View view) {
             switch (view.getId()){
+                case R.id.index_me:
+                    drawerLayout = (DrawerLayout)findViewById(R.id.drawerlayout);
+                    drawerLayout.openDrawer(Gravity.LEFT);
+                    break;
                 case R.id.index_msg:
                     startActivity(new Intent(MainActivity.this,LoginActivity.class));
                     break;

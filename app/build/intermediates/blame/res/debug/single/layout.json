@@ -88,6 +88,10 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\layout\\ease_fragment_chat.xml"
     },
     {
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_major_item.xml",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\layout\\dialog_major_item.xml"
+    },
+    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_menu_layout.xml"
     },
@@ -366,6 +370,10 @@
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_location.xml",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\layout\\ease_row_sent_location.xml"
+    },
+    {
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_receive_invite.xml",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\layout\\activity_receive_invite.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_video_call.xml",
