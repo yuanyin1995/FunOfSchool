@@ -216,12 +216,12 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable-hdpi\\ease_chat_face_normal.png"
     },
     {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ease_settings_normal.png",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable-hdpi\\ease_settings_normal.png"
-    },
-    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ease_chatfrom_voice_playing_f3.png",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable-hdpi\\ease_chatfrom_voice_playing_f3.png"
+    },
+    {
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ease_settings_normal.png",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable-hdpi\\ease_settings_normal.png"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ease_chat_face_pressed.png",
@@ -288,12 +288,12 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable-hdpi\\ease_app_panel_video_icon.9.png"
     },
     {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ee_19.png",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable-hdpi\\ee_19.png"
-    },
-    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ee_16.png",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable-hdpi\\ee_16.png"
+    },
+    {
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ee_19.png",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable-hdpi\\ee_19.png"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ease_chatfrom_voice_playing_f1.png",

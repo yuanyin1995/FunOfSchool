@@ -44,16 +44,16 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\ease_btn_cancel_bj.xml"
     },
     {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\login_bg.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\drawable\\login_bg.xml"
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_search_clear.xml",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\ease_search_clear.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_search_clear.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\ease_search_clear.xml"
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\login_bg.xml",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\drawable\\login_bg.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_btn_blue_normal_shape.xml",
@@ -68,12 +68,12 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\drawable\\login_et_bg.xml"
     },
     {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_common_tab_bg.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\ease_common_tab_bg.xml"
-    },
-    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\p_pic.png",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\p_pic.png"
+    },
+    {
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_common_tab_bg.xml",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\ease_common_tab_bg.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
@@ -172,12 +172,12 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_dialog_material_background_dark.xml"
     },
     {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_timestampe_bg.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\ease_timestampe_bg.xml"
-    },
-    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg.png",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\bg.png"
+    },
+    {
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_timestampe_bg.xml",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\ease_timestampe_bg.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
@@ -204,12 +204,12 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_item_background_holo_light.xml"
     },
     {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_light.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_dialog_material_background_light.xml"
-    },
-    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\travellist.png",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\travellist.png"
+    },
+    {
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_light.xml",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_dialog_material_background_light.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_type_select_btn.xml",
@@ -224,12 +224,12 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_seekbar_thumb_material.xml"
     },
     {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_ratingbar_small_material.xml"
-    },
-    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\mywork_selected.png",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\mywork_selected.png"
+    },
+    {
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_ratingbar_small_material.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_full_material.xml",
@@ -264,12 +264,12 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\doctoradvice2.png"
     },
     {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_mm_listitem_grey.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\ease_mm_listitem_grey.xml"
-    },
-    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\p_center.png",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\p_center.png"
+    },
+    {
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_mm_listitem_grey.xml",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\exploded-aar\\FunOfSchool\\easeUI\\unspecified\\res\\drawable\\ease_mm_listitem_grey.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\myprize.png",

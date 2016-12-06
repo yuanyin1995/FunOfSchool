@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable\\ease_mm_listitem_grey.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable\\ease_mm_listitem_grey.xml"
-    },
-    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable\\p_center.png",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable\\p_center.png"
+    },
+    {
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable\\ease_mm_listitem_grey.xml",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable\\ease_mm_listitem_grey.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable\\infusion_selected.png",
@@ -68,12 +68,12 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable\\ease_btn_blue_normal_shape.xml"
     },
     {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable\\ease_recording_hint_bg.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable\\ease_recording_hint_bg.xml"
-    },
-    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable\\ease_msg_state_failed_resend.xml",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable\\ease_msg_state_failed_resend.xml"
+    },
+    {
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable\\ease_recording_hint_bg.xml",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable\\ease_recording_hint_bg.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable\\set.png",
@@ -88,12 +88,12 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable\\ease_chatting_setmode_voice_btn.xml"
     },
     {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable\\ease_btn_cancel_normal_shape.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable\\ease_btn_cancel_normal_shape.xml"
-    },
-    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable\\personal_selected.png",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable\\personal_selected.png"
+    },
+    {
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable\\ease_btn_cancel_normal_shape.xml",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable\\ease_btn_cancel_normal_shape.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable\\level_bg.xml",
@@ -112,20 +112,20 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable\\ease_btn_blue_pressed_shape.xml"
     },
     {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable\\ease_chat_send_btn_selector.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable\\ease_chat_send_btn_selector.xml"
-    },
-    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable\\doctoradvice2.png",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable\\doctoradvice2.png"
     },
     {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable\\ease_chatto_bg.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable\\ease_chatto_bg.xml"
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable\\ease_chat_send_btn_selector.xml",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable\\ease_chat_send_btn_selector.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable\\travellist.png",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable\\travellist.png"
+    },
+    {
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable\\ease_chatto_bg.xml",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\drawable\\ease_chatto_bg.xml"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\drawable\\ease_sidebar_background_pressed.xml",

@@ -68,12 +68,12 @@
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\year.png"
     },
     {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\background.jpg",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\background.jpg"
-    },
-    {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\yuan.jpg",
         "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\yuan.jpg"
+    },
+    {
+        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\background.jpg",
+        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xhdpi\\background.jpg"
     },
     {
         "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
