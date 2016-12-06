@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "outputFile": "D:\\cocoa\\android\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\values-w820dp-v13\\values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,55 +11,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\values-w820dp\\ease_dimens.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 312,
-                        "endColumn": 57,
-                        "endOffset": 365
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\values-w820dp-v13\\values-w820dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
-                },
-                "from": {
-                    "file": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\values-w820dp\\ease_dimens.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 312,
-                        "endColumn": 57,
-                        "endOffset": 365
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\values-w820dp-v13\\values-w820dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
-                },
-                "from": {
-                    "file": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\values-w820dp\\ease_dimens.xml",
+                    "file": "D:\\cocoa\\android\\FunOfSchool\\easeUI\\src\\main\\res\\values-w820dp\\ease_dimens.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
