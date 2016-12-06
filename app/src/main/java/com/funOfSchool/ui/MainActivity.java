@@ -116,7 +116,7 @@ public class MainActivity extends Activity {
                 btnCanInvite.setVisibility(View.INVISIBLE);
                 // 根据关键词获取学校下拉列表
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = "http://10.141.228.228/api/college/searchCollege";
+                String url = "http://10.7.88.41/api/college/searchCollege";
                 // 请求参数：关键词
                 RequestParams param = new RequestParams();
                 param.put("keyWord",etSearch.getText());
@@ -176,7 +176,7 @@ public class MainActivity extends Activity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 // 根据学校名称，获得所选学校的经纬度和ID
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = "http://10.141.228.228/api/college/searchLaAndLo";
+                String url = "http://10.7.88.41/api/college/searchLaAndLo";
                 // 请求参数：学校名称
                 RequestParams param = new RequestParams();
                 param.put("collegeName",collegeName);
