@@ -4,5 +4,6 @@
     <string name="chat_accept">接受</string>
     <string name="chat_time">时间:</string>
     <string name="chat_remark">备注:</string>
-
+    <string name="conversation_guider">我是游客</string>
+    <string name="conversation_tourist">我是导游</string>
 </resources>

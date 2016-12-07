@@ -4,19 +4,14 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-
-    <!--输入框-->
-    <RelativeLayout
+    <FrameLayout
         android:id="@+id/activity_conversation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="ddddddddddddd"/>
-    </RelativeLayout>
+    </FrameLayout>
+
 
 
 </LinearLayout>

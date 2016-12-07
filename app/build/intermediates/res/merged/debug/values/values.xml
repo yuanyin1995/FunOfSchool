@@ -52,6 +52,7 @@
     <color name="btn_white_pressed">#b5b5b6</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
+    <color name="chatTabText">#4E6CEF</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorPrimary">#5677fc</color>
     <color name="colorPrimaryDark">#303F9F</color>
@@ -442,6 +443,8 @@
     <string name="confirmpassword">Confirm password</string>
     <string name="connect_conflict">The same account was loggedin in other device</string>
     <string name="connect_failuer_toast">Please check the network or try again later</string>
+    <string name="conversation_guider">我是游客</string>
+    <string name="conversation_tourist">我是导游</string>
     <string name="copy">Copy</string>
     <string name="copy_message">Copy message</string>
     <string name="delete">Delete</string>
@@ -1579,6 +1582,10 @@
         <item name="android:background">?attr/controlBackground</item>
         <item name="android:minWidth">56dp</item>
         <item name="android:scaleType">center</item>
+    </style>
+    <style name="ChatTabText">
+        <item name="android:textColor">@color/chatTabText</item>
+        <item name="android:textSize">14sp</item>
     </style>
     <style name="FirstText">
         <item name="android:textColor">@color/firstText</item>

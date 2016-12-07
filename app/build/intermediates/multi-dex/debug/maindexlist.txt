@@ -654,6 +654,7 @@ org/apache/http/impl/conn/SingleClientConnManager.class
 android/support/v4/content/PermissionChecker.class
 com/baidu/platform/comapi/map/MapRenderer$a.class
 org/apache/http/impl/io/IdentityOutputStream.class
+com/funOfSchool/ui/ConversationListFragment.class
 org/apache/http/client/utils/CloneUtils.class
 android/support/annotation/AnimRes.class
 android/support/v4/app/FragmentActivity$NonConfigurationInstances.class

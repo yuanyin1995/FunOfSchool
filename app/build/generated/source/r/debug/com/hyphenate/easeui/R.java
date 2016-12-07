@@ -81,28 +81,28 @@ public final class R {
 		public static final int btn_register_pressed = 0x7f0b0023;
 		public static final int btn_white_normal = 0x7f0b0024;
 		public static final int btn_white_pressed = 0x7f0b0025;
-		public static final int common_bg = 0x7f0b002b;
-		public static final int common_bottom_bar_normal_bg = 0x7f0b002c;
-		public static final int common_bottom_bar_selected_bg = 0x7f0b002d;
-		public static final int common_botton_bar_blue = 0x7f0b002e;
-		public static final int common_top_bar_blue = 0x7f0b002f;
-		public static final int divider_list = 0x7f0b0034;
-		public static final int emojicon_tab_nomal = 0x7f0b0035;
-		public static final int emojicon_tab_selected = 0x7f0b0036;
-		public static final int error_item_color = 0x7f0b0037;
-		public static final int gray_normal = 0x7f0b003b;
-		public static final int gray_pressed = 0x7f0b003c;
-		public static final int grid_state_focused = 0x7f0b003d;
-		public static final int grid_state_pressed = 0x7f0b003e;
-		public static final int holo_blue_bright = 0x7f0b0043;
-		public static final int holo_green_light = 0x7f0b0044;
-		public static final int holo_orange_light = 0x7f0b0045;
-		public static final int holo_red_light = 0x7f0b0046;
-		public static final int list_itease_primary_color = 0x7f0b0047;
-		public static final int list_itease_secondary_color = 0x7f0b0048;
-		public static final int orange = 0x7f0b0055;
-		public static final int top_bar_normal_bg = 0x7f0b006a;
-		public static final int voip_interface_text_color = 0x7f0b006b;
+		public static final int common_bg = 0x7f0b002c;
+		public static final int common_bottom_bar_normal_bg = 0x7f0b002d;
+		public static final int common_bottom_bar_selected_bg = 0x7f0b002e;
+		public static final int common_botton_bar_blue = 0x7f0b002f;
+		public static final int common_top_bar_blue = 0x7f0b0030;
+		public static final int divider_list = 0x7f0b0035;
+		public static final int emojicon_tab_nomal = 0x7f0b0036;
+		public static final int emojicon_tab_selected = 0x7f0b0037;
+		public static final int error_item_color = 0x7f0b0038;
+		public static final int gray_normal = 0x7f0b003c;
+		public static final int gray_pressed = 0x7f0b003d;
+		public static final int grid_state_focused = 0x7f0b003e;
+		public static final int grid_state_pressed = 0x7f0b003f;
+		public static final int holo_blue_bright = 0x7f0b0044;
+		public static final int holo_green_light = 0x7f0b0045;
+		public static final int holo_orange_light = 0x7f0b0046;
+		public static final int holo_red_light = 0x7f0b0047;
+		public static final int list_itease_primary_color = 0x7f0b0048;
+		public static final int list_itease_secondary_color = 0x7f0b0049;
+		public static final int orange = 0x7f0b0056;
+		public static final int top_bar_normal_bg = 0x7f0b006b;
+		public static final int voip_interface_text_color = 0x7f0b006c;
 	}
 	public static final class dimen {
 		public static final int activity_horizontal_margin = 0x7f080013;
@@ -449,6 +449,7 @@ public final class R {
 		public static final int ease_widget_switch_button = 0x7f040053;
 		public static final int ease_widget_title_bar = 0x7f040054;
 		public static final int ease_widget_voice_recorder = 0x7f040055;
+		public static final int temp = 0x7f040065;
 	}
 	public static final class string {
 		public static final int Add_a_button_was_clicked = 0x7f060083;
@@ -659,7 +660,7 @@ public final class R {
 		public static final int is_down_please_wait = 0x7f060059;
 		public static final int is_modify_the_group_name = 0x7f06010b;
 		public static final int is_quit_the_group_chat = 0x7f06010c;
-		public static final int join_public_group = 0x7f060145;
+		public static final int join_public_group = 0x7f060147;
 		public static final int list_is_for = 0x7f06010d;
 		public static final int location_message = 0x7f06005a;
 		public static final int location_prefix = 0x7f06005b;
@@ -763,16 +764,16 @@ public final class R {
 		public static final int Anim_style = 0x7f090091;
 		public static final int Anim_style2 = 0x7f09000b;
 		public static final int AppTheme = 0x7f090094;
-		public static final int HeadScale = 0x7f0900c2;
-		public static final int MyAlertDialog = 0x7f0900c3;
-		public static final int MyDialogStyle = 0x7f0900c4;
-		public static final int MyDialogStyleBottom = 0x7f0900c5;
-		public static final int MyDialogStyleTop = 0x7f0900c6;
-		public static final int bottom_line_edit_text_style = 0x7f090150;
-		public static final int chat_content_date_style = 0x7f090151;
-		public static final int chat_text_date_style = 0x7f090152;
-		public static final int chat_text_name_style = 0x7f090153;
-		public static final int devide_line_eee = 0x7f090154;
+		public static final int HeadScale = 0x7f0900c3;
+		public static final int MyAlertDialog = 0x7f0900c4;
+		public static final int MyDialogStyle = 0x7f0900c5;
+		public static final int MyDialogStyleBottom = 0x7f0900c6;
+		public static final int MyDialogStyleTop = 0x7f0900c7;
+		public static final int bottom_line_edit_text_style = 0x7f090151;
+		public static final int chat_content_date_style = 0x7f090152;
+		public static final int chat_text_date_style = 0x7f090153;
+		public static final int chat_text_name_style = 0x7f090154;
+		public static final int devide_line_eee = 0x7f090155;
 		public static final int horizontal_slide = 0x7f09001d;
 		public static final int nornal_style = 0x7f09001e;
 	}

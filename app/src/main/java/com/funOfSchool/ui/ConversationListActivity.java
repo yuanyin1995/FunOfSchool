@@ -4,15 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.funOfSchool.R;
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMCmdMessageBody;
 import com.hyphenate.chat.EMConversation;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.easeui.EaseConstant;
 import com.hyphenate.easeui.ui.EaseConversationListFragment;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,12 +24,12 @@ import java.util.List;
 
 public class ConversationListActivity extends AppCompatActivity {
     private EMMessageListener emMessageListener;
-    private EaseConversationListFragment conversationListFragment;
+    private ConversationListFragment conversationListFragment;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conversation_list);
-        conversationListFragment = new EaseConversationListFragment();
+        conversationListFragment = new ConversationListFragment();
         conversationListFragment.setConversationListItemClickListener(new EaseConversationListFragment.EaseConversationListItemClickListener() {
 
             @Override
@@ -47,6 +50,26 @@ public class ConversationListActivity extends AppCompatActivity {
             @Override
             public void onCmdMessageReceived(List<EMMessage> messages) {
                 //收到透传消息
+                String userName = null;
+                List<EMMessage> msg = new ArrayList<>();
+                EMMessage serverMsg = null;
+                for (EMMessage message : messages) {
+                    EMCmdMessageBody cmdMsgBody = (EMCmdMessageBody) message.getBody();
+                    String action = cmdMsgBody.action();//获取自定义action
+                    if (action.equals("show")){
+                        Log.i("tag",cmdMsgBody.action());
+                        userName = message.getFrom();
+                        serverMsg = EMMessage.createTxtSendMessage("   ",userName);
+                        serverMsg.setAttribute("show",false);
+                        msg.add(serverMsg);
+                    }
+                }
+                Log.i("tag",""+EMClient.getInstance().chatManager().getAllConversations().size());
+                EMConversation conversation = EMClient.getInstance().chatManager()
+                        .getConversation(userName, EMConversation.EMConversationType.Chat,true);
+                conversation.insertMessage(serverMsg);
+                conversationListFragment.addConversation(conversation);
+//                EMClient.getInstance().chatManager().importMessages(msg);
             }
 
             @Override

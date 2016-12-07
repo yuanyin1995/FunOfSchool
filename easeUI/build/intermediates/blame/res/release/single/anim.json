@@ -1,89 +1,23 @@
 [
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_top_out.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_top_out.xml"
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_bottom_out.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_bottom_out.xml"
     },
     {
-        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\slide_out_to_right.xml",
-        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\slide_out_to_right.xml"
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_top_out.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_top_out.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\voice_to_icon.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\voice_to_icon.xml"
     },
     {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_top_in.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_top_in.xml"
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\head_in.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\head_in.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\slide_in_from_right.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\slide_in_from_right.xml"
-    },
-    {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\hold.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\hold.xml"
-    },
-    {
-        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_top_in.xml",
-        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_top_in.xml"
-    },
-    {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\fade_in.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\fade_in.xml"
-    },
-    {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_bottom_in.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_bottom_in.xml"
-    },
-    {
-        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_bottom_out.xml",
-        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_bottom_out.xml"
-    },
-    {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\voice_to_icon.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\voice_to_icon.xml"
-    },
-    {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_bottom_in.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_bottom_in.xml"
-    },
-    {
-        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\slide_in_from_left.xml",
-        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\slide_in_from_left.xml"
-    },
-    {
-        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\voice_to_icon.xml",
-        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\voice_to_icon.xml"
-    },
-    {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\head_in.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\head_in.xml"
-    },
-    {
-<<<<<<< Updated upstream
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_top_in.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_top_in.xml"
-    },
-    {
-=======
->>>>>>> Stashed changes
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\head_out.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\head_out.xml"
-    },
-    {
-<<<<<<< Updated upstream
-=======
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_top_in.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_top_in.xml"
-    },
-    {
->>>>>>> Stashed changes
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_bottom_out.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_bottom_out.xml"
-    },
-    {
-        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_top_out.xml",
-        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_top_out.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\fade_out.xml",
@@ -94,123 +28,43 @@
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\head_out.xml"
     },
     {
-        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\hold.xml",
-        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\hold.xml"
-    },
-    {
-        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\slide_out_to_left.xml",
-        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\slide_out_to_left.xml"
-    },
-    {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_top_out.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_top_out.xml"
-    },
-    {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\hold.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\hold.xml"
-    },
-    {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_top_out2.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_top_out2.xml"
-    },
-    {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\head_in.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\head_in.xml"
-    },
-    {
-        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\head_out.xml",
-        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\head_out.xml"
-    },
-    {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\voice_from_icon.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\voice_from_icon.xml"
-    },
-    {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\slide_out_to_left.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\slide_out_to_left.xml"
-    },
-    {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_top_in2.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_top_in2.xml"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\voice_from_icon.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\voice_from_icon.xml"
-    },
-    {
-        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_top_out2.xml",
-        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_top_out2.xml"
-    },
-    {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\slide_out_to_right.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\slide_out_to_right.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\fade_in.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\fade_in.xml"
     },
     {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\slide_in_from_right.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\slide_in_from_right.xml"
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_top_in2.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_top_in2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_bottom_in.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_bottom_in.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_top_out2.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_top_out2.xml"
     },
     {
-        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\head_in.xml",
-        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\head_in.xml"
-    },
-    {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_bottom_out.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_bottom_out.xml"
-    },
-    {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\slide_in_from_left.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\slide_in_from_left.xml"
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\slide_out_to_right.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\slide_out_to_right.xml"
     },
     {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\slide_in_from_left.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\slide_in_from_left.xml"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\slide_out_to_right.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\slide_out_to_right.xml"
-    },
-    {
-        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\fade_in.xml",
-        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\fade_in.xml"
-    },
-    {
-        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\voice_from_icon.xml",
-        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\voice_from_icon.xml"
-    },
-    {
-        "merged": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\fade_out.xml",
-        "source": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\fade_out.xml"
-    },
-    {
-        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\slide_in_from_right.xml",
-        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\slide_in_from_right.xml"
-    },
-    {
-        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_bottom_in.xml",
-        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_bottom_in.xml"
-    },
-    {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_top_in2.xml",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_top_in2.xml"
-    },
-    {
-        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_top_in2.xml",
-        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_top_in2.xml"
-    },
-    {
-        "merged": "D:\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\fade_out.xml",
-        "source": "D:\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\fade_out.xml"
-    },
-    {
         "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\slide_out_to_left.xml",
         "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\slide_out_to_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\hold.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\hold.xml"
+    },
+    {
+        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\anim\\push_top_in.xml",
+        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\anim\\push_top_in.xml"
     }
 ]

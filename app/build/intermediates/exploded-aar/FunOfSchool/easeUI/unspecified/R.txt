@@ -427,6 +427,7 @@ int layout ease_widget_emojicon_tab_bar 0x7f03002d
 int layout ease_widget_switch_button 0x7f03002e
 int layout ease_widget_title_bar 0x7f03002f
 int layout ease_widget_voice_recorder 0x7f030030
+int layout temp 0x7f030031
 int string Add_a_button_was_clicked 0x7f06006f
 int string Add_a_friend 0x7f060070
 int string Add_group_members_fail 0x7f060071
