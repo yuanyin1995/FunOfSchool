@@ -99,6 +99,11 @@
         </receiver>
 
         <activity android:name=".ui.ReceiveInviteActivity"></activity>
+        <activity android:name=".ui.PersonInfoActivity"/>
+        <activity android:name=".ui.TravelListActivity" />
+        <activity android:name=".ui.MyPrizeActivity"/>
+        <activity android:name=".ui.MarketActivity"/>
+        <activity android:name=".ui.SetActivity"/>
     </application>
 
 </manifest>
