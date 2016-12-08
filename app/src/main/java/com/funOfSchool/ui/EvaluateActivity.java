@@ -74,8 +74,8 @@ public class EvaluateActivity extends Activity {
         width = wm.getDefaultDisplay().getWidth();
         //设置标题栏高度
         android.view.ViewGroup.LayoutParams lp = R1.getLayoutParams();
-        lp.height = (height/15);
-        lp.width = (7*width/10);
+        lp.height = (height/16);
+        lp.width = (2*width/3);
     }
 
     //提交按钮点击事件处理

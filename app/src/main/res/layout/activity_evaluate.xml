@@ -18,8 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageButton
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_centerVertical="true"
                 android:scaleType="centerInside"
@@ -60,9 +60,11 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1">
                     <ImageView
-                        android:layout_margin="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:scaleType="fitXY"
+                        android:padding="4dp"
                         android:src="@mipmap/evaluate_photo_before"
                         android:background="@android:color/transparent"/>
                 </RelativeLayout>
@@ -74,9 +76,10 @@
                         android:id="@+id/Et_evaluate_et1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="@string/evaluate_guide"
+                        android:hint="@string/evaluate_guide"
+                        android:textColorHint="#CCCCCC"
                         android:textSize="15dp"
-                        android:textColor="#CCCCCC"
+                        android:background="@drawable/evaluate_edit_shape"
                         />
                 </RelativeLayout>
             </LinearLayout>
@@ -90,9 +93,11 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1">
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="10dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:padding="4dp"
+                        android:layout_centerInParent="true"
+                        android:scaleType="fitXY"
                         android:src="@mipmap/evaluate_photo_before"
                         android:background="@android:color/transparent"/>
                 </RelativeLayout>
@@ -104,9 +109,10 @@
                         android:id="@+id/Et_evaluate_et2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="@string/evaluate_college"
+                        android:hint="@string/evaluate_college"
+                        android:textColorHint="#CCCCCC"
                         android:textSize="15dp"
-                        android:textColor="#CCCCCC"
+                        android:background="@drawable/evaluate_edit_shape"
                         />
 
                 </RelativeLayout>
@@ -146,19 +152,29 @@
                 android:layout_weight="1"
                 android:paddingLeft="20dp"
                 >
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@mipmap/evaluate_grade"/>
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent">
-                    <TextView
+                    <ImageView
+                        android:id="@+id/iv_evaluate"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:src="@mipmap/evaluate_grade"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"/>
+                    <RelativeLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="评分"
-                        android:textSize="16sp"
-                        android:layout_centerVertical="true"/>
+                        android:layout_height="fill_parent"
+                        android:layout_toRightOf="@+id/iv_evaluate"
+                        android:paddingLeft="10dp">
+                        <TextView
+                            android:id="@+id/tv_evaluate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="评分"
+                            style="@style/FirstText"
+                            android:layout_centerVertical="true"/>
+                    </RelativeLayout>
                 </RelativeLayout>
             </LinearLayout>
             <LinearLayout
@@ -171,13 +187,13 @@
                     android:layout_width="0px"
                     android:layout_height="match_parent"
                     android:layout_weight="1.5"
-                    android:paddingTop="10dp">
+                    android:paddingTop="12dp">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/evaluate_schoolgrade"
                         android:layout_centerHorizontal="true"
-                        android:textSize="16sp"/>
+                        style="@style/SecondText"/>
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="0px"
@@ -202,13 +218,13 @@
                     android:layout_width="0px"
                     android:layout_height="match_parent"
                     android:layout_weight="1.5"
-                    android:paddingTop="10dp">
+                    android:paddingTop="12dp">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/evaluate_guidegrade"
                         android:layout_centerHorizontal="true"
-                        android:textSize="16sp"/>
+                        style="@style/SecondText"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -245,10 +261,10 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:text="@string/evaluate_submit"
-                    android:textSize="20dp"
+                    android:textSize="14sp"
                     android:textColor="@drawable/evaluate_btn_text_style"
                     android:layout_centerInParent="true"
-                    android:background="@drawable/evaluate_btn_style"/>
+                    android:background="@drawable/btn_bg"/>
             </RelativeLayout>
         </RelativeLayout>
     </LinearLayout>
