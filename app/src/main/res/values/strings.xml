@@ -6,12 +6,16 @@
     <string name="chat_remark">备注:</string>
     <string name="cannot_invite_warn">还未选择学校，不能发送邀请哦 :)</string>
     <string name="evaluate_title">发表评价</string>
-    <string name="evaluate_guide">请输入您对这位同学本次导游的评价，
-                        评价成功后赢取刮刮乐有机会赢得大奖。</string>
-    <string name="evaluate_college">请留下您对本所高校的印象，
-评价成功后领取刮刮乐有机会赢得大奖。</string>
+    <string name="evaluate_guide">请输入您对这位同学本次导游的评价,评价成功后赢取刮刮乐有机会赢得大奖。</string>
+    <string name="evaluate_college">请留下您对本所高校的印象,评价成功后领取刮刮乐有机会赢得大奖。</string>
     <string name="evaluate_grade">评分</string>
     <string name="evaluate_schoolgrade">校园评分</string>
     <string name="evaluate_guidegrade">导游评分</string>
     <string name="evaluate_submit">发表评价</string>
+    <string name="ggl_title1">感谢您的评价:)</string>
+    <string name="ggl_title2">恭喜您得到一次刮刮乐机会！</string>
+    <string name="ggl_content1">1.活动规则：撰写出游评价(30字+两张带图评价)，即可获得抽取机会赢得海量优惠券。</string>
+    <string name="ggl_content2">2.活动步骤：出游完成后-点击“写评价”-发部评价-抽奖。</string>
+    <string name="ggl_content3">3.如何查看优惠券？打开“笑脸”APP-我-我的卡券包；即可看到优惠券信息。</string>
+    
 </resources>

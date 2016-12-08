@@ -93,9 +93,9 @@ public class EvaluateActivity extends Activity {
                 //获取星级评分
                 RatingBardeal();
                 //跳转
-//                Intent intent = new Intent(EvaluateActivity.this,Ggl_Activity.class);
-//                startActivity(intent);
-//                finish();
+                Intent intent = new Intent(EvaluateActivity.this,GGL_Activity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
