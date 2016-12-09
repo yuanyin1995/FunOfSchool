@@ -473,6 +473,13 @@
     <string name="ease_user_remove">This user has been removed</string>
     <string name="error_send_invalid_content">The message content is not allowed to be sent!</string>
     <string name="error_send_not_in_the_group">You already were not in the group</string>
+    <string name="evaluate_college">请留下您对本所高校的印象,评价成功后领取刮刮乐有机会赢得大奖。</string>
+    <string name="evaluate_grade">评分</string>
+    <string name="evaluate_guide">请输入您对这位同学本次导游的评价,评价成功后赢取刮刮乐有机会赢得大奖。</string>
+    <string name="evaluate_guidegrade">导游评分</string>
+    <string name="evaluate_schoolgrade">校园评分</string>
+    <string name="evaluate_submit">发表评价</string>
+    <string name="evaluate_title">发表评价</string>
     <string name="exit_group">Exit</string>
     <string name="exit_group_hint">The group messages will not be received after exiting the group</string>
     <string name="expression">[expression]</string>
@@ -481,6 +488,11 @@
     <string name="file">[file]</string>
     <string name="forward">Forward</string>
     <string name="get_failed_please_check">Failed to retrieve, please check the network or try again later</string>
+    <string name="ggl_content1">1.活动规则：撰写出游评价(30字+两张带图评价)，即可获得抽取机会赢得海量优惠券。</string>
+    <string name="ggl_content2">2.活动步骤：出游完成后-点击“写评价”-发部评价-抽奖。</string>
+    <string name="ggl_content3">3.如何查看优惠券？打开“笑脸”APP-我-我的卡券包；即可看到优惠券信息。</string>
+    <string name="ggl_title1">感谢您的评价:)</string>
+    <string name="ggl_title2">恭喜您得到一次刮刮乐机会！</string>
     <string name="gorup_not_found">Can not find this group</string>
     <string name="group_chat">Group chat</string>
     <string name="group_id">Group ID</string>
@@ -2033,6 +2045,11 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1.5dp</item>
         <item name="android:background">#eee</item>
+    </style>
+    <style name="foodRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/evaluate_ratingstars</item>
+        <item name="android:minHeight">44dip</item>
+        <item name="android:maxHeight">44dip</item>
     </style>
     <style name="horizontal_slide" parent="android:Theme.NoTitleBar">
         <item name="android:windowAnimationStyle">@style/AnimFade2</item>

@@ -81,7 +81,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/horizontal_slide" />
         <!-- 集成聊天位置信息 -->
-
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
