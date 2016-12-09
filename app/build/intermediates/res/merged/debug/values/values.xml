@@ -425,6 +425,7 @@
     <string name="call_duration">call duration</string>
     <string name="can_not_connect_chat_server_connection">Cannot connect to server</string>
     <string name="cancel">Cancel</string>
+    <string name="cannot_invite_warn">还未选择学校，不能发送邀请哦 :)</string>
     <string name="cant_find_pictures">"Can't find pictures"</string>
     <string name="change_the_group_name_failed_please">Failed to change the group name, please check the network or try again later</string>
     <string name="chat_accept">接受</string>
