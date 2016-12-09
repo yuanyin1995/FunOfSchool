@@ -5,5 +5,8 @@
     <string name="chat_time">时间:</string>
     <string name="chat_remark">备注:</string>
     <string name="cannot_invite_warn">还未选择学校，不能发送邀请哦 :)</string>
-
+    <string name="in_match_warn">正在等待导游接受邀请，本次匹配结束后才可以再次发送请求哦 :)</string>
+    <string name="no_guider_warn">在该校没有找到符合您全部条件的导游，换个条件试试吧 :)</string>
+    <string name="no_time_warn">请选择游玩时间 :)</string>
+    <string name="send_success">发送成功，请等待导游接受邀请 :)</string>
 </resources>
