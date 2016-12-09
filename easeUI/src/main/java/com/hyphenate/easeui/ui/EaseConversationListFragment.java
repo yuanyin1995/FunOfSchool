@@ -57,6 +57,7 @@ public class EaseConversationListFragment extends EaseBaseFragment{
 		}
     	
     };
+    //刷新会话列表(添加服务端透传消息会话列表)
     public void addConversation(EMConversation conversation){
         conversationList.clear();
         conversationList.add(conversation);

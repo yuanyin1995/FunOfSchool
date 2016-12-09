@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 import com.funOfSchool.R;
 import com.hyphenate.EMMessageListener;
@@ -25,19 +27,14 @@ import java.util.List;
 public class ConversationListActivity extends AppCompatActivity {
     private EMMessageListener emMessageListener;
     private ConversationListFragment conversationListFragment;
+    private List<ConversationListFragment> mFragmentList;
+    private TextView mTouristTv;
+    private TextView mGuiderTv;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conversation_list);
-        conversationListFragment = new ConversationListFragment();
-        conversationListFragment.setConversationListItemClickListener(new EaseConversationListFragment.EaseConversationListItemClickListener() {
 
-            @Override
-            public void onListItemClicked(EMConversation conversation) {
-                startActivity(new Intent(ConversationListActivity.this, ChatActivity.class).putExtra(EaseConstant.EXTRA_USER_ID, conversation.getUserName()));
-            }
-        });
-        getSupportFragmentManager().beginTransaction().add(R.id.activity_conversation, conversationListFragment).commit();
         emMessageListener = new EMMessageListener() {
 
             @Override
@@ -88,5 +85,71 @@ public class ConversationListActivity extends AppCompatActivity {
             }
         };
         EMClient.getInstance().chatManager().addMessageListener(emMessageListener);
+        initView();
+        initTouristFragment();
+        setUpView();
     }
+
+    private void setUpView() {
+        mTouristTv.setOnClickListener(tabListener);
+        mGuiderTv.setOnClickListener(tabListener);
+    }
+
+    private void initView() {
+        mTouristTv = (TextView) findViewById(R.id.fragment_conversation_tourist);
+        mGuiderTv = (TextView) findViewById(R.id.fragment_conversation_guider);
+    }
+
+    //初始化导游会话列表
+    private void initGuiderFragment() {
+        conversationListFragment = new ConversationListFragment();
+        conversationListFragment.setConversationListItemClickListener(new EaseConversationListFragment.EaseConversationListItemClickListener() {
+
+            @Override
+            public void onListItemClicked(EMConversation conversation) {
+                startActivity(new Intent(ConversationListActivity.this, ChatActivity.class).putExtra(EaseConstant.EXTRA_USER_ID, conversation.getUserName()));
+            }
+        });
+        conversationListFragment.isGuiderConversationList(true);
+        getSupportFragmentManager().beginTransaction().add(R.id.activity_conversation, conversationListFragment).commit();
+    }
+    //初始化出游者列表
+    private void initTouristFragment() {
+        conversationListFragment = new ConversationListFragment();
+        conversationListFragment.setConversationListItemClickListener(new EaseConversationListFragment.EaseConversationListItemClickListener() {
+
+            @Override
+            public void onListItemClicked(EMConversation conversation) {
+                startActivity(new Intent(ConversationListActivity.this, ChatActivity.class).putExtra(EaseConstant.EXTRA_USER_ID, conversation.getUserName()));
+            }
+        });
+        getSupportFragmentManager().beginTransaction().add(R.id.activity_conversation, conversationListFragment).commit();
+    }
+
+    View.OnClickListener tabListener = new View.OnClickListener() {
+        private void resetTextView(){
+            mTouristTv.setTextColor(0xff010101);
+            mGuiderTv.setTextColor(0xff010101);
+        }
+
+
+        @Override
+        public void onClick(View v) {
+            resetTextView();
+            switch (v.getId()){
+                case R.id.fragment_conversation_tourist:
+                    mTouristTv.setTextColor(0xff4E6CEF);
+                    initTouristFragment();
+                    break;
+                case R.id.fragment_conversation_guider:
+                    mGuiderTv.setTextColor(0xff4E6CEF);
+                    initGuiderFragment();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
+    };
 }

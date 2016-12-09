@@ -14,29 +14,7 @@
         />
 
     <include layout="@layout/ease_search_bar" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/fragment_conversation_tourist"
-            android:clickable="true"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:gravity="center"
-            style="@style/ChatTabText"
-            android:layout_weight="1"
-            android:text="@string/conversation_guider"/>
-        <TextView
-            android:id="@+id/fragment_conversation_guider"
-            android:clickable="true"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:gravity="center"
-            style="@style/FirstText"
-            android:layout_weight="1"
-            android:text="@string/conversation_tourist"/>
-    </LinearLayout>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
