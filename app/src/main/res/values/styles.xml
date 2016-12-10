@@ -17,7 +17,6 @@
     <style name="FirstText">
         <item name="android:textColor">@color/firstText</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:layout_centerVertical">true</item>
     </style>
 
     <style name="SecondText">

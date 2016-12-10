@@ -6,6 +6,6 @@
     <color name="bg">#eeeeee</color>
     <color name="titleBg">#ffffff</color>
     <color name="firstText">#010101</color>
-    <color name="secondText">#666666</color>
+    <color name="secondText">#999999</color>
     <color name="chatTabText">#4E6CEF</color>
 </resources>
