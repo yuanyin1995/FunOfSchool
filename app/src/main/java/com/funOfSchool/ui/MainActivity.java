@@ -12,7 +12,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
@@ -80,8 +83,13 @@ public class MainActivity extends Activity {
     /*  个人信息 */
     private ImageView btnMe;
     //侧拉菜单对象
-    DrawerLayout drawerLayout;
-
+    private DrawerLayout drawerLayout;
+    //个人资料、出游记录、卡券包、积分商城、设置
+    private LinearLayout btnPersoninfo;
+    private LinearLayout btnTravelist;
+    private LinearLayout btnPrize;
+    private LinearLayout btnMarket;
+    private LinearLayout btnSet;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -224,6 +232,11 @@ public class MainActivity extends Activity {
         btnMe = (ImageView)findViewById(R.id.index_me);
         btnCannotInvite = (ImageView)findViewById(R.id.map_cannot_invite);
         btnCanInvite = (ImageView)findViewById(R.id.map_can_invite);
+        btnPersoninfo = (LinearLayout)findViewById(R.id.me_personinfo);
+        btnTravelist = (LinearLayout)findViewById(R.id.me_trvallist);
+        btnPrize = (LinearLayout)findViewById(R.id.me_myprize);
+        btnMarket = (LinearLayout)findViewById(R.id.me_market);
+        btnSet = (LinearLayout)findViewById(R.id.me_set);
     }
 
     private void setListener() {
@@ -232,6 +245,11 @@ public class MainActivity extends Activity {
         btnMsg.setOnClickListener(mapListener);
         btnCannotInvite.setOnClickListener(mapListener);
         btnCanInvite.setOnClickListener(mapListener);
+        btnPersoninfo.setOnClickListener(mapListener);
+        btnTravelist.setOnClickListener(mapListener);
+        btnPrize.setOnClickListener(mapListener);
+        btnMarket.setOnClickListener(mapListener);
+        btnSet.setOnClickListener(mapListener);
     }
 
     private class MapListener implements View.OnClickListener{
@@ -254,6 +272,27 @@ public class MainActivity extends Activity {
                     Intent intent = new Intent(MainActivity.this,SelectActivity.class);
                     intent.putExtra("scid",collegeId);
                     startActivity(intent);
+                    break;
+                case R.id.me_personinfo:
+                    Toast.makeText(MainActivity.this,"dianjilegeren",Toast.LENGTH_LONG).show();
+                    Intent intent_info = new Intent(MainActivity.this,PersonInfoActivity.class);
+                    startActivity(intent_info);
+                    break;
+                case R.id.me_trvallist:
+                    Intent intent_Tlist = new Intent(MainActivity.this,TravelListActivity.class);
+                    startActivity(intent_Tlist);
+                    break;
+                case R.id.me_myprize:
+                    Intent intent_prz = new Intent(MainActivity.this,MyPrizeActivity.class);
+                    startActivity(intent_prz);
+                    break;
+                case R.id.me_market:
+                    Intent intent_mkt = new Intent(MainActivity.this,MarketActivity.class);
+                    startActivity(intent_mkt);
+                    break;
+                case R.id.me_set:
+                    Intent intent_st = new Intent(MainActivity.this,SetActivity.class);
+                    startActivity(intent_st);
                     break;
             }
         }
