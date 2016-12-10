@@ -17,5 +17,7 @@
     <string name="ggl_content1">1.活动规则：撰写出游评价(30字+两张带图评价)，即可获得抽取机会赢得海量优惠券。</string>
     <string name="ggl_content2">2.活动步骤：出游完成后-点击“写评价”-发部评价-抽奖。</string>
     <string name="ggl_content3">3.如何查看优惠券？打开“笑脸”APP-我-我的卡券包；即可看到优惠券信息。</string>
-    
+
+    <string name="conversation_guider">我是游客</string>
+    <string name="conversation_tourist">我是导游</string>
 </resources>

@@ -57,7 +57,13 @@ public class EaseConversationListFragment extends EaseBaseFragment{
 		}
     	
     };
-    
+    //刷新会话列表(添加服务端透传消息会话列表)
+    public void addConversation(EMConversation conversation){
+        conversationList.clear();
+        conversationList.add(conversation);
+        conversationListView.refresh();
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.ease_fragment_conversation_list, container, false);

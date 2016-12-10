@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.funOfSchool.R;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMConversation;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.easeui.ui.EaseChatFragment;
 
@@ -105,7 +107,15 @@ public class ChatFragment extends EaseChatFragment {
 
     @Override
     public void onMessageReceived(List<EMMessage> messages) {
+        EMConversation conversation = EMClient.getInstance().chatManager().getConversation(toChatUsername);
+        Long last = Long.valueOf(conversation.getLastMessage().getMsgId()) - 1;
+        if(!conversation.getMessage(last.toString(),false).getBooleanAttribute("show",true)){
+//            Toast.makeText(getContext(),conversation.getLastMessage().getMsgId(),Toast.LENGTH_SHORT).show();
+            conversation.removeMessage(last.toString());
+
+        }
         super.onMessageReceived(messages);
+
     }
 
     @Override
@@ -140,6 +150,13 @@ public class ChatFragment extends EaseChatFragment {
 
     @Override
     protected void sendTextMessage(String content) {
+        EMConversation conversation = EMClient.getInstance().chatManager().getConversation(toChatUsername);
+
+        if(!conversation.getLastMessage().getBooleanAttribute("show",true)){
+//            Toast.makeText(getContext(),conversation.getLastMessage().getMsgId(),Toast.LENGTH_SHORT).show();
+            conversation.removeMessage(conversation.getLastMessage().getMsgId());
+
+        }
         super.sendTextMessage(content);
     }
 

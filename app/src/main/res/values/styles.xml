@@ -24,4 +24,9 @@
         <item name="android:textColor">@color/secondText</item>
         <item name="android:textSize">14sp</item>
     </style>
+
+    <style name="ChatTabText">
+        <item name="android:textColor">@color/chatTabText</item>
+        <item name="android:textSize">14sp</item>
+    </style>
 </resources>
