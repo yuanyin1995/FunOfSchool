@@ -522,6 +522,7 @@
     <string name="have_connected_with">Connected to the peer and waiting for the peer to accept</string>
     <string name="have_you_removed">Have you removed from his buddy list</string>
     <string name="illegal_user_name">Illegal user name</string>
+    <string name="in_match_warn">正在为您匹配中，请在本次匹配完成后再发送新的邀请 :)</string>
     <string name="input_new_nick_hint">Input a new nick</string>
     <string name="is_down_please_wait">Downloading video, please wait a moment</string>
     <string name="is_modify_the_group_name">Modifying the group name..</string>
@@ -545,7 +546,9 @@
     <string name="newnotify">Receiving a new message</string>
     <string name="nickname">NickName</string>
     <string name="nickname_description">Once this nick is set, this nick will be used in push notification (by default this is HuanXin ID ) when the receiver is using the IOS device.</string>
+    <string name="no_guider_warn">在该校没有找到符合您全部条件的导游，换个条件试试吧 :)</string>
     <string name="no_more_messages">no more messages</string>
+    <string name="no_time_warn">请选择游玩时间 :)</string>
     <string name="not_add_myself">"Can't add myself"</string>
     <string name="not_connect_to_server">Not connect to server, please try again later</string>
     <string name="not_delete_myself">Cannot delete myself</string>
@@ -582,6 +585,7 @@
     <string name="select_contacts">Select the contact</string>
     <string name="send_fail">Send failed</string>
     <string name="send_failure_please">Send failure, please test whether the server connection</string>
+    <string name="send_success">发送成功 :)</string>
     <string name="send_successful">Request was sent, waiting for the peer to accept</string>
     <string name="send_the_request_is">The request was sent and waiting for owner approval</string>
     <string name="session">Conversation</string>
