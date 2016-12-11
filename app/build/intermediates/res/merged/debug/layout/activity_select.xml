@@ -271,6 +271,7 @@
         android:layout_width="match_parent"
         android:layout_height="36dp"
         android:text="发送请求 "
+        android:textSize="14sp"
         android:textColor="@color/colorPrimary"
         android:background="@drawable/btn_bg"
         android:layout_marginLeft="16dp"

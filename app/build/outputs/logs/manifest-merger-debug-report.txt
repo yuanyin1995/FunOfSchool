@@ -107,6 +107,13 @@ MERGED from [com.android.support:support-v4:23.4.0] D:\1A\2016-2017(1)\xiaolian\
 MERGED from [com.android.support:support-vector-drawable:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\AndroidManifest.xml:7:5-20
 MERGED from [com.android.support:support-v4:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\src\main\AndroidManifest.xml:39:9-41
 	android:supportsRtl
@@ -236,6 +243,13 @@ MERGED from [com.android.support:support-v4:23.4.0] D:\1A\2016-2017(1)\xiaolian\
 MERGED from [com.android.support:support-vector-drawable:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\AndroidManifest.xml:5:5-43
 MERGED from [com.android.support:support-v4:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:20:5-43
 MERGED from [FunOfSchool:easeUI:unspecified] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\FunOfSchool\easeUI\unspecified\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-v4:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:support-vector-drawable:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-vector-drawable:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\AndroidManifest.xml:5:5-43
 MERGED from [com.android.support:support-v4:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:20:5-43
 	tools:overrideLibrary
 		ADDED from [com.android.support:appcompat-v7:23.4.0] D:\1A\2016-2017(1)\xiaolian\FunOfSchool\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\AndroidManifest.xml:23:9-75

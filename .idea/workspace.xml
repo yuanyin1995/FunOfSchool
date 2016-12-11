@@ -17,7 +17,405 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e56fd969-ddca-4414-a5ba-6f6a8527c680" name="Default" comment="" />
+    <list default="true" id="e56fd969-ddca-4414-a5ba-6f6a8527c680" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/color.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/funOfSchool/ui/MainActivity$1$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/funOfSchool/ui/MainActivity$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/res/drawable/bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/res/drawable/doctoradvice2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/res/drawable/infusion_selected.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/res/drawable/level_bg.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/res/drawable/market.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/res/drawable/menu.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/res/drawable/mypatient_selected.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/res/drawable/myprize.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/res/drawable/mywork_selected.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/res/drawable/nursingcareplan2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/res/drawable/p_center.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/res/drawable/p_pic.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/res/drawable/personal_selected.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/res/drawable/personinfo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/res/drawable/set.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/res/drawable/travellist.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/res/drawable/we.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/res/drawable/yuan.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/multi-dex/debug/componentClasses.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/multi-dex/debug/components.flags" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/multi-dex/debug/maindexlist.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/multi-dex/debug/manifest_keep.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/doctoradvice2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/infusion_selected.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/menu.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/mypatient_selected.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/mywork_selected.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/nursingcareplan2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/p_center.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/p_pic.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/personal_selected.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/we.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/jarMerging/debug/jars/1/1f/combined.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/arm64-v8a/libBaiduMapSDK_cloud_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/arm64-v8a/libBaiduMapSDK_radar_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/arm64-v8a/libBaiduMapSDK_search_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/armeabi-v7a/libBaiduMapSDK_base_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/armeabi-v7a/libBaiduMapSDK_cloud_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/armeabi-v7a/libBaiduMapSDK_map_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/armeabi-v7a/libBaiduMapSDK_radar_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/armeabi-v7a/libBaiduMapSDK_search_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/armeabi-v7a/libBaiduMapSDK_util_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/armeabi-v7a/liblocSDK7.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/armeabi/libBaiduMapSDK_cloud_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/armeabi/libBaiduMapSDK_radar_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/armeabi/libBaiduMapSDK_search_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/x86/libBaiduMapSDK_base_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/x86/libBaiduMapSDK_cloud_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/x86/libBaiduMapSDK_map_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/x86/libBaiduMapSDK_radar_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/x86/libBaiduMapSDK_search_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/x86/libBaiduMapSDK_util_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/x86/liblocSDK7.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/x86_64/libBaiduMapSDK_base_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/x86_64/libBaiduMapSDK_cloud_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/x86_64/libBaiduMapSDK_map_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/x86_64/libBaiduMapSDK_radar_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/x86_64/libBaiduMapSDK_search_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/x86_64/libBaiduMapSDK_util_v4_0_0.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/folders/2000/1f/main/lib/x86_64/liblocSDK7.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/generated/mockable-android-19.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/res/drawable-mdpi-v4/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/res/drawable/bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/res/drawable/doctoradvice2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/res/drawable/infusion_selected.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/res/drawable/level_bg.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/res/drawable/market.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/res/drawable/menu.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/res/drawable/mypatient_selected.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/res/drawable/myprize.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/res/drawable/mywork_selected.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/res/drawable/nursingcareplan2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/res/drawable/p_center.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/res/drawable/p_pic.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/res/drawable/personal_selected.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/res/drawable/personinfo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/res/drawable/set.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/res/drawable/travellist.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/res/drawable/we.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/res/drawable/yuan.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/res/merged/release/drawable/bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/res/merged/release/drawable/doctoradvice2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/res/merged/release/drawable/infusion_selected.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/res/merged/release/drawable/level_bg.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/res/merged/release/drawable/market.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/res/merged/release/drawable/menu.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/res/merged/release/drawable/mypatient_selected.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/res/merged/release/drawable/myprize.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/res/merged/release/drawable/mywork_selected.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/res/merged/release/drawable/nursingcareplan2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/res/merged/release/drawable/p_center.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/res/merged/release/drawable/p_pic.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/res/merged/release/drawable/personal_selected.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/res/merged/release/drawable/personinfo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/res/merged/release/drawable/set.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/res/merged/release/drawable/travellist.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/res/merged/release/drawable/we.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/res/merged/release/drawable/yuan.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/funOfSchool/ui/ChatFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/funOfSchool/ui/ChatFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/funOfSchool/ui/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/funOfSchool/ui/MainActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/funOfSchool/ui/MainActivity$2$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/funOfSchool/ui/MainActivity$2$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/funOfSchool/ui/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/funOfSchool/ui/MainActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/funOfSchool/ui/MainActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/funOfSchool/ui/MainActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/funOfSchool/ui/MainActivity$MyLocationListener.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/funOfSchool/ui/MainActivity$MyLocationListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/jars/classes.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/jars/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/jars/libs/BaiduLBS_Android.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/jars/libs/BaiduLBS_Android.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/jars/libs/glide-3.6.1.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/jars/libs/glide-3.6.1.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/jars/libs/hyphenatechat_3.2.1.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/jars/libs/hyphenatechat_3.2.1.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/jars/libs/org.apache.http.legacy.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/jars/libs/org.apache.http.legacy.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/libs/BaiduLBS_Android.jar" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/libs/BaiduLBS_Android.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/libs/glide-3.6.1.jar" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/libs/glide-3.6.1.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/libs/hyphenatechat_3.2.1.jar" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/libs/hyphenatechat_3.2.1.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/libs/org.apache.http.legacy.jar" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/libs/org.apache.http.legacy.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/BuildConfig.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/BuildConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/EaseConstant.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/EaseConstant.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R$anim.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R$anim.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R$attr.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R$attr.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R$color.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R$color.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R$dimen.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R$dimen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R$drawable.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R$id.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R$layout.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R$string.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R$style.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R$styleable.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R$styleable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseContactAdapter$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseContactAdapter$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseContactAdapter$MyFilter.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseContactAdapter$MyFilter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseContactAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseContactAdapter$ViewHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseContactAdapter.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseContactAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseConversationAdapter$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseConversationAdapter$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseConversationAdapter$ConversationFilter.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseConversationAdapter$ConversationFilter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseConversationAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseConversationAdapter$ViewHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseConversationAdapter.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseConversationAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseExpressionPagerAdapter.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseExpressionPagerAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseMessageAdapter$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseMessageAdapter$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseMessageAdapter$2.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseMessageAdapter$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseMessageAdapter.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EaseMessageAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EmojiconGridAdapter.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EmojiconGridAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EmojiconPagerAdapter.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/adapter/EmojiconPagerAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/controller/EaseUI$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/controller/EaseUI$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/controller/EaseUI$DefaultSettingsProvider.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/controller/EaseUI$DefaultSettingsProvider.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/controller/EaseUI$EaseEmojiconInfoProvider.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/controller/EaseUI$EaseEmojiconInfoProvider.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/controller/EaseUI$EaseSettingsProvider.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/controller/EaseUI$EaseSettingsProvider.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/controller/EaseUI$EaseUserProfileProvider.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/controller/EaseUI$EaseUserProfileProvider.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/controller/EaseUI.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/controller/EaseUI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/domain/EaseEmojicon$Type.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/domain/EaseEmojicon$Type.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/domain/EaseEmojicon.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/domain/EaseEmojicon.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/domain/EaseEmojiconGroupEntity.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/domain/EaseEmojiconGroupEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/domain/EaseUser.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/domain/EaseUser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EaseAtMessageHelper.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EaseAtMessageHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EaseDefaultEmojiconDatas.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EaseDefaultEmojiconDatas.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EaseImageCache$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EaseImageCache$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EaseImageCache.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EaseImageCache.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EaseNotifier$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EaseNotifier$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EaseNotifier$2.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EaseNotifier$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EaseNotifier$EaseNotificationInfoProvider.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EaseNotifier$EaseNotificationInfoProvider.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EaseNotifier.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EaseNotifier.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EasePreferenceManager.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EasePreferenceManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EaseVoiceRecorder$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EaseVoiceRecorder$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EaseVoiceRecorder.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/model/EaseVoiceRecorder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseBaiduMapActivity$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseBaiduMapActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseBaiduMapActivity$BaiduSDKReceiver.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseBaiduMapActivity$BaiduSDKReceiver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseBaiduMapActivity$MyLocationListenner.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseBaiduMapActivity$MyLocationListenner.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseBaiduMapActivity.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseBaiduMapActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseBaseActivity.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseBaseActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseBaseFragment.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseBaseFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$1$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$10.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$11.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$11.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$2.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$3.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$4.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$5$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$5$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$5.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$6$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$6$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$6.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$7$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$7$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$7$2.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$7$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$7.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$8.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$9.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$EaseChatFragmentHelper.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$EaseChatFragmentHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$GroupListener$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$GroupListener$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$GroupListener$2.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$GroupListener$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$GroupListener.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$GroupListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$MyItemClickListener.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment$MyItemClickListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseChatFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$2.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$3.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$4.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$5$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$5$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$5$2.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$5$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$5.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$6.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$7$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$7$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$7$2.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$7$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$7.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$EaseContactListItemClickListener.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment$EaseContactListItemClickListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseContactListFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseConversationListFragment$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseConversationListFragment$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseConversationListFragment$2.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseConversationListFragment$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseConversationListFragment$3.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseConversationListFragment$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseConversationListFragment$4.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseConversationListFragment$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseConversationListFragment$5.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseConversationListFragment$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseConversationListFragment$6.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseConversationListFragment$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseConversationListFragment$7.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseConversationListFragment$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseConversationListFragment$8.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseConversationListFragment$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseConversationListFragment$EaseConversationListItemClickListener.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseConversationListFragment$EaseConversationListItemClickListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseConversationListFragment.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseConversationListFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseGroupRemoveListener.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseGroupRemoveListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowBigImageActivity$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowBigImageActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowBigImageActivity$2$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowBigImageActivity$2$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowBigImageActivity$2$2.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowBigImageActivity$2$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowBigImageActivity$2$3.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowBigImageActivity$2$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowBigImageActivity$2.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowBigImageActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowBigImageActivity.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowBigImageActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowNormalFileActivity$1$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowNormalFileActivity$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowNormalFileActivity$1$2.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowNormalFileActivity$1$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowNormalFileActivity$1$3.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowNormalFileActivity$1$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowNormalFileActivity$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowNormalFileActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowNormalFileActivity.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowNormalFileActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowVideoActivity$1$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowVideoActivity$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowVideoActivity$1$2.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowVideoActivity$1$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowVideoActivity$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowVideoActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowVideoActivity.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/ui/EaseShowVideoActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/utils/EaseCommonUtils$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/utils/EaseCommonUtils$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/utils/EaseCommonUtils$1GetInitialLetter.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/utils/EaseCommonUtils$1GetInitialLetter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/utils/EaseCommonUtils.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/utils/EaseCommonUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/utils/EaseImageUtils.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/utils/EaseImageUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/utils/EaseLoadLocalBigImgTask.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/utils/EaseLoadLocalBigImgTask.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/utils/EaseSmileUtils.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/utils/EaseSmileUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/utils/EaseUserUtils.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/utils/EaseUserUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseAlertDialog$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseAlertDialog$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseAlertDialog$AlertDialogUser.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseAlertDialog$AlertDialogUser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseAlertDialog.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseAlertDialog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatExtendMenu$ChatMenuItem.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatExtendMenu$ChatMenuItem.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatExtendMenu$ChatMenuItemModel.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatExtendMenu$ChatMenuItemModel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatExtendMenu$EaseChatExtendMenuItemClickListener.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatExtendMenu$EaseChatExtendMenuItemClickListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatExtendMenu$ItemAdapter$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatExtendMenu$ItemAdapter$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatExtendMenu$ItemAdapter.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatExtendMenu$ItemAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatExtendMenu.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatExtendMenu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatInputMenu$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatInputMenu$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatInputMenu$2.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatInputMenu$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatInputMenu$3.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatInputMenu$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatInputMenu$4.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatInputMenu$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatInputMenu$ChatInputMenuListener.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatInputMenu$ChatInputMenuListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatInputMenu.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatInputMenu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatMessageList$MessageListItemClickListener.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatMessageList$MessageListItemClickListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatMessageList.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatMessageList.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatPrimaryMenu$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatPrimaryMenu$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatPrimaryMenu$2.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatPrimaryMenu$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatPrimaryMenu$3.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatPrimaryMenu$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatPrimaryMenu.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatPrimaryMenu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatPrimaryMenuBase$EaseChatPrimaryMenuListener.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatPrimaryMenuBase$EaseChatPrimaryMenuListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatPrimaryMenuBase.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseChatPrimaryMenuBase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseContactList$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseContactList$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseContactList.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseContactList.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseConversationList$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseConversationList$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseConversationList$EaseConversationListHelper.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseConversationList$EaseConversationListHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseConversationList.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseConversationList.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseExpandGridView.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseExpandGridView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseImageView.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseImageView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseSidebar.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseSidebar.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseSwitchButton.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseSwitchButton.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseTitleBar.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseTitleBar.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseVoiceRecorderView$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseVoiceRecorderView$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseVoiceRecorderView$EaseVoiceRecorderCallback.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseVoiceRecorderView$EaseVoiceRecorderCallback.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseVoiceRecorderView.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/EaseVoiceRecorderView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow$1$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow$2$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow$2$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow$2.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow$3.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow$4.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow$5.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow$6.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow$7.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow$8.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRow.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowBigExpression.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowBigExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowFile$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowFile$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowFile.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowFile.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowImage$1$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowImage$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowImage$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowImage$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowImage.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowImage.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowLocation$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowLocation$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowLocation$MapClickListener.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowLocation$MapClickListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowLocation.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowLocation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowText$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowText$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowText.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowText.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowVideo$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowVideo$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowVideo.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowVideo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowVoice.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowVoice.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowVoicePlayClickListener$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowVoicePlayClickListener$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowVoicePlayClickListener$2.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowVoicePlayClickListener$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowVoicePlayClickListener.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseChatRowVoicePlayClickListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseCustomChatRowProvider.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/chatrow/EaseCustomChatRowProvider.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconIndicatorView.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconIndicatorView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconMenu$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconMenu$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconMenu$EmojiconPagerViewListener.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconMenu$EmojiconPagerViewListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconMenu.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconMenu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconMenuBase$EaseEmojiconMenuListener.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconMenuBase$EaseEmojiconMenuListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconMenuBase.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconMenuBase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconPagerView$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconPagerView$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconPagerView$EaseEmojiconPagerViewListener.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconPagerView$EaseEmojiconPagerViewListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconPagerView$EmojiPagerChangeListener.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconPagerView$EmojiPagerChangeListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconPagerView.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconPagerView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconScrollTabBar$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconScrollTabBar$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconScrollTabBar$2.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconScrollTabBar$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconScrollTabBar$EaseScrollTabBarItemClickListener.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconScrollTabBar$EaseScrollTabBarItemClickListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconScrollTabBar.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/emojicon/EaseEmojiconScrollTabBar.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/Compat.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/Compat.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/EasePhotoView.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/EasePhotoView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/IPhotoView.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/IPhotoView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/PhotoViewAttacher$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/PhotoViewAttacher$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/PhotoViewAttacher$2.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/PhotoViewAttacher$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/PhotoViewAttacher$AnimatedZoomRunnable.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/PhotoViewAttacher$AnimatedZoomRunnable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/PhotoViewAttacher$FlingRunnable.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/PhotoViewAttacher$FlingRunnable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/PhotoViewAttacher$OnMatrixChangedListener.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/PhotoViewAttacher$OnMatrixChangedListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/PhotoViewAttacher$OnPhotoTapListener.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/PhotoViewAttacher$OnPhotoTapListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/PhotoViewAttacher$OnViewTapListener.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/PhotoViewAttacher$OnViewTapListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/PhotoViewAttacher.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/PhotoViewAttacher.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/SDK16.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/SDK16.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/ScrollerProxy$GingerScroller.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/ScrollerProxy$GingerScroller.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/ScrollerProxy$PreGingerScroller.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/ScrollerProxy$PreGingerScroller.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/ScrollerProxy.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/ScrollerProxy.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/VersionedGestureDetector$CupcakeDetector.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/VersionedGestureDetector$CupcakeDetector.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/VersionedGestureDetector$EclairDetector.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/VersionedGestureDetector$EclairDetector.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/VersionedGestureDetector$FroyoDetector$1.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/VersionedGestureDetector$FroyoDetector$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/VersionedGestureDetector$FroyoDetector.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/VersionedGestureDetector$FroyoDetector.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/VersionedGestureDetector$OnGestureListener.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/VersionedGestureDetector$OnGestureListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/VersionedGestureDetector.class" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/classes/release/com/hyphenate/easeui/widget/photoview/VersionedGestureDetector.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/outputs/aar/easeUI-release.aar" afterPath="$PROJECT_DIR$/easeUI/build/outputs/aar/easeUI-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_23_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_23_4_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_4_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/multidex_1_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/multidex_1_0_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_23_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_23_4_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_23_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_23_4_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_23_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_23_4_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FunOfSchool.iml" afterPath="$PROJECT_DIR$/FunOfSchool.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/anim.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/anim.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-hdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-hdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-mdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-mdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xhdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xhdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xxxhdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xxxhdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/mipmap-hdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/mipmap-hdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/mipmap-xhdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/mipmap-xhdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/mipmap-xxxhdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/mipmap-xxxhdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/FunOfSchool/easeUI/unspecified/R.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/login_bg.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/login_bg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/activity_select.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/activity_select.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/login_bg.xml" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/login_bg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build.gradle" afterPath="$PROJECT_DIR$/easeUI/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/generated/source/r/release/com/hyphenate/easeui/R.java" afterPath="$PROJECT_DIR$/easeUI/build/generated/source/r/release/com/hyphenate/easeui/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/multi/values-large-v4.json" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/multi/values-large-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/multi/values-v11.json" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/multi/values-v11.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/multi/values-xlarge-v4.json" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/multi/values-xlarge-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/multi/values-zh-rCN.json" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/multi/values-zh-rCN.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/multi/values.json" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/multi/values.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/single/anim.json" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/single/anim.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/single/drawable-hdpi-v4.json" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/single/drawable-hdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/single/drawable-mdpi-v4.json" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/single/drawable-mdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/single/drawable-xhdpi-v4.json" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/single/drawable-xhdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/single/drawable.json" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/single/drawable.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/single/layout.json" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/blame/res/release/single/layout.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/R.txt" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/bundles/release/R.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/incremental/mergeReleaseAssets/merger.xml" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/incremental/mergeReleaseAssets/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/incremental/mergeReleaseJniLibFolders/merger.xml" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/incremental/mergeReleaseJniLibFolders/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/incremental/mergeReleaseResources/merger.xml" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/incremental/mergeReleaseResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/build/intermediates/incremental/packageReleaseResources/merger.xml" afterPath="$PROJECT_DIR$/easeUI/build/intermediates/incremental/packageReleaseResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easeUI/easeUI.iml" afterPath="$PROJECT_DIR$/easeUI/easeUI.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
+    </list>
     <ignored path="FunOfSchool.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/build/classes/" />
@@ -121,7 +519,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-4.5396824">
               <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
               <folding />
             </state>
@@ -146,7 +544,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="354" column="4" selection-start-line="354" selection-start-column="4" selection-end-line="354" selection-end-column="4" />
               <folding>
-                <element signature="imports" expanded="false" />
                 <element signature="method#findView#0;class#SelectActivity#0" expanded="false" />
                 <element signature="method#setListener#0;class#SelectActivity#0" expanded="false" />
                 <element signature="class#SelectListener#0;class#SelectActivity#0" expanded="false" />
@@ -165,13 +562,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1148#1149#0" expanded="false" />
-                <element signature="e#1187#1188#0" expanded="false" />
-                <element signature="e#2252#2253#0" expanded="false" />
-                <element signature="e#2303#2304#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -189,11 +580,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login_bg.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login_bg.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/login_bg.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6053131">
-              <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+            <state vertical-scroll-proportion="-3.612903">
+              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/easeUI/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2795699">
+              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -2065,9 +2466,24 @@
                 <option name="name" value="preReleaseUnitTestBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare com.android.support:animated-vector-drawable:23.4.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/easeUI" />
+                <option name="name" value="prepareComAndroidSupportAnimatedVectorDrawable2340Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.android.support:appcompat-v7:23.4.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/easeUI" />
+                <option name="name" value="prepareComAndroidSupportAppcompatV72340Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Prepare com.android.support:support-v4:23.4.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/easeUI" />
                 <option name="name" value="prepareComAndroidSupportSupportV42340Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.android.support:support-vector-drawable:23.4.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/easeUI" />
+                <option name="name" value="prepareComAndroidSupportSupportVectorDrawable2340Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/easeUI" />
@@ -2246,7 +2662,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="5921690356286" />
+        <entry key="$PROJECT_DIR$" value="5922614399102" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2535,7 +2951,10 @@
                             <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/external/lombok/lombok-ast/0.2.3/lombok-ast-0.2.3-sources.jar" />
                             <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/external/lombok/lombok-ast/0.2.3/lombok-ast-0.2.3.jar" />
                             <option value="D:/android-sdk-windows/extras/android/m2repository/com/android/support/support-v4/23.4.0/support-v4-23.4.0.aar" />
+                            <option value="D:/android-sdk-windows/extras/android/m2repository/com/android/support/appcompat-v7/23.4.0/appcompat-v7-23.4.0.aar" />
                             <option value="D:/android-sdk-windows/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar" />
+                            <option value="D:/android-sdk-windows/extras/android/m2repository/com/android/support/animated-vector-drawable/23.4.0/animated-vector-drawable-23.4.0.aar" />
+                            <option value="D:/android-sdk-windows/extras/android/m2repository/com/android/support/support-vector-drawable/23.4.0/support-vector-drawable-23.4.0.aar" />
                             <option value="$MODULE_DIR$/libs/glide-3.6.1.jar" />
                             <option value="$MODULE_DIR$/libs/hyphenatechat_3.2.1.jar" />
                             <option value="$MODULE_DIR$/libs/org.apache.http.legacy.jar" />
@@ -2708,7 +3127,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/search_bg.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
-        <option value="$PROJECT_DIR$/easeUI/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
@@ -2725,6 +3143,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/funOfSchool/ui/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/funOfSchool/ui/SelectActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/login_bg.xml" />
+        <option value="$PROJECT_DIR$/easeUI/build.gradle" />
+        <option value="$PROJECT_DIR$/easeUI/build/intermediates/res/merged/release/values-ldltr-v21/values-ldltr-v21.xml" />
       </list>
     </option>
   </component>
@@ -2759,8 +3179,172 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
+      <pane id="Scratches">
         <subPane />
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FunOfSchool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FunOfSchool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FunOfSchool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FunOfSchool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FunOfSchool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FunOfSchool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FunOfSchool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FunOfSchool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FunOfSchool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FunOfSchool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FunOfSchool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="funOfSchool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FunOfSchool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FunOfSchool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="funOfSchool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Android Instrumentation Tests">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/androidTest/java">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="com/funOfSchool">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
       <pane id="AndroidView">
         <subPane>
@@ -2948,334 +3532,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easeUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easeUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easeUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="funOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="funOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="funOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adapter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunOfSchool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches">
+      <pane id="PackagesPane">
         <subPane />
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Android Instrumentation Tests">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="app">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="app">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src/androidTest/java">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="com/funOfSchool">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
       </pane>
     </panes>
   </component>
@@ -3804,6 +4062,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.idea/runConfigurations.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/chunvzuo.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -3959,13 +4225,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/easeUI/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -4117,13 +4376,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.6774193">
-          <caret line="2" column="4" selection-start-line="0" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/funOfSchool/adapter/MajorAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.53405017">
@@ -4161,19 +4413,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="211" column="17" selection-start-line="211" selection-start-column="17" selection-end-line="211" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="-4.5396824">
           <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
           <folding />
         </state>
@@ -4184,7 +4429,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="354" column="4" selection-start-line="354" selection-start-column="4" selection-end-line="354" selection-end-column="4" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="method#findView#0;class#SelectActivity#0" expanded="false" />
             <element signature="method#setListener#0;class#SelectActivity#0" expanded="false" />
             <element signature="class#SelectListener#0;class#SelectActivity#0" expanded="false" />
@@ -4201,13 +4445,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1148#1149#0" expanded="false" />
-            <element signature="e#1187#1188#0" expanded="false" />
-            <element signature="e#2252#2253#0" expanded="false" />
-            <element signature="e#2303#2304#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -4242,8 +4480,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/login_bg.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6053131">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        <state vertical-scroll-proportion="-3.612903">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/easeUI/build/intermediates/res/merged/release/values-ldltr-v21/values-ldltr-v21.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15694165">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/easeUI/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2795699">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
           <folding />
         </state>
       </provider>
