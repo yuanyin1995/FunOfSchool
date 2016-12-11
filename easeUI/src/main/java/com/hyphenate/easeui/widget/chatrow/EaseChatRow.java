@@ -62,6 +62,8 @@ public abstract class EaseChatRow extends LinearLayout {
         inflater = LayoutInflater.from(context);
 
         initView();
+
+
     }
 
     private void initView() {
@@ -115,9 +117,9 @@ public abstract class EaseChatRow extends LinearLayout {
             }
         }
         //set nickname and avatar
-        if(message.direct() == Direct.SEND){
+        if(message.direct() == Direct.SEND && userAvatarView != null){
             EaseUserUtils.setUserAvatar(context, EMClient.getInstance().getCurrentUser(), userAvatarView);
-        }else{
+        }else if (userAvatarView != null){
             EaseUserUtils.setUserAvatar(context, message.getFrom(), userAvatarView);
             EaseUserUtils.setUserNick(message.getFrom(), usernickView);
         }
@@ -142,7 +144,7 @@ public abstract class EaseChatRow extends LinearLayout {
         }
         
 
-        if (adapter instanceof EaseMessageAdapter) {
+        if (adapter instanceof EaseMessageAdapter && userAvatarView != null) {
             if (((EaseMessageAdapter) adapter).isShowAvatar())
                 userAvatarView.setVisibility(View.VISIBLE);
             else

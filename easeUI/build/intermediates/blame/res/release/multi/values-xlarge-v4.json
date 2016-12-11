@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\values-xlarge-v4\\values-xlarge-v4.xml",
+        "outputFile": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\build\\intermediates\\res\\merged\\release\\values-xlarge-v4\\values-xlarge-v4.xml",
         "map": [
             {
                 "to": {
@@ -163,7 +163,7 @@
                     "endOffset": 662
                 },
                 "from": {
-                    "file": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\values-xlarge\\ease_dimens.xml",
+                    "file": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\values-xlarge\\ease_dimens.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -182,7 +182,7 @@
                     "endOffset": 716
                 },
                 "from": {
-                    "file": "D:\\1A\\2016-2017(1)\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\values-xlarge\\ease_dimens.xml",
+                    "file": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\easeUI\\src\\main\\res\\values-xlarge\\ease_dimens.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
