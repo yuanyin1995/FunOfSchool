@@ -22,12 +22,15 @@ import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
+import com.baidu.location.Poi;
 import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
+import com.baidu.mapapi.map.OverlayOptions;
+import com.baidu.mapapi.map.PolylineOptions;
 import com.baidu.mapapi.map.TextureMapView;
 import com.baidu.mapapi.model.LatLng;
 import com.funOfSchool.R;
@@ -90,6 +93,12 @@ public class MainActivity extends Activity {
     private LinearLayout btnPrize;
     private LinearLayout btnMarket;
     private LinearLayout btnSet;
+    //  上一次定位的经纬度
+    private double mPreLantitude = 0;
+    private double mPreLongitude = 0;
+    //  定位点列表
+    List<LatLng> pts = new ArrayList<LatLng>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -225,7 +234,6 @@ public class MainActivity extends Activity {
         });
     }
 
-
     private void findView() {
         etSearch = (AutoCompleteTextView)findViewById(R.id.map_et_search);
         btnMsg = (ImageView) findViewById(R.id.index_msg);
@@ -274,7 +282,6 @@ public class MainActivity extends Activity {
                     startActivity(intent);
                     break;
                 case R.id.me_personinfo:
-                    Toast.makeText(MainActivity.this,"dianjilegeren",Toast.LENGTH_LONG).show();
                     Intent intent_info = new Intent(MainActivity.this,PersonInfoActivity.class);
                     startActivity(intent_info);
                     break;
@@ -338,13 +345,40 @@ public class MainActivity extends Activity {
             //  记录位置信息
             mCurrentLantitude = location.getLatitude();
             mCurrentLongitude = location.getLongitude();
+
             //  第一次定位时，将地图位置移动到当前位置
             if (isFristLocation) {
                 isFristLocation = false;
                 center2myLoc();
             }
+
+            // Log记录位置信息
+            Log.e("CurrentPos",mCurrentLantitude+"-"+mCurrentLongitude);
+            /*StringBuffer sb = new StringBuffer(256);
+            sb.append("\nlatitude : ");
+            sb.append(location.getLatitude());
+            sb.append("\nlontitude : ");
+            sb.append(location.getLongitude());
+            sb.append("\naddress : ");
+            sb.append(location.getAddrStr());
+            for(int i=0; i<location.getPoiList().size(); i++) {
+                Poi p = location.getPoiList().get(i);
+                sb.append("\nPoi NO.");
+                sb.append(i);
+                sb.append(" : ");
+                sb.append(p.getId());
+                sb.append("-");
+                sb.append(p.getName());
+                sb.append("-");
+                sb.append(p.getRank());
+            }
+            Log.e("BaiduLocationInfo", sb.toString());*/
         }
+
+
     }
+
+
 
     /**
      *  初始化定位相关代码
@@ -358,7 +392,7 @@ public class MainActivity extends Activity {
                 LocationClientOption();
         option.setOpenGps(true); //  打开 gps
         option.setCoorType("bd09ll"); //  设置坐标类型
-        option.setScanSpan(1000); //  自动定位间隔
+        option.setScanSpan(20000); //  自动定位间隔
         option.setIsNeedAddress(true);//  是否需要地址
         option.setIsNeedLocationPoiList(true);
         //  定位模式

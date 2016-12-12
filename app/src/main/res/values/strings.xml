@@ -23,6 +23,6 @@
 
     <string name="no_time_warn">没写时间！:)</string>
     <string name="no_guider_warn">没有导游！:)</string>
-    <string name="match_now">不能匹配！:)</string>
+    <string name="in_match_warn">不能匹配！</string>
     <string name="send_success">发送成功！:)</string>
 </resources>
