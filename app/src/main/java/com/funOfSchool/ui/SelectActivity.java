@@ -187,7 +187,7 @@ public class SelectActivity extends Activity {
      */
     private void sendInvite() {
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.141.230.114/api/match/start";
+        String url = "http://172.16.17.39/api/match/start";
         // 请求参数
         RequestParams param = new RequestParams();
         param.put("sex",sexCode);
@@ -225,7 +225,7 @@ public class SelectActivity extends Activity {
                     }
                     else if (statusCode == 6){
                         Toast.makeText(SelectActivity.this,
-                                R.string.in_match_warn,
+                                R.string.match_now_warn,
                                 Toast.LENGTH_LONG).show();
                     }
                     else {
@@ -257,7 +257,7 @@ public class SelectActivity extends Activity {
         AlertDialog.Builder builder = new AlertDialog.Builder(SelectActivity.this);
 
         // 设置对话框标题
-        builder.setTitle("选择出游时间");
+        //  builder.setTitle("选择出游时间");
 
         // 加载对话框布局
         View dialogLayout =
@@ -301,7 +301,7 @@ public class SelectActivity extends Activity {
         AlertDialog.Builder builder = new AlertDialog.Builder(SelectActivity.this);
 
         // 设置对话框标题
-        builder.setTitle("选择性别");
+        // builder.setTitle("选择性别");
 
         // 加载对话框布局
         final View dialogLayout =
@@ -350,7 +350,7 @@ public class SelectActivity extends Activity {
 
         // 根据学校ID，发送网络请求，获得专业列表
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.141.230.114/api/college/searchMajor";
+        String url = "http://172.16.17.39/api/college/searchMajor";
         // 请求参数：关键词
         RequestParams param = new RequestParams();
         param.put("collegeId",selectCollegeId);
@@ -388,7 +388,7 @@ public class SelectActivity extends Activity {
                     final AlertDialog.Builder builder = new AlertDialog.Builder(SelectActivity.this);
 
                     // 设置对话框标题
-                    builder.setTitle("选择专业");
+                    // builder.setTitle("选择专业");
 
                     // 加载对话框布局
                     final View dialogLayout =
@@ -451,7 +451,7 @@ public class SelectActivity extends Activity {
         });
 
         // 设置对话框标题
-        builder.setTitle("选择入学年份");
+        // builder.setTitle("选择入学年份");
 
         // 创建 adapter
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
@@ -479,7 +479,7 @@ public class SelectActivity extends Activity {
         builder.setView(dialogLayout);
 
         // 设置对话框标题
-        builder.setTitle("选择星座");
+        // builder.setTitle("选择星座");
 
         // 创建 adapter
         final ConstellationAdapter adapter = new ConstellationAdapter(SelectActivity.this);
@@ -506,7 +506,7 @@ public class SelectActivity extends Activity {
         AlertDialog.Builder builder = new AlertDialog.Builder(SelectActivity.this);
 
         // 设置对话框标题
-        builder.setTitle("选择年龄段");
+        // builder.setTitle("选择年龄段");
 
         // 加载对话框布局
         final View dialogLayout =

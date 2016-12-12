@@ -14,6 +14,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TitleText">
+        <item name="android:textColor">@color/firstText</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
     <style name="FirstText">
         <item name="android:textColor">@color/firstText</item>
         <item name="android:textSize">14sp</item>
