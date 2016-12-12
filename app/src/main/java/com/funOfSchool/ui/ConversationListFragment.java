@@ -1,6 +1,7 @@
 package com.funOfSchool.ui;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,30 +64,46 @@ public class ConversationListFragment extends EaseConversationListFragment {
         // get all conversations
         Map<String, EMConversation> conversations = EMClient.getInstance().chatManager().getAllConversations();
         Iterator<String> iter = conversations.keySet().iterator();
+        Log.i("tag",conversations.size()+"");
         //区分导游与出游者聊天会话
         if (isGuider){
             while (iter.hasNext()){
                 String key = iter.next();
-                List<EMMessage> msgs = conversations.get(key).getAllMessages();
-                for (EMMessage msg : msgs){
-                    if (!msg.getStringAttribute("guider","0").equals("1")){
-                        iter.remove();
-                        continue;
+                List<EMMessage> msgs = conversations.get(key).loadMoreMsgFromDB(conversations.get(key).getLastMessage().getMsgId(),
+                        500);
+                int guiderMsg = 0;
+                for (int i = 0; i < msgs.size(); i++){
+                    Log.i("tag",(i+1) + ":" + msgs.get(i).getStringAttribute("guider","0") + "----msgSize:" +  msgs.size());
+                    if (msgs.get(i).getStringAttribute("guider","0").equals("1")){
+                        guiderMsg++;
                     }
                 }
+                //如果msg中包不含 1 就删除
+                if (guiderMsg <= 0){
+                    iter.remove();
+                }
+                Log.i("tag","guiderSize:" + guiderMsg);
             }
         } else {
             while (iter.hasNext()){
                 String key = iter.next();
-                List<EMMessage> msgs = conversations.get(key).getAllMessages();
-                for (EMMessage msg : msgs){
-                    if (msg.getStringAttribute("guider","0").equals("1")){
-                        iter.remove();
-                        continue;
+                List<EMMessage> msgs = conversations.get(key).loadMoreMsgFromDB(conversations.get(key).getLastMessage().getMsgId(),
+                        500);
+                int guiderMsg = 0;
+                for (int i = 0; i < msgs.size(); i++){
+                    Log.i("tag",(i+1) + ":" + msgs.get(i).getStringAttribute("guider","0") + "----msgSize:" +  msgs.size());
+                    if (msgs.get(i).getStringAttribute("guider","0").equals("1")){
+                        guiderMsg++;
                     }
                 }
+                //如果msg中包含 1 就删除
+                if (guiderMsg > 0){
+                    iter.remove();
+                }
+                Log.i("tag","guiderSize:" + guiderMsg);
             }
         }
+        Log.i("tag",conversations.size()+"");
 
         List<Pair<Long, EMConversation>> sortList = new ArrayList<Pair<Long, EMConversation>>();
         /**
