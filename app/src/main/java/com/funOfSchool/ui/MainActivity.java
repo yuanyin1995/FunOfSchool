@@ -1,6 +1,8 @@
 package com.funOfSchool.ui;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
@@ -85,14 +87,26 @@ public class MainActivity extends Activity {
     private ImageView btnMsg;
     /*  个人信息 */
     private ImageView btnMe;
-    //侧拉菜单对象
+    /*  用户当前状态  */
+    private int flag;
+    //  侧拉菜单对象
     private DrawerLayout drawerLayout;
-    //个人资料、出游记录、卡券包、积分商城、设置
+
+    //  个人资料、出游记录、卡券包、积分商城、设置
     private LinearLayout btnPersoninfo;
     private LinearLayout btnTravelist;
     private LinearLayout btnPrize;
     private LinearLayout btnMarket;
     private LinearLayout btnSet;
+
+    //  不同状态的按钮
+    private ImageView btnCannotInvite;
+    private ImageView btnCanInvite;
+    private ImageView btnMatchNow;
+    private ImageView btnStartTravel;
+    private ImageView btnTraveling;
+    private ImageView btnEndTravel;
+
     //  上一次定位的经纬度
     private double mPreLantitude = 0;
     private double mPreLongitude = 0;
@@ -113,12 +127,62 @@ public class MainActivity extends Activity {
         initMyLocation();
         //  获得各控件
         findView();
+        //  根据用户当前状态设置首页的按钮
+        setIndexBtn();
         //  为各按钮设置监听器
         setListener();
         //  搜索大学
         searchCollege();
     }
 
+    /**
+     * 获取用户当前状态，以设置首页按钮显示内容
+     */
+    private void setIndexBtn() {
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = "http://172.16.17.39/api/account/getStatus";
+        // 请求参数：关键词
+        RequestParams param = new RequestParams();
+        param.put("token","e0d734c840414242af709a67eb48fb38543PlI");
+        // 发送网络请求
+        client.post(url, param, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                try {
+                    JSONObject flagJO = new JSONObject(response.toString());
+                    // 获取JSONArray
+                    JSONArray flagJA = flagJO.getJSONArray("datum");
+                    // 获取flag
+                    flag = flagJA.getJSONObject(0).getInt("flag");
+                    Log.e("FLAG",flag+"");
+
+                    switch (flag){
+                        case 1:
+                            btnCannotInvite.setVisibility(View.VISIBLE);
+                            break;
+                        case 2:
+                            btnMatchNow.setVisibility(View.VISIBLE);
+                            break;
+                        case 3:
+                            btnStartTravel.setVisibility(View.VISIBLE);
+                            break;
+                        case 4:
+                            btnTraveling.setVisibility(View.VISIBLE);
+                            break;
+                        default:
+                            btnCannotInvite.setVisibility(View.VISIBLE);
+                            break;
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    /**
+     * 根据用户输入的关键词获取大学列表
+     */
     private void searchCollege() {
         etSearch.addTextChangedListener(new TextWatcher() {
             @Override
@@ -234,12 +298,17 @@ public class MainActivity extends Activity {
         });
     }
 
+
     private void findView() {
         etSearch = (AutoCompleteTextView)findViewById(R.id.map_et_search);
         btnMsg = (ImageView) findViewById(R.id.index_msg);
         btnMe = (ImageView)findViewById(R.id.index_me);
         btnCannotInvite = (ImageView)findViewById(R.id.map_cannot_invite);
         btnCanInvite = (ImageView)findViewById(R.id.map_can_invite);
+        btnMatchNow = (ImageView)findViewById(R.id.map_match);
+        btnStartTravel = (ImageView)findViewById(R.id.map_start_travel);
+        btnTraveling = (ImageView)findViewById(R.id.map_end_travel);
+        btnEndTravel = (ImageView)findViewById(R.id.map_end_travel);
         btnPersoninfo = (LinearLayout)findViewById(R.id.me_personinfo);
         btnTravelist = (LinearLayout)findViewById(R.id.me_trvallist);
         btnPrize = (LinearLayout)findViewById(R.id.me_myprize);
@@ -253,6 +322,10 @@ public class MainActivity extends Activity {
         btnMsg.setOnClickListener(mapListener);
         btnCannotInvite.setOnClickListener(mapListener);
         btnCanInvite.setOnClickListener(mapListener);
+        btnMatchNow.setOnClickListener(mapListener);
+        btnStartTravel.setOnClickListener(mapListener);
+        btnTraveling.setOnClickListener(mapListener);
+        btnEndTravel.setOnClickListener(mapListener);
         btnPersoninfo.setOnClickListener(mapListener);
         btnTravelist.setOnClickListener(mapListener);
         btnPrize.setOnClickListener(mapListener);
@@ -277,9 +350,21 @@ public class MainActivity extends Activity {
                             Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.map_can_invite:
-                    Intent intent = new Intent(MainActivity.this,SelectActivity.class);
-                    intent.putExtra("scid",collegeId);
-                    startActivity(intent);
+                    sendInvitation();
+                    break;
+                case R.id.map_match:
+                    Toast.makeText(MainActivity.this,
+                            R.string.match_now_warn,
+                            Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.map_start_travel:
+                    startTravel();
+                    break;
+                case R.id.map_traveling:
+                    toTravelingPage();
+                    break;
+                case R.id.map_end_travel:
+                    endTravel();
                     break;
                 case R.id.me_personinfo:
                     Intent intent_info = new Intent(MainActivity.this,PersonInfoActivity.class);
@@ -309,7 +394,99 @@ public class MainActivity extends Activity {
      * 如果当前为可发送邀请状态，则点击按钮可发送邀请
      */
     private void sendInvitation() {
+        Intent intent = new Intent(MainActivity.this,SelectActivity.class);
+        intent.putExtra("scid",collegeId);
+        startActivity(intent);
+    }
 
+    /**
+     * 用户点击开始旅程后，弹出对话框让用户二次确认
+     */
+    private void startTravel(){
+        //  弹出框：确认开始旅程
+        AlertDialog.Builder AdBuilder =
+                new AlertDialog.Builder(MainActivity.this);
+        AdBuilder.setMessage(R.string.confirm_start_travel);
+
+        AdBuilder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                //  弹出框：是否记录路径
+                AlertDialog.Builder builder =
+                        new AlertDialog.Builder(MainActivity.this);
+                builder.setMessage(R.string.choose_record_route);
+
+                builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    // 选择是，进入记录路径页面
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        toTravelingPage();
+                    }
+                });
+                builder.setNegativeButton(R.string.no, null);
+                builder.create();
+                builder.show();
+                //  改变按钮显示
+                btnStartTravel.setVisibility(View.INVISIBLE);
+                btnEndTravel.setVisibility(View.VISIBLE);
+            }
+        });
+        AdBuilder.setNegativeButton(R.string.no, null);
+        AdBuilder.create();
+        AdBuilder.show();
+    }
+
+    /**
+     * 进入路径记录页面
+     */
+    private void toTravelingPage() {
+        Intent intent =
+            new Intent(MainActivity.this,TravelingActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * 用户点击结束旅程后，弹出对话框让用户二次确认
+     */
+    private void endTravel() {
+        //  弹出框：确认开始旅程
+        AlertDialog.Builder AdBuilder =
+                new AlertDialog.Builder(MainActivity.this);
+        AdBuilder.setMessage(R.string.confirm_end_travel);
+
+        AdBuilder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                //  弹出框：是否发表评价
+                AlertDialog.Builder builder =
+                        new AlertDialog.Builder(MainActivity.this);
+                builder.setMessage(R.string.choose_comment);
+
+                builder.setPositiveButton(R.string.to_comment, new DialogInterface.OnClickListener() {
+                    // 选择是，进入记录路径页面
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        toEvaluatePage();
+                    }
+                });
+                builder.setNegativeButton(R.string.not_comment, null);
+                builder.create();
+                builder.show();
+                //  改变按钮显示
+                btnEndTravel.setVisibility(View.INVISIBLE);
+                btnCannotInvite.setVisibility(View.VISIBLE);
+            }
+        });
+        AdBuilder.setNegativeButton(R.string.no, null);
+        AdBuilder.create();
+        AdBuilder.show();
+    }
+
+    /**
+     * 用户确认发表评价时，进入评价页面
+     */
+    private void toEvaluatePage() {
+        Intent intent =
+                new Intent(MainActivity.this,EvaluateActivity.class);
+        startActivity(intent);
     }
 
     /**
@@ -345,40 +522,13 @@ public class MainActivity extends Activity {
             //  记录位置信息
             mCurrentLantitude = location.getLatitude();
             mCurrentLongitude = location.getLongitude();
-
             //  第一次定位时，将地图位置移动到当前位置
             if (isFristLocation) {
                 isFristLocation = false;
                 center2myLoc();
             }
-
-            // Log记录位置信息
-            Log.e("CurrentPos",mCurrentLantitude+"-"+mCurrentLongitude);
-            /*StringBuffer sb = new StringBuffer(256);
-            sb.append("\nlatitude : ");
-            sb.append(location.getLatitude());
-            sb.append("\nlontitude : ");
-            sb.append(location.getLongitude());
-            sb.append("\naddress : ");
-            sb.append(location.getAddrStr());
-            for(int i=0; i<location.getPoiList().size(); i++) {
-                Poi p = location.getPoiList().get(i);
-                sb.append("\nPoi NO.");
-                sb.append(i);
-                sb.append(" : ");
-                sb.append(p.getId());
-                sb.append("-");
-                sb.append(p.getName());
-                sb.append("-");
-                sb.append(p.getRank());
-            }
-            Log.e("BaiduLocationInfo", sb.toString());*/
         }
-
-
     }
-
-
 
     /**
      *  初始化定位相关代码
@@ -392,7 +542,7 @@ public class MainActivity extends Activity {
                 LocationClientOption();
         option.setOpenGps(true); //  打开 gps
         option.setCoorType("bd09ll"); //  设置坐标类型
-        option.setScanSpan(20000); //  自动定位间隔
+        option.setScanSpan(1000); //  自动定位间隔
         option.setIsNeedAddress(true);//  是否需要地址
         option.setIsNeedLocationPoiList(true);
         //  定位模式
