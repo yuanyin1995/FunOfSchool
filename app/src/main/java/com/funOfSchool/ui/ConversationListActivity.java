@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.funOfSchool.R;
+import com.funOfSchool.ui.http.AsyncHttpMangers;
+import com.funOfSchool.util.AppUtils;
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMCmdMessageBody;
@@ -16,6 +18,10 @@ import com.hyphenate.chat.EMConversation;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.easeui.EaseConstant;
 import com.hyphenate.easeui.ui.EaseConversationListFragment;
+import com.loopj.android.http.JsonHttpResponseHandler;
+
+import org.apache.http.Header;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,6 +94,7 @@ public class ConversationListActivity extends AppCompatActivity {
         initView();
         initTouristFragment();
         setUpView();
+        temp();
     }
 
     private void setUpView() {
@@ -126,12 +133,14 @@ public class ConversationListActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().add(R.id.activity_conversation, conversationListFragment).commit();
     }
 
+    /**
+     * tab点击事件,切换会话列表
+     */
     View.OnClickListener tabListener = new View.OnClickListener() {
         private void resetTextView(){
             mTouristTv.setTextColor(0xff010101);
             mGuiderTv.setTextColor(0xff010101);
         }
-
 
         @Override
         public void onClick(View v) {
@@ -149,7 +158,21 @@ public class ConversationListActivity extends AppCompatActivity {
                     break;
             }
         }
-
-
     };
+    private void temp() {
+        JsonHttpResponseHandler handler = new JsonHttpResponseHandler() {
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                AppUtils.showShort(getApplicationContext(), "网络连接失败");
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                AppUtils.Log("网络请求成功");
+            }
+        };
+        AsyncHttpMangers.getUserList(handler);
+    }
 }
