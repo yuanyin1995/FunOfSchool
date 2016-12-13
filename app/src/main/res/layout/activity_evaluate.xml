@@ -36,6 +36,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="0px"
         android:layout_weight="11"
@@ -59,19 +60,23 @@
                     android:layout_width="0px"
                     android:layout_height="match_parent"
                     android:layout_weight="1">
+
                     <ImageView
-                        android:layout_centerInParent="true"
+                        android:id="@+id/Iv_evaluate_portrait"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:scaleType="fitXY"
                         android:padding="4dp"
                         android:src="@mipmap/evaluate_photo_before"
-                        android:background="@android:color/transparent"/>
+                        android:background="@android:color/transparent"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true" />
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="0px"
                     android:layout_height="match_parent"
-                    android:layout_weight="3">
+                    android:layout_weight="3"
+                    android:paddingTop="20dp">
                     <EditText
                         android:id="@+id/Et_evaluate_et1"
                         android:layout_width="match_parent"
@@ -93,6 +98,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1">
                     <ImageView
+                        android:id="@+id/Iv_evaluate_college"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:padding="4dp"
@@ -104,7 +110,8 @@
                 <RelativeLayout
                     android:layout_width="0px"
                     android:layout_height="match_parent"
-                    android:layout_weight="3">
+                    android:layout_weight="3"
+                    android:paddingTop="20dp">
                     <EditText
                         android:id="@+id/Et_evaluate_et2"
                         android:layout_width="match_parent"
