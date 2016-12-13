@@ -19,6 +19,9 @@ public class ChatActivity extends AppCompatActivity{
         ChatFragment chatFragment = new ChatFragment();
         //将参数传递给聊天界面
         chatFragment.setArguments(getIntent().getExtras());
+        chatFragment.setShowChoose(true);
+        chatFragment.setRemark("啦啦啦");
+        chatFragment.setTime("2020-10-32");
 
         //加载EaseUI封装的聊天界面Fragment
         getSupportFragmentManager().beginTransaction()
