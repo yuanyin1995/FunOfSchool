@@ -34,4 +34,8 @@ public class ApiUtils {
      * 导游删除出游者聊天列表
      */
     public static final String API_MATCH_GUIDER_CHAT_DELETE = "api/match/guiderDelUser";
+    /**
+     * 获取remark
+     */
+    public static final String API_MATCH_USER_CHAT_REMARK = "api/match/userGetRemark";
 }

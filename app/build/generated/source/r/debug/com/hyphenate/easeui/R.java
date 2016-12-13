@@ -449,7 +449,7 @@ public final class R {
 		public static final int ease_widget_switch_button = 0x7f040058;
 		public static final int ease_widget_title_bar = 0x7f040059;
 		public static final int ease_widget_voice_recorder = 0x7f04005a;
-		public static final int temp = 0x7f04006c;
+		public static final int temp = 0x7f04006d;
 	}
 	public static final class string {
 		public static final int Add_a_button_was_clicked = 0x7f060083;

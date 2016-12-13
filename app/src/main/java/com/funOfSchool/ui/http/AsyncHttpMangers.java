@@ -17,4 +17,12 @@ public class AsyncHttpMangers {
 
         AsyncHttpClients.getLocal(url,param,handler);
     }
+    public static void getReamrk(String guiderId, JsonHttpResponseHandler handler){
+        String url = AppUtils.HOST + ApiUtils.API_MATCH_USER_CHAT_REMARK;
+        RequestParams param = new RequestParams();
+        param.put("token",AppUtils.GetToken());
+        param.put("guiderId",guiderId);
+
+        AsyncHttpClients.getLocal(url,param,handler);
+    }
 }
