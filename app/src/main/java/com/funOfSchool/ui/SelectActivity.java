@@ -187,11 +187,11 @@ public class SelectActivity extends Activity {
      */
     private void sendInvite() {
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.41/api/match/start";
+        String url = "http://172.16.17.39/api/match/start";
         // 请求参数
         RequestParams param = new RequestParams();
         param.put("sex",sexCode);
-        param.put("schoolId",selectCollegeId+"");
+        param.put("schoolId","11006");
         param.put("majorId",majorId+"");
         param.put("enrollment",enrollYear);
         param.put("constellation",constellation);
@@ -199,7 +199,7 @@ public class SelectActivity extends Activity {
         param.put("birthdayMax",maxBirthYear);
         param.put("remark",remark);
         param.put("time",travelDate);
-        param.put("token","c8a2171dd8354a5ca1b05d51200cc065RyJtnp");
+        param.put("token","e8a3648c62194bcfb765ddb3b635ff27JJWoby");
         // 发送网络请求
         client.post(url, param, new JsonHttpResponseHandler() {
             @Override
@@ -213,29 +213,38 @@ public class SelectActivity extends Activity {
                     matchJO = new JSONObject(response.toString());
                     statusCode = matchJO.getInt("code");
                     Log.e("statusCode",statusCode+"");
-                    if (statusCode == 1){
+                    if (statusCode == 2){
                         Toast.makeText(SelectActivity.this,
-                                "发送成功 :)",
-                                Toast.LENGTH_LONG).show();
-                    }
-                    else if (statusCode == 2){
-                        Toast.makeText(SelectActivity.this,
-                                "不能不填时间 :(",
+                                R.string.no_time_warn,
                                 Toast.LENGTH_LONG).show();
                     }
                     else if (statusCode == 5){
                         Toast.makeText(SelectActivity.this,
-                                "没有符合条件的导游 :(",
+                                R.string.no_guider_warn,
                                 Toast.LENGTH_LONG).show();
                     }
                     else if (statusCode == 6){
                         Toast.makeText(SelectActivity.this,
-                                "正在匹配中 :(",
+                                R.string.match_now_warn,
                                 Toast.LENGTH_LONG).show();
+                    }
+                    else {
+                        Toast.makeText(SelectActivity.this,
+                                R.string.send_success,
+                                Toast.LENGTH_LONG).show();
+                        SelectActivity.this.finish();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                Toast.makeText(SelectActivity.this,
+                        R.string.send_success,
+                        Toast.LENGTH_LONG).show();
+                SelectActivity.this.finish();
             }
         });
     }
@@ -248,7 +257,7 @@ public class SelectActivity extends Activity {
         AlertDialog.Builder builder = new AlertDialog.Builder(SelectActivity.this);
 
         // 设置对话框标题
-        builder.setTitle("选择出游时间");
+        //  builder.setTitle("选择出游时间");
 
         // 加载对话框布局
         View dialogLayout =
@@ -292,7 +301,7 @@ public class SelectActivity extends Activity {
         AlertDialog.Builder builder = new AlertDialog.Builder(SelectActivity.this);
 
         // 设置对话框标题
-        builder.setTitle("选择性别");
+        // builder.setTitle("选择性别");
 
         // 加载对话框布局
         final View dialogLayout =
@@ -341,7 +350,7 @@ public class SelectActivity extends Activity {
 
         // 根据学校ID，发送网络请求，获得专业列表
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.41/api/college/searchMajor";
+        String url = "http://172.16.17.39/api/college/searchMajor";
         // 请求参数：关键词
         RequestParams param = new RequestParams();
         param.put("collegeId",selectCollegeId);
@@ -379,7 +388,7 @@ public class SelectActivity extends Activity {
                     final AlertDialog.Builder builder = new AlertDialog.Builder(SelectActivity.this);
 
                     // 设置对话框标题
-                    builder.setTitle("选择专业");
+                    // builder.setTitle("选择专业");
 
                     // 加载对话框布局
                     final View dialogLayout =
@@ -442,7 +451,7 @@ public class SelectActivity extends Activity {
         });
 
         // 设置对话框标题
-        builder.setTitle("选择入学年份");
+        // builder.setTitle("选择入学年份");
 
         // 创建 adapter
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
@@ -470,7 +479,7 @@ public class SelectActivity extends Activity {
         builder.setView(dialogLayout);
 
         // 设置对话框标题
-        builder.setTitle("选择星座");
+        // builder.setTitle("选择星座");
 
         // 创建 adapter
         final ConstellationAdapter adapter = new ConstellationAdapter(SelectActivity.this);
@@ -497,7 +506,7 @@ public class SelectActivity extends Activity {
         AlertDialog.Builder builder = new AlertDialog.Builder(SelectActivity.this);
 
         // 设置对话框标题
-        builder.setTitle("选择年龄段");
+        // builder.setTitle("选择年龄段");
 
         // 加载对话框布局
         final View dialogLayout =

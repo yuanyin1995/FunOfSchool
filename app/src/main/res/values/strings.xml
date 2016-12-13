@@ -20,4 +20,19 @@
 
     <string name="conversation_guider">我是游客</string>
     <string name="conversation_tourist">我是导游</string>
+
+    <string name="no_time_warn">没写时间！:)</string>
+    <string name="no_guider_warn">没有导游！:)</string>
+    <string name="in_match_now">不能匹配！:)</string>
+    <string name="send_success">发送成功！:)</string>
+    <string name="wish">祝您旅程愉快 :)</string>
+
+    <string name="confirm_start_travel">确定现在开始您的旅程吗？</string>
+    <string name="choose_record_route">是否为您记录路径？</string>
+    <string name="confirm_end_travel">确定现在结束您的旅程吗？</string>
+    <string name="choose_comment">发表一下您对本次旅游高校和导游的评价吧 :)</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="to_comment">去发表</string>
+    <string name="not_comment">不发表了</string>
 </resources>
