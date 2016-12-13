@@ -14,6 +14,7 @@ import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.text.InputType;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
@@ -28,6 +29,13 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.funOfSchool.R;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.apache.http.Header;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -51,10 +59,18 @@ public class EvaluateActivity extends Activity {
     private RelativeLayout R1;
     private int height;
     private int width;
+    //测试 定义 token
+    private String token = "e4b5ca189b7e4c7a8dff29b1c6704c1do39dTR";
+    private String portraiturl;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evaluate);
+
+        //测试获取头像url
+        getPortrait();
+
         //多行输入
         Edittext_input();
         //GridView设定
@@ -63,6 +79,27 @@ public class EvaluateActivity extends Activity {
         b1_Onclick();
         //设置按钮大小
         setTitlehigh();
+    }
+
+    //测试：获取带领人头像url
+    private void getPortrait(){
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = "http://10.7.88.109:8080/api/account/profile/getProfile";
+        RequestParams param = new RequestParams();
+        param.put("token",token);
+        client.get(url, param, new JsonHttpResponseHandler(){
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response){
+                try {
+                    JSONObject profile = null;
+                    profile = new JSONObject(response.toString());
+                    JSONObject profile1 = profile.getJSONObject("datum");
+                    portraiturl = profile1.getString("profileImage");
+                    Log.e( portraiturl, portraiturl);
+                }catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     //设置按钮大小
