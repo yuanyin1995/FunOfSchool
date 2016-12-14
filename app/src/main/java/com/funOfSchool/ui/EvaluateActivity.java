@@ -79,7 +79,7 @@ public class EvaluateActivity extends Activity{
         setContentView(R.layout.activity_evaluate);
         Iv = (ImageView)findViewById(R.id.Iv_evaluate_portrait);
 
-//        //测试获取头像url
+        //测试获取头像url
         getPortrait();
 
         //根据url载入图片

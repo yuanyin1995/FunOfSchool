@@ -18,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageButton
+                android:id="@+id/Bt_evaluate_back"
                 android:layout_width="16dp"
                 android:layout_height="16dp"
                 android:layout_marginLeft="16dp"
