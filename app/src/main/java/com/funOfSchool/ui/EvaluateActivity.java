@@ -1,19 +1,22 @@
 package com.funOfSchool.ui;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.text.InputType;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
@@ -28,11 +31,21 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.funOfSchool.R;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
+import org.apache.http.Header;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class EvaluateActivity extends Activity {
+public class EvaluateActivity extends Activity{
     private String guade_evaluate;//带领人评价
     private String school_evaluate;//学校评价
     private EditText et1;   //带领者评价输入框
@@ -51,10 +64,27 @@ public class EvaluateActivity extends Activity {
     private RelativeLayout R1;
     private int height;
     private int width;
+    //测试 定义 token
+    private String token = "e4b5ca189b7e4c7a8dff29b1c6704c1do39dTR";
+    private String portraiturl;
+
+    //根据url加载图片
+    private static final String imgUrl = "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4155302816,1201715785&fm=116&gp=0.jpg";
+    public ImageView Iv ;
+    private ProgressDialog mDialog;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evaluate);
+        Iv = (ImageView)findViewById(R.id.Iv_evaluate_portrait);
+
+        //测试获取头像url
+        getPortrait();
+
+        //根据url载入图片
+        new ImageAsynTask().execute();
+
         //多行输入
         Edittext_input();
         //GridView设定
@@ -63,7 +93,71 @@ public class EvaluateActivity extends Activity {
         b1_Onclick();
         //设置按钮大小
         setTitlehigh();
+
     }
+
+
+    //根据url加载显示图片
+    private class ImageAsynTask extends AsyncTask<Void, Void, Drawable> {
+
+        @Override
+        protected Drawable doInBackground (Void... params) {
+            String url = "http://img1.3lian.com/img2011/07/20/05.jpg";
+            return loadImages(url);
+        }
+
+        @Override
+        protected void onPostExecute (Drawable result) {
+            super.onPostExecute(result);
+            Iv.setImageDrawable(result);
+        }
+
+        @Override
+        protected void onPreExecute () {
+            super.onPreExecute();
+        }
+    }
+
+    @Override
+    protected void onDestroy () {
+        super.onDestroy();
+    }
+
+    public Drawable loadImages(String url) {
+        try {
+            return Drawable.createFromStream((InputStream)(new URL(url)).openStream(), "test");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+
+    //测试：获取带领人头像url
+    private void getPortrait(){
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = "http://10.7.88.109:8080/api/account/profile/getProfile";
+        RequestParams param = new RequestParams();
+        param.put("token",token);
+        client.get(url, param, new JsonHttpResponseHandler(){
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response){
+                try {
+                    JSONObject profile = null;
+                    profile = new JSONObject(response.toString());
+                    JSONObject profile1 = profile.getJSONObject("datum");
+                    portraiturl = profile1.getString("profileImage");
+                    Log.e( portraiturl, portraiturl);
+                }catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+
+
 
     //设置按钮大小
     private void setTitlehigh(){
@@ -161,9 +255,7 @@ public class EvaluateActivity extends Activity {
          * 希望动态调整高度 android:windowSoftInputMode="adjustResize"
          */
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-        //锁定屏幕
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        setContentView(R.layout.activity_evaluate);
+
         //获取控件对象
         gridView = (GridView) findViewById(R.id.gridView);
 

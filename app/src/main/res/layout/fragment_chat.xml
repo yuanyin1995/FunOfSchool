@@ -11,115 +11,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         hyphenate:titleBarLeftImage="@drawable/ease_mm_title_back" />
-    <LinearLayout
-        android:id="@+id/fragment_chat_isAccept"
+    <FrameLayout
         android:layout_below="@+id/title_bar"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:background="#FCFCFD"
-        android:layout_height="50dp">
-        <LinearLayout
-            android:id="@+id/fragment_chat_accept"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:src="@mipmap/accept"
-                android:layout_width="24dp"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:layout_marginLeft="10dp"
-                android:textSize="14sp"
-                android:textColor="#161616"
-                android:text="@string/chat_accept"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/fragment_chat_refuse"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:src="@mipmap/refuse"
-                android:layout_width="24dp"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:layout_marginLeft="10dp"
-                android:textSize="14sp"
-                android:textColor="#161616"
-                android:text="@string/chat_refuse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-    <RelativeLayout
-        android:id="@+id/fragment_chat_info"
-        android:layout_below="@+id/fragment_chat_isAccept"
-        android:background="@drawable/fragment_chat_relativelayout_bg"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="35dp"
-        android:paddingTop="3dp"
-        android:paddingRight="3dp"
-        android:paddingBottom="10dp"
-        android:layout_width="300dp"
-        android:layout_centerHorizontal="true"
+        android:id="@+id/fragment_isAccept"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/fragment_chat_times"
-            android:paddingTop="7dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            style="@style/SecondText"
-            android:text="@string/chat_time"/>
-        <TextView
-            android:id="@+id/fragment_chat_time"
-            android:paddingTop="7dp"
-            android:layout_marginLeft="35dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            style="@style/SecondText"
-            android:text="2016-12-9"/>
-        <TextView
-            android:id="@+id/fragment_chat_remarks"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/fragment_chat_times"
-            style="@style/SecondText"
-            android:text="@string/chat_remark"/>
-        <TextView
-            android:id="@+id/fragment_chat_remark"
-            android:layout_width="200dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="35dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/fragment_chat_times"
-            style="@style/SecondText"
-            android:text="希望找个文院的大三学姐带领~"/>
+    </FrameLayout>
 
-        <ImageView
-            android:src="@mipmap/tag"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_alignParentRight="true"/>
 
-    </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/input_menu"
-        android:layout_below="@id/fragment_chat_info" >
+        android:layout_below="@id/fragment_isAccept" >
 
 
         <com.hyphenate.easeui.widget.EaseChatMessageList
