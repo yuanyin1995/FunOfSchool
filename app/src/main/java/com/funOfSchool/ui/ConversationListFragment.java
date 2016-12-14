@@ -1,6 +1,7 @@
 package com.funOfSchool.ui;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,7 +41,7 @@ public class ConversationListFragment extends EaseConversationListFragment {
     @Override
     protected void initView() {
         super.initView();
-        View errorView = (LinearLayout) View.inflate(getActivity(),R.layout.em_chat_neterror_item, null);
+        View errorView = (LinearLayout) View.inflate(getActivity(),R.layout.fragment_conbersation_neterror_item, null);
         errorItemContainer.addView(errorView);
         errorText = (TextView) errorView.findViewById(R.id.tv_connect_errormsg);
         //隐藏titlebar
@@ -60,38 +61,60 @@ public class ConversationListFragment extends EaseConversationListFragment {
 
     @Override
     protected List<EMConversation> loadConversationList() {
-        // get all conversations
+        // 获取所有的会话
         Map<String, EMConversation> conversations = EMClient.getInstance().chatManager().getAllConversations();
         Iterator<String> iter = conversations.keySet().iterator();
+        Log.i("tag",conversations.size()+"");
         //区分导游与出游者聊天会话
         if (isGuider){
             while (iter.hasNext()){
                 String key = iter.next();
-                List<EMMessage> msgs = conversations.get(key).getAllMessages();
-                for (EMMessage msg : msgs){
-                    if (!msg.getStringAttribute("guider","0").equals("1")){
-                        iter.remove();
-                        continue;
+                //添加数据库中的消息
+                List<EMMessage> msgs = conversations.get(key).loadMoreMsgFromDB(conversations.get(key).getLastMessage().getMsgId(),
+                        500);
+                //添加内存中的消息
+                msgs.addAll(conversations.get(key).getAllMessages());
+
+                int guiderMsg = 0;
+                for (int i = 0; i < msgs.size(); i++){
+                    Log.i("tag",(i+1) + ":" + msgs.get(i).getStringAttribute("guider","0") + "----msgSize:" +  msgs.size());
+                    if (msgs.get(i).getStringAttribute("guider","0").equals("1")){
+                        guiderMsg++;
                     }
                 }
+                //如果msg中包不含 1 就删除
+                if (guiderMsg <= 0){
+                    iter.remove();
+                }
+                Log.i("tag","guiderSize:" + guiderMsg);
             }
         } else {
             while (iter.hasNext()){
                 String key = iter.next();
-                List<EMMessage> msgs = conversations.get(key).getAllMessages();
-                for (EMMessage msg : msgs){
-                    if (msg.getStringAttribute("guider","0").equals("1")){
-                        iter.remove();
-                        continue;
+                List<EMMessage> msgs = conversations.get(key).loadMoreMsgFromDB(conversations.get(key).getLastMessage().getMsgId(),
+                        500);
+                //添加内存中的消息
+                msgs.addAll(conversations.get(key).getAllMessages());
+                int guiderMsg = 0;
+                for (int i = 0; i < msgs.size(); i++){
+                    Log.i("tag",(i+1) + ":" + msgs.get(i).getStringAttribute("guider","0") + "----msgSize:" +  msgs.size());
+                    if (msgs.get(i).getStringAttribute("guider","0").equals("1")){
+                        guiderMsg++;
                     }
                 }
+                //如果msg中包含 1 就删除
+                if (guiderMsg > 0){
+                    iter.remove();
+                }
+                Log.i("tag","guiderSize:" + guiderMsg);
             }
         }
+        Log.i("tag",conversations.size()+"");
 
         List<Pair<Long, EMConversation>> sortList = new ArrayList<Pair<Long, EMConversation>>();
         /**
-         * lastMsgTime will change if there is new message during sorting
-         * so use synchronized to make sure timestamp of last message won't change.
+         * 排序整理的时候如果收到新消息，最后一条消息的时间将改变
+         * 所以在用synchronized的时候要保证最后一条消息的时间戳不变
          */
         synchronized (conversations) {
             for (EMConversation conversation : conversations.values()) {

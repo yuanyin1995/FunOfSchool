@@ -25,6 +25,7 @@
     <string name="no_guider_warn">没有导游！:)</string>
     <string name="in_match_now">不能匹配！:)</string>
     <string name="send_success">发送成功！:)</string>
+    <string name="match_now_warn">不能匹配！:)</string>
     <string name="wish">祝您旅程愉快 :)</string>
 
     <string name="confirm_start_travel">确定现在开始您的旅程吗？</string>

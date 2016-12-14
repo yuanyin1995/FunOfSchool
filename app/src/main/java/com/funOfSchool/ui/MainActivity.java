@@ -72,10 +72,6 @@ public class MainActivity extends Activity {
 
     /*  搜索栏 */
     private AutoCompleteTextView etSearch;
-    /*  不可发送请求按钮  */
-    private ImageView btnCannotInvite;
-    /*  可发送请求按钮  */
-    private ImageView btnCanInvite;
     /*  学校名称列表  */
     private List<String> collegeNameList = new ArrayList<String>();
     /*  所选学校名称  */

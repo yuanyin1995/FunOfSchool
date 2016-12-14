@@ -118,5 +118,9 @@
     <orderEntry type="library" exported="" scope="TEST" name="junit-4.12" level="project" />
     <orderEntry type="library" exported="" name="android-async-http-1.4.8" level="project" />
     <orderEntry type="module" module-name="easeUI" exported="" />
+    <orderEntry type="library" exported="" name="hyphenatechat_3.2.1" level="project" />
+    <orderEntry type="library" exported="" name="org.apache.http.legacy" level="project" />
+    <orderEntry type="library" exported="" name="BaiduLBS_Android" level="project" />
+    <orderEntry type="library" exported="" name="glide-3.6.1" level="project" />
   </component>
 </module>
