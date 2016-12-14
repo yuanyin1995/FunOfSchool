@@ -127,10 +127,10 @@ public class MainActivity extends Activity {
      */
     private void setIndexBtn() {
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://172.16.17.39/api/account/getStatus";
+        String url = "http://10.7.88.14/api/account/getStatus";
         // 请求参数：关键词
         RequestParams param = new RequestParams();
-        param.put("token","e0d734c840414242af709a67eb48fb38543PlI");
+        param.put("token","6c962e3e6373491b9ecae0147bd80789paOx2a");
         // 发送网络请求
         client.post(url, param, new JsonHttpResponseHandler() {
             @Override
@@ -184,7 +184,7 @@ public class MainActivity extends Activity {
                 btnCanInvite.setVisibility(View.INVISIBLE);
                 // 根据关键词获取学校下拉列表
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = "http://172.16.17.39/api/college/searchCollege";
+                String url = "http://10.7.88.49/api/college/searchCollege";
                 // 请求参数：关键词
                 RequestParams param = new RequestParams();
                 param.put("keyWord",etSearch.getText());
@@ -244,7 +244,7 @@ public class MainActivity extends Activity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 // 根据学校名称，获得所选学校的经纬度和ID
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = "http://10.141.228.233/api/college/searchLaAndLo";
+                String url = "http://10.7.88.49/api/college/searchLaAndLo";
                 // 请求参数：学校名称
                 RequestParams param = new RequestParams();
                 param.put("collegeName",collegeName);
