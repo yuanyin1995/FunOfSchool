@@ -14,10 +14,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
@@ -329,7 +327,7 @@ public class MainActivity extends Activity {
                     drawerLayout.openDrawer(Gravity.LEFT);
                     break;
                 case R.id.index_msg:
-                    startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                    startActivity(new Intent(MainActivity.this,LoginActivityTemp.class));
                     break;
                 case R.id.map_cannot_invite:
                     Toast.makeText(MainActivity.this,
