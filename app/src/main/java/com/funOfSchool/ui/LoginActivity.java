@@ -1,85 +1,43 @@
 package com.funOfSchool.ui;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.os.Bundle;
+import android.text.method.PasswordTransformationMethod;
+import android.text.method.TransformationMethod;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.funOfSchool.R;
-import com.hyphenate.EMCallBack;
-import com.hyphenate.chat.EMClient;
 
 public class LoginActivity extends AppCompatActivity {
-    private Button login;
-    private EditText loginName;
-    private EditText passWord;
+    private TextView tvRegist;
+    private TextView tvPassword;
+    private EditText etpsd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        /**
-         * 临时调试聊天功能，测试专用！！！
-         * 临时调试聊天功能，测试专用！！！
-         * 临时调试聊天功能，测试专用！！！
-         * 临时调试聊天功能，测试专用！！！
-         * 临时调试聊天功能，测试专用！！！
-         */
-        login = (Button) findViewById(R.id.login);
-        loginName = (EditText) findViewById(R.id.loginName);
-        passWord = (EditText) findViewById(R.id.password);
-
-        login.setOnClickListener(new View.OnClickListener() {
+        tvRegist = (TextView) findViewById(R.id.Regist);
+        tvRegist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login();
+                Intent i = new Intent();
+                i.setClass(LoginActivity.this, RegistActivity.class);
+                startActivity(i);
             }
         });
-    }
-
-    private void login() {
-        final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        progressDialog.setCanceledOnTouchOutside(false);
-        progressDialog.setMessage("正在登录");
-        progressDialog.show();
-        //聊天登录----临时
-        EMClient.getInstance().login(loginName.getText().toString().trim(), passWord.getText().toString().trim(), new EMCallBack() {
-
-            @Override
-            public void onSuccess() {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (progressDialog != null && progressDialog.isShowing())
-                        {
-                            progressDialog.dismiss();
-                        }
-                    }
-                });
-
-                startActivity(new Intent(LoginActivity.this,ConversationListActivity.class));
-            }
-
-            @Override
-            public void onError(int i, String s) {
-                Log.i("tag","登录失败");
-            }
-
-            @Override
-            public void onProgress(int i, String s) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (LoginActivity.this.isFinishing() || LoginActivity.this.isDestroyed()) {
-                            return;
-                        }
-                        progressDialog.setMessage("正在登录");
-                    }
-                });
+        tvPassword = (TextView) findViewById(R.id.Password);
+        etpsd = (EditText)findViewById(R.id.Et_login_psd);
+        /*密码密文*/
+        TransformationMethod method =  PasswordTransformationMethod.getInstance();
+        etpsd.setTransformationMethod(method);
+        tvPassword.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent();
+                i.setClass(LoginActivity.this, PasswordActivity.class);
+                startActivity(i);
             }
         });
     }

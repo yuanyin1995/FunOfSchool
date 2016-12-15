@@ -24,15 +24,12 @@ import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
-import com.baidu.location.Poi;
 import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
-import com.baidu.mapapi.map.OverlayOptions;
-import com.baidu.mapapi.map.PolylineOptions;
 import com.baidu.mapapi.map.TextureMapView;
 import com.baidu.mapapi.model.LatLng;
 import com.funOfSchool.R;
@@ -103,12 +100,6 @@ public class MainActivity extends Activity {
     private ImageView btnTraveling;
     private ImageView btnEndTravel;
 
-    //  上一次定位的经纬度
-    private double mPreLantitude = 0;
-    private double mPreLongitude = 0;
-    //  定位点列表
-    List<LatLng> pts = new ArrayList<LatLng>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -136,10 +127,10 @@ public class MainActivity extends Activity {
      */
     private void setIndexBtn() {
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://172.16.17.39/api/account/getStatus";
+        String url = "http://10.7.88.14/api/account/getStatus";
         // 请求参数：关键词
         RequestParams param = new RequestParams();
-        param.put("token","e0d734c840414242af709a67eb48fb38543PlI");
+        param.put("token","6c962e3e6373491b9ecae0147bd80789paOx2a");
         // 发送网络请求
         client.post(url, param, new JsonHttpResponseHandler() {
             @Override
@@ -193,7 +184,7 @@ public class MainActivity extends Activity {
                 btnCanInvite.setVisibility(View.INVISIBLE);
                 // 根据关键词获取学校下拉列表
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = "http://10.7.88.41/api/college/searchCollege";
+                String url = "http://10.7.88.49/api/college/searchCollege";
                 // 请求参数：关键词
                 RequestParams param = new RequestParams();
                 param.put("keyWord",etSearch.getText());
@@ -253,7 +244,7 @@ public class MainActivity extends Activity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 // 根据学校名称，获得所选学校的经纬度和ID
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = "http://10.7.88.41/api/college/searchLaAndLo";
+                String url = "http://10.7.88.49/api/college/searchLaAndLo";
                 // 请求参数：学校名称
                 RequestParams param = new RequestParams();
                 param.put("collegeName",collegeName);
@@ -363,6 +354,7 @@ public class MainActivity extends Activity {
                     endTravel();
                     break;
                 case R.id.me_personinfo:
+                    Toast.makeText(MainActivity.this,"dianjilegeren",Toast.LENGTH_LONG).show();
                     Intent intent_info = new Intent(MainActivity.this,PersonInfoActivity.class);
                     startActivity(intent_info);
                     break;

@@ -187,7 +187,7 @@ public class SelectActivity extends Activity {
      */
     private void sendInvite() {
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://172.16.17.39/api/match/start";
+        String url = "http://10.7.88.49/api/match/start";
         // 请求参数
         RequestParams param = new RequestParams();
         param.put("sex",sexCode);
@@ -350,7 +350,7 @@ public class SelectActivity extends Activity {
 
         // 根据学校ID，发送网络请求，获得专业列表
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://172.16.17.39/api/college/searchMajor";
+        String url = "http://10.7.88.49/api/college/searchMajor";
         // 请求参数：关键词
         RequestParams param = new RequestParams();
         param.put("collegeId",selectCollegeId);

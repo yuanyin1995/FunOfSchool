@@ -6,15 +6,17 @@
     android:layout_height="wrap_content"
     android:background="@mipmap/background"
     android:orientation="vertical"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
 
-    tools:context="com.funOfSchool.ui.LoginActivity"
+
+    tools:context=".ui.LoginActivity"
     android:weightSum="1">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
+
+            android:layout_marginRight="16dp"
+            android:id="@+id/Regist"
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,29 +32,35 @@
         android:layout_gravity="center"
         android:layout_marginTop="40dp"/>
     <EditText
-        android:id="@+id/loginName"
-        android:paddingLeft="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:id="@+id/Et_login"
+        android:paddingLeft="15dp"
         android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@drawable/login_et_bg"
-
         android:hint="请输入手机号"
-
+        android:textColor="#FFFFFF"
         style="@style/FirstText"
         android:textColorHint="#FFFFFF"/>
     <EditText
-        android:id="@+id/password"
-        android:paddingLeft="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:id="@+id/Et_login_psd"
+        android:paddingLeft="15dp"
         android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@drawable/login_et_bg"
         android:hint="请输入密码"
+        android:textColor="#FFFFFF"
         style="@style/FirstText"
         android:textColorHint="#FFFFFF"/>
     <Button
-        android:id="@+id/login"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:id="@+id/Btn_login"
         android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -60,6 +68,8 @@
         android:text="登录"
         android:textColor="#5677FC"/>
     <RelativeLayout
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -70,6 +80,7 @@
             android:textColor="#FFFFFF"
             android:layout_alignParentLeft="true"/>
         <TextView
+            android:id="@+id/Password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="忘记密码"
