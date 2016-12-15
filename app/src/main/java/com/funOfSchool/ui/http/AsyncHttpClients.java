@@ -46,7 +46,7 @@ public class AsyncHttpClients {
     public static void getLocal(String partUrl, RequestParams params,
                                 AsyncHttpResponseHandler handler) {
         client.get(partUrl, params, handler);
-        log(new StringBuilder("GET ").append(partUrl).append("&")
+        log(new StringBuilder("GET ").append(partUrl).append("?")
                 .append(params).toString());
     }
 
@@ -64,14 +64,14 @@ public class AsyncHttpClients {
     public static void post(String partUrl, RequestParams params,
                             AsyncHttpResponseHandler handler) {
         client.post(partUrl, params, handler);
-        log(new StringBuilder("POST ").append(partUrl).append("&")
+        log(new StringBuilder("POST ").append(partUrl).append("?")
                 .append(params).toString());
     }
 
     public static void postDirect(String url, RequestParams params,
                                   AsyncHttpResponseHandler handler) {
         client.post(url, params, handler);
-        log(new StringBuilder("POST ").append(url).append("&").append(params)
+        log(new StringBuilder("POST ").append(url).append("?").append(params)
                 .toString());
     }
 
@@ -83,7 +83,7 @@ public class AsyncHttpClients {
     public static void put(String partUrl, RequestParams params,
                            AsyncHttpResponseHandler handler) {
         client.put(partUrl, params, handler);
-        log(new StringBuilder("PUT ").append(partUrl).append("&")
+        log(new StringBuilder("PUT ").append(partUrl).append("?")
                 .append(params).toString());
     }
 }

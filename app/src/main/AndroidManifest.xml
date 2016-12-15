@@ -45,6 +45,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <!-- 聊天相关权限 -->
+
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -60,6 +61,17 @@
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <!-- smssdk -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:name=".MyApplication"
@@ -79,6 +91,7 @@
         </activity>
         <activity android:name=".ui.SelectActivity" />
         <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.LoginActivityTemp" />
         <!-- 高德地图相关 -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
@@ -112,7 +125,7 @@
         <service
             android:name="com.baidu.trace.LBSTraceService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
@@ -139,10 +152,17 @@
         <activity android:name=".ui.MarketActivity" />
         <activity android:name=".ui.SetActivity" />
         <activity android:name=".ui.EvaluateActivity" />
-        <activity android:name=".ui.TravelingActivity">
-        </activity>
+        <activity android:name=".ui.TravelingActivity" />
         <activity android:name=".ui.QueryTraceActivity">
         </activity>
+
+        <activity android:name=".ui.RegistActivity" />
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity android:name=".ui.PasswordActivity"></activity>
     </application>
 
 </manifest>
