@@ -112,7 +112,7 @@ public class TravelingActivity extends AppCompatActivity {
 
     protected static MapStatusUpdate msUpdate = null;
 
-    private boolean isTraceStarted = false;
+    private boolean isTraceStarted = true;
 
 
     @Override
@@ -169,6 +169,9 @@ public class TravelingActivity extends AppCompatActivity {
         refreshThread.refresh = isStart;
         if (isStart) {
             if (!refreshThread.isAlive()) {
+                Toast.makeText(getApplicationContext(),
+                        "thread start",
+                        Toast.LENGTH_LONG).show();
                 refreshThread.start();
             }
         } else {
@@ -638,10 +641,12 @@ public class TravelingActivity extends AppCompatActivity {
                 // 轨迹服务开启成功后，调用queryEntityList()查询最新轨迹；
                 // 未开启轨迹服务时，调用queryRealtimeLoc()进行实时定位。
                 if (isTraceStarted) {
+                    Toast.makeText(getApplicationContext(),
+                            "trace started",
+                            Toast.LENGTH_LONG).show();
                     queryEntityList();
                 } else {
                     queryRealtimeLoc();
-                    isTraceStarted = true;
                 }
 
                 try {

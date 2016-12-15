@@ -4,16 +4,22 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.text.Editable;
+import android.text.Layout;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -26,10 +32,16 @@ import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mapapi.map.BaiduMap;
+import com.baidu.mapapi.map.BitmapDescriptor;
+import com.baidu.mapapi.map.BitmapDescriptorFactory;
+import com.baidu.mapapi.map.InfoWindow;
 import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
+import com.baidu.mapapi.map.Marker;
+import com.baidu.mapapi.map.MarkerOptions;
 import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
+import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.map.TextureMapView;
 import com.baidu.mapapi.model.LatLng;
 import com.funOfSchool.R;
@@ -66,6 +78,9 @@ public class MainActivity extends Activity {
     /* 当前学校的经纬度 */
     private double collegeLantitude;
     private double collegeLongitude;
+
+    /* 当前学校景点 */
+    private String collegeScene;
 
     /*  搜索栏 */
     private AutoCompleteTextView etSearch;
@@ -127,10 +142,10 @@ public class MainActivity extends Activity {
      */
     private void setIndexBtn() {
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.14/api/account/getStatus";
+        String url = "http://10.7.88.37/api/account/getStatus";
         // 请求参数：关键词
         RequestParams param = new RequestParams();
-        param.put("token","6c962e3e6373491b9ecae0147bd80789paOx2a");
+        param.put("token","e16a8b95e435467e9d84082da954625b11q8BM");
         // 发送网络请求
         client.post(url, param, new JsonHttpResponseHandler() {
             @Override
@@ -184,7 +199,7 @@ public class MainActivity extends Activity {
                 btnCanInvite.setVisibility(View.INVISIBLE);
                 // 根据关键词获取学校下拉列表
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = "http://10.7.88.49/api/college/searchCollege";
+                String url = "http://10.7.88.37/api/college/searchCollege";
                 // 请求参数：关键词
                 RequestParams param = new RequestParams();
                 param.put("keyWord",etSearch.getText());
@@ -242,9 +257,9 @@ public class MainActivity extends Activity {
         etSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                // 根据学校名称，获得所选学校的经纬度和ID
+                // 根据学校名称，获得所选学校的经纬度和ID和景点
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = "http://10.7.88.49/api/college/searchLaAndLo";
+                String url = "http://10.7.88.37/api/college/searchLaAndLoAndScene";
                 // 请求参数：学校名称
                 RequestParams param = new RequestParams();
                 param.put("collegeName",collegeName);
@@ -265,14 +280,74 @@ public class MainActivity extends Activity {
                             collegeId = collegeNameJA.getJSONObject(0).getInt("coid");
                             collegeLantitude = collegeNameJA.getJSONObject(0).getDouble("lantitude");
                             collegeLongitude = collegeNameJA.getJSONObject(0).getDouble("longitude");
+                            collegeScene = collegeNameJA.getJSONObject(0).getString("scene");
 
                             Log.e("LL:",collegeLantitude+"-"+collegeLongitude);
+                            Log.e("scene:",collegeScene);
 
                             // 创建 LatLng 对象
                             LatLng ll = new LatLng(collegeLantitude, collegeLongitude);
                             // 设置所选学校位置为地图中心点，并移动到定位位置
                             MapStatusUpdate u = MapStatusUpdateFactory.newLatLng(ll);
                             mBaiduMap.animateMapStatus(u);
+
+                            // 构建Marker图标
+                            BitmapDescriptor bitmapLogo = BitmapDescriptorFactory
+                                    .fromResource(R.mipmap.college_logo);
+                            // 添加附加信息
+                            Bundle b = new Bundle();
+                            b.putString("collegeInfo",collegeName+"好玩的地方有："+collegeScene);
+                            // 构建MarkerOption，用于在地图上添加Marker
+                            OverlayOptions option = new MarkerOptions()
+                                    .position(ll)
+                                    .icon(bitmapLogo)
+                                    .draggable(true)
+                                    .title("北京大学")
+                                    .extraInfo(b);
+                            // 在地图上添加Marker，并显示
+                            Marker marker = (Marker) mBaiduMap.addOverlay(option);
+                            // 为图标设置监听器
+                            mBaiduMap.setOnMarkerClickListener(new BaiduMap.OnMarkerClickListener() {
+                                @Override
+                                public boolean onMarkerClick(Marker marker) {
+                                    Toast.makeText(getApplicationContext(),
+                                            "click marker",
+                                            Toast.LENGTH_LONG).show();
+
+                                    final String info = marker.getExtraInfo().getString("collegeInfo");
+
+                                    InfoWindow infoWindow;
+                                    // 动态生成一个Button对象，用户在地图中显示InfoWindow
+                                    final TextView textInfo = new TextView(getApplicationContext());
+                                    //设置布局属性
+                                    /*int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                                            30, getResources().getDisplayMetrics());
+                                    textInfo.setLayoutParams(new DrawerLayout.LayoutParams(
+                                            DrawerLayout.LayoutParams.WRAP_CONTENT, px
+                                    ));*/
+                                    textInfo.setHeight(250);
+                                    textInfo.setWidth(300);
+                                    textInfo.setBackgroundResource(R.drawable.marker_bg);
+                                    textInfo.setPadding(12, 12, 12, 12);
+                                    textInfo.setTextColor(getResources().getColor(R.color.firstText));
+                                    textInfo.setTextSize(13);
+                                    textInfo.setText(info);
+                                    // 得到点击的覆盖物的经纬度
+                                    LatLng ll = marker.getPosition();
+                                    // 将marker所在的经纬度的信息转化成屏幕上的坐标
+                                    Point p = mBaiduMap.getProjection().toScreenLocation(ll);
+                                    p.x -= 100;
+                                    p.y -= 100;
+                                    LatLng llInfo = mBaiduMap.getProjection().fromScreenLocation(p);
+                                    // 初始化infoWindow，最后那个参数表示显示的位置相对于覆盖物的竖直偏移量，这里也可以传入一个监听器
+                                    infoWindow = new InfoWindow(textInfo, llInfo, 0);
+                                    // 显示此infoWindow
+                                    mBaiduMap.showInfoWindow(infoWindow);
+
+                                    return true;
+                                }
+                            });
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -329,7 +404,7 @@ public class MainActivity extends Activity {
                     drawerLayout.openDrawer(Gravity.LEFT);
                     break;
                 case R.id.index_msg:
-                    startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                    //startActivity(new Intent(MainActivity.this,LoginActivity.class));
                     break;
                 case R.id.map_cannot_invite:
                     Toast.makeText(MainActivity.this,
