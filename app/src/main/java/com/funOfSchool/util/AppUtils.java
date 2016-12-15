@@ -21,7 +21,7 @@ public class AppUtils {
      * @return token
      */
     public static String GetToken(){
-        return "f8364cf1c0a9416880eecca08e6a0d4da1l3hG";
+        return "443fe86fdb6447e8b0e5e9b20748720e57jw7T";
     }
 
     /**

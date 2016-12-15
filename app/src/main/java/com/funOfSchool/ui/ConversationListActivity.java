@@ -18,6 +18,7 @@ import com.hyphenate.chat.EMConversation;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.easeui.EaseConstant;
 import com.hyphenate.easeui.ui.EaseConversationListFragment;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.http.Header;
@@ -34,6 +35,7 @@ public class ConversationListActivity extends AppCompatActivity {
     private EMMessageListener emMessageListener;
     private ConversationListFragment conversationListFragment;
     private List<ConversationListFragment> mFragmentList;
+    private AsyncHttpResponseHandler handler;
     private TextView mTouristTv;
     private TextView mGuiderTv;
     @Override
@@ -94,12 +96,27 @@ public class ConversationListActivity extends AppCompatActivity {
         initView();
         initTouristFragment();
         setUpView();
-        temp();
     }
 
     private void setUpView() {
         mTouristTv.setOnClickListener(tabListener);
         mGuiderTv.setOnClickListener(tabListener);
+
+        handler = new JsonHttpResponseHandler() {
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                AppUtils.showShort(getApplicationContext(), "网络连接失败");
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                AppUtils.Log("网络请求成功");
+            }
+        };
+
+        AsyncHttpMangers.getUserList(handler);
     }
 
     private void initView() {
@@ -114,7 +131,10 @@ public class ConversationListActivity extends AppCompatActivity {
 
             @Override
             public void onListItemClicked(EMConversation conversation) {
-                startActivity(new Intent(ConversationListActivity.this, ChatActivity.class).putExtra(EaseConstant.EXTRA_USER_ID, conversation.getUserName()));
+                Intent intent = new Intent(ConversationListActivity.this, ChatActivity.class);
+                intent.putExtra(EaseConstant.EXTRA_USER_ID, conversation.getUserName());
+                intent.putExtra("type","guider");
+                startActivity(intent);
             }
         });
         conversationListFragment.isGuiderConversationList(true);
@@ -127,7 +147,10 @@ public class ConversationListActivity extends AppCompatActivity {
 
             @Override
             public void onListItemClicked(EMConversation conversation) {
-                startActivity(new Intent(ConversationListActivity.this, ChatActivity.class).putExtra(EaseConstant.EXTRA_USER_ID, conversation.getUserName()));
+                Intent intent = new Intent(ConversationListActivity.this, ChatActivity.class);
+                intent.putExtra(EaseConstant.EXTRA_USER_ID, conversation.getUserName());
+                intent.putExtra("type","user");
+                startActivity(intent);
             }
         });
         getSupportFragmentManager().beginTransaction().add(R.id.activity_conversation, conversationListFragment).commit();
@@ -149,30 +172,16 @@ public class ConversationListActivity extends AppCompatActivity {
                 case R.id.fragment_conversation_tourist:
                     mTouristTv.setTextColor(0xff4E6CEF);
                     initTouristFragment();
+                    AsyncHttpMangers.getUserList(handler);
                     break;
                 case R.id.fragment_conversation_guider:
                     mGuiderTv.setTextColor(0xff4E6CEF);
                     initGuiderFragment();
+                    AsyncHttpMangers.getGuiderList(handler);
                     break;
                 default:
                     break;
             }
         }
     };
-    private void temp() {
-        JsonHttpResponseHandler handler = new JsonHttpResponseHandler() {
-            @Override
-            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                super.onFailure(statusCode, headers, throwable, errorResponse);
-                AppUtils.showShort(getApplicationContext(), "网络连接失败");
-            }
-
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                super.onSuccess(statusCode, headers, response);
-                AppUtils.Log("网络请求成功");
-            }
-        };
-        AsyncHttpMangers.getUserList(handler);
-    }
 }

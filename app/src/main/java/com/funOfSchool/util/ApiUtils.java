@@ -35,7 +35,11 @@ public class ApiUtils {
      */
     public static final String API_MATCH_GUIDER_CHAT_DELETE = "api/match/guiderDelUser";
     /**
-     * 获取remark
+     * 获取出游者remark
      */
     public static final String API_MATCH_USER_CHAT_REMARK = "api/match/userGetRemark";
+    /**
+     * 获取导游remark
+     */
+    public static final String API_MATCH_GUIDER_CHAT_REMARK = "api/match/guiderGetRemark";
 }
