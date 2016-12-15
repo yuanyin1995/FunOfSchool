@@ -41,5 +41,13 @@ dependencies {
     compile files('libs/wheelview_1.3.3.jar')
     compile project(':easeUI')
     compile files('libs/android-async-http-1.4.8.jar')
-
+    compile files('libs/MobTools-2016.1201.1839.jar')
+    compile files('libs/MobCommons-2016.1201.1839.jar')
+    compile name:'SMSSDK-2.1.3',ext:'aar'
 }
+repositories{
+    flatDir{
+        dirs 'libs' //就是你放aar的目录地址
+    }
+}
+
