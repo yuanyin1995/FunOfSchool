@@ -90,7 +90,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.SelectActivity" />
-        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.LoginActivity">
+        </activity>
         <activity android:name=".ui.LoginActivityTemp" />
         <!-- 高德地图相关 -->
         <meta-data
@@ -152,7 +153,7 @@
         <activity android:name=".ui.MarketActivity" />
         <activity android:name=".ui.SetActivity" />
         <activity android:name=".ui.EvaluateActivity" />
-        <activity android:name=".ui.TravelingActivity" />
+        <activity android:name=".ui.TravelingActivity" ></activity>
         <activity android:name=".ui.QueryTraceActivity">
         </activity>
 

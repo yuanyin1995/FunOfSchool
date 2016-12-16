@@ -45,6 +45,8 @@ import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.map.TextureMapView;
 import com.baidu.mapapi.model.LatLng;
 import com.funOfSchool.R;
+import com.funOfSchool.util.ApiUtils;
+import com.funOfSchool.util.AppUtils;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -115,6 +117,9 @@ public class MainActivity extends Activity {
     private ImageView btnTraveling;
     private ImageView btnEndTravel;
 
+    // 是否实时生成轨迹
+    private boolean isNeedTrace;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -137,15 +142,17 @@ public class MainActivity extends Activity {
         searchCollege();
     }
 
+
+
     /**
      * 获取用户当前状态，以设置首页按钮显示内容
      */
     private void setIndexBtn() {
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.37/api/account/getStatus";
+        String url = AppUtils.HOST+ ApiUtils.API_USER_STATUS;
         // 请求参数：关键词
         RequestParams param = new RequestParams();
-        param.put("token","e16a8b95e435467e9d84082da954625b11q8BM");
+        param.put("token",AppUtils.GetToken());
         // 发送网络请求
         client.post(url, param, new JsonHttpResponseHandler() {
             @Override
@@ -170,6 +177,9 @@ public class MainActivity extends Activity {
                             break;
                         case 4:
                             btnTraveling.setVisibility(View.VISIBLE);
+                            break;
+                        case 5:
+                            btnEndTravel.setVisibility(View.VISIBLE);
                             break;
                         default:
                             btnCannotInvite.setVisibility(View.VISIBLE);
@@ -199,7 +209,7 @@ public class MainActivity extends Activity {
                 btnCanInvite.setVisibility(View.INVISIBLE);
                 // 根据关键词获取学校下拉列表
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = "http://10.7.88.37/api/college/searchCollege";
+                String url = AppUtils.HOST + ApiUtils.API_COLLEGE_NAMELIST;
                 // 请求参数：关键词
                 RequestParams param = new RequestParams();
                 param.put("keyWord",etSearch.getText());
@@ -259,7 +269,7 @@ public class MainActivity extends Activity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 // 根据学校名称，获得所选学校的经纬度和ID和景点
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = "http://10.7.88.37/api/college/searchLaAndLoAndScene";
+                String url = AppUtils.HOST + ApiUtils.API_COLLEGE_LALO_SCENE;
                 // 请求参数：学校名称
                 RequestParams param = new RequestParams();
                 param.put("collegeName",collegeName);
@@ -369,7 +379,7 @@ public class MainActivity extends Activity {
         btnCanInvite = (ImageView)findViewById(R.id.map_can_invite);
         btnMatchNow = (ImageView)findViewById(R.id.map_match);
         btnStartTravel = (ImageView)findViewById(R.id.map_start_travel);
-        btnTraveling = (ImageView)findViewById(R.id.map_end_travel);
+        btnTraveling = (ImageView)findViewById(R.id.map_traveling);
         btnEndTravel = (ImageView)findViewById(R.id.map_end_travel);
         btnPersoninfo = (LinearLayout)findViewById(R.id.me_personinfo);
         btnTravelist = (LinearLayout)findViewById(R.id.me_trvallist);
@@ -482,15 +492,18 @@ public class MainActivity extends Activity {
                     // 选择是，进入记录路径页面
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        toTravelingPage();
+                       startTravelwithTrace();
                     }
                 });
-                builder.setNegativeButton(R.string.no, null);
+                builder.setNegativeButton(R.string.no, new DialogInterface.OnClickListener(){
+                    // 选择否
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startTravelwithoutTrace();
+                    }
+                });
                 builder.create();
                 builder.show();
-                //  改变按钮显示
-                btnStartTravel.setVisibility(View.INVISIBLE);
-                btnEndTravel.setVisibility(View.VISIBLE);
             }
         });
         AdBuilder.setNegativeButton(R.string.no, null);
@@ -499,11 +512,51 @@ public class MainActivity extends Activity {
     }
 
     /**
+     * 开始旅程（记录路径）
+     */
+    private void startTravelwithTrace(){
+        //  调用开始旅程接口（记录路径）
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = AppUtils.HOST + ApiUtils.API_MATCH_START_TRAVEL_WITH_TRACE;
+        // 请求参数
+        RequestParams param = new RequestParams();
+        param.put("token",AppUtils.GetToken());
+        client.post(url, param, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+            }
+        });
+        toTravelingPage();
+    }
+
+    /**
+     * 开始旅程（不记录路径）
+     */
+    private void startTravelwithoutTrace(){
+        btnStartTravel.setVisibility(View.INVISIBLE);
+        btnEndTravel.setVisibility(View.VISIBLE);
+        //  调用开始旅程接口（不记录路径）
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = AppUtils.HOST + ApiUtils.API_MATCH_START_TRAVEL_WITHOUT_TRACE;
+        // 请求参数
+        RequestParams param = new RequestParams();
+        param.put("token",AppUtils.GetToken());
+        client.post(url, param, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+            }
+        });
+    }
+
+    /**
      * 进入路径记录页面
      */
     private void toTravelingPage() {
+
         Intent intent =
-            new Intent(MainActivity.this,TravelingActivity.class);
+                new Intent(MainActivity.this,TravelingActivity.class);
         startActivity(intent);
     }
 
@@ -511,13 +564,16 @@ public class MainActivity extends Activity {
      * 用户点击结束旅程后，弹出对话框让用户二次确认
      */
     private void endTravel() {
-        //  弹出框：确认开始旅程
+        //  弹出框：确认结束旅程
         AlertDialog.Builder AdBuilder =
                 new AlertDialog.Builder(MainActivity.this);
         AdBuilder.setMessage(R.string.confirm_end_travel);
 
         AdBuilder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
+                //  发送网络请求
+                endTravelRequest();
+
                 //  弹出框：是否发表评价
                 AlertDialog.Builder builder =
                         new AlertDialog.Builder(MainActivity.this);
@@ -533,14 +589,33 @@ public class MainActivity extends Activity {
                 builder.setNegativeButton(R.string.not_comment, null);
                 builder.create();
                 builder.show();
-                //  改变按钮显示
-                btnEndTravel.setVisibility(View.INVISIBLE);
-                btnCannotInvite.setVisibility(View.VISIBLE);
             }
         });
         AdBuilder.setNegativeButton(R.string.no, null);
         AdBuilder.create();
         AdBuilder.show();
+    }
+
+    /**
+     * 结束旅程网络请求
+     */
+    private void endTravelRequest() {
+        //  调用结束旅程接口
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = AppUtils.HOST + ApiUtils.API_MATCH_END_TRAVEL;
+        // 请求参数
+        RequestParams param = new RequestParams();
+        param.put("token",AppUtils.GetToken());
+        client.post(url, param, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                Log.e("end",response.toString());
+            }
+        });
+        //  改变按钮显示
+        btnEndTravel.setVisibility(View.INVISIBLE);
+        btnCannotInvite.setVisibility(View.VISIBLE);
     }
 
     /**
@@ -632,6 +707,8 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onStart() {
+        //  设置首页按钮显示
+        setIndexBtn();
         //  开启图层定位
         mBaiduMap.setMyLocationEnabled(true);
         if (!mLocationClient.isStarted())

@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -39,8 +40,14 @@ import com.baidu.trace.OnStopTraceListener;
 import com.baidu.trace.Trace;
 import com.baidu.trace.TraceLocation;
 import com.funOfSchool.R;
+import com.funOfSchool.util.ApiUtils;
+import com.funOfSchool.util.AppUtils;
 import com.funOfSchool.util.DateUtils;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
+import org.apache.http.Header;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -52,13 +59,6 @@ public class TravelingActivity extends AppCompatActivity {
 
     private TextureMapView mMapView;
     private BaiduMap mBaiduMap;
-    private LocationClient mLocationClient;
-    public MyLocationListener mMyLocationListener;
-    //  是否是第一次定位
-    private volatile boolean isFristLocation = true;
-    //  最新一次的经纬度
-    private double mCurrentLantitude;
-    private double mCurrentLongitude;
     //  回退按钮
     private ImageView btnTravelingBack;
     //  结束旅程按钮
@@ -136,6 +136,7 @@ public class TravelingActivity extends AppCompatActivity {
         //  为各按钮设置监听器
         setListener();
 
+        //  开启轨迹服务
         startRefreshThread(true);
         Toast.makeText(getApplicationContext(),
                 "正在开启轨迹服务，请稍候",
@@ -161,7 +162,10 @@ public class TravelingActivity extends AppCompatActivity {
         mTraceClient.setProtocolType (protocolType);
     }
 
-
+    /**
+     * 轨迹记录线程
+     * @param isStart
+     */
     protected void startRefreshThread(boolean isStart) {
         if (null == refreshThread) {
             refreshThread = new RefreshThread();
@@ -444,10 +448,6 @@ public class TravelingActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
     private void findView() {
         btnTravelingBack = (ImageView)findViewById(R.id.travling_back);
         btnTravelingEnd = (ImageView)findViewById(R.id.traveling_end);
@@ -470,7 +470,6 @@ public class TravelingActivity extends AppCompatActivity {
         }
     }
 
-
     /**
      * 用户点击结束旅程后，弹出对话框让用户二次确认
      */
@@ -482,7 +481,10 @@ public class TravelingActivity extends AppCompatActivity {
 
         AdBuilder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
+                //  停止轨迹服务
                 stopTrace();
+                //  发送网络请求
+                endTravelRequest();
                 //  弹出框：是否发表评价
                 AlertDialog.Builder builder =
                         new AlertDialog.Builder(TravelingActivity.this);
@@ -499,7 +501,7 @@ public class TravelingActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         //  返回上一页
-                        //TravelingActivity.this.finish();
+                        TravelingActivity.this.finish();
                     }
                 });
                 builder.create();
@@ -509,6 +511,25 @@ public class TravelingActivity extends AppCompatActivity {
         AdBuilder.setNegativeButton(R.string.no, null);
         AdBuilder.create();
         AdBuilder.show();
+    }
+
+    /**
+     * 结束旅程网络请求
+     */
+    private void endTravelRequest() {
+        //  调用结束旅程接口
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = AppUtils.HOST + ApiUtils.API_MATCH_END_TRAVEL;
+        // 请求参数
+        RequestParams param = new RequestParams();
+        param.put("token",AppUtils.GetToken());
+        client.post(url, param, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                Log.e("end",response.toString());
+            }
+        });
     }
 
     /**
@@ -534,70 +555,6 @@ public class TravelingActivity extends AppCompatActivity {
         mBaiduMap.setMapStatus(msu);
     }
 
-    /**
-     *  实现实位回调监听
-     */
-    public class MyLocationListener implements
-            BDLocationListener {
-        @Override
-        public void onReceiveLocation(BDLocation location) {
-            //  mapView  销毁后不在处理新接收的位置
-            if (location == null || mMapView == null)
-                return;
-            //  构造定位数据
-            MyLocationData locData = new MyLocationData.Builder()
-                    //  此处设置开发者获取到的方向信息，顺时针 0-360
-                    .latitude(location.getLatitude())
-                    .longitude(location.getLongitude()).build();
-            //  设置 BaiduMap 的定位数据
-            mBaiduMap.setMyLocationData(locData);
-            //  记录位置信息
-            mCurrentLantitude = location.getLatitude();
-            mCurrentLongitude = location.getLongitude();
-            //  第一次定位时，将地图位置移动到当前位置
-            if (isFristLocation) {
-                isFristLocation = false;
-                center2myLoc();
-            }
-        }
-    }
-
-    /**
-     *  初始化定位相关代码
-     */
-    private void initMyLocation() {
-        //  定位 SDK 初始化
-        mLocationClient = new
-                LocationClient(getApplicationContext());
-        //  设置定位的相关配置
-        LocationClientOption option = new
-                LocationClientOption();
-        option.setOpenGps(true); //  打开 gps
-        option.setCoorType("bd09ll"); //  设置坐标类型
-        option.setScanSpan(1000); //  自动定位间隔
-        option.setIsNeedAddress(true);//  是否需要地址
-        option.setIsNeedLocationPoiList(true);
-        //  定位模式
-        option.setLocationMode(LocationClientOption.LocationMode.
-                Hight_Accuracy);
-        //  根据配置信息对定位客户端进行设置
-        mLocationClient.setLocOption(option);
-        //  注册定位监听
-        mMyLocationListener = new MyLocationListener();
-        mLocationClient.registerLocationListener(mMyLocationListener);
-    }
-
-    /**
-     * BaiduMap 移动到我的位置
-     */
-    private void center2myLoc() {
-        LatLng ll = new LatLng(mCurrentLantitude,
-                mCurrentLongitude);
-        //  设置当前定位位置为 BaiduMap 的中心点，并移动到定位位置
-        MapStatusUpdate u =
-                MapStatusUpdateFactory.newLatLng(ll);
-        mBaiduMap.animateMapStatus(u);
-    }
 
     /**
      * 查询实时轨迹
