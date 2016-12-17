@@ -18,27 +18,20 @@ import org.json.JSONObject;
  */
 
 public class ChatActivity extends AppCompatActivity{
-    ChatFragment chatFragment;
+    private ChatFragment chatFragment;
+    private JsonHttpResponseHandler handler;
+    private String mType;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
-        //初始化聊天界面
-        chatFragment = new ChatFragment();
-        //将参数传递给聊天界面
-        chatFragment.setArguments(getIntent().getExtras());
-
-        //加载EaseUI封装的聊天界面Fragment
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.activity_chat, chatFragment).commit();
-        getRemark();
+        initView();
+        setUpView();
     }
 
-    /**
-     * 处理是否显示remark
-     */
-    public void getRemark(){
-        JsonHttpResponseHandler handler = new JsonHttpResponseHandler() {
+    private void setUpView() {
+        handler = new JsonHttpResponseHandler() {
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
@@ -63,9 +56,10 @@ public class ChatActivity extends AppCompatActivity{
                             remark = datum.getString("remark");
                             time = datum.getString("time");
 
-                            if (remark == null){
+                            if (remark.equals("null")){
                                 remark = "无";
                             }
+                            //设置remark，time，显示remark
                             chatFragment.setTime(time);
                             chatFragment.setRemark(remark);
                             chatFragment.showRemark();
@@ -75,8 +69,26 @@ public class ChatActivity extends AppCompatActivity{
                     e.printStackTrace();
                 }
             }
-
         };
-        AsyncHttpMangers.getReamrk(chatFragment.getToChatWith(),handler);
+
+        if (mType.equals("user")){
+            AsyncHttpMangers.getUserRemark(chatFragment.getToChatWith(),handler);
+        }else {
+            AsyncHttpMangers.getGuiderRemark(chatFragment.getToChatWith(),handler);
+        }
+
+    }
+
+    private void initView() {
+        //初始化聊天界面
+        chatFragment = new ChatFragment();
+        //将参数传递给聊天界面
+        chatFragment.setArguments(getIntent().getExtras());
+
+        mType = getIntent().getExtras().getString("type");
+
+        //加载EaseUI封装的聊天界面Fragment
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.activity_chat, chatFragment).commit();
     }
 }

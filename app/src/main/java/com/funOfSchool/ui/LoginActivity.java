@@ -101,10 +101,11 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
                 //创建网络访问的类的对象
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = "http://10.7.88.4:8080/api/account/login";
+                String url = "http://10.7.88.37/api/account/login";
                 RequestParams param = new RequestParams();
                 param.put("loginName", login_num);
-                param.put("login_psd", login_psd);
+                param.put("password", login_psd);
+                Log.e("param",param.toString());
 
 
                 // 发送网络请求

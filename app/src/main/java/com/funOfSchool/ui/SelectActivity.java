@@ -24,6 +24,8 @@ import android.widget.Toast;
 import com.funOfSchool.R;
 import com.funOfSchool.adapter.ConstellationAdapter;
 import com.funOfSchool.adapter.MajorAdapter;
+import com.funOfSchool.util.ApiUtils;
+import com.funOfSchool.util.AppUtils;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -63,10 +65,12 @@ public class SelectActivity extends Activity {
     // 记录用户所选性别的变量
     private int sexRBId;
     private String sex;
-    private int sexCode;
+    private Integer sexCode;
+    // private int sexCode;
     // 记录用户所选专业的变量
     private String majorName;
-    private int majorId;
+    private String majorId;
+    // private int majorId;
     // 记录用户所选入学年份的变量
     private String enrollYear;
     // 记录用户所选星座的变量
@@ -80,13 +84,14 @@ public class SelectActivity extends Activity {
     private String remark;
     // 所选学校的ID
     private int selectCollegeId;
+    private String collegeIdStr;
     // 记录服务器返回code
     private String statusCode;
 
     MajorAdapter adapter;
     // 创建专业数据列表
     private ArrayList<String> majorNameList = new ArrayList<String>();
-    private ArrayList<Integer> majorIdList = new ArrayList<Integer>();
+    private ArrayList<String> majorIdList = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +102,10 @@ public class SelectActivity extends Activity {
         findView();
         //  为各控件设置监听器
         setListener();
+
+        Intent intent = getIntent();
+        selectCollegeId = intent.getIntExtra("scid",1001);
+        collegeIdStr = selectCollegeId+"";
     }
 
     /**
@@ -183,23 +192,24 @@ public class SelectActivity extends Activity {
     }
 
     /**
-     * 向服务器发送请求，并根据服务器返回结果做出响应
+     * 出游者发送请求，客户端根据服务器返回结果做出响应
      */
     private void sendInvite() {
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.49/api/match/start";
+        String url = AppUtils.HOST + ApiUtils.API_MATCH_START_MATCH;
         // 请求参数
         RequestParams param = new RequestParams();
         param.put("sex",sexCode);
-        param.put("schoolId","11006");
-        param.put("majorId",majorId+"");
+        param.put("schoolId",collegeIdStr);
+        param.put("majorId",majorId);
         param.put("enrollment",enrollYear);
         param.put("constellation",constellation);
         param.put("birthdayMin",minBirthYear);
         param.put("birthdayMax",maxBirthYear);
         param.put("remark",remark);
         param.put("time",travelDate);
-        param.put("token","e8a3648c62194bcfb765ddb3b635ff27JJWoby");
+        param.put("token",AppUtils.GetToken());
+        Log.e("param",param.toString());
         // 发送网络请求
         client.post(url, param, new JsonHttpResponseHandler() {
             @Override
@@ -228,7 +238,7 @@ public class SelectActivity extends Activity {
                                 R.string.match_now_warn,
                                 Toast.LENGTH_LONG).show();
                     }
-                    else {
+                    else if (statusCode == 1){
                         Toast.makeText(SelectActivity.this,
                                 R.string.send_success,
                                 Toast.LENGTH_LONG).show();
@@ -346,11 +356,12 @@ public class SelectActivity extends Activity {
         // 获取学校ID
         Intent intent = getIntent();
         selectCollegeId = intent.getIntExtra("scid",1001);
-        Toast.makeText(SelectActivity.this,selectCollegeId+"",Toast.LENGTH_SHORT).show();
+        collegeIdStr = selectCollegeId+"";
+        Toast.makeText(SelectActivity.this,collegeIdStr,Toast.LENGTH_SHORT).show();
 
         // 根据学校ID，发送网络请求，获得专业列表
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.49/api/college/searchMajor";
+        String url = AppUtils.HOST + ApiUtils.API_COLLEGE_MARJOR;
         // 请求参数：关键词
         RequestParams param = new RequestParams();
         param.put("collegeId",selectCollegeId);
@@ -379,7 +390,7 @@ public class SelectActivity extends Activity {
                     // 给专业名列表赋值
                     for (int j=0; j<majorNameListJA.length();j++){
                         majorNameList.add(j,majorNameListJA.getJSONObject(j).getString("name"));
-                        majorIdList.add(j,majorNameListJA.getJSONObject(j).getInt("scid"));
+                        majorIdList.add(j,majorNameListJA.getJSONObject(j).getString("scid"));
                     }
                     Log.e("MAJOR", majorNameList.toString());
                     Log.e("MAJORID", majorIdList.toString());

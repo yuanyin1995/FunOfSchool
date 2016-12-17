@@ -198,7 +198,7 @@ public class QueryTraceActivity extends AppCompatActivity {
         // 设置日期
         year = 2016;
         month = 12;
-        day = 13;
+        day = 14;
 
         String st = year + "年" + month + "月" + day + "日0时0分0秒";
         String et = year + "年" + month + "月" + day + "日23时59分59秒";
