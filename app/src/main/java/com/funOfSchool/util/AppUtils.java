@@ -14,14 +14,15 @@ public class AppUtils {
      */
     public static final String HOST = "http://192.168.178.2/";
     /**
-     * 写入token
+     * 写入token------临时
      */
+    public static String token = "";
     /**
      * 获取token
      * @return token
      */
     public static String GetToken(){
-        return "cf313de633594a39b4e26a75e525d7255WWVzV";
+        return token;
     }
 
     /**
