@@ -21,11 +21,11 @@
     <string name="conversation_guider">我是游客</string>
     <string name="conversation_tourist">我是导游</string>
 
-    <string name="no_time_warn">没写时间！:)</string>
-    <string name="no_guider_warn">没有导游！:)</string>
-    <string name="in_match_now">不能匹配！:)</string>
-    <string name="send_success">发送成功！:)</string>
-    <string name="match_now_warn">不能匹配！:)</string>
+    <string name="no_time_warn">请选择出游时间 :)</string>
+    <string name="no_guider_warn">在该校没有找到符合您全部条件的导游，换个条件试试吧 :)</string>
+    <string name="in_match_now">正在为您匹配中 :)</string>
+    <string name="send_success">发送成功 :)</string>
+    <string name="match_now_warn">正在为您匹配中 :)</string>
     <string name="wish">祝您旅程愉快 :)</string>
 
     <string name="confirm_start_travel">确定现在开始您的旅程吗？</string>
@@ -36,4 +36,5 @@
     <string name="no">否</string>
     <string name="to_comment">去发表</string>
     <string name="not_comment">不发表了</string>
+    <string name="not_yet">未填写</string>
 </resources>
