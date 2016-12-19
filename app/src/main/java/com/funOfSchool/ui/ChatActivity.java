@@ -75,9 +75,9 @@ public class ChatActivity extends AppCompatActivity{
         };
 
         if (mType.equals("user")){
-            AsyncHttpMangers.getUserRemark(chatFragment.getToChatWith(),handler);
+            AsyncHttpMangers.getUserRemark(getApplicationContext(),chatFragment.getToChatWith(),handler);
         }else {
-            AsyncHttpMangers.getGuiderRemark(chatFragment.getToChatWith(),handler);
+            AsyncHttpMangers.getGuiderRemark(getApplicationContext(),chatFragment.getToChatWith(),handler);
         }
 
     }

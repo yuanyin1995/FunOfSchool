@@ -101,10 +101,10 @@ public class ChatFragment extends EaseChatFragment {
             @Override
             public void onClick(View v) {
                 if (type){
-                    AsyncHttpMangers.userChoose(0,getToChatWith(),mHandler);
+                    AsyncHttpMangers.userChoose(getContext(),0,getToChatWith(),mHandler);
                     AppUtils.showShort(getContext(),"useraccept");
                 }else {
-                    AsyncHttpMangers.guiderChoose(0,getToChatWith(),mHandler);
+                    AsyncHttpMangers.guiderChoose(getContext(),0,getToChatWith(),mHandler);
                     AppUtils.showShort(getContext(),"guideraccept");
                 }
             }
@@ -113,10 +113,10 @@ public class ChatFragment extends EaseChatFragment {
             @Override
             public void onClick(View v) {
                 if (type){
-                    AsyncHttpMangers.userChoose(1,getToChatWith(),mHandler);
+                    AsyncHttpMangers.userChoose(getContext(),1,getToChatWith(),mHandler);
                     AppUtils.showShort(getContext(),"useraccept");
                 }else {
-                    AsyncHttpMangers.guiderChoose(1,getToChatWith(),mHandler);
+                    AsyncHttpMangers.guiderChoose(getContext(),1,getToChatWith(),mHandler);
                     AppUtils.showShort(getContext(),"guideraccept");
                 }
             }

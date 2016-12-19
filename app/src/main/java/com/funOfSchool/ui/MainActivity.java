@@ -146,7 +146,7 @@ public class MainActivity extends Activity {
         String url = AppUtils.HOST+ ApiUtils.API_USER_STATUS;
         // 请求参数：关键词
         RequestParams param = new RequestParams();
-        param.put("token",AppUtils.GetToken());
+        param.put("token",AppUtils.getToken(getApplicationContext()));
         // 发送网络请求
         client.post(url, param, new JsonHttpResponseHandler() {
             @Override
@@ -514,7 +514,7 @@ public class MainActivity extends Activity {
         String url = AppUtils.HOST + ApiUtils.API_MATCH_START_TRAVEL_WITH_TRACE;
         // 请求参数
         RequestParams param = new RequestParams();
-        param.put("token",AppUtils.GetToken());
+        param.put("token",AppUtils.getToken(getApplicationContext()));
         client.post(url, param, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -535,7 +535,7 @@ public class MainActivity extends Activity {
         String url = AppUtils.HOST + ApiUtils.API_MATCH_START_TRAVEL_WITHOUT_TRACE;
         // 请求参数
         RequestParams param = new RequestParams();
-        param.put("token",AppUtils.GetToken());
+        param.put("token",AppUtils.getToken(getApplicationContext()));
         client.post(url, param, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -599,7 +599,7 @@ public class MainActivity extends Activity {
         String url = AppUtils.HOST + ApiUtils.API_MATCH_END_TRAVEL;
         // 请求参数
         RequestParams param = new RequestParams();
-        param.put("token",AppUtils.GetToken());
+        param.put("token",AppUtils.getToken(getApplicationContext()));
         client.post(url, param, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {

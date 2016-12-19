@@ -2,7 +2,6 @@ package com.funOfSchool.ui;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -11,7 +10,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -208,7 +206,7 @@ public class SelectActivity extends Activity {
         param.put("birthdayMax",maxBirthYear);
         param.put("remark",remark);
         param.put("time",travelDate);
-        param.put("token",AppUtils.GetToken());
+        param.put("token",AppUtils.getToken(getApplicationContext()));
         Log.e("param",param.toString());
         // 发送网络请求
         client.post(url, param, new JsonHttpResponseHandler() {

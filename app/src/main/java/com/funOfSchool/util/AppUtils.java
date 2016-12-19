@@ -12,17 +12,25 @@ public class AppUtils {
     /**
      * 主机地址
      */
-    public static final String HOST = "http://10.7.88.22/";
+    public static final String HOST = "http://192.168.178.2/";
     /**
      * 写入token------临时
      */
-    public static String token = "fc0f205f86e54d03ae4905201c3d9388A6qvGB";
+    public static void setToken(String token,Context context){
+        SharedPreferences spf = context.getSharedPreferences("Token", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = spf.edit();
+
+        editor.putString("token",token);
+
+        editor.commit();
+    }
     /**
      * 获取token
      * @return token
      */
-    public static String GetToken(){
-        return token;
+    public static String getToken(Context context){
+        SharedPreferences spf = context.getSharedPreferences("Token", Context.MODE_PRIVATE);
+        return spf.getString("token","");
     }
 
     /**
