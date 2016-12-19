@@ -12,7 +12,7 @@ public class AppUtils {
     /**
      * 主机地址
      */
-    public static final String HOST = "http://192.168.191.3/";
+    public static final String HOST = "http://10.141.230.100:8080/";
     /**
      * 写入token
      */
@@ -21,7 +21,7 @@ public class AppUtils {
      * @return token
      */
     public static String GetToken(){
-        return "e4f59e1da8084a6db25d599d64be04adh2cb8z";
+        return "c5b4f1079ca24e71a25e0f3b06e5de642dNRr3";
     }
 
     /**
