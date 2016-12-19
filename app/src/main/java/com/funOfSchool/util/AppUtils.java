@@ -1,6 +1,7 @@
 package com.funOfSchool.util;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -16,13 +17,21 @@ public class AppUtils {
     /**
      * 写入token------临时
      */
-    public static String token = "";
+    public static void setToken(String token,Context context){
+        SharedPreferences spf = context.getSharedPreferences("Token", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = spf.edit();
+
+        editor.putString("token",token);
+
+        editor.commit();
+    }
     /**
      * 获取token
      * @return token
      */
-    public static String GetToken(){
-        return token;
+    public static String getToken(Context context){
+        SharedPreferences spf = context.getSharedPreferences("Token", Context.MODE_PRIVATE);
+        return spf.getString("token","");
     }
 
     /**

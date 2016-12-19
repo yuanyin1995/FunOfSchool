@@ -69,7 +69,7 @@ public class LoginActivityTemp extends AppCompatActivity {
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 try {
                     if (response.getInt("code") == 1) {
-                        AppUtils.token = response.getString("token");
+                        AppUtils.setToken(response.getString("token"),LoginActivityTemp.this);
                         //聊天登录
                         EMClient.getInstance().login(response.getJSONObject("info").getString("userId"), passWord.getText().toString().trim(), new EMCallBack() {
 

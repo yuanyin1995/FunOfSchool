@@ -128,7 +128,7 @@ public class ConversationListActivity extends AppCompatActivity {
             }
         };
 
-        AsyncHttpMangers.getUserList(handler);
+        AsyncHttpMangers.getUserList(getApplicationContext(),handler);
     }
 
     private void initView() {
@@ -190,7 +190,7 @@ public class ConversationListActivity extends AppCompatActivity {
                         EMClient.getInstance().chatManager().deleteConversation(conversation.getUserName(),false);
                     }
                     initTouristFragment();
-                    AsyncHttpMangers.getUserList(handler);
+                    AsyncHttpMangers.getUserList(getApplicationContext(),handler);
                     break;
                 case R.id.fragment_conversation_guider:
                     mGuiderTv.setTextColor(0xff4E6CEF);
@@ -199,7 +199,7 @@ public class ConversationListActivity extends AppCompatActivity {
                         EMClient.getInstance().chatManager().deleteConversation(conversation.getUserName(),false);
                     }
                     initGuiderFragment();
-                    AsyncHttpMangers.getGuiderList(handler);
+                    AsyncHttpMangers.getGuiderList(getApplicationContext(),handler);
                     break;
                 default:
                     break;
