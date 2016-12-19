@@ -10,8 +10,16 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.funOfSchool.R;
+import com.funOfSchool.util.AppUtils;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.apache.http.Header;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class LoginActivityTemp extends AppCompatActivity {
     private Button login;
@@ -46,41 +54,65 @@ public class LoginActivityTemp extends AppCompatActivity {
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setMessage("正在登录");
         progressDialog.show();
-        //聊天登录----临时
-        EMClient.getInstance().login(loginName.getText().toString().trim(), passWord.getText().toString().trim(), new EMCallBack() {
 
+
+        // 根据学校名称，获得所选学校的经纬度和ID
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = AppUtils.HOST + "api/account/login";
+        // 请求参数：学校名称
+        RequestParams param = new RequestParams();
+        param.put("loginName",loginName.getText().toString().trim());
+        param.put("password",passWord.getText().toString().trim());
+        // 发送网络请求
+        client.post(url, param, new JsonHttpResponseHandler() {
             @Override
-            public void onSuccess() {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (progressDialog != null && progressDialog.isShowing())
-                        {
-                            progressDialog.dismiss();
-                        }
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                try {
+                    if (response.getInt("code") == 1) {
+                        AppUtils.token = response.getString("token");
+                        //聊天登录
+                        EMClient.getInstance().login(response.getJSONObject("info").getString("userId"), passWord.getText().toString().trim(), new EMCallBack() {
+
+                            @Override
+                            public void onSuccess() {
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        if (progressDialog != null && progressDialog.isShowing()) {
+                                            progressDialog.dismiss();
+                                        }
+                                    }
+                                });
+
+                                startActivity(new Intent(LoginActivityTemp.this, ConversationListActivity.class));
+                            }
+
+                            @Override
+                            public void onError(int i, String s) {
+                                Log.i("tag", "登录失败" + s);
+                                progressDialog.dismiss();
+                                AppUtils.showShort(getApplicationContext(),"登录失败");
+                            }
+
+                            @Override
+                            public void onProgress(int i, String s) {
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        if (LoginActivityTemp.this.isFinishing() || LoginActivityTemp.this.isDestroyed()) {
+                                            return;
+                                        }
+                                        progressDialog.setMessage("正在登录");
+                                    }
+                                });
+                            }
+                        });
                     }
-                });
-
-                startActivity(new Intent(LoginActivityTemp.this,ConversationListActivity.class));
-            }
-
-            @Override
-            public void onError(int i, String s) {
-                Log.i("tag","登录失败");
-            }
-
-            @Override
-            public void onProgress(int i, String s) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (LoginActivityTemp.this.isFinishing() || LoginActivityTemp.this.isDestroyed()) {
-                            return;
-                        }
-                        progressDialog.setMessage("正在登录");
-                    }
-                });
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         });
+
     }
 }

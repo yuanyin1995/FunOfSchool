@@ -36,4 +36,5 @@
     <string name="no">否</string>
     <string name="to_comment">去发表</string>
     <string name="not_comment">不发表了</string>
+    <string name="not_yet">未填写</string>
 </resources>
