@@ -1,10 +1,18 @@
 [
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "D:\\cocoa\\android\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ggl_background.jpg",
+        "source": "D:\\cocoa\\android\\FunOfSchool\\app\\src\\main\\res\\mipmap-hdpi\\ggl_background.jpg"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ggl_background.jpg",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-hdpi\\ggl_background.jpg"
+        "merged": "D:\\cocoa\\android\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\track_finish.png",
+        "source": "D:\\cocoa\\android\\FunOfSchool\\app\\src\\main\\res\\mipmap-hdpi\\track_finish.png"
+    },
+    {
+        "merged": "D:\\cocoa\\android\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\traveling.png",
+        "source": "D:\\cocoa\\android\\FunOfSchool\\app\\src\\main\\res\\mipmap-hdpi\\traveling.png"
+    },
+    {
+        "merged": "D:\\cocoa\\android\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\track_start.png",
+        "source": "D:\\cocoa\\android\\FunOfSchool\\app\\src\\main\\res\\mipmap-hdpi\\track_start.png"
     }
 ]

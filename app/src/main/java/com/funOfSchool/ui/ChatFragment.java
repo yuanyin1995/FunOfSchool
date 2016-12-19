@@ -9,12 +9,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.funOfSchool.R;
+import com.funOfSchool.ui.http.AsyncHttpMangers;
 import com.funOfSchool.util.AppUtils;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMConversation;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.easeui.EaseConstant;
 import com.hyphenate.easeui.ui.EaseChatFragment;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.JsonHttpResponseHandler;
+
+import org.apache.http.Header;
+import org.json.JSONArray;
 
 import java.util.List;
 
@@ -30,6 +36,10 @@ public class ChatFragment extends EaseChatFragment {
     private TextView remarkTv;
     private View acceptBtn;
     private View refuseBtn;
+
+    private boolean type;
+
+    private AsyncHttpResponseHandler mHandler;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -63,6 +73,9 @@ public class ChatFragment extends EaseChatFragment {
     public void setTime(String time){
         timeTv.setText(time);
     }
+    public void setType(boolean b){
+        type = b;
+    }
 
     /**
      * 设置备注信息
@@ -77,16 +90,35 @@ public class ChatFragment extends EaseChatFragment {
         refuseBtn = chooseView.findViewById(R.id.fragment_chat_refuse);
         acceptBtn = chooseView.findViewById(R.id.fragment_chat_accept);
 
+        mHandler = new JsonHttpResponseHandler(){
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                super.onSuccess(statusCode, headers, response);
+            }
+        };
+
         refuseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AppUtils.showShort(getContext(),"refuse");
+                if (type){
+                    AsyncHttpMangers.userChoose(0,getToChatWith(),mHandler);
+                    AppUtils.showShort(getContext(),"useraccept");
+                }else {
+                    AsyncHttpMangers.guiderChoose(0,getToChatWith(),mHandler);
+                    AppUtils.showShort(getContext(),"guideraccept");
+                }
             }
         });
         acceptBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AppUtils.showShort(getContext(),"accept");
+                if (type){
+                    AsyncHttpMangers.userChoose(1,getToChatWith(),mHandler);
+                    AppUtils.showShort(getContext(),"useraccept");
+                }else {
+                    AsyncHttpMangers.guiderChoose(1,getToChatWith(),mHandler);
+                    AppUtils.showShort(getContext(),"guideraccept");
+                }
             }
         });
     }

@@ -7,12 +7,25 @@
 -keep class com.funOfSchool.ui.MainActivity { <init>(); }
 -keep class com.funOfSchool.ui.SelectActivity { <init>(); }
 -keep class com.funOfSchool.ui.LoginActivity { <init>(); }
+-keep class com.funOfSchool.ui.LoginActivityTemp { <init>(); }
 -keep class com.hyphenate.chat.EMChatService { <init>(); }
 -keep class com.hyphenate.easeui.ui.EaseShowBigImageActivity { <init>(); }
 -keep class com.hyphenate.easeui.ui.EaseBaiduMapActivity { <init>(); }
 -keep class com.baidu.location.f { <init>(); }
+-keep class com.baidu.trace.LBSTraceService { <init>(); }
 -keep class com.hyphenate.chat.EMMonitorReceiver { <init>(); }
 -keep class com.funOfSchool.ui.ReceiveInviteActivity { <init>(); }
+-keep class com.funOfSchool.ui.PersonInfoActivity { <init>(); }
+-keep class com.funOfSchool.ui.TravelListActivity { <init>(); }
+-keep class com.funOfSchool.ui.MyPrizeActivity { <init>(); }
+-keep class com.funOfSchool.ui.MarketActivity { <init>(); }
+-keep class com.funOfSchool.ui.SetActivity { <init>(); }
+-keep class com.funOfSchool.ui.EvaluateActivity { <init>(); }
+-keep class com.funOfSchool.ui.TravelingActivity { <init>(); }
+-keep class com.funOfSchool.ui.QueryTraceActivity { <init>(); }
+-keep class com.funOfSchool.ui.RegistActivity { <init>(); }
+-keep class com.mob.tools.MobUIShell { <init>(); }
+-keep class com.funOfSchool.ui.PasswordActivity { <init>(); }
 -keep public class * extends android.app.backup.BackupAgent {
     <init>();
 }

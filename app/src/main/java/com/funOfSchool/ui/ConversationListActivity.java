@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.funOfSchool.R;
 import com.funOfSchool.ui.http.AsyncHttpMangers;
 import com.funOfSchool.util.AppUtils;
+import com.hyphenate.EMCallBack;
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMCmdMessageBody;
@@ -22,6 +23,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.http.Header;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -113,6 +115,14 @@ public class ConversationListActivity extends AppCompatActivity {
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
                 AppUtils.Log("网络请求成功");
+                try {
+                    int code = response.getInt("code");
+                    if (422 == code){
+                        TokenError.Login(getApplicationContext());
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         };
 
@@ -184,4 +194,24 @@ public class ConversationListActivity extends AppCompatActivity {
             }
         }
     };
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EMClient.getInstance().logout(false, new EMCallBack() {
+            @Override
+            public void onSuccess() {
+                Log.e("MainActivity","退出登录");
+            }
+
+            @Override
+            public void onError(int i, String s) {
+                Log.e("MainActivity","退出失败" + i + ","+ s);
+            }
+
+            @Override
+            public void onProgress(int i, String s) {
+
+            }
+        });
+    }
 }

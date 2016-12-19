@@ -30,7 +30,8 @@
             android:text="游玩日期（必选）"
             style="@style/FirstText"
             android:layout_marginLeft="12dp"
-            android:layout_toRightOf="@id/select_date_icon"/>
+            android:layout_toRightOf="@id/select_date_icon"
+            android:layout_centerVertical="true"/>
         <ImageView
             android:id="@+id/select_date_open_icon"
             android:layout_width="16dp"
@@ -71,7 +72,8 @@
             android:text="性别"
             style="@style/FirstText"
             android:layout_marginLeft="12dp"
-            android:layout_toRightOf="@id/select_sex_icon"/>
+            android:layout_toRightOf="@id/select_sex_icon"
+            android:layout_centerVertical="true"/>
         <ImageView
             android:id="@+id/select_sex_open_icon"
             android:layout_width="16dp"
@@ -112,7 +114,8 @@
             android:text="专业"
             style="@style/FirstText"
             android:layout_marginLeft="12dp"
-            android:layout_toRightOf="@id/select_major_icon"/>
+            android:layout_toRightOf="@id/select_major_icon"
+            android:layout_centerVertical="true"/>
         <ImageView
             android:id="@+id/select_major_open_icon"
             android:layout_width="16dp"
@@ -153,7 +156,8 @@
             android:text="入学年份"
             style="@style/FirstText"
             android:layout_marginLeft="12dp"
-            android:layout_toRightOf="@id/select_year_icon"/>
+            android:layout_toRightOf="@id/select_year_icon"
+            android:layout_centerVertical="true"/>
         <ImageView
             android:id="@+id/select_year_open_icon"
             android:layout_width="16dp"
@@ -194,7 +198,8 @@
             android:text="星座"
             style="@style/FirstText"
             android:layout_marginLeft="12dp"
-            android:layout_toRightOf="@id/select_constellation_icon"/>
+            android:layout_toRightOf="@id/select_constellation_icon"
+            android:layout_centerVertical="true"/>
         <ImageView
             android:id="@+id/select_constellation_open_icon"
             android:layout_width="16dp"
@@ -235,7 +240,8 @@
             android:text="年龄段"
             style="@style/FirstText"
             android:layout_marginLeft="12dp"
-            android:layout_toRightOf="@id/select_age_icon"/>
+            android:layout_toRightOf="@id/select_age_icon"
+            android:layout_centerVertical="true"/>
         <ImageView
             android:id="@+id/select_age_open_icon"
             android:layout_width="16dp"
