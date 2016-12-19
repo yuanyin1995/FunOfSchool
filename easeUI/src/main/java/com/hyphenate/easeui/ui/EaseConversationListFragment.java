@@ -61,7 +61,8 @@ public class EaseConversationListFragment extends EaseBaseFragment{
     public void addConversation(EMConversation conversation){
         int size = 0;
         for (EMConversation conversation1:conversationList){
-            if (!conversation1.getUserName().equals(conversation.getUserName())){
+            conversation.getUserName();
+            if (conversation1.getUserName().equals(conversation.getUserName())){
                 size++;
             }
         }
