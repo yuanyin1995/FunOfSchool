@@ -27,7 +27,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Aiome on 2016/12/2.
@@ -178,14 +180,24 @@ public class ConversationListActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             resetTextView();
+            Map<String,EMConversation> list = EMClient.getInstance().chatManager().getAllConversations();
+            Iterator<EMConversation> iter = list.values().iterator();
             switch (v.getId()){
                 case R.id.fragment_conversation_tourist:
                     mTouristTv.setTextColor(0xff4E6CEF);
+                    while (iter.hasNext()){
+                        EMConversation conversation = iter.next();
+                        EMClient.getInstance().chatManager().deleteConversation(conversation.getUserName(),false);
+                    }
                     initTouristFragment();
                     AsyncHttpMangers.getUserList(handler);
                     break;
                 case R.id.fragment_conversation_guider:
                     mGuiderTv.setTextColor(0xff4E6CEF);
+                    while (iter.hasNext()){
+                        EMConversation conversation = iter.next();
+                        EMClient.getInstance().chatManager().deleteConversation(conversation.getUserName(),false);
+                    }
                     initGuiderFragment();
                     AsyncHttpMangers.getGuiderList(handler);
                     break;
