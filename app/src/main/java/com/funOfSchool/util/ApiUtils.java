@@ -81,5 +81,5 @@ public class ApiUtils {
     /**
      * 上传图片接口
      */
-    public static final String API_ACCOUNT_LOAD ="/api/fs/upload";
+    public static final String API_ACCOUNT_LOAD ="api/fs/upload";
 }
