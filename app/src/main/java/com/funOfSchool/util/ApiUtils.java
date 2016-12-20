@@ -74,4 +74,12 @@ public class ApiUtils {
      * 查询专业
      */
     public static final String API_COLLEGE_MARJOR = "api/college/searchMajor";
+    /**
+     * 获得出游列表
+     */
+    public static final String API_TRAVEL_LIST = "api/travel/getTravelList";
+    /**
+     * 根据学校ID获得学校名称
+     */
+    public static final String API_COLLEGE_NAME = "api/college/schoolName";
 }

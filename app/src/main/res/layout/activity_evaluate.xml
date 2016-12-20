@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/evaluate_title"
                 android:layout_centerInParent="true"
-                android:textSize="18sp"
+                style="@style/TitleText"
                 />
         </RelativeLayout>
     </LinearLayout>

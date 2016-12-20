@@ -9,4 +9,5 @@
     <color name="secondText">#999999</color>
     <color name="chatTabText">#4E6CEF</color>
     <color name="white">#ffffff</color>
+    <color name="titleBottom">#eeeeee</color>
 </resources>

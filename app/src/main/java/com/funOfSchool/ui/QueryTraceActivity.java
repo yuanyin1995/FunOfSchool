@@ -1,9 +1,14 @@
 package com.funOfSchool.ui;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baidu.mapapi.SDKInitializer;
@@ -25,6 +30,7 @@ import com.funOfSchool.R;
 import com.funOfSchool.util.DateUtils;
 import com.funOfSchool.util.GsonService;
 import com.funOfSchool.util.HistoryTrackData;
+import com.funOfSchool.util.TitleHeight;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,8 +43,12 @@ import java.util.Map;
 public class QueryTraceActivity extends AppCompatActivity {
     private TextureMapView mMapView;
     private BaiduMap mBaiduMap;
+    //  标题栏
+    private RelativeLayout rlTitle;
     //  回退按钮
     private ImageView btnQueryTraceBack;
+    //  游玩时间
+    String travelDate;
     //  轨迹服务ID
     long serviceId = 131124;
     //  设备名称
@@ -82,6 +92,12 @@ public class QueryTraceActivity extends AppCompatActivity {
         SDKInitializer.initialize(getApplicationContext());
         setContentView(R.layout.activity_query_trace);
 
+        // 设置标题栏高度
+        setTitleHeight();
+
+        //  得到游玩时间
+        getTravelTime();
+
         // 初始化地图配置
         initBaiduMap();
 
@@ -93,6 +109,26 @@ public class QueryTraceActivity extends AppCompatActivity {
 
         // 查询轨迹
         queryTrack();
+    }
+
+    /**
+     * 获取游玩时间
+     */
+    private void getTravelTime() {
+        Intent i = getIntent();
+        travelDate = i.getStringExtra("travelDate");
+    }
+
+    /**
+     * 设置标题栏高度
+     */
+    private void setTitleHeight() {
+        rlTitle = (RelativeLayout)findViewById(R.id.query_trace_rl_title);
+        WindowManager wm = (WindowManager) getApplicationContext()
+                .getSystemService(Context.WINDOW_SERVICE);
+        int wHeight = wm.getDefaultDisplay().getHeight();
+        int tHeight = wHeight /11;
+        rlTitle.setMinimumHeight(tHeight);
     }
 
     /**
@@ -196,9 +232,9 @@ public class QueryTraceActivity extends AppCompatActivity {
      */
     private void queryTrack() {
         // 设置日期
-        year = 2016;
-        month = 12;
-        day = 14;
+        year = Integer.parseInt(travelDate.substring(0,3));
+        month = Integer.parseInt(travelDate.substring(5,6));
+        day = Integer.parseInt(travelDate.substring(8,9));
 
         String st = year + "年" + month + "月" + day + "日0时0分0秒";
         String et = year + "年" + month + "月" + day + "日23时59分59秒";

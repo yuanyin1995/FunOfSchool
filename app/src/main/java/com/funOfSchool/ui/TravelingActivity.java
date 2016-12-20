@@ -1,6 +1,7 @@
 package com.funOfSchool.ui;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,7 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
@@ -113,6 +116,7 @@ public class TravelingActivity extends AppCompatActivity {
     protected static MapStatusUpdate msUpdate = null;
 
     private boolean isTraceStarted = true;
+    private RelativeLayout rlTitle;
 
 
     @Override
@@ -123,6 +127,8 @@ public class TravelingActivity extends AppCompatActivity {
         SDKInitializer.initialize(getApplicationContext());
         setContentView(R.layout.activity_traveling);
 
+        //  设置标题栏高度
+        setTitleHeight();
         //  初始化 BaiduMap 相关
         initBaiduMap();
         //  初始化百度定位客户端
@@ -136,12 +142,25 @@ public class TravelingActivity extends AppCompatActivity {
         //  为各按钮设置监听器
         setListener();
 
+
         //  开启轨迹服务
         startRefreshThread(true);
         Toast.makeText(getApplicationContext(),
                 "正在开启轨迹服务，请稍候",
                 Toast.LENGTH_LONG).show();
         startTrace();
+    }
+
+    /**
+     * 设置标题栏高度
+     */
+    private void setTitleHeight() {
+        rlTitle = (RelativeLayout)findViewById(R.id.traveling_rl_title);
+        WindowManager wm = (WindowManager) getApplicationContext()
+                .getSystemService(Context.WINDOW_SERVICE);
+        int wHeight = wm.getDefaultDisplay().getHeight();
+        int tHeight = wHeight /11;
+        rlTitle.setMinimumHeight(tHeight);
     }
 
     /**

@@ -3,6 +3,7 @@ package com.funOfSchool.ui;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -11,6 +12,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -92,12 +94,15 @@ public class SelectActivity extends Activity {
     // 创建专业数据列表
     private ArrayList<String> majorNameList = new ArrayList<String>();
     private ArrayList<String> majorIdList = new ArrayList<String>();
+    private RelativeLayout rlTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select);
 
+        //  设置标题栏高度
+        setTitleHeight();
         //  得到各控件
         findView();
         //  为各控件设置监听器
@@ -106,6 +111,18 @@ public class SelectActivity extends Activity {
         Intent intent = getIntent();
         selectCollegeId = intent.getIntExtra("scid",1001);
         collegeIdStr = selectCollegeId+"";
+    }
+
+    /**
+     * 设置标题栏高度
+     */
+    private void setTitleHeight() {
+        rlTitle = (RelativeLayout)findViewById(R.id.select_rl_title);
+        WindowManager wm = (WindowManager) getApplicationContext()
+                .getSystemService(Context.WINDOW_SERVICE);
+        int wHeight = wm.getDefaultDisplay().getHeight();
+        int tHeight = wHeight /11;
+        rlTitle.setMinimumHeight(tHeight);
     }
 
     /**
@@ -284,7 +301,7 @@ public class SelectActivity extends Activity {
             @Override
             public void onDateChanged(DatePicker datePicker, int year, int month, int day) {
                 SelectActivity.this.year = year;
-                SelectActivity.this.month = month;
+                SelectActivity.this.month = month+1;
                 SelectActivity.this.day = day;
             }
         });

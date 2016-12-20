@@ -277,8 +277,7 @@ public class MainActivity extends Activity {
                 client.post(url, param, new JsonHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                        Log.e("SUCCESS","发送成功!");
-                        Log.e("RC",response.toString());
+
 
                         JSONObject collegeNameJO = null;
                         try {
