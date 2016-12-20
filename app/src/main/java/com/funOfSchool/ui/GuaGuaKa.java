@@ -14,6 +14,15 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.apache.http.Header;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.Random;
 
 /**
@@ -23,8 +32,7 @@ import java.util.Random;
 public class GuaGuaKa extends View {
     private Rect mTextBound = new Rect();
     public int randomNum;
-    public String randonText;
-
+    public String randonText = "谢谢惠顾";
     /**
      * 绘制线条的Paint,即用户手指绘制Path
      */
@@ -47,6 +55,7 @@ public class GuaGuaKa extends View {
     private int mLastX;
     private int mLastY;
     private int gravity;
+
 
     public GuaGuaKa(Context context)
     {
@@ -73,6 +82,7 @@ public class GuaGuaKa extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
     {
+
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
         int width = getMeasuredWidth();
@@ -95,8 +105,8 @@ public class GuaGuaKa extends View {
     private void setUpOutterPaint()
     {
         testRandom();
-        introduction();
-        mBackPint.setTextSize(50);
+        getRemainprize();
+        mBackPint.setTextSize(30);
         mBackPint.getTextBounds(randonText, 0, randonText.length(), mTextBound);
         mOutterPaint.setColor(Color.RED);
         mOutterPaint.setAntiAlias(true);
@@ -149,8 +159,6 @@ public class GuaGuaKa extends View {
                 mLastY = y;
                 break;
         }
-
-
         invalidate();
         return true;
     }
@@ -158,20 +166,38 @@ public class GuaGuaKa extends View {
     //随机生成1-3的数
     private void testRandom(){
         Random random=new Random();
-        randomNum = random.nextInt(3) + 1;
-
-    }
-    //将随机生成的数传入textview
-    private void introduction(){
-        if(randomNum==1){
-            randonText = "一等奖";
-        }else if(randomNum== 2){
-            randonText = "二等奖";
-        }else {
-            randonText = "三等奖";
-        }
+        randomNum = random.nextInt(3);
     }
 
+    //解析
+    private void getRemainprize(){
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = "http://10.7.88.109:8080/api/prize/getRemainPrizeList";
+        RequestParams param = new RequestParams();
+        client.get(url, param, new JsonHttpResponseHandler() {
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                JSONObject profile = null;
+                try {
+                    profile = new JSONObject(response.toString());
+                    JSONArray profile1 = profile.getJSONArray("datum");
+                    int iSize = profile1.length();
+                    for (int i = 0; i < iSize; i++) {
+                        if(i == randomNum) {
+                            if (profile1.getJSONObject(i).getString("prizeCount") != "0") {
+                                randonText = profile1.getJSONObject(i).getString("prizeName");
+                            }
+                            else {
+                                randonText = "谢谢惠顾";
+                            }
+                        }
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
     public void setGravity(int gravity) {
         this.gravity = gravity;
     }
