@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.funOfSchool.R;
 import com.funOfSchool.ui.http.AsyncHttpMangers;
 import com.funOfSchool.util.AppUtils;
+import com.hyphenate.EMCallBack;
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMCmdMessageBody;
@@ -22,10 +23,13 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.http.Header;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Aiome on 2016/12/2.
@@ -65,7 +69,7 @@ public class ConversationListActivity extends AppCompatActivity {
                         Log.i("tag",cmdMsgBody.action());
                         userName = message.getFrom();
                         serverMsg = EMMessage.createTxtSendMessage("   ",userName);
-                        serverMsg.setAttribute("show",false);
+                        serverMsg.setAttribute("serverMsg",true);
                         msg.add(serverMsg);
                     }
                 }
@@ -113,10 +117,18 @@ public class ConversationListActivity extends AppCompatActivity {
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
                 AppUtils.Log("网络请求成功");
+                try {
+                    int code = response.getInt("code");
+                    if (422 == code){
+                        TokenError.Login(getApplicationContext());
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         };
 
-        AsyncHttpMangers.getUserList(handler);
+        AsyncHttpMangers.getUserList(getApplicationContext(),handler);
     }
 
     private void initView() {
@@ -168,20 +180,50 @@ public class ConversationListActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             resetTextView();
+            Map<String,EMConversation> list = EMClient.getInstance().chatManager().getAllConversations();
+            Iterator<EMConversation> iter = list.values().iterator();
             switch (v.getId()){
                 case R.id.fragment_conversation_tourist:
                     mTouristTv.setTextColor(0xff4E6CEF);
+                    while (iter.hasNext()){
+                        EMConversation conversation = iter.next();
+                        EMClient.getInstance().chatManager().deleteConversation(conversation.getUserName(),false);
+                    }
                     initTouristFragment();
-                    AsyncHttpMangers.getUserList(handler);
+                    AsyncHttpMangers.getUserList(getApplicationContext(),handler);
                     break;
                 case R.id.fragment_conversation_guider:
                     mGuiderTv.setTextColor(0xff4E6CEF);
+                    while (iter.hasNext()){
+                        EMConversation conversation = iter.next();
+                        EMClient.getInstance().chatManager().deleteConversation(conversation.getUserName(),false);
+                    }
                     initGuiderFragment();
-                    AsyncHttpMangers.getGuiderList(handler);
+                    AsyncHttpMangers.getGuiderList(getApplicationContext(),handler);
                     break;
                 default:
                     break;
             }
         }
     };
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EMClient.getInstance().logout(false, new EMCallBack() {
+            @Override
+            public void onSuccess() {
+                Log.e("MainActivity","退出登录");
+            }
+
+            @Override
+            public void onError(int i, String s) {
+                Log.e("MainActivity","退出失败" + i + ","+ s);
+            }
+
+            @Override
+            public void onProgress(int i, String s) {
+
+            }
+        });
+    }
 }

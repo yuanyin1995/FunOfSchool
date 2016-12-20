@@ -4,23 +4,17 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.text.Editable;
-import android.text.Layout;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -152,7 +146,7 @@ public class MainActivity extends Activity {
         String url = AppUtils.HOST+ ApiUtils.API_USER_STATUS;
         // 请求参数：关键词
         RequestParams param = new RequestParams();
-        param.put("token",AppUtils.GetToken());
+        param.put("token",AppUtils.getToken(getApplicationContext()));
         // 发送网络请求
         client.post(url, param, new JsonHttpResponseHandler() {
             @Override
@@ -413,7 +407,7 @@ public class MainActivity extends Activity {
                     drawerLayout.openDrawer(Gravity.LEFT);
                     break;
                 case R.id.index_msg:
-                    //startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                    startActivity(new Intent(MainActivity.this,LoginActivityTemp.class));
                     break;
                 case R.id.map_cannot_invite:
                     Toast.makeText(MainActivity.this,
@@ -519,7 +513,7 @@ public class MainActivity extends Activity {
         String url = AppUtils.HOST + ApiUtils.API_MATCH_START_TRAVEL_WITH_TRACE;
         // 请求参数
         RequestParams param = new RequestParams();
-        param.put("token",AppUtils.GetToken());
+        param.put("token",AppUtils.getToken(getApplicationContext()));
         client.post(url, param, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -540,7 +534,7 @@ public class MainActivity extends Activity {
         String url = AppUtils.HOST + ApiUtils.API_MATCH_START_TRAVEL_WITHOUT_TRACE;
         // 请求参数
         RequestParams param = new RequestParams();
-        param.put("token",AppUtils.GetToken());
+        param.put("token",AppUtils.getToken(getApplicationContext()));
         client.post(url, param, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -604,7 +598,7 @@ public class MainActivity extends Activity {
         String url = AppUtils.HOST + ApiUtils.API_MATCH_END_TRAVEL;
         // 请求参数
         RequestParams param = new RequestParams();
-        param.put("token",AppUtils.GetToken());
+        param.put("token",AppUtils.getToken(getApplicationContext()));
         client.post(url, param, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {

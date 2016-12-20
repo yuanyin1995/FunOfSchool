@@ -44,6 +44,9 @@ public class ChatActivity extends AppCompatActivity{
                 AppUtils.Log("网络请求成功");
                 try {
                     int code = response.getInt("code");
+                    if (422 == code){
+                        TokenError.Login(getApplicationContext());
+                    }
                     if (11 == code){
                         //不显示remark
                         chatFragment.hideRemark();
@@ -72,9 +75,9 @@ public class ChatActivity extends AppCompatActivity{
         };
 
         if (mType.equals("user")){
-            AsyncHttpMangers.getUserRemark(chatFragment.getToChatWith(),handler);
+            AsyncHttpMangers.getUserRemark(getApplicationContext(),chatFragment.getToChatWith(),handler);
         }else {
-            AsyncHttpMangers.getGuiderRemark(chatFragment.getToChatWith(),handler);
+            AsyncHttpMangers.getGuiderRemark(getApplicationContext(),chatFragment.getToChatWith(),handler);
         }
 
     }
@@ -86,6 +89,11 @@ public class ChatActivity extends AppCompatActivity{
         chatFragment.setArguments(getIntent().getExtras());
 
         mType = getIntent().getExtras().getString("type");
+        if (mType.equals("user")){
+            chatFragment.setType(true);
+        }else {
+            chatFragment.setType(false);
+        }
 
         //加载EaseUI封装的聊天界面Fragment
         getSupportFragmentManager().beginTransaction()

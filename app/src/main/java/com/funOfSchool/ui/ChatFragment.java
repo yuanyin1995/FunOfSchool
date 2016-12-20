@@ -4,25 +4,30 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.funOfSchool.R;
+import com.funOfSchool.ui.http.AsyncHttpMangers;
 import com.funOfSchool.util.AppUtils;
-import com.hyphenate.chat.EMClient;
-import com.hyphenate.chat.EMConversation;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.easeui.EaseConstant;
 import com.hyphenate.easeui.ui.EaseChatFragment;
+import com.hyphenate.easeui.widget.chatrow.EaseChatRow;
+import com.hyphenate.easeui.widget.chatrow.EaseCustomChatRowProvider;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.JsonHttpResponseHandler;
 
-import java.util.List;
+import org.apache.http.Header;
+import org.json.JSONArray;
 
 /**
  * Created by Aiome on 2016/11/29.
  */
 
-public class ChatFragment extends EaseChatFragment {
+public class ChatFragment extends EaseChatFragment implements EaseChatFragment.EaseChatFragmentHelper{
     private FrameLayout chooseFragment;
     private View chooseView;
 
@@ -30,6 +35,10 @@ public class ChatFragment extends EaseChatFragment {
     private TextView remarkTv;
     private View acceptBtn;
     private View refuseBtn;
+
+    private boolean type;
+
+    private AsyncHttpResponseHandler mHandler;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -53,6 +62,7 @@ public class ChatFragment extends EaseChatFragment {
 
     @Override
     protected void setUpView() {
+        setChatFragmentListener(this);
         super.setUpView();
     }
 
@@ -62,6 +72,9 @@ public class ChatFragment extends EaseChatFragment {
      */
     public void setTime(String time){
         timeTv.setText(time);
+    }
+    public void setType(boolean b){
+        type = b;
     }
 
     /**
@@ -77,16 +90,35 @@ public class ChatFragment extends EaseChatFragment {
         refuseBtn = chooseView.findViewById(R.id.fragment_chat_refuse);
         acceptBtn = chooseView.findViewById(R.id.fragment_chat_accept);
 
+        mHandler = new JsonHttpResponseHandler(){
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                super.onSuccess(statusCode, headers, response);
+            }
+        };
+
         refuseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AppUtils.showShort(getContext(),"refuse");
+                if (type){
+                    AsyncHttpMangers.userChoose(getContext(),0,getToChatWith(),mHandler);
+                    AppUtils.showShort(getContext(),"useraccept");
+                }else {
+                    AsyncHttpMangers.guiderChoose(getContext(),0,getToChatWith(),mHandler);
+                    AppUtils.showShort(getContext(),"guideraccept");
+                }
             }
         });
         acceptBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AppUtils.showShort(getContext(),"accept");
+                if (type){
+                    AsyncHttpMangers.userChoose(getContext(),1,getToChatWith(),mHandler);
+                    AppUtils.showShort(getContext(),"useraccept");
+                }else {
+                    AsyncHttpMangers.guiderChoose(getContext(),1,getToChatWith(),mHandler);
+                    AppUtils.showShort(getContext(),"guideraccept");
+                }
             }
         });
     }
@@ -114,28 +146,79 @@ public class ChatFragment extends EaseChatFragment {
     }
 
     @Override
-    public void onMessageReceived(List<EMMessage> messages) {
-        EMConversation conversation = EMClient.getInstance().chatManager().getConversation(toChatUsername);
-        Long last = Long.valueOf(conversation.getLastMessage().getMsgId()) - 1;
-        if(!conversation.getMessage(last.toString(),false).getBooleanAttribute("show",true)){
-//            Toast.makeText(getContext(),conversation.getLastMessage().getMsgId(),Toast.LENGTH_SHORT).show();
-            conversation.removeMessage(last.toString());
-
-        }
-        super.onMessageReceived(messages);
-
+    protected void onMessageListInit() {
+        super.onMessageListInit();
     }
+
     @Override
-    protected void sendTextMessage(String content) {
-        EMConversation conversation = EMClient.getInstance().chatManager().getConversation(toChatUsername);
+    public void onSetMessageAttributes(EMMessage message) {
 
-        if(!conversation.getLastMessage().getBooleanAttribute("show",true)){
-//            Toast.makeText(getContext(),conversation.getLastMessage().getMsgId(),Toast.LENGTH_SHORT).show();
-            conversation.removeMessage(conversation.getLastMessage().getMsgId());
+    }
 
-        }
-        super.sendTextMessage(content);
+    @Override
+    public void onEnterToChatDetails() {
+
+    }
+
+    @Override
+    public void onAvatarClick(String username) {
+
+    }
+
+    @Override
+    public void onAvatarLongClick(String username) {
+
+    }
+
+    @Override
+    public boolean onMessageBubbleClick(EMMessage message) {
+        return false;
+    }
+
+    @Override
+    public void onMessageBubbleLongClick(EMMessage message) {
+
+    }
+
+    @Override
+    public boolean onExtendMenuItemClick(int itemId, View view) {
+        return false;
+    }
+
+    @Override
+    public EaseCustomChatRowProvider onSetCustomChatRowProvider() {
+        return new CustomChatRowProvider();
     }
 
 
+    private final class CustomChatRowProvider implements EaseCustomChatRowProvider {
+        @Override
+        public int getCustomChatRowTypeCount() {
+
+            return 2;
+        }
+
+        @Override
+        public int getCustomChatRowType(EMMessage message) {
+            if(message.getType() == EMMessage.Type.TXT){
+                //服务器消息
+                if (message.getBooleanAttribute("serverMsg", false)){
+                    return message.direct() == EMMessage.Direct.RECEIVE ? 2 : 1;
+                }
+            }
+            return 0;
+        }
+
+        @Override
+        public EaseChatRow getCustomChatRow(EMMessage message, int position, BaseAdapter adapter) {
+            if(message.getType() == EMMessage.Type.TXT){
+                // 判断是不是服务器消息
+                if (message.getBooleanAttribute("serverMsg", false)){
+                    return new ServerMsgChatTow(getActivity(), message, position, adapter);
+                }
+            }
+            return null;
+        }
+
+    }
 }

@@ -11,7 +11,7 @@ public class ApiUtils {
     public static final String API_MATCH_USER_CONFIRMATION = "api/match/matchEnd";
 
     /**
-     * 出游者确认导游
+     * 导游确认出游者
      */
     public static final String API_MATCH_GUIDER_CONFIRMATION = "api/match/guider";
 
