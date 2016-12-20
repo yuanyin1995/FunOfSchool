@@ -91,7 +91,6 @@ public class LoginActivityTemp extends AppCompatActivity {
                             public void onError(int i, String s) {
                                 Log.i("tag", "登录失败" + s);
                                 progressDialog.dismiss();
-                                AppUtils.showShort(getApplicationContext(),"登录失败");
                             }
 
                             @Override

@@ -24,16 +24,26 @@ public class EaseChatRowText extends EaseChatRow{
 
 	@Override
 	protected void onInflateView() {
-        //判断是server透传消息操作会话列表还是其他
-        Boolean flag = message.getBooleanAttribute("show",true);
-        if (flag){
-            inflater.inflate(message.direct() == EMMessage.Direct.RECEIVE ?
-                    R.layout.ease_row_received_message : R.layout.ease_row_sent_message, this);
-        }else {
-            inflater.inflate(message.direct() == EMMessage.Direct.RECEIVE ?
-                    R.layout.ease_row_received_message : R.layout.temp, this);
-        }
+//        //判断是server透传消息操作会话列表还是其他
+//        Boolean flag = message.getBooleanAttribute("show",true);
+//        if (flag){
+//            inflater.inflate(message.direct() == EMMessage.Direct.RECEIVE ?
+//                    R.layout.ease_row_received_message : R.layout.ease_row_sent_message, this);
+//        }else {
+//            inflater.inflate(message.direct() == EMMessage.Direct.RECEIVE ?
+//                    R.layout.ease_row_received_message : R.layout.temp, this);
+//        }
 
+//        if (message.getBooleanAttribute(Constant.MESSAGE_ATTR_IS_VOICE_CALL, false)){
+//            inflater.inflate(message.direct() == EMMessage.Direct.RECEIVE ?
+//                    R.layout.ease_row_received_voice_call : R.layout.ease_row_sent_voice_call, this);
+//            // video call
+//        }else if (message.getBooleanAttribute(Constant.MESSAGE_ATTR_IS_VIDEO_CALL, false)){
+//            inflater.inflate(message.direct() == EMMessage.Direct.RECEIVE ?
+//                    R.layout.ease_row_received_video_call : R.layout.ease_row_sent_video_call, this);
+//        }
+        inflater.inflate(message.direct() == EMMessage.Direct.RECEIVE ?
+                R.layout.ease_row_received_message : R.layout.ease_row_sent_message, this);
 
 	}
 

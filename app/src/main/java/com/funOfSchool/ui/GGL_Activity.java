@@ -23,6 +23,7 @@ public class GGL_Activity extends Activity {
     private TextView Tv2;
     private TextView Tv3;
     private ImageButton Ib1;
+    public String result[];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +39,7 @@ public class GGL_Activity extends Activity {
         character();
         //按钮点击事件
         Onclick();
+
     }
     //按钮点击事件
     private void Onclick(){
@@ -93,4 +95,6 @@ public class GGL_Activity extends Activity {
         TextPaint tp3 = Tv3.getPaint();
         tp3.setFakeBoldText(true);
     }
+
+
 }
