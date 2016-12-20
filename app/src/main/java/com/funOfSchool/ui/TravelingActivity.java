@@ -479,6 +479,9 @@ public class TravelingActivity extends AppCompatActivity {
                 case R.id.traveling_end:
                     endTravel();
                     break;
+                case R.id.travling_back:
+                    TravelingActivity.this.finish();
+                    break;
             }
         }
     }

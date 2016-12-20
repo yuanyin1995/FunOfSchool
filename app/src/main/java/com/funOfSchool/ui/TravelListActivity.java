@@ -49,6 +49,20 @@ public class TravelListActivity extends Activity {
         setListener();
         //  发送网络请求得到列表数据，并设置监听器
         getTravelList();
+        //  设置回退按钮
+        setBackBtn();
+    }
+
+    /**
+     * 设置回退按钮
+     */
+    private void setBackBtn() {
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TravelListActivity.this.finish();
+            }
+        });
     }
 
     /**

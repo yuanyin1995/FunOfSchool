@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -45,7 +46,7 @@ public class QueryTraceActivity extends AppCompatActivity {
     //  标题栏
     private RelativeLayout rlTitle;
     //  回退按钮
-    private ImageView btnQueryTraceBack;
+    private ImageView btnBack;
     //  游玩时间
     String travelDate;
     //  轨迹服务ID
@@ -108,6 +109,22 @@ public class QueryTraceActivity extends AppCompatActivity {
 
         // 查询轨迹
         queryTrack();
+
+        // 设置回退按钮
+        setBackBtn();
+    }
+
+    /**
+     * 设置回退按钮
+     */
+    private void setBackBtn() {
+        btnBack = (ImageView)findViewById(R.id.query_trace_back);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                QueryTraceActivity.this.finish();
+            }
+        });
     }
 
     /**

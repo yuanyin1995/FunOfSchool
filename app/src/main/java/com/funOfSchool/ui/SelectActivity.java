@@ -17,6 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -68,11 +69,9 @@ public class SelectActivity extends Activity {
     private int sexRBId;
     private String sex;
     private Integer sexCode;
-    // private int sexCode;
     // 记录用户所选专业的变量
     private String majorName;
     private String majorId;
-    // private int majorId;
     // 记录用户所选入学年份的变量
     private String enrollYear;
     // 记录用户所选星座的变量
@@ -89,6 +88,8 @@ public class SelectActivity extends Activity {
     private String collegeIdStr;
     // 记录服务器返回code
     private String statusCode;
+    // 回退按钮
+    private ImageView btnBack;
 
     MajorAdapter adapter;
     // 创建专业数据列表
@@ -107,10 +108,25 @@ public class SelectActivity extends Activity {
         findView();
         //  为各控件设置监听器
         setListener();
+        //  设置回退按钮
+        setBackBtn();
 
         Intent intent = getIntent();
         selectCollegeId = intent.getIntExtra("scid",1001);
         collegeIdStr = selectCollegeId+"";
+    }
+
+
+    /**
+     * 设置回退按钮
+     */
+    private void setBackBtn() {
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SelectActivity.this.finish();
+            }
+        });
     }
 
     /**
@@ -143,6 +159,7 @@ public class SelectActivity extends Activity {
         selectResultYear = (TextView)findViewById(R.id.select_year_result);
         selectResultConstellation = (TextView)findViewById(R.id.select_constellation_result);
         selectResultAge = (TextView)findViewById(R.id.select_age_result);
+        btnBack = (ImageView)findViewById(R.id.select_back);
     }
 
     /**
