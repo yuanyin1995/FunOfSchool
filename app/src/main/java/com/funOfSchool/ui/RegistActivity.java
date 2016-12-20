@@ -18,8 +18,17 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.baidu.mapapi.http.AsyncHttpClient;
 import com.funOfSchool.R;
+import com.funOfSchool.util.AppUtils;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.apache.http.Header;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -43,6 +52,8 @@ public class RegistActivity extends AppCompatActivity {
     private Button getnum;
     private ImageView ivregist;
     private ImageButton ib;
+    private EditText code;
+    private int code1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -143,6 +154,55 @@ public class RegistActivity extends AppCompatActivity {
             }
         });
         btn = (Button)findViewById(R.id.Btn_regist);
+        code=(EditText)findViewById(R.id.code) ;
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //  创建网络访问的类的对象
+                com.loopj.android.http.AsyncHttpClient client = new com.loopj.android.http.AsyncHttpClient();
+                String url = "http://10.7.88.22/api/account/register";
+                RequestParams param = new RequestParams();
+                param.put("loginName", Etphone.getText().toString().trim());
+                param.put("code", code.getText().toString().trim());
+                param.put("userName","hhhh");
+                param.put("password", Etpsd.getText().toString().trim());
+// 发送网络请求
+                client.get(url, param, new JsonHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                        Log.e("response",response.toString());
+                        try {
+
+                            JSONObject JO = new JSONObject(response.toString());
+                            //JSONObject JO1 = JO.getJSONObject("info");
+                            code1 = JO.getInt("code");
+                            //AppUtils.setToken(JO.getString("token"),RegistActivity.this);
+
+                            if (code1==1) {
+                                Toast toast = Toast.makeText(RegistActivity.this, "注册成功",
+                                        Toast.LENGTH_SHORT);
+                                toast.show();
+                                Intent i = new Intent(RegistActivity.this, LoginActivity.class);
+//                                i.setClass();
+                                startActivity(i);
+                            } else {
+                                Toast toast = Toast.makeText(RegistActivity.this, "注册失败",
+                                        Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+
+
+                            /**写你要进行的操作**/
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                });
+            }
+        });
+
+
         Tv = (TextView)findViewById(R.id.Tv_regist);
 
 

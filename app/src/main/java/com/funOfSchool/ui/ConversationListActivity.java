@@ -69,7 +69,7 @@ public class ConversationListActivity extends AppCompatActivity {
                         Log.i("tag",cmdMsgBody.action());
                         userName = message.getFrom();
                         serverMsg = EMMessage.createTxtSendMessage("   ",userName);
-                        serverMsg.setAttribute("show",false);
+                        serverMsg.setAttribute("serverMsg",true);
                         msg.add(serverMsg);
                     }
                 }

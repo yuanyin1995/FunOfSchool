@@ -9,9 +9,9 @@
         tools:context="com.funOfSchool.ui.TravelingActivity">
 
         <RelativeLayout
+            android:id="@+id/traveling_rl_title"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
@@ -34,8 +34,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="10">
+            android:layout_height="match_parent">
             <com.baidu.mapapi.map.TextureMapView
                 android:id="@+id/traveling_mapView"
                 android:layout_width="match_parent"

@@ -271,8 +271,7 @@ public class MainActivity extends Activity {
                 client.post(url, param, new JsonHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                        Log.e("SUCCESS","发送成功!");
-                        Log.e("RC",response.toString());
+
 
                         JSONObject collegeNameJO = null;
                         try {
@@ -408,7 +407,7 @@ public class MainActivity extends Activity {
                     drawerLayout.openDrawer(Gravity.LEFT);
                     break;
                 case R.id.index_msg:
-                    startActivity(new Intent(MainActivity.this,LoginActivityTemp.class));
+                    startActivity(new Intent(MainActivity.this,LoginActivity.class));
                     break;
                 case R.id.map_cannot_invite:
                     Toast.makeText(MainActivity.this,
@@ -461,9 +460,41 @@ public class MainActivity extends Activity {
      * 如果当前为可发送邀请状态，则点击按钮可发送邀请
      */
     private void sendInvitation() {
-        Intent intent = new Intent(MainActivity.this,SelectActivity.class);
-        intent.putExtra("scid",collegeId);
-        startActivity(intent);
+        //  验证token是否有效
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = AppUtils.HOST + ApiUtils.API_IS_TOKEN;
+        // 请求参数
+        RequestParams param = new RequestParams();
+        param.put("token",AppUtils.getToken(getApplicationContext()));
+        client.post(url, param, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                Log.e("tokenres",response.toString());
+
+                try {
+                    JSONObject isTokenJO = new JSONObject(response.toString());
+                    int isTokenCode = isTokenJO.getInt("code");
+                    if (isTokenCode == 1){
+                        //  跳转到选择条件页面
+                        Intent intent = new Intent(MainActivity.this,SelectActivity.class);
+                        intent.putExtra("scid",collegeId);
+                        startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(),
+                                "请先登录 :)",
+                                Toast.LENGTH_LONG).show();
+                        //  跳转到登录页面
+                        Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                        startActivity(intent);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
     }
 
     /**

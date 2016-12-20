@@ -167,6 +167,7 @@ public class PasswordActivity extends AppCompatActivity {
 
             }
         });
+
     }
     /*SMSsdk*/
     public void initsdk(){

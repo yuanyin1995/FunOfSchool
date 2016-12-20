@@ -2,6 +2,8 @@ package com.funOfSchool.ui;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -10,9 +12,12 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -64,11 +69,9 @@ public class SelectActivity extends Activity {
     private int sexRBId;
     private String sex;
     private Integer sexCode;
-    // private int sexCode;
     // 记录用户所选专业的变量
     private String majorName;
     private String majorId;
-    // private int majorId;
     // 记录用户所选入学年份的变量
     private String enrollYear;
     // 记录用户所选星座的变量
@@ -85,25 +88,57 @@ public class SelectActivity extends Activity {
     private String collegeIdStr;
     // 记录服务器返回code
     private String statusCode;
+    // 回退按钮
+    private ImageView btnBack;
 
     MajorAdapter adapter;
     // 创建专业数据列表
     private ArrayList<String> majorNameList = new ArrayList<String>();
     private ArrayList<String> majorIdList = new ArrayList<String>();
+    private RelativeLayout rlTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select);
 
+        //  设置标题栏高度
+        setTitleHeight();
         //  得到各控件
         findView();
         //  为各控件设置监听器
         setListener();
+        //  设置回退按钮
+        setBackBtn();
 
         Intent intent = getIntent();
         selectCollegeId = intent.getIntExtra("scid",1001);
         collegeIdStr = selectCollegeId+"";
+    }
+
+
+    /**
+     * 设置回退按钮
+     */
+    private void setBackBtn() {
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SelectActivity.this.finish();
+            }
+        });
+    }
+
+    /**
+     * 设置标题栏高度
+     */
+    private void setTitleHeight() {
+        rlTitle = (RelativeLayout)findViewById(R.id.select_rl_title);
+        WindowManager wm = (WindowManager) getApplicationContext()
+                .getSystemService(Context.WINDOW_SERVICE);
+        int wHeight = wm.getDefaultDisplay().getHeight();
+        int tHeight = wHeight /11;
+        rlTitle.setMinimumHeight(tHeight);
     }
 
     /**
@@ -124,6 +159,7 @@ public class SelectActivity extends Activity {
         selectResultYear = (TextView)findViewById(R.id.select_year_result);
         selectResultConstellation = (TextView)findViewById(R.id.select_constellation_result);
         selectResultAge = (TextView)findViewById(R.id.select_age_result);
+        btnBack = (ImageView)findViewById(R.id.select_back);
     }
 
     /**
@@ -282,7 +318,7 @@ public class SelectActivity extends Activity {
             @Override
             public void onDateChanged(DatePicker datePicker, int year, int month, int day) {
                 SelectActivity.this.year = year;
-                SelectActivity.this.month = month;
+                SelectActivity.this.month = month+1;
                 SelectActivity.this.day = day;
             }
         });

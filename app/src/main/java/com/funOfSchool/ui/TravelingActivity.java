@@ -1,6 +1,7 @@
 package com.funOfSchool.ui;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Looper;
@@ -8,7 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.baidu.mapapi.SDKInitializer;
@@ -106,6 +109,7 @@ public class TravelingActivity extends AppCompatActivity {
     protected static MapStatusUpdate msUpdate = null;
 
     private boolean isTraceStarted = true;
+    private RelativeLayout rlTitle;
 
 
     @Override
@@ -116,6 +120,8 @@ public class TravelingActivity extends AppCompatActivity {
         SDKInitializer.initialize(getApplicationContext());
         setContentView(R.layout.activity_traveling);
 
+        //  设置标题栏高度
+        setTitleHeight();
         //  初始化 BaiduMap 相关
         initBaiduMap();
         //  初始化百度定位客户端
@@ -129,12 +135,25 @@ public class TravelingActivity extends AppCompatActivity {
         //  为各按钮设置监听器
         setListener();
 
+
         //  开启轨迹服务
         startRefreshThread(true);
         Toast.makeText(getApplicationContext(),
                 "正在开启轨迹服务，请稍候",
                 Toast.LENGTH_LONG).show();
         startTrace();
+    }
+
+    /**
+     * 设置标题栏高度
+     */
+    private void setTitleHeight() {
+        rlTitle = (RelativeLayout)findViewById(R.id.traveling_rl_title);
+        WindowManager wm = (WindowManager) getApplicationContext()
+                .getSystemService(Context.WINDOW_SERVICE);
+        int wHeight = wm.getDefaultDisplay().getHeight();
+        int tHeight = wHeight /11;
+        rlTitle.setMinimumHeight(tHeight);
     }
 
     /**
@@ -209,7 +228,8 @@ public class TravelingActivity extends AppCompatActivity {
                         Toast.LENGTH_LONG).show();
             }
 
-            // 轨迹服务推送接口（用于接收服务端推送消息，arg0 : 消息类型，arg1 : 消息内容，详情查看类参考）
+            // 轨迹服务推送接口
+            // （用于接收服务端推送消息，arg0 : 消息类型，arg1 : 消息内容，详情查看类参考）
             public void onTracePushCallback(byte arg0, String arg1) {
                 // TODO Auto-generated method stub
                 if (0x03 == arg0 || 0x04 == arg0) {
@@ -458,6 +478,9 @@ public class TravelingActivity extends AppCompatActivity {
             switch (view.getId()){
                 case R.id.traveling_end:
                     endTravel();
+                    break;
+                case R.id.travling_back:
+                    TravelingActivity.this.finish();
                     break;
             }
         }

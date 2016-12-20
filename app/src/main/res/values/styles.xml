@@ -16,7 +16,7 @@
 
     <style name="TitleText">
         <item name="android:textColor">@color/firstText</item>
-        <item name="android:textSize">17sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="FirstText">
