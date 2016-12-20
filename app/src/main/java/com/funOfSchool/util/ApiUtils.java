@@ -82,4 +82,8 @@ public class ApiUtils {
      * 根据学校ID获得学校名称
      */
     public static final String API_COLLEGE_NAME = "api/college/schoolName";
+    /**
+     * 验证token是否有效
+     */
+    public static final String API_IS_TOKEN = "api/account/isToken";
 }

@@ -87,6 +87,11 @@
         <activity android:name=".ui.SelectActivity" >
         </activity>
         <activity android:name=".ui.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <!-- 高德地图相关 -->
         <meta-data
@@ -144,11 +149,6 @@
         <activity android:name=".ui.ReceiveInviteActivity" />
         <activity android:name=".ui.PersonInfoActivity" />
         <activity android:name=".ui.TravelListActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ui.MyPrizeActivity" />
         <activity android:name=".ui.MarketActivity" />

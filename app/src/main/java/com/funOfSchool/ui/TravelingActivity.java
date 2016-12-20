@@ -228,7 +228,8 @@ public class TravelingActivity extends AppCompatActivity {
                         Toast.LENGTH_LONG).show();
             }
 
-            // 轨迹服务推送接口（用于接收服务端推送消息，arg0 : 消息类型，arg1 : 消息内容，详情查看类参考）
+            // 轨迹服务推送接口
+            // （用于接收服务端推送消息，arg0 : 消息类型，arg1 : 消息内容，详情查看类参考）
             public void onTracePushCallback(byte arg0, String arg1) {
                 // TODO Auto-generated method stub
                 if (0x03 == arg0 || 0x04 == arg0) {

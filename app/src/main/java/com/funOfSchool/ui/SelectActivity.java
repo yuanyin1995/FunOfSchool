@@ -225,7 +225,7 @@ public class SelectActivity extends Activity {
         param.put("birthdayMax",maxBirthYear);
         param.put("remark",remark);
         param.put("time",travelDate);
-        param.put("token",AppUtils.GetToken());
+        param.put("token",AppUtils.getToken(getApplicationContext()));
         Log.e("param",param.toString());
         // 发送网络请求
         client.post(url, param, new JsonHttpResponseHandler() {

@@ -60,7 +60,7 @@ public class TravelListActivity extends Activity {
         String url = AppUtils.HOST + ApiUtils.API_TRAVEL_LIST;
         //  请求参数：token
         RequestParams param = new RequestParams();
-        param.put("token",AppUtils.GetToken());
+        param.put("token",AppUtils.getToken(getApplicationContext()));
         //  发送网络请求
         client.post(url, param, new JsonHttpResponseHandler() {
             @Override

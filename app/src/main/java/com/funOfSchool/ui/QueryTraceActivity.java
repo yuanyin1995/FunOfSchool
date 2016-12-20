@@ -30,7 +30,6 @@ import com.funOfSchool.R;
 import com.funOfSchool.util.DateUtils;
 import com.funOfSchool.util.GsonService;
 import com.funOfSchool.util.HistoryTrackData;
-import com.funOfSchool.util.TitleHeight;
 
 import org.json.JSONException;
 import org.json.JSONObject;
