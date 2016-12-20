@@ -20,8 +20,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baidu.mapapi.http.AsyncHttpClient;
 import com.funOfSchool.R;
-import com.loopj.android.http.AsyncHttpClient;
+import com.funOfSchool.util.AppUtils;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
@@ -51,9 +52,8 @@ public class RegistActivity extends AppCompatActivity {
     private Button getnum;
     private ImageView ivregist;
     private ImageButton ib;
-    private EditText code1;
-    private int code;
-    private int codenum;
+    private EditText code;
+    private int code1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -154,96 +154,60 @@ public class RegistActivity extends AppCompatActivity {
             }
         });
         btn = (Button)findViewById(R.id.Btn_regist);
-        Tv = (TextView)findViewById(R.id.Tv_regist);
-        code1=(EditText)findViewById(R.id.code);
-
-
-        // 手机号 创建网络访问的类的对象
-        AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.37/api/account/checkUser";
-        RequestParams param = new RequestParams();
-        param.put("loginName", Etphone);
-        param.put("code", code1);
-       // param.put("password", psd);
-
-        // 发送网络请求
-
-        client.get(url, param, new JsonHttpResponseHandler() {
+        code=(EditText)findViewById(R.id.code) ;
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                Log.e("response",response.toString());
-                try {
-                    JSONObject JO = new JSONObject(response.toString());
-                    //JSONObject JO1 = JO.getJSONObject("info");
-                    code = JO.getInt("code");
+            public void onClick(View v) {
+                //  创建网络访问的类的对象
+                com.loopj.android.http.AsyncHttpClient client = new com.loopj.android.http.AsyncHttpClient();
+                String url = "http://10.7.88.22/api/account/register";
+                RequestParams param = new RequestParams();
+                param.put("loginName", Etphone.getText().toString().trim());
+                param.put("code", code.getText().toString().trim());
+                param.put("userName","hhhh");
+                param.put("password", Etpsd.getText().toString().trim());
+// 发送网络请求
+                client.get(url, param, new JsonHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                        Log.e("response",response.toString());
+                        try {
 
+                            JSONObject JO = new JSONObject(response.toString());
+                            //JSONObject JO1 = JO.getJSONObject("info");
+                            code1 = JO.getInt("code");
+                            //AppUtils.setToken(JO.getString("token"),RegistActivity.this);
 
-
-                    if (code==1) {
-                        Toast toast = Toast.makeText(RegistActivity.this, "手机号已注册",
-                                Toast.LENGTH_SHORT);
-                        toast.show();
-                        /*Intent i = new Intent();
-                        i.setClass(RegistActivity.this, MainActivity.class);
-                        startActivity(i);*/
-                    } else {
-                        // 验证码是否符合要求 创建网络访问的类的对象
-                        AsyncHttpClient client = new AsyncHttpClient();
-                        String url = "http://10.7.88.37/api/account//sendCode";
-                        RequestParams param = new RequestParams();
-                        param.put("code", codenum);
-                        // 发送网络请求
-
-                        client.get(url, param, new JsonHttpResponseHandler() {
-                            @Override
-                            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                                try {
-                                    JSONObject JO = new JSONObject(response.toString());
-                                    //JSONObject JO1 = JO.getJSONObject("info");
-                                    code = JO.getInt("code");
-
-
-
-                                    if (code==1) {
-                                        Toast toast = Toast.makeText(RegistActivity.this, "短信验证码输入有误",
-                                                Toast.LENGTH_SHORT);
-                                        toast.show();
-                        /*Intent i = new Intent();
-                        i.setClass(RegistActivity.this, MainActivity.class);
-                        startActivity(i);*/
-                                    } else {
-
-
-
-                                    }
-
-
-                                    /**写你要进行的操作**/
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
+                            if (code1==1) {
+                                Toast toast = Toast.makeText(RegistActivity.this, "注册成功",
+                                        Toast.LENGTH_SHORT);
+                                toast.show();
+                                Intent i = new Intent(RegistActivity.this, LoginActivity.class);
+//                                i.setClass();
+                                startActivity(i);
+                            } else {
+                                Toast toast = Toast.makeText(RegistActivity.this, "注册失败",
+                                        Toast.LENGTH_SHORT);
+                                toast.show();
                             }
 
-                        });
 
-
+                            /**写你要进行的操作**/
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
 
-
-                    /**写你要进行的操作**/
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                });
             }
-
         });
 
+
+        Tv = (TextView)findViewById(R.id.Tv_regist);
+
+
+
     }
-
-
-
-
-
     /*smssdk*/
     public void initsdk(){
         SMSSDK.initSDK(this, "1976ff5d7157a", "b78cfcbd11636cd1e1defee643a18c8a");
@@ -306,6 +270,5 @@ public class RegistActivity extends AppCompatActivity {
         Matcher m = p.matcher(Psd);
 
         return m.matches();
-
     }
 }

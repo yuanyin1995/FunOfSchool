@@ -15,16 +15,17 @@
         android:background="#88FFFFFF">
         <ImageButton
             android:id="@+id/IB"
-            android:layout_marginTop="7dp"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:background="@mipmap/back_black" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:background="@mipmap/back_white" />
     </LinearLayout>
 
     <ImageView
 
-        android:layout_width="68dp"
-        android:layout_height="68dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:background="@mipmap/logo"
         android:layout_gravity="center"
         android:layout_marginTop="70dp"/>
