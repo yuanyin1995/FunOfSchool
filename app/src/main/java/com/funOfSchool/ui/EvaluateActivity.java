@@ -7,9 +7,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
@@ -41,9 +39,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -96,8 +91,10 @@ public class EvaluateActivity extends Activity{
 
         //测试获取头像url
         getPortrait();
-        //根据url载入图片
-        new ImageAsynTask().execute();
+        getschoolbadge();
+        //使用普通加载网络方式通过url加载图片
+        new NormalLoadPictrue().getPicture(portraiturl,Iv);
+        new NormalLoadPictrue().getPicture(schoolbadge,Iv2);
         //多行输入
         Edittext_input();
         //GridView设定
@@ -162,7 +159,7 @@ public class EvaluateActivity extends Activity{
 
     private void submitcolloge(){
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.109:8080/api/comment/setCollegeComment";
+        String url = "http://10.7.88.110:8080/api/comment/setCollegeComment";
         //请求参数：关键词
         RequestParams param = new RequestParams();
         param.put("collegeId","10001");
@@ -187,7 +184,7 @@ public class EvaluateActivity extends Activity{
     //测试：上传带领人评分及带领人评论
     private void submitman(){
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.109:8080/api/comment/setUserComment";
+        String url = "http://10.7.88.110:8080/api/comment/setUserComment";
         // 请求参数：关键词
         RequestParams param = new RequestParams();
         param.put("userId","dcc2d7bf7f2a4c089f142a35af2f1318");
@@ -209,60 +206,7 @@ public class EvaluateActivity extends Activity{
     }
 
 
-    //根据url加载显示图片
-    private class ImageAsynTask extends AsyncTask<Void, Void, Drawable> {
 
-        @Override
-        protected Drawable doInBackground (Void... params) {
-            return loadImages(portraiturl);
-        }
-
-        @Override
-        protected void onPostExecute (Drawable result) {
-            super.onPostExecute(result);
-            Iv.setImageDrawable(result);
-        }
-
-        @Override
-        protected void onPreExecute () {
-            super.onPreExecute();
-        }
-    }
-//    private class ImageAsynTask1 extends AsyncTask<Void, Void, Drawable> {
-//
-//        @Override
-//        protected Drawable doInBackground (Void... params) {
-//            //测试获取头像url
-//            getschoolbadge();
-//            return loadImages(schoolbadge);
-//        }
-//
-//        @Override
-//        protected void onPostExecute (Drawable result) {
-//            super.onPostExecute(result);
-//            Iv2.setImageDrawable(result);
-//        }
-//
-//        @Override
-//        protected void onPreExecute () {
-//            super.onPreExecute();
-//        }
-//    }
-
-    @Override
-    protected void onDestroy () {
-        super.onDestroy();
-    }
-
-    public Drawable loadImages(String url) {
-        try {
-            return Drawable.createFromStream((InputStream)(new URL(url)).openStream(), "test");
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 
 
 
