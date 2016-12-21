@@ -5,9 +5,78 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/bg"
     tools:context="com.funOfSchool.ui.ReceiveInviteActivity">
+
     <RelativeLayout
-        android:id="@+id/receive_date"
+        android:id="@+id/receive_rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
+        <ImageView
+            android:id="@+id/receive_back"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@mipmap/back_black"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="收到邀请"
+            style="@style/TitleText"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/titleBottom"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+        <com.funOfSchool.util.CircleImageView
+            android:id="@+id/receive_iv_avatar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@mipmap/test_tx"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:id="@+id/receive_from_ptext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="来自 "
+            style="@style/FirstText"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/receive_iv_avatar"
+            android:layout_marginLeft="12dp"/>
+        <TextView
+            android:id="@+id/receive_from_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="某某同学"
+            style="@style/FirstText"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/receive_from_ptext"/>
+        <TextView
+            android:id="@+id/receive_from_ntext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 的出游邀请"
+            style="@style/FirstText"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/receive_from_user"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/receive_remark"
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:background="@color/titleBg"
@@ -29,37 +98,63 @@
             android:text="出游时间"
             style="@style/FirstText"
             android:layout_marginLeft="12dp"
-            android:layout_toRightOf="@id/receive_date_icon"/>
+            android:layout_toRightOf="@id/receive_date_icon"
+            android:layout_centerVertical="true"/>
         <TextView
             android:id="@+id/receive_date_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/SecondText"
-            android:layout_toLeftOf="@+id/select_age_open_icon"
             android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/receive_date"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/titleBg"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="1dp">
+        <ImageView
+            android:id="@+id/receive_remark_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@mipmap/remark"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"/>
+        <TextView
+            android:id="@+id/receive_remark_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="其他要求"
+            style="@style/FirstText"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/receive_remark_icon"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:id="@+id/receive_remark_remark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/SecondText"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@+id/receive_remark_title"
             android:layout_marginRight="10dp"/>
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/receive_remark_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="其他要求："
-        style="@style/FirstText"
-        android:paddingTop="12dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingBottom="12dp"
-        android:layout_marginTop="1dp"/>
-    <TextView
-        android:id="@+id/receive_remark"
+        android:id="@+id/receive_remark_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/SecondText"
         android:paddingTop="12dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:paddingBottom="12dp"/>
+        android:paddingBottom="12dp"
+        android:background="@color/white"/>
 
     <LinearLayout
         android:layout_width="match_parent"

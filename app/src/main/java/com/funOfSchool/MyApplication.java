@@ -1,14 +1,19 @@
 package com.funOfSchool;
 
 import android.app.Application;
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
+import com.funOfSchool.ui.ReceiveInviteActivity;
 import com.funOfSchool.ui.http.AsyncHttpMangers;
 import com.hyphenate.easeui.controller.EaseUI;
 import com.hyphenate.easeui.domain.EaseUser;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.umeng.message.IUmengRegisterCallback;
 import com.umeng.message.PushAgent;
+import com.umeng.message.UmengNotificationClickHandler;
+import com.umeng.message.entity.UMessage;
 
 import org.apache.http.Header;
 import org.json.JSONException;
@@ -46,6 +51,27 @@ public class MyApplication extends Application {
                 Log.d("mytoken","s:" + s + "     s1" + s1);
             }
         });
+
+        UmengNotificationClickHandler notificationClickHandler = new UmengNotificationClickHandler() {
+            @Override
+            public void dealWithCustomAction(Context context, UMessage msg) {
+                Log.i("shazhu",msg.custom);
+                Intent intent = new Intent(context, ReceiveInviteActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                try {
+                    JSONObject object = new JSONObject(msg.custom);
+                    intent.putExtra("userId",object.getString("userId"));
+                    intent.putExtra("userName",object.getString("userName"));
+                    intent.putExtra("time",object.getString("time"));
+                    intent.putExtra("remark",object.getString("remark"));
+                    intent.putExtra("url",object.getString("url"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                startActivity(intent);
+            }
+        };
+        mPushAgent.setNotificationClickHandler(notificationClickHandler);
     }
 
     private void initUserInfo() {
