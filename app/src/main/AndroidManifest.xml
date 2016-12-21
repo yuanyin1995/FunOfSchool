@@ -83,16 +83,18 @@
         <activity android:name=".ui.ConversationListActivity" />
         <activity android:name=".ui.ChatActivity" />
         <activity android:name=".ui.MainActivity">
-        </activity>
-        <activity android:name=".ui.SelectActivity" >
-        </activity>
-        <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.SelectActivity" >
+        </activity>
+        <activity android:name=".ui.LoginActivity">
+
+        </activity>
+        <activity android:name=".ui.LoginActivityTemp"/>
         <!-- 高德地图相关 -->
         <meta-data
             android:name="com.amap.api.v2.apikey"

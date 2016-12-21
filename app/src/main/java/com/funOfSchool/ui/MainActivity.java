@@ -407,7 +407,7 @@ public class MainActivity extends Activity {
                     drawerLayout.openDrawer(Gravity.LEFT);
                     break;
                 case R.id.index_msg:
-                    startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                    startActivity(new Intent(MainActivity.this,LoginActivityTemp.class));
                     break;
                 case R.id.map_cannot_invite:
                     Toast.makeText(MainActivity.this,
