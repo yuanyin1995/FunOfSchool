@@ -1,14 +1,30 @@
 [
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\evaluate_photo.png",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xxxhdpi\\evaluate_photo.png"
+        "merged": "D:\\cocoa\\android\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\ic_launcher.png",
+        "source": "D:\\cocoa\\android\\FunOfSchool\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\evaluate_photo_before.png",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xxxhdpi\\evaluate_photo_before.png"
+        "merged": "D:\\cocoa\\android\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\evaluate_photo_before.png",
+        "source": "D:\\cocoa\\android\\FunOfSchool\\app\\src\\main\\res\\mipmap-xxxhdpi\\evaluate_photo_before.png"
     },
     {
-        "merged": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\ic_launcher.png",
-        "source": "C:\\Users\\Aiome\\Desktop\\xiaolian\\FunOfSchool\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "D:\\cocoa\\android\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\evaluate_photo.png",
+        "source": "D:\\cocoa\\android\\FunOfSchool\\app\\src\\main\\res\\mipmap-xxxhdpi\\evaluate_photo.png"
+    },
+    {
+        "merged": "D:\\cocoa\\android\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\college_logo.png",
+        "source": "D:\\cocoa\\android\\FunOfSchool\\app\\src\\main\\res\\mipmap-xxxhdpi\\college_logo.png"
+    },
+    {
+        "merged": "D:\\cocoa\\android\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\icon_start.png",
+        "source": "D:\\cocoa\\android\\FunOfSchool\\app\\src\\main\\res\\mipmap-xxxhdpi\\icon_start.png"
+    },
+    {
+        "merged": "D:\\cocoa\\android\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\icon_end.png",
+        "source": "D:\\cocoa\\android\\FunOfSchool\\app\\src\\main\\res\\mipmap-xxxhdpi\\icon_end.png"
+    },
+    {
+        "merged": "D:\\cocoa\\android\\FunOfSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\icon_gcoding.png",
+        "source": "D:\\cocoa\\android\\FunOfSchool\\app\\src\\main\\res\\mipmap-xxxhdpi\\icon_gcoding.png"
     }
 ]

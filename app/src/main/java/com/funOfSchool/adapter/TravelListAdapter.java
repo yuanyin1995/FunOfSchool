@@ -1,15 +1,19 @@
 package com.funOfSchool.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.funOfSchool.R;
 import com.funOfSchool.model.TravelItem;
+import com.funOfSchool.ui.QueryTraceActivity;
+import com.funOfSchool.ui.TravelingActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,17 +47,31 @@ public class TravelListAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         if (null == convertView){
             convertView = LayoutInflater.from(context).inflate(R.layout.activity_travellist_item,null);
         }
-        //获取id
-        TextView school =(TextView) convertView.findViewById(R.id.school);
-        TextView date = (TextView)convertView.findViewById(R.id.date);
-        //设值
-        school.setText(travelItems.get(position).getSchool());
-        Log.e("aaa",travelItems.get(position).getSchool());
-        date.setText(travelItems.get(position).getDate());
+        //  获取id
+        TextView school =(TextView) convertView.findViewById(R.id.travel_list_school);
+        TextView date = (TextView)convertView.findViewById(R.id.travel_list_date);
+        //  设值
+        school.setText(travelItems.get(position).getTravelCollege());
+        date.setText(travelItems.get(position).getTravelDate());
+
+        //  路线图点击事件
+        TextView tvPath = (TextView) convertView.findViewById(R.id.travel_list_path);
+        tvPath.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, TravelingActivity.class);
+                //  不是在Activity中进行跳转，需要添加这个方法
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                //  添加日期参数
+                i.putExtra("travelDate",travelItems.get(position).getTravelDate());
+                context.startActivity(i);
+            }
+        });
+
         return convertView;
     }
 }

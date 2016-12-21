@@ -9,25 +9,63 @@ import java.util.Date;
  */
 
 public class TravelItem {
-    private String avater1;
-    private String avater2;
-    private String school;
-    private String date;
-    public TravelItem(String s,String d){
-        this.school = s;
-        this.date = d;
+    private String userId;
+    private String guiderId;
+    private String travelCollege;
+    private String travelDate;
+    private Boolean travelFlag;
+
+    public TravelItem(String userId, String guiderId, String travelCollege,
+                      String travelDate, Boolean travelFlag) {
+        this.userId = userId;
+        this.guiderId = guiderId;
+        this.travelCollege = travelCollege;
+        this.travelDate = travelDate;
+        this.travelFlag = travelFlag;
     }
 
-    public String getSchool() {
-        return school;
+    public String getUserId() {
+        return userId;
     }
 
-    public String getDate() {
-        return date;
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getGuiderId() {
+        return guiderId;
+    }
+
+    public void setGuiderId(String guiderId) {
+        this.guiderId = guiderId;
+    }
+
+    public String getTravelCollege() {
+        return travelCollege;
+    }
+
+    public void setTravelCollege(String travelCollege) {
+        this.travelCollege = travelCollege;
+    }
+
+    public String getTravelDate() {
+        return travelDate;
+    }
+
+    public void setTravelDate(String travelDate) {
+        this.travelDate = travelDate;
+    }
+
+    public Boolean getTravelFlag() {
+        return travelFlag;
+    }
+
+    public void setTravelFlag(Boolean travelFlag) {
+        this.travelFlag = travelFlag;
     }
 
     @Override
     public String toString() {
-        return school+date;
+        return userId+guiderId+travelCollege+travelDate+travelFlag+"!!!";
     }
 }

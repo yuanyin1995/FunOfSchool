@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.funOfSchool.R;
+import com.funOfSchool.util.AppUtils;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -33,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     private String login_psd;
     private Button btn;
     private int code;
-    static public String token;
+    //static public String token;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,7 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
                 //创建网络访问的类的对象
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = "http://10.7.88.37/api/account/login";
+                String url = "http://10.7.88.22/api/account/login";
                 RequestParams param = new RequestParams();
                 param.put("loginName", login_num);
                 param.put("password", login_psd);
@@ -117,15 +118,14 @@ public class LoginActivity extends AppCompatActivity {
                             JSONObject JO = new JSONObject(response.toString());
                             //JSONObject JO1 = JO.getJSONObject("info");
                             code = JO.getInt("code");
-                            token = JO.getString("token");
-                            Log.e("code",code+"");
-                            Log.e("token",token);
+                            AppUtils.setToken(JO.getString("token"),LoginActivity.this);
+
                             if (code==1) {
                                 Toast toast = Toast.makeText(LoginActivity.this, "登录成功",
                                         Toast.LENGTH_SHORT);
                                 toast.show();
-                                Intent i = new Intent();
-                                i.setClass(LoginActivity.this, MainActivity.class);
+                                Intent i = new Intent(LoginActivity.this, RegistActivity.class);
+//                                i.setClass();
                                 startActivity(i);
                             } else {
                                 Toast toast = Toast.makeText(LoginActivity.this, "登录失败",

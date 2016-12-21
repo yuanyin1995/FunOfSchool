@@ -26,8 +26,8 @@
     </RelativeLayout>
 
     <ImageView
-        android:layout_width="68dp"
-        android:layout_height="68dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:background="@mipmap/logo"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"/>

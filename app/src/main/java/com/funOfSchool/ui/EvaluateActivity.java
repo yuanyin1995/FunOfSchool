@@ -1,16 +1,13 @@
 package com.funOfSchool.ui;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
@@ -32,16 +29,16 @@ import android.widget.Toast;
 
 import com.funOfSchool.R;
 import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 import org.apache.http.Header;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -53,38 +50,51 @@ public class EvaluateActivity extends Activity{
     private Button b1;  //提交按钮
     private GridView gridView;              //网格显示缩略图
     private final int IMAGE_OPEN = 1;        //打开图片标记
-    private String pathImage;                //选择图片路径
+    public String pathImage;                //选择图片路径
+    ArrayList<String> image_route  = new ArrayList<String> ();
+
     private Bitmap bmp;                      //导入临时图片
     private ArrayList<HashMap<String, Object>> imageItem;
     private SimpleAdapter simpleAdapter;     //适配器
     private RatingBar guade_ratingbar;//带领人本次评分星星个数
+
     private RatingBar school_ratingbar;//学校本次评分星星个数
     private int guade_score;//带领人评分
+    private String guade_sc;
     private int school_score;//学校评分
+    private String school_sc;
     private RelativeLayout R1;
     private int height;
     private int width;
     //测试 定义 token
-    private String token = "e4b5ca189b7e4c7a8dff29b1c6704c1do39dTR";
+    private String token = "480476f12c4740749ad01269933c6a7dF166LN";
+    private String keyWord = "河北师范大学";
+    private String provinceID = "130000";
     private String portraiturl;
+    private String schoolbadge = null;
+
 
     //根据url加载图片
-    private static final String imgUrl = "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4155302816,1201715785&fm=116&gp=0.jpg";
     public ImageView Iv ;
-    private ProgressDialog mDialog;
+    public ImageView Iv2;
 
 
+    //测试上传评论
+    private EditText Ed1;
+    private String recond;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evaluate);
         Iv = (ImageView)findViewById(R.id.Iv_evaluate_portrait);
+        Iv2 = (ImageView)findViewById(R.id.Iv_evaluate_college);
+        Ed1 = (EditText)findViewById(R.id.Et_evaluate_et1);
 
         //测试获取头像url
         getPortrait();
-
-        //根据url载入图片
-        new ImageAsynTask().execute();
-
+        getschoolbadge();
+        //使用普通加载网络方式通过url加载图片
+        new NormalLoadPictrue().getPicture(portraiturl,Iv);
+        new NormalLoadPictrue().getPicture(schoolbadge,Iv2);
         //多行输入
         Edittext_input();
         //GridView设定
@@ -94,44 +104,109 @@ public class EvaluateActivity extends Activity{
         //设置按钮大小
         setTitlehigh();
 
+
+    }
+    //图片上传
+    private void photouploading(){
+        int a = image_route.size();
+        if(a >=3){
+            a=3;
+        }
+        for(int i=0;i< a;i++){
+            if (TextUtils.isEmpty(image_route.get(i).trim())) {
+                Toast.makeText(this, "上次文件路径不能为空", Toast.LENGTH_SHORT).show();
+            } else {
+                //异步的客户端对象
+                AsyncHttpClient client = new AsyncHttpClient();
+                //指定url路径http://192.168.1.103:8080/api/fs/upload?token=f51d03971db845db9e95444b37ea14693uKLdX
+                String url = "http://10.7.88.110:8080/api/fs/upload?token=8e09d5b2dcf345f38f340a9e4a6a1e54aazlQI";
+                //封装文件上传的参数
+                RequestParams params = new RequestParams();
+                //根据路径创建文件
+                File file = new File(image_route.get(i));
+                try {
+                    //放入文件
+                    params.put("profile_picture", file);
+                } catch (Exception e) {
+                    // TODO: handle exception
+                    System.out.println("文件不存在----------");
+                }
+                //执行post请求
+                client.post(url,params, new AsyncHttpResponseHandler() {
+
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers,
+                                          byte[] responseBody) {
+                        if (statusCode == 200) {
+                            Toast.makeText(getApplicationContext(), "上次成功", Toast.LENGTH_SHORT)
+                                    .show();
+                        }
+                        Log.i("tag",new String(responseBody));
+                    }
+
+                    @Override
+                    public void onFailure(int statusCode, Header[] headers,
+                                          byte[] responseBody, Throwable error) {
+                        error.printStackTrace();
+                    }
+                });
+
+            }
+        }
+    }
+
+    //测试：上传学校评分及学校评价:未成功
+
+    private void submitcolloge(){
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = "http://10.7.88.110:8080/api/comment/setCollegeComment";
+        //请求参数：关键词
+        RequestParams param = new RequestParams();
+        param.put("collegeId","10001");
+        param.put("score",school_sc);
+        param.put("comment", school_evaluate);
+        param.put("token",token);
+        client.get(url, param, new JsonHttpResponseHandler(){
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response){
+                try {
+                    recond = null;
+                    JSONObject profile2 = null;
+                    profile2 = new JSONObject(response.toString());
+                    recond = profile2.getString("message");
+                    Log.e( "学校评价", recond);
+                }catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    //测试：上传带领人评分及带领人评论
+    private void submitman(){
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = "http://10.7.88.110:8080/api/comment/setUserComment";
+        // 请求参数：关键词
+        RequestParams param = new RequestParams();
+        param.put("userId","dcc2d7bf7f2a4c089f142a35af2f1318");
+        param.put("comment",guade_evaluate);
+        param.put("score",guade_sc);
+        param.put("token",token);
+        client.get(url, param, new JsonHttpResponseHandler(){
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response){
+                try {
+                    JSONObject profile2 = null;
+                    profile2 = new JSONObject(response.toString());
+                    recond = profile2.getString("message");
+                    Log.e( "带领者评价", recond);
+                }catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
 
-    //根据url加载显示图片
-    private class ImageAsynTask extends AsyncTask<Void, Void, Drawable> {
 
-        @Override
-        protected Drawable doInBackground (Void... params) {
-            String url = "http://img1.3lian.com/img2011/07/20/05.jpg";
-            return loadImages(url);
-        }
-
-        @Override
-        protected void onPostExecute (Drawable result) {
-            super.onPostExecute(result);
-            Iv.setImageDrawable(result);
-        }
-
-        @Override
-        protected void onPreExecute () {
-            super.onPreExecute();
-        }
-    }
-
-    @Override
-    protected void onDestroy () {
-        super.onDestroy();
-    }
-
-    public Drawable loadImages(String url) {
-        try {
-            return Drawable.createFromStream((InputStream)(new URL(url)).openStream(), "test");
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 
 
 
@@ -154,8 +229,36 @@ public class EvaluateActivity extends Activity{
                 }
             }
         });
+
+
     }
 
+    //测试：获取学校校徽url
+    private void getschoolbadge(){
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = "http://localhost:8080/api/college/searchCollege";
+        RequestParams param = new RequestParams();
+        param.put("keyWord",keyWord);
+        client.get(url, param, new JsonHttpResponseHandler(){
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response){
+                try {
+                    JSONObject profile = null;
+                    profile = new JSONObject(response.toString());
+                    JSONArray profile2 = profile.getJSONArray("datum");
+                    int iSize = profile2.length();
+                    for (int i = 0; i < iSize; i++) {
+                        String schoolid = profile2.getJSONObject(i).getString("provinceID");
+                        if (schoolid == provinceID){
+                            schoolbadge = profile2.getJSONObject(i).getString("schoolLogo");
+                        }
+                    }
+                    Log.e( schoolbadge, schoolbadge);
+                }catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
 
 
 
@@ -186,30 +289,36 @@ public class EvaluateActivity extends Activity{
                 school_evaluate = et2.getText().toString();
                 //获取星级评分
                 RatingBardeal();
-                //跳转
-                Intent intent = new Intent(EvaluateActivity.this,GGL_Activity.class);
-                startActivity(intent);
-                finish();
+                //测试：发送消息
+                submitman();
+                submitcolloge();
+                photouploading();
+                for(int i = 0;i<image_route.size();i++){
+                    Log.e("路径-----",image_route.get(i));
+                }
+//                //跳转
+//                Intent intent = new Intent(EvaluateActivity.this,GGL_Activity.class);
+//                startActivity(intent);
+//                finish();
             }
         });
     }
     //获取星级评价的评分
     private void RatingBardeal(){
         //获取进度
-        int guade_result = guade_ratingbar.getProgress();
-        int school_result = school_ratingbar.getProgress();
+//        int guade_result = guade_ratingbar.getProgress();
+//        int school_result = school_ratingbar.getProgress();
         //获取星级
-        float guade_rating = guade_ratingbar.getRating();
-        float school_rating = school_ratingbar.getRating();
+        float guade_rating = guade_ratingbar.getRating()*20;
+        float school_rating = school_ratingbar.getRating()*20;
         //获取每次至少需改变多少个星级
-        float guade_step = guade_ratingbar.getStepSize();
-        float school_step = school_ratingbar.getStepSize();
-        //toast输出
-//        Log.i("星级平分条","step="+guade_step+"result"+guade_result+"rating"+guade_rating);
-//        Log.i("星级平分条","step="+school_step+"result"+school_result+"rating"+school_rating);
+//        float guade_step = guade_ratingbar.getStepSize();
+//        float school_step = school_ratingbar.getStepSize();
         //获取学校及带领人的评分
         guade_score = (int)guade_rating;
+        guade_sc = guade_score + "";
         school_score = (int)school_rating;
+        school_sc = school_score + "";
     }
     //设置Edittext为多行输入
     private void Edittext_input(){
@@ -244,8 +353,11 @@ public class EvaluateActivity extends Activity{
                 //光标移动至开头 获取图片路径
                 cursor.moveToFirst();
                 pathImage = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));
+                image_route.add(pathImage);
+                Log.e( pathImage, pathImage);
             }
         }  //end if 打开图片
+
     }
     //GridView设定
     protected void GridViewsetting(){
@@ -370,4 +482,27 @@ public class EvaluateActivity extends Activity{
         });
         builder.create().show();
     }
+
+    //返回按钮操作
+    protected void back_dialog(final int position){
+        AlertDialog.Builder builder = new AlertDialog.Builder(EvaluateActivity.this);
+        builder.setMessage("评价还未完成，您确定要退出吗？");
+        builder.setTitle("提示");
+        builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                imageItem.remove(position);
+                simpleAdapter.notifyDataSetChanged();
+            }
+        });
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.create().show();
+    }
+
 }
