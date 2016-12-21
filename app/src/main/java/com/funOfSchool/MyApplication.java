@@ -1,11 +1,14 @@
 package com.funOfSchool;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.funOfSchool.ui.http.AsyncHttpMangers;
 import com.hyphenate.easeui.controller.EaseUI;
 import com.hyphenate.easeui.domain.EaseUser;
 import com.loopj.android.http.JsonHttpResponseHandler;
+import com.umeng.message.IUmengRegisterCallback;
+import com.umeng.message.PushAgent;
 
 import org.apache.http.Header;
 import org.json.JSONException;
@@ -24,6 +27,25 @@ public class MyApplication extends Application {
         //开启debug模式
 //        EMClient.getInstance().setDebugMode(true);
 //        initUserInfo();
+        initUmeng();
+    }
+
+    private void initUmeng() {
+        PushAgent mPushAgent = PushAgent.getInstance(this);
+        //注册推送服务，每次调用register方法都会回调该接口
+        mPushAgent.register(new IUmengRegisterCallback() {
+
+            @Override
+            public void onSuccess(String deviceToken) {
+                //注册成功会返回device token
+                Log.d("mytoken",deviceToken);
+            }
+
+            @Override
+            public void onFailure(String s, String s1) {
+                Log.d("mytoken","s:" + s + "     s1" + s1);
+            }
+        });
     }
 
     private void initUserInfo() {
