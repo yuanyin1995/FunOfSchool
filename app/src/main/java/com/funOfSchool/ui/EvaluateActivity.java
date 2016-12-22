@@ -32,7 +32,6 @@ import com.bumptech.glide.Glide;
 import com.funOfSchool.R;
 import com.funOfSchool.util.AppUtils;
 import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
@@ -55,7 +54,6 @@ public class EvaluateActivity extends Activity{
     private final int IMAGE_OPEN = 1;        //打开图片标记
     public String pathImage;                //选择图片路径
     ArrayList<String> image_route  = new ArrayList<String> ();//图片本地路径
-    ArrayList<String> image_route_online  = new ArrayList<String> ();//图片网上路径
     private String  image_online;
     private Bitmap bmp;                      //导入临时图片
     private ArrayList<HashMap<String, Object>> imageItem;
@@ -88,9 +86,6 @@ public class EvaluateActivity extends Activity{
         Iv2 = (ImageView)findViewById(R.id.Iv_evaluate_college);
         Ed1 = (EditText)findViewById(R.id.Et_evaluate_et1);
 
-        //打印token
-//        Log.e("token",token);
-
         //测试获取头像
         getPortrait();
         getschoolbadge();
@@ -107,13 +102,16 @@ public class EvaluateActivity extends Activity{
 
 
     }
+
     //图片上传
     private void photouploading(){
         int a = image_route.size();
         if(a >=3){
             a=3;
         }
+        final int temp = a;
         for(int i=0;i< a;i++){
+            final int tempa = i+1;
             if (TextUtils.isEmpty(image_route.get(i).trim())) {
                 Toast.makeText(this, "上次文件路径不能为空", Toast.LENGTH_SHORT).show();
             } else {
@@ -133,21 +131,36 @@ public class EvaluateActivity extends Activity{
                     System.out.println("----文件不存在----------");
                 }
                 //执行post请求
-                client.post(url,params, new AsyncHttpResponseHandler() {
+                client.post(url,params, new JsonHttpResponseHandler() {
 
                     @Override
                     public void onSuccess(int statusCode, Header[] headers,
-                                          byte[] responseBody) {
+                                          JSONObject responseBody) {
                         if (statusCode == 200) {
                             Toast.makeText(getApplicationContext(), "上传成功", Toast.LENGTH_SHORT).show();
+                            try {
+                                String avatarurl2 = null;
+                                Log.e("responBody",responseBody.toString());
+                                JSONObject avatarurl1 = responseBody.getJSONObject("datum");
+                                avatarurl2 = avatarurl1.getString("profile_picture");
+                                if(image_online == null){
+                                    image_online = avatarurl2;
+                                }
+                                else {
+                                    image_online = image_online + "," + avatarurl2;
+                                }
+                            }catch (Exception e){
+                                e.printStackTrace();
+                            }
                         }
-                        Log.e("上传图片",new String(responseBody));
-
+                        Log.e("图片地址",image_online);
+                        if(temp == tempa){
+                            submitman();
+                            submitcolloge();
+                        }
                     }
 
-                    @Override
-                    public void onFailure(int statusCode, Header[] headers,
-                                          byte[] responseBody, Throwable error) {
+                    public void onFailure(int statusCode, Header[] headers, JSONObject responseBody, Throwable error) {
                         error.printStackTrace();
                     }
                 });
@@ -168,6 +181,8 @@ public class EvaluateActivity extends Activity{
         param.put("score",school_sc);
         param.put("comment", school_evaluate);
         param.put("token",token);
+        param.put("image",image_online);
+//        Log.e("学校评论url",image_online);
         client.get(url, param, new JsonHttpResponseHandler(){
             public void onSuccess(int statusCode, Header[] headers, JSONObject response){
                 try {
@@ -229,6 +244,7 @@ public class EvaluateActivity extends Activity{
                     portraiturl = profile1.getString("profileImage");
                     Log.e( "portraiturl", portraiturl);
                     Glide.with(EvaluateActivity.this).load(AppUtils.HOST+portraiturl).into(Iv);
+                    Log.e("头像加载完毕","加载完毕");
                 }catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -236,13 +252,16 @@ public class EvaluateActivity extends Activity{
         });
     }
 
+
+
     //测试：获取学校校徽url
     private void getschoolbadge(){
         token = AppUtils.getToken(EvaluateActivity.this);
+        Log.e("token",token);
         AsyncHttpClient client = new AsyncHttpClient();
         String url = "http://10.7.88.31/api/college/schoolLogo";
         RequestParams param = new RequestParams();
-        param.put("collegeId",1001);
+        param.put("collegeId",11006);
         client.get(url, param, new JsonHttpResponseHandler(){
             public void onSuccess(int statusCode, Header[] headers, JSONObject response){
                 try {
@@ -251,7 +270,7 @@ public class EvaluateActivity extends Activity{
                     JSONObject profile2 = profile.getJSONObject("datum");
                     schoolbadge = profile2.getString("schoolLogo");
                     Log.e( "schoolbadge", schoolbadge);
-                    Glide.with(EvaluateActivity.this).load(schoolbadge).into(Iv2);
+                    Glide.with(EvaluateActivity.this).load(AppUtils.HOST+schoolbadge).into(Iv2);
                 }catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -289,16 +308,15 @@ public class EvaluateActivity extends Activity{
                 //获取星级评分
                 RatingBardeal();
                 //测试：发送消息
-                submitman();
-                submitcolloge();
                 photouploading();
+
                 for(int i = 0;i<image_route.size();i++){
                     Log.e("路径-----",image_route.get(i));
                 }
-//                //跳转
-//                Intent intent = new Intent(EvaluateActivity.this,GGL_Activity.class);
-//                startActivity(intent);
-//                finish();
+                //跳转
+                Intent intent = new Intent(EvaluateActivity.this,GGL_Activity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

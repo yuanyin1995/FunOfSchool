@@ -1,6 +1,7 @@
 package com.funOfSchool.ui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextPaint;
 import android.util.DisplayMetrics;
@@ -46,7 +47,9 @@ public class GGL_Activity extends Activity {
         Ib1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                finish();
+                Intent intent =new Intent(GGL_Activity.this,MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
