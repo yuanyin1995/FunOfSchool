@@ -36,6 +36,7 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
     private View acceptBtn;
     private View refuseBtn;
 
+    private String title = "";
     private boolean type;
 
     private AsyncHttpResponseHandler mHandler;
@@ -57,8 +58,14 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
         chooseView = LinearLayout.inflate(getContext(),R.layout.fragment_chat_choose,null);
         initChooseView();
         chooseFragment.addView(chooseView);
+
+
         hideRemark();
     }
+    public void setTitle( String title){
+        titleBar.setTitle(title);
+    }
+
 
     @Override
     protected void setUpView() {
