@@ -135,6 +135,14 @@
             android:layout_marginLeft="12dp"
             android:layout_toRightOf="@id/receive_remark_icon"
             android:layout_centerVertical="true"/>
+        <TextView
+            android:id="@+id/receive_remark_remark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/SecondText"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@+id/receive_remark_title"
+            android:layout_marginRight="10dp"/>
     </RelativeLayout>
 
     <TextView

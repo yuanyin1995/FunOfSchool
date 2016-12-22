@@ -98,4 +98,12 @@ public class ApiUtils {
      * 获得学校评论列表
      */
     public static final String API_COLLEGE_COMMENT = "api/comment/getCollegeComment";
+    /**
+     * 查询专业
+     */
+    public static final String API_ACCOUNT_PROFILE = "api/account/profile/getprofile";
+    /**
+     * 上传图片接口
+     */
+    public static final String API_ACCOUNT_LOAD ="api/fs/upload";
 }

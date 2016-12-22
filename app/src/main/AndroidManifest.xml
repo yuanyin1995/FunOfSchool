@@ -84,7 +84,8 @@
         <activity android:name=".ui.ChatActivity" />
         <activity android:name=".ui.MainActivity">
         </activity>
-        <activity android:name=".ui.SelectActivity" />
+        <activity android:name=".ui.SelectActivity" >
+        </activity>
         <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -92,6 +93,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.SelectActivity" >
+        </activity>
+        <activity android:name=".ui.LoginActivity">
+
+        </activity>
+        <activity android:name=".ui.LoginActivityTemp"/>
         <!-- 高德地图相关 -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
@@ -130,7 +137,15 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="YeB0YmGWiXxgq0eC1UdEviO7aYcK2Ltc" />
-
+        <!--友盟推送-->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="58591a8d8f4a9d4708000532">
+        </meta-data>
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="627bb83958138640b18ef6d40dd0cdb9">
+        </meta-data>
         <!-- 声明SDK所需的receiver -->
         <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
             <intent-filter>
@@ -147,14 +162,20 @@
 
         <activity android:name=".ui.ReceiveInviteActivity" />
         <activity android:name=".ui.PersonInfoActivity" />
-        <activity android:name=".ui.TravelListActivity" />
-        <activity android:name=".ui.MyPrizeActivity"></activity>
+        <activity android:name=".ui.TravelListActivity" >
+        </activity>
+        <activity android:name=".ui.MyPrizeActivity" />
         <activity android:name=".ui.MarketActivity" />
         <activity android:name=".ui.SetActivity" />
         <activity android:name=".ui.EvaluateActivity" />
-        <activity android:name=".ui.TravelingActivity" />
-        <activity android:name=".ui.QueryTraceActivity" />
-        <activity android:name=".ui.RegistActivity" />
+        <activity android:name=".ui.TravelingActivity" >
+        </activity>
+        <activity android:name=".ui.QueryTraceActivity">
+        </activity>
+
+        <activity android:name=".ui.RegistActivity" >
+
+        </activity>
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"

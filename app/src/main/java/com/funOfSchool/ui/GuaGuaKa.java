@@ -172,7 +172,7 @@ public class GuaGuaKa extends View {
     //解析
     private void getRemainprize(){
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.109:8080/api/prize/getRemainPrizeList";
+        String url = "http://10.7.88.31/api/prize/getRemainPrizeList";
         RequestParams param = new RequestParams();
         client.get(url, param, new JsonHttpResponseHandler() {
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {

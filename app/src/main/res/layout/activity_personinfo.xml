@@ -76,6 +76,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
        <RelativeLayout
+           android:id="@+id/nameClick"
          android:layout_width="match_parent"
          android:layout_height="42dp"
          android:background="#FFFFFF"
@@ -106,6 +107,7 @@
         style="@style/SecondText"/>
 </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/sexClick"
             android:layout_width="match_parent"
             android:layout_height="42dp"
             android:background="#FFFFFF"
@@ -136,6 +138,7 @@
                 style="@style/SecondText"/>
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/dateClick"
             android:layout_width="match_parent"
             android:layout_height="42dp"
             android:background="#FFFFFF"
@@ -166,6 +169,7 @@
                 style="@style/SecondText"/>
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/schoolClick"
             android:layout_width="match_parent"
             android:layout_height="42dp"
             android:background="#FFFFFF"
@@ -196,6 +200,7 @@
                 style="@style/SecondText"/>
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/majorClick"
             android:layout_width="match_parent"
             android:layout_height="42dp"
             android:background="#FFFFFF"
@@ -226,6 +231,7 @@
                 style="@style/SecondText"/>
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/yearClick"
             android:layout_width="match_parent"
             android:layout_height="42dp"
             android:background="#FFFFFF"
@@ -256,6 +262,7 @@
                 style="@style/SecondText"/>
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/constellationClick"
             android:layout_width="match_parent"
             android:layout_height="42dp"
             android:background="#FFFFFF"
