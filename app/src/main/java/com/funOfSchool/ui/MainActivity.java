@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -267,11 +268,13 @@ public class MainActivity extends Activity {
                 // 请求参数：学校名称
                 RequestParams param = new RequestParams();
                 param.put("collegeName",collegeName);
+                Log.e("aaaparam",param.toString());
+
                 // 发送网络请求
                 client.post(url, param, new JsonHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-
+                        Log.e("aaares",response.toString());
 
                         JSONObject collegeNameJO = null;
                         try {
@@ -299,13 +302,15 @@ public class MainActivity extends Activity {
                                     .fromResource(R.mipmap.college_logo);
                             // 添加附加信息
                             Bundle b = new Bundle();
-                            b.putString("collegeInfo",collegeName+"好玩的地方有："+collegeScene);
+                            b.putString("collegeInfo",
+                                    collegeName+"好玩的地方有："+collegeScene
+                            +"快在这个学校找个同学带你玩吧~\n（点击可查看其它用户对此大学的评价）");
                             // 构建MarkerOption，用于在地图上添加Marker
                             OverlayOptions option = new MarkerOptions()
                                     .position(ll)
                                     .icon(bitmapLogo)
                                     .draggable(true)
-                                    .title("北京大学")
+                                    .title("大学")
                                     .extraInfo(b);
                             // 在地图上添加Marker，并显示
                             Marker marker = (Marker) mBaiduMap.addOverlay(option);
@@ -321,7 +326,7 @@ public class MainActivity extends Activity {
 
                                     InfoWindow infoWindow;
                                     // 动态生成一个Button对象，用户在地图中显示InfoWindow
-                                    final TextView textInfo = new TextView(getApplicationContext());
+                                    final Button textInfo = new Button(getApplicationContext());
                                     //设置布局属性
                                     /*int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                                             30, getResources().getDisplayMetrics());
@@ -335,6 +340,7 @@ public class MainActivity extends Activity {
                                     textInfo.setTextColor(getResources().getColor(R.color.firstText));
                                     textInfo.setTextSize(13);
                                     textInfo.setText(info);
+                                    Log.i("infooooo",info);
                                     // 得到点击的覆盖物的经纬度
                                     LatLng ll = marker.getPosition();
                                     // 将marker所在的经纬度的信息转化成屏幕上的坐标
@@ -346,6 +352,20 @@ public class MainActivity extends Activity {
                                     infoWindow = new InfoWindow(textInfo, llInfo, 0);
                                     // 显示此infoWindow
                                     mBaiduMap.showInfoWindow(infoWindow);
+                                    // 点击按钮，跳转到学校评价列表页
+                                    textInfo.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            Toast.makeText(getApplicationContext(),
+                                                    "click",
+                                                    Toast.LENGTH_LONG).show();
+                                            Intent intent = new Intent(MainActivity.this,
+                                                    CollegeCommentListActivity.class);
+                                            intent.putExtra("collegeId",collegeId);
+                                            Log.e("maincollegeid",collegeId+"");
+                                            startActivity(intent);
+                                        }
+                                    });
 
                                     return true;
                                 }
@@ -445,7 +465,7 @@ public class MainActivity extends Activity {
                     startActivity(intent_prz);
                     break;
                 case R.id.me_market:
-                    Intent intent_mkt = new Intent(MainActivity.this,MarketActivity.class);
+                    Intent intent_mkt = new Intent(MainActivity.this,ShopActivity.class);
                     startActivity(intent_mkt);
                     break;
                 case R.id.me_set:
@@ -466,6 +486,7 @@ public class MainActivity extends Activity {
         // 请求参数
         RequestParams param = new RequestParams();
         param.put("token",AppUtils.getToken(getApplicationContext()));
+        Log.e("tokenparam",AppUtils.getToken(getApplicationContext()));
         client.post(url, param, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -517,7 +538,7 @@ public class MainActivity extends Activity {
                     // 选择是，进入记录路径页面
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                       startTravelwithTrace();
+                        startTravelwithTrace();
                     }
                 });
                 builder.setNegativeButton(R.string.no, new DialogInterface.OnClickListener(){
@@ -582,6 +603,7 @@ public class MainActivity extends Activity {
 
         Intent intent =
                 new Intent(MainActivity.this,TravelingActivity.class);
+        intent.putExtra("collegeId",collegeId);
         startActivity(intent);
     }
 
@@ -649,6 +671,7 @@ public class MainActivity extends Activity {
     private void toEvaluatePage() {
         Intent intent =
                 new Intent(MainActivity.this,EvaluateActivity.class);
+        intent.putExtra("collegeId",collegeId);
         startActivity(intent);
     }
 

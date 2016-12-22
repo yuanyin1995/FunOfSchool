@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:layout_marginTop="16dp"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/prize_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="某某某店铺10元代金券"
+            style="@style/FirstText"/>
+        <TextView
+            android:id="@+id/prize_valid_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="有效期：2016-12-06 至 2016-12-12"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@mipmap/prize_icon"
+        android:layout_alignParentRight="true"/>
+</RelativeLayout>

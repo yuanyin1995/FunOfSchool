@@ -102,7 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
                 //创建网络访问的类的对象
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = "http://10.7.88.22/api/account/login";
+                String url = "http://10.7.1.203/api/account/login";
                 RequestParams param = new RequestParams();
                 param.put("loginName", login_num);
                 param.put("password", login_psd);
@@ -124,7 +124,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast toast = Toast.makeText(LoginActivity.this, "登录成功",
                                         Toast.LENGTH_SHORT);
                                 toast.show();
-                                Intent i = new Intent(LoginActivity.this, RegistActivity.class);
+                                Intent i = new Intent(LoginActivity.this, MainActivity.class);
 //                                i.setClass();
                                 startActivity(i);
                             } else {

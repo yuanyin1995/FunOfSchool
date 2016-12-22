@@ -29,7 +29,7 @@ public class ReceiveInviteActivity extends AppCompatActivity {
 
     private void findView() {
         receiveDate = (TextView)findViewById(R.id.receive_date_result);
-        receiveRemark = (TextView)findViewById(R.id.receive_remark);
+        receiveRemark = (TextView)findViewById(R.id.receive_remark_result);
         receiveBtnAccept = (Button)findViewById(R.id.receive_btn_accept);
         receiveBtnRefuse = (Button)findViewById(R.id.receive_btn_refuse);
         receiveBtnTochat = (Button)findViewById(R.id.receive_btn_tochat);

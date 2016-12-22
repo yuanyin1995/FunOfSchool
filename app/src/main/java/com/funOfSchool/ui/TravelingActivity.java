@@ -59,6 +59,8 @@ public class TravelingActivity extends AppCompatActivity {
     private ImageView btnTravelingBack;
     //  结束旅程按钮
     private ImageView btnTravelingEnd;
+    //  游玩学校ID
+    private String travelCollegeId;
 
     //  轨迹服务ID
     long serviceId = 131124;
@@ -134,7 +136,8 @@ public class TravelingActivity extends AppCompatActivity {
         findView();
         //  为各按钮设置监听器
         setListener();
-
+        //  获得学校ID
+        getCollegeId();
 
         //  开启轨迹服务
         startRefreshThread(true);
@@ -142,6 +145,14 @@ public class TravelingActivity extends AppCompatActivity {
                 "正在开启轨迹服务，请稍候",
                 Toast.LENGTH_LONG).show();
         startTrace();
+    }
+
+    /**
+     * 得到学校ID
+     */
+    private void getCollegeId() {
+        Intent i = getIntent();
+        travelCollegeId = i.getStringExtra("collegeId");
     }
 
     /**
@@ -554,6 +565,7 @@ public class TravelingActivity extends AppCompatActivity {
     private void toEvaluatePage() {
         Intent intent =
                 new Intent(TravelingActivity.this,EvaluateActivity.class);
+        intent.putExtra("collegeId",travelCollegeId);
         startActivity(intent);
     }
 
