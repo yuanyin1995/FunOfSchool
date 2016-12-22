@@ -16,6 +16,8 @@ import com.hyphenate.chat.EMClient;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+import com.umeng.message.PushAgent;
+import com.umeng.message.UTrack;
 
 import org.apache.http.Header;
 import org.json.JSONException;
@@ -70,8 +72,18 @@ public class LoginActivityTemp extends AppCompatActivity {
                 try {
                     if (response.getInt("code") == 1) {
                         AppUtils.setToken(response.getString("token"),LoginActivityTemp.this);
+                        String userId = response.getJSONObject("info").getString("userId");
+                        //绑定alias
+                        PushAgent mPushAgent = PushAgent.getInstance(LoginActivityTemp.this);
+                        mPushAgent.addAlias(userId, "userId", new UTrack.ICallBack() {
+                            @Override
+                            public void onMessage(boolean b, String s) {
+                                AppUtils.Log(b + "  " + s);
+                            }
+                        });
+
                         //聊天登录
-                        EMClient.getInstance().login(response.getJSONObject("info").getString("userId"), passWord.getText().toString().trim(), new EMCallBack() {
+                        EMClient.getInstance().login(userId, passWord.getText().toString().trim(), new EMCallBack() {
 
                             @Override
                             public void onSuccess() {
@@ -91,6 +103,7 @@ public class LoginActivityTemp extends AppCompatActivity {
                             public void onError(int i, String s) {
                                 Log.i("tag", "登录失败" + s);
                                 progressDialog.dismiss();
+//                                AppUtils.showShort(getApplicationContext(),"用户已登录");
                             }
 
                             @Override

@@ -21,6 +21,8 @@ import com.hyphenate.easeui.EaseConstant;
 import com.hyphenate.easeui.ui.EaseConversationListFragment;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
+import com.umeng.message.PushAgent;
+import com.umeng.message.UTrack;
 
 import org.apache.http.Header;
 import org.json.JSONException;
@@ -209,6 +211,12 @@ public class ConversationListActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        PushAgent.getInstance(ConversationListActivity.this).removeAlias(EMClient.getInstance().getCurrentUser(), "userId", new UTrack.ICallBack(){
+            @Override
+            public void onMessage(boolean isSuccess, String message) {
+                AppUtils.Log(isSuccess + "   " + message);
+            }
+        });
         EMClient.getInstance().logout(false, new EMCallBack() {
             @Override
             public void onSuccess() {
