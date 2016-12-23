@@ -101,6 +101,7 @@ public class TravelListActivity extends Activity {
                     }
                     Log.e("travelIems",travelIems.toString());
 
+
                     //  去掉当前出游（flag=true）记录
                     for (int j=0 ; j<travelIems.size() ; j++){
                         if (travelIems.get(j).getTravelFlag()){

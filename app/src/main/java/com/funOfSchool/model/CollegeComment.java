@@ -9,13 +9,15 @@ public class CollegeComment {
     private String userId;
     private String commentPicUrl;
     private String commentDate;
+    private String userName;
 
-    public CollegeComment(String comment, int score, String userId, String commentPic, String commentDate) {
+    public CollegeComment(String comment, int score, String userId, String commentPic, String commentDate, String userName) {
         this.comment = comment;
         this.score = score;
         this.userId = userId;
         this.commentPicUrl = commentPic;
         this.commentDate = commentDate;
+        this.userName = userName;
     }
 
     public String getComment() {
@@ -64,6 +66,14 @@ public class CollegeComment {
 
     public void setCommentDate(String commentDate) {
         this.commentDate = commentDate;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     @Override

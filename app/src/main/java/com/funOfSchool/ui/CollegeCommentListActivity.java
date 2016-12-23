@@ -74,7 +74,8 @@ public class CollegeCommentListActivity extends Activity {
                                 ccJA.getJSONObject(i).getInt("score"),
                                 ccJA.getJSONObject(i).getString("userId"),
                                 ccJA.getJSONObject(i).getString("image"),
-                                ccJA.getJSONObject(i).getString("time")
+                                ccJA.getJSONObject(i).getString("time"),
+                                ccJA.getJSONObject(i).getString("userName")
                         ));
                     }
 
