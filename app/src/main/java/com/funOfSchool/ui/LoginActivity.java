@@ -1,8 +1,8 @@
 package com.funOfSchool.ui;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.method.PasswordTransformationMethod;
@@ -21,6 +21,7 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 import org.apache.http.Header;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -101,7 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
                 //创建网络访问的类的对象
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = AppUtils.HOST + "api/account/login";
+                String url = "http://10.7.1.203/api/account/login";
                 RequestParams param = new RequestParams();
                 param.put("loginName", login_num);
                 param.put("password", login_psd);
@@ -123,7 +124,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast toast = Toast.makeText(LoginActivity.this, "登录成功",
                                         Toast.LENGTH_SHORT);
                                 toast.show();
-                                Intent i = new Intent(LoginActivity.this, RegistActivity.class);
+                                Intent i = new Intent(LoginActivity.this, MainActivity.class);
 //                                i.setClass();
                                 startActivity(i);
                             } else {

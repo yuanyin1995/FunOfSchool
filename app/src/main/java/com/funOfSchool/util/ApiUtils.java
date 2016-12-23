@@ -87,6 +87,18 @@ public class ApiUtils {
      */
     public static final String API_IS_TOKEN = "api/account/isToken";
     /**
+     * 获得我的奖品列表
+     */
+    public static final String API_MY_PRIZE_LIST = "api/prize/getAllocatePrizeList";
+    /**
+     * 删除已使用的卡券
+     */
+    public static final String API_DELETE_PRIZE = "api/prize/manageUserPrize";
+    /**
+     * 获得学校评论列表
+     */
+    public static final String API_COLLEGE_COMMENT = "api/comment/getCollegeComment";
+    /**
      * 查询专业
      */
     public static final String API_ACCOUNT_PROFILE = "api/account/profile/getprofile";

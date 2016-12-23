@@ -83,6 +83,10 @@
         <activity android:name=".ui.ConversationListActivity" />
         <activity android:name=".ui.ChatActivity" />
         <activity android:name=".ui.MainActivity">
+        </activity>
+        <activity android:name=".ui.SelectActivity" >
+        </activity>
+        <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -156,9 +160,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".ui.ReceiveInviteActivity" >
-
-        </activity>
+        <activity android:name=".ui.ReceiveInviteActivity" />
         <activity android:name=".ui.PersonInfoActivity" />
         <activity android:name=".ui.TravelListActivity" >
         </activity>
@@ -179,7 +181,10 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity android:name=".ui.PasswordActivity"></activity>
+        <activity android:name=".ui.PasswordActivity" />
+        <activity android:name=".ui.MyprizeInfoActivity"></activity>
+        <activity android:name=".ui.CollegeCommentListActivity"></activity>
+        <activity android:name=".ui.ShopActivity"></activity>
     </application>
 
 </manifest>

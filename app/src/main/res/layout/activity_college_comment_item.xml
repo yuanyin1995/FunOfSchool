@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="16dp"
+    android:paddingLeft="16dp"
+    android:paddingBottom="16dp"
+    android:paddingRight="16dp"
+    android:layout_marginTop="16dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.funOfSchool.util.CircleImageView
+            android:id="@+id/cc_user_avatar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@mipmap/test_tx"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toRightOf="@+id/cc_user_avatar"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp">
+            <TextView
+                android:id="@+id/cc_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="用户名"
+                style="@style/FirstText"/>
+            <TextView
+                android:id="@+id/cc_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2016-12-06"
+                style="@style/SecondText"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="4dp"/>
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/cc_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5.0 分"
+            android:textSize="20sp"
+            android:textColor="#ffa726"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/bg"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/cc_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容"
+        style="@style/FirstText"
+        android:layout_marginTop="8dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp">
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@mipmap/test_tx"
+            android:layout_marginRight="8dp"/>
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@mipmap/test_tx"
+            android:layout_marginRight="8dp"/>
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@mipmap/test_tx"
+            android:layout_marginRight="8dp"/>
+    </LinearLayout>
+</LinearLayout>

@@ -21,20 +21,21 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.funOfSchool.R;
+import com.funOfSchool.util.AppUtils;
 import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 import org.apache.http.Header;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -48,11 +49,12 @@ public class EvaluateActivity extends Activity{
     private EditText et1;   //带领者评价输入框
     private EditText et2;   //学校评价输入框
     private Button b1;  //提交按钮
+    private ImageButton b2;//返回按钮
     private GridView gridView;              //网格显示缩略图
     private final int IMAGE_OPEN = 1;        //打开图片标记
     public String pathImage;                //选择图片路径
-    ArrayList<String> image_route  = new ArrayList<String> ();
-
+    ArrayList<String> image_route  = new ArrayList<String> ();//图片本地路径
+    private String  image_online;
     private Bitmap bmp;                      //导入临时图片
     private ArrayList<HashMap<String, Object>> imageItem;
     private SimpleAdapter simpleAdapter;     //适配器
@@ -67,18 +69,13 @@ public class EvaluateActivity extends Activity{
     private int height;
     private int width;
     //测试 定义 token
-    private String token = "480476f12c4740749ad01269933c6a7dF166LN";
-    private String keyWord = "河北师范大学";
-    private String provinceID = "130000";
-    private String portraiturl;
+    private String token = null;
+    private String provinceID = "11006";
+    private String portraiturl = null;
     private String schoolbadge = null;
-
-
     //根据url加载图片
     public ImageView Iv ;
     public ImageView Iv2;
-
-
     //测试上传评论
     private EditText Ed1;
     private String recond;
@@ -89,39 +86,41 @@ public class EvaluateActivity extends Activity{
         Iv2 = (ImageView)findViewById(R.id.Iv_evaluate_college);
         Ed1 = (EditText)findViewById(R.id.Et_evaluate_et1);
 
-        //测试获取头像url
+        //测试获取头像
         getPortrait();
         getschoolbadge();
-        //使用普通加载网络方式通过url加载图片
-        new NormalLoadPictrue().getPicture(portraiturl,Iv);
-        new NormalLoadPictrue().getPicture(schoolbadge,Iv2);
+
         //多行输入
         Edittext_input();
         //GridView设定
         GridViewsetting();
         //点击事件
         b1_Onclick();
+        b2_Onclick();
         //设置按钮大小
         setTitlehigh();
 
 
     }
+
     //图片上传
     private void photouploading(){
         int a = image_route.size();
         if(a >=3){
             a=3;
         }
+        final int temp = a;
         for(int i=0;i< a;i++){
+            final int tempa = i+1;
             if (TextUtils.isEmpty(image_route.get(i).trim())) {
                 Toast.makeText(this, "上次文件路径不能为空", Toast.LENGTH_SHORT).show();
             } else {
-                //异步的客户端对象
-                AsyncHttpClient client = new AsyncHttpClient();
-                //指定url路径http://192.168.1.103:8080/api/fs/upload?token=f51d03971db845db9e95444b37ea14693uKLdX
-                String url = "http://10.7.88.110:8080/api/fs/upload?token=8e09d5b2dcf345f38f340a9e4a6a1e54aazlQI";
                 //封装文件上传的参数
                 RequestParams params = new RequestParams();
+                //异步的客户端对象
+                AsyncHttpClient client = new AsyncHttpClient();
+                token = AppUtils.getToken(EvaluateActivity.this);
+                String url = "http://10.7.88.31/api/fs/upload?token="+token;
                 //根据路径创建文件
                 File file = new File(image_route.get(i));
                 try {
@@ -129,24 +128,39 @@ public class EvaluateActivity extends Activity{
                     params.put("profile_picture", file);
                 } catch (Exception e) {
                     // TODO: handle exception
-                    System.out.println("文件不存在----------");
+                    System.out.println("----文件不存在----------");
                 }
                 //执行post请求
-                client.post(url,params, new AsyncHttpResponseHandler() {
+                client.post(url,params, new JsonHttpResponseHandler() {
 
                     @Override
                     public void onSuccess(int statusCode, Header[] headers,
-                                          byte[] responseBody) {
+                                          JSONObject responseBody) {
                         if (statusCode == 200) {
-                            Toast.makeText(getApplicationContext(), "上次成功", Toast.LENGTH_SHORT)
-                                    .show();
+                            Toast.makeText(getApplicationContext(), "上传成功", Toast.LENGTH_SHORT).show();
+                            try {
+                                String avatarurl2 = null;
+                                Log.e("responBody",responseBody.toString());
+                                JSONObject avatarurl1 = responseBody.getJSONObject("datum");
+                                avatarurl2 = avatarurl1.getString("profile_picture");
+                                if(image_online == null){
+                                    image_online = avatarurl2;
+                                }
+                                else {
+                                    image_online = image_online + "," + avatarurl2;
+                                }
+                            }catch (Exception e){
+                                e.printStackTrace();
+                            }
                         }
-                        Log.i("tag",new String(responseBody));
+                        Log.e("图片地址",image_online);
+                        if(temp == tempa){
+                            submitman();
+                            submitcolloge();
+                        }
                     }
 
-                    @Override
-                    public void onFailure(int statusCode, Header[] headers,
-                                          byte[] responseBody, Throwable error) {
+                    public void onFailure(int statusCode, Header[] headers, JSONObject responseBody, Throwable error) {
                         error.printStackTrace();
                     }
                 });
@@ -155,17 +169,20 @@ public class EvaluateActivity extends Activity{
         }
     }
 
-    //测试：上传学校评分及学校评价:未成功
+    //测试：上传学校评分及学校评价:
 
     private void submitcolloge(){
+        token = AppUtils.getToken(EvaluateActivity.this);
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.110:8080/api/comment/setCollegeComment";
+        String url = "http://10.7.88.31/api/comment/setCollegeComment";
         //请求参数：关键词
         RequestParams param = new RequestParams();
-        param.put("collegeId","10001");
+        param.put("collegeId","11006");
         param.put("score",school_sc);
         param.put("comment", school_evaluate);
         param.put("token",token);
+        param.put("image",image_online);
+//        Log.e("学校评论url",image_online);
         client.get(url, param, new JsonHttpResponseHandler(){
             public void onSuccess(int statusCode, Header[] headers, JSONObject response){
                 try {
@@ -183,8 +200,9 @@ public class EvaluateActivity extends Activity{
 
     //测试：上传带领人评分及带领人评论
     private void submitman(){
+        token = AppUtils.getToken(EvaluateActivity.this);
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.110:8080/api/comment/setUserComment";
+        String url = "http://10.7.88.31/api/comment/setUserComment";
         // 请求参数：关键词
         RequestParams param = new RequestParams();
         param.put("userId","dcc2d7bf7f2a4c089f142a35af2f1318");
@@ -212,8 +230,9 @@ public class EvaluateActivity extends Activity{
 
     //测试：获取带领人头像url
     private void getPortrait(){
+        token = AppUtils.getToken(EvaluateActivity.this);
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.109:8080/api/account/profile/getProfile";
+        String url = "http://10.7.88.31/api/account/profile/getProfile";
         RequestParams param = new RequestParams();
         param.put("token",token);
         client.get(url, param, new JsonHttpResponseHandler(){
@@ -223,36 +242,35 @@ public class EvaluateActivity extends Activity{
                     profile = new JSONObject(response.toString());
                     JSONObject profile1 = profile.getJSONObject("datum");
                     portraiturl = profile1.getString("profileImage");
-                    Log.e( portraiturl, portraiturl);
+                    Log.e( "portraiturl", portraiturl);
+                    Glide.with(EvaluateActivity.this).load(AppUtils.HOST+portraiturl).into(Iv);
+                    Log.e("头像加载完毕","加载完毕");
                 }catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
         });
-
-
     }
+
+
 
     //测试：获取学校校徽url
     private void getschoolbadge(){
+        token = AppUtils.getToken(EvaluateActivity.this);
+        Log.e("token",token);
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://localhost:8080/api/college/searchCollege";
+        String url = "http://10.7.88.31/api/college/schoolLogo";
         RequestParams param = new RequestParams();
-        param.put("keyWord",keyWord);
+        param.put("collegeId",11006);
         client.get(url, param, new JsonHttpResponseHandler(){
             public void onSuccess(int statusCode, Header[] headers, JSONObject response){
                 try {
                     JSONObject profile = null;
                     profile = new JSONObject(response.toString());
-                    JSONArray profile2 = profile.getJSONArray("datum");
-                    int iSize = profile2.length();
-                    for (int i = 0; i < iSize; i++) {
-                        String schoolid = profile2.getJSONObject(i).getString("provinceID");
-                        if (schoolid == provinceID){
-                            schoolbadge = profile2.getJSONObject(i).getString("schoolLogo");
-                        }
-                    }
-                    Log.e( schoolbadge, schoolbadge);
+                    JSONObject profile2 = profile.getJSONObject("datum");
+                    schoolbadge = profile2.getString("schoolLogo");
+                    Log.e( "schoolbadge", schoolbadge);
+                    Glide.with(EvaluateActivity.this).load(AppUtils.HOST+schoolbadge).into(Iv2);
                 }catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -290,16 +308,24 @@ public class EvaluateActivity extends Activity{
                 //获取星级评分
                 RatingBardeal();
                 //测试：发送消息
-                submitman();
-                submitcolloge();
                 photouploading();
+
                 for(int i = 0;i<image_route.size();i++){
                     Log.e("路径-----",image_route.get(i));
                 }
-//                //跳转
-//                Intent intent = new Intent(EvaluateActivity.this,GGL_Activity.class);
-//                startActivity(intent);
-//                finish();
+                //跳转
+                Intent intent = new Intent(EvaluateActivity.this,GGL_Activity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+    private void b2_Onclick(){
+        b2 = (ImageButton)findViewById(R.id.Bt_evaluate_back);
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                back_dialog();
             }
         });
     }
@@ -484,16 +510,16 @@ public class EvaluateActivity extends Activity{
     }
 
     //返回按钮操作
-    protected void back_dialog(final int position){
+    protected void back_dialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(EvaluateActivity.this);
         builder.setMessage("评价还未完成，您确定要退出吗？");
         builder.setTitle("提示");
         builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-                imageItem.remove(position);
-                simpleAdapter.notifyDataSetChanged();
+                Intent intent = new Intent(EvaluateActivity.this,MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
