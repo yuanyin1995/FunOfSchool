@@ -70,9 +70,10 @@ public class EvaluateActivity extends Activity{
     private int width;
     //测试 定义 token
     private String token = null;
-    private String provinceID = "11006";
     private String portraiturl = null;
     private String schoolbadge = null;
+    private int collegeId ;
+    private String collegeId1 = null;
     //根据url加载图片
     public ImageView Iv ;
     public ImageView Iv2;
@@ -85,6 +86,10 @@ public class EvaluateActivity extends Activity{
         Iv = (ImageView)findViewById(R.id.Iv_evaluate_portrait);
         Iv2 = (ImageView)findViewById(R.id.Iv_evaluate_college);
         Ed1 = (EditText)findViewById(R.id.Et_evaluate_et1);
+
+        collegeId = getIntent().getIntExtra("collegeId",1001);
+        collegeId1 = collegeId +"";
+        Log.e("collegeid",collegeId1);
 
         //测试获取头像
         getPortrait();
@@ -99,8 +104,6 @@ public class EvaluateActivity extends Activity{
         b2_Onclick();
         //设置按钮大小
         setTitlehigh();
-
-
     }
 
     //图片上传
@@ -120,7 +123,7 @@ public class EvaluateActivity extends Activity{
                 //异步的客户端对象
                 AsyncHttpClient client = new AsyncHttpClient();
                 token = AppUtils.getToken(EvaluateActivity.this);
-                String url = "http://10.7.88.31/api/fs/upload?token="+token;
+                String url = AppUtils.HOST +"api/fs/upload?token="+token;
                 //根据路径创建文件
                 File file = new File(image_route.get(i));
                 try {
@@ -143,6 +146,9 @@ public class EvaluateActivity extends Activity{
                                 Log.e("responBody",responseBody.toString());
                                 JSONObject avatarurl1 = responseBody.getJSONObject("datum");
                                 avatarurl2 = avatarurl1.getString("profile_picture");
+
+
+
                                 if(image_online == null){
                                     image_online = avatarurl2;
                                 }
@@ -174,10 +180,9 @@ public class EvaluateActivity extends Activity{
     private void submitcolloge(){
         token = AppUtils.getToken(EvaluateActivity.this);
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.31/api/comment/setCollegeComment";
+        String url = AppUtils.HOST +"api/comment/setCollegeComment";
         //请求参数：关键词
         RequestParams param = new RequestParams();
-        param.put("collegeId","11006");
         param.put("score",school_sc);
         param.put("comment", school_evaluate);
         param.put("token",token);
@@ -202,7 +207,7 @@ public class EvaluateActivity extends Activity{
     private void submitman(){
         token = AppUtils.getToken(EvaluateActivity.this);
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.31/api/comment/setUserComment";
+        String url = AppUtils.HOST +"api/comment/setUserComment";
         // 请求参数：关键词
         RequestParams param = new RequestParams();
         param.put("userId","dcc2d7bf7f2a4c089f142a35af2f1318");
@@ -232,7 +237,7 @@ public class EvaluateActivity extends Activity{
     private void getPortrait(){
         token = AppUtils.getToken(EvaluateActivity.this);
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.31/api/account/profile/getProfile";
+        String url = AppUtils.HOST + "api/account/profile/getProfile";
         RequestParams param = new RequestParams();
         param.put("token",token);
         client.get(url, param, new JsonHttpResponseHandler(){
@@ -256,12 +261,14 @@ public class EvaluateActivity extends Activity{
 
     //测试：获取学校校徽url
     private void getschoolbadge(){
+//        collegeId1 = getIntent().getExtras().getString("collegeId");
+//        Log.e("collegeid",collegeId1);
         token = AppUtils.getToken(EvaluateActivity.this);
         Log.e("token",token);
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.31/api/college/schoolLogo";
+        String url = AppUtils.HOST+"api/college/schoolLogo";
         RequestParams param = new RequestParams();
-        param.put("collegeId",11006);
+        param.put("collegeId","11006");
         client.get(url, param, new JsonHttpResponseHandler(){
             public void onSuccess(int statusCode, Header[] headers, JSONObject response){
                 try {
