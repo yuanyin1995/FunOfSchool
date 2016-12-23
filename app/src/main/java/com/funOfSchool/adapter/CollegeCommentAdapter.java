@@ -54,7 +54,7 @@ public class CollegeCommentAdapter extends BaseAdapter {
         TextView score = (TextView)view.findViewById(R.id.cc_score);
         TextView comment = (TextView)view.findViewById(R.id.cc_comment);
 
-        userName.setText(ccItems.get(i).getUserId());
+        userName.setText(ccItems.get(i).getUserName());
         commentDate.setText(ccItems.get(i).getCommentDate());
         score.setText(ccItems.get(i).getScore()+"分");
         comment.setText(ccItems.get(i).getComment());

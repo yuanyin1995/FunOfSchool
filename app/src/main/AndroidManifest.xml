@@ -82,7 +82,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.ConversationListActivity" />
         <activity android:name=".ui.ChatActivity" />
-        <activity android:name=".ui.GGL_Activity"/>
         <activity android:name=".ui.MainActivity">
         </activity>
         <activity android:name=".ui.SelectActivity" >
@@ -94,7 +93,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".ui.LoginActivityTemp"/>
         <!-- 高德地图相关 -->
         <meta-data

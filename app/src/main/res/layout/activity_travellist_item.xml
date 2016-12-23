@@ -10,7 +10,7 @@
         android:background="#FFFFFF"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="16dp">
         <com.funOfSchool.util.CircleImageView
             android:id="@+id/firstU"
             android:layout_width="68dp"

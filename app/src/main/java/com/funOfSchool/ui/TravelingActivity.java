@@ -60,7 +60,7 @@ public class TravelingActivity extends AppCompatActivity {
     //  结束旅程按钮
     private ImageView btnTravelingEnd;
     //  游玩学校ID
-    private String travelCollegeId;
+    private int travelCollegeId;
 
     //  轨迹服务ID
     long serviceId = 131124;
@@ -152,7 +152,7 @@ public class TravelingActivity extends AppCompatActivity {
      */
     private void getCollegeId() {
         Intent i = getIntent();
-        travelCollegeId = i.getStringExtra("collegeId");
+        travelCollegeId = i.getIntExtra("collegeId",1001);
     }
 
     /**
