@@ -93,11 +93,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.SelectActivity" >
-        </activity>
-        <activity android:name=".ui.LoginActivity">
-
-        </activity>
         <activity android:name=".ui.LoginActivityTemp"/>
         <!-- 高德地图相关 -->
         <meta-data
