@@ -58,7 +58,6 @@ public class LoginActivityTemp extends AppCompatActivity {
         progressDialog.show();
 
 
-        // 根据学校名称，获得所选学校的经纬度和ID
         AsyncHttpClient client = new AsyncHttpClient();
         String url = AppUtils.HOST + "api/account/login";
         // 请求参数：学校名称

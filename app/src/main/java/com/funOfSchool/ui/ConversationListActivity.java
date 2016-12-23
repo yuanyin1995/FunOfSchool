@@ -11,7 +11,6 @@ import android.widget.TextView;
 import com.funOfSchool.R;
 import com.funOfSchool.ui.http.AsyncHttpMangers;
 import com.funOfSchool.util.AppUtils;
-import com.hyphenate.EMCallBack;
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMCmdMessageBody;
@@ -215,22 +214,6 @@ public class ConversationListActivity extends AppCompatActivity {
             @Override
             public void onMessage(boolean isSuccess, String message) {
                 AppUtils.Log(isSuccess + "   " + message);
-            }
-        });
-        EMClient.getInstance().logout(false, new EMCallBack() {
-            @Override
-            public void onSuccess() {
-                Log.e("MainActivity","退出登录");
-            }
-
-            @Override
-            public void onError(int i, String s) {
-                Log.e("MainActivity","退出失败" + i + ","+ s);
-            }
-
-            @Override
-            public void onProgress(int i, String s) {
-
             }
         });
     }

@@ -13,7 +13,11 @@ public class AppUtils {
     /**
      * 主机地址
      */
-    public static final String HOST = "http://10.7.1.203/";
+    public static final String HOST = "http://192.168.1.170/";
+    /**
+     * 用户头像url
+     */
+    public static String AVATAR = HOST + "images/defaultUserAvatar.jpg";
     /**
      * 写入token------临时
      */

@@ -120,7 +120,7 @@ public class EvaluateActivity extends Activity{
                 //异步的客户端对象
                 AsyncHttpClient client = new AsyncHttpClient();
                 token = AppUtils.getToken(EvaluateActivity.this);
-                String url = "http://10.7.88.31/api/fs/upload?token="+token;
+                String url = AppUtils.HOST + "api/fs/upload?token="+token;
                 //根据路径创建文件
                 File file = new File(image_route.get(i));
                 try {
@@ -174,7 +174,7 @@ public class EvaluateActivity extends Activity{
     private void submitcolloge(){
         token = AppUtils.getToken(EvaluateActivity.this);
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.31/api/comment/setCollegeComment";
+        String url = AppUtils.HOST + "api/comment/setCollegeComment";
         //请求参数：关键词
         RequestParams param = new RequestParams();
         param.put("collegeId","11006");
@@ -202,7 +202,7 @@ public class EvaluateActivity extends Activity{
     private void submitman(){
         token = AppUtils.getToken(EvaluateActivity.this);
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.31/api/comment/setUserComment";
+        String url = AppUtils.HOST + "api/comment/setUserComment";
         // 请求参数：关键词
         RequestParams param = new RequestParams();
         param.put("userId","dcc2d7bf7f2a4c089f142a35af2f1318");
@@ -232,7 +232,7 @@ public class EvaluateActivity extends Activity{
     private void getPortrait(){
         token = AppUtils.getToken(EvaluateActivity.this);
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.31/api/account/profile/getProfile";
+        String url = AppUtils.HOST + "api/account/profile/getProfile";
         RequestParams param = new RequestParams();
         param.put("token",token);
         client.get(url, param, new JsonHttpResponseHandler(){
@@ -259,7 +259,7 @@ public class EvaluateActivity extends Activity{
         token = AppUtils.getToken(EvaluateActivity.this);
         Log.e("token",token);
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.31/api/college/schoolLogo";
+        String url = AppUtils.HOST + "api/college/schoolLogo";
         RequestParams param = new RequestParams();
         param.put("collegeId",11006);
         client.get(url, param, new JsonHttpResponseHandler(){

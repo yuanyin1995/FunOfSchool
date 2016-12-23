@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.EMError;
 import com.hyphenate.chat.EMClient;
@@ -21,6 +22,7 @@ import com.hyphenate.easeui.adapter.EaseMessageAdapter;
 import com.hyphenate.easeui.utils.EaseUserUtils;
 import com.hyphenate.easeui.widget.EaseChatMessageList;
 import com.hyphenate.easeui.widget.EaseChatMessageList.MessageListItemClickListener;
+import com.hyphenate.exceptions.HyphenateException;
 import com.hyphenate.util.DateUtils;
 
 import java.util.Date;
@@ -118,9 +120,17 @@ public abstract class EaseChatRow extends LinearLayout {
         }
         //set nickname and avatar
         if(message.direct() == Direct.SEND && userAvatarView != null){
-            EaseUserUtils.setUserAvatar(context, EMClient.getInstance().getCurrentUser(), userAvatarView);
+            try {
+                Glide.with(getContext()).load(message.getStringAttribute("avatar")).into(userAvatarView);
+            } catch (HyphenateException e) {
+                Glide.with(context).load(R.drawable.ease_default_avatar).into(userAvatarView);
+            }
         }else if (userAvatarView != null){
-            EaseUserUtils.setUserAvatar(context, message.getFrom(), userAvatarView);
+            try {
+                Glide.with(getContext()).load(message.getStringAttribute("avatar")).into(userAvatarView);
+            } catch (HyphenateException e) {
+                Glide.with(context).load(R.drawable.ease_default_avatar).into(userAvatarView);
+            }
             EaseUserUtils.setUserNick(message.getFrom(), usernickView);
         }
         

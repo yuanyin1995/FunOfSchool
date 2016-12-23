@@ -159,7 +159,9 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
 
     @Override
     public void onSetMessageAttributes(EMMessage message) {
-
+        if (!message.getBooleanAttribute("serverMsg",false)){
+            message.setAttribute("avatar",AppUtils.AVATAR);
+        }
     }
 
     @Override
