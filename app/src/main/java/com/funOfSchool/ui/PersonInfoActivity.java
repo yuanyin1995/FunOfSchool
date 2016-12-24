@@ -19,6 +19,9 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -28,6 +31,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.funOfSchool.R;
 import com.funOfSchool.adapter.ConstellationAdapter;
 import com.funOfSchool.adapter.MajorAdapter;
@@ -35,10 +39,11 @@ import com.funOfSchool.util.ApiUtils;
 import com.funOfSchool.util.AppUtils;
 import com.funOfSchool.util.CircleImageView;
 import com.funOfSchool.util.FileUtil;
-import com.funOfSchool.util.MyAsyncTask;
 import com.funOfSchool.util.SelectPicPopupWindow;
 import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestHandle;
 import com.loopj.android.http.RequestParams;
 
 import org.apache.http.Header;
@@ -47,8 +52,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 import static com.funOfSchool.ui.http.AsyncHttpClients.client;
 import static com.funOfSchool.util.ApiUtils.API_ACCOUNT_PROFILE;
@@ -64,9 +72,9 @@ public class PersonInfoActivity extends Activity {
     private CircleImageView avatarImg;// 头像控件
     private SelectPicPopupWindow menuWindow; // 弹出框
     private Context c = PersonInfoActivity.this;
-    //static public String imgUrl = AppUtils.HOST+ApiUtils.API_ACCOUNT_LOAD+"?"+c;//"Http://10.141.230.100:8080/api/fs/upload?token=c5b4f1079ca24e71a25e0f3b06e5de642dNRr3";
+    private String imgUrl;//"Http://10.141.230.100:8080/api/fs/upload?token=c5b4f1079ca24e71a25e0f3b06e5de642dNRr3";
     private static final String IMAGE_FILE_NAME = "avatarImage.jpg";
-    static public String urlpath;	//相片储存路径
+    static public String urlpath="null";	//相片储存路径
     private static final int REQUESTCODE_PICK = 0;
     private static final int REQUESTCODE_TAKE = 1;
     private static final int REQUESTCODE_CUTTING = 2;
@@ -74,9 +82,12 @@ public class PersonInfoActivity extends Activity {
     private TextView tvName;
     private TextView tvSex;
     private TextView tvBirthday;
-    private TextView tvSchool;
     private TextView tvYear;
+    private TextView tvStars;
+    private TextView tvPoint;
     private TextView tvCollstellation;
+    private TextView tvSchool;
+    private TextView tvMajor;
     private RelativeLayout selectSex;
     private RelativeLayout selectDate;
     private RelativeLayout selectYear;
@@ -100,7 +111,38 @@ public class PersonInfoActivity extends Activity {
     private String enrollName;
     // 记录用户所选星座的变量
     private String constellation;
-
+    //获取的手机号
+    //String userPhoneNumber="11111111111";
+    //要上传的头像
+    Bitmap photo;
+    //drawable（头像用）
+    Drawable drawable;
+    // 定义记录用户更换头像时的时间
+    private int h;
+    private int m;
+    private int s;
+    private String alterAvatar = null;
+    // 所选学校的ID
+    private int selectCollegeId;
+    private String collegeIdStr;
+    MajorAdapter adapter;
+    /*  所选学校ID  */
+    int collegeId;
+    private ArrayAdapter<String> ada;
+    /*  学校名称列表  */
+    private List<String> collegeNameList = new ArrayList<String>();
+    // 创建专业数据列表
+    private ArrayList<String> majorNameList = new ArrayList<String>();
+    private ArrayList<String> majorIdList = new ArrayList<String>();
+    private RelativeLayout rlTitle;
+    // 记录用户所选专业的变量
+    private String majorName;
+    private String majorId;
+    // 记录用户所选学校的变量
+    private String collegeName;
+    private String schoolId;
+    //获取父控件
+    private View parentView;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personinfo);
@@ -122,6 +164,9 @@ public class PersonInfoActivity extends Activity {
         tvSchool = (TextView)findViewById(R.id.value_school);
         tvYear = (TextView)findViewById(R.id.value_year);
         tvCollstellation = (TextView)findViewById(R.id.value_constellation);
+        tvStars=(TextView)findViewById(R.id.stars);
+        tvPoint=(TextView)findViewById(R.id.point);
+        tvMajor=(TextView)findViewById(R.id.value_major);
         selectSex = (RelativeLayout)findViewById(R.id.sexClick);
         selectDate = (RelativeLayout)findViewById(R.id.dateClick);
         selectYear = (RelativeLayout)findViewById(R.id.yearClick);
@@ -129,6 +174,8 @@ public class PersonInfoActivity extends Activity {
         selectConstellation = (RelativeLayout)findViewById(R.id.constellationClick);
         selectSchool = (RelativeLayout)findViewById(R.id.schoolClick);
         selectMajor = (RelativeLayout)findViewById(R.id.majorClick);
+        avatarImg = (CircleImageView) findViewById(R.id.avatarImg);
+        parentView = (View)findViewById(R.id.personinfo);
     }
     private void setListener(){
         Listener listener = new Listener();
@@ -167,6 +214,11 @@ public class PersonInfoActivity extends Activity {
                     tvSchool.setText(profile1.getString("schoolName"));
                     tvYear.setText(profile1.getString("enrollment"));
                     tvCollstellation.setText(profile1.getString("constellation"));
+                    tvStars.setText("评分|"+profile1.getString("stars"));
+                    tvPoint.setText("积分|"+profile1.getString("point"));
+                    tvMajor.setText(profile1.getString("majorName"));
+                    Log.i("profileImage",profile1.getString("profileImage"));
+                    Glide.with(PersonInfoActivity.this).load(AppUtils.HOST+profile1.getString("profileImage")).into(avatarImg);
                 }catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -196,13 +248,208 @@ public class PersonInfoActivity extends Activity {
                     setConstellation();
                     break;
                 case R.id.schoolClick:
-
+                    searchCollege();
                     break;
                 case R.id.majorClick:
-
+                    setMajorDialog();
                     break;
             }
         }
+    }
+    /**
+     * 根据用户输入的关键词获取大学列表
+     */
+    private void searchCollege(){
+        Toast.makeText(PersonInfoActivity.this,"点击了切换学校",Toast.LENGTH_SHORT).show();
+        // 创建对话框 Builder
+        final AlertDialog.Builder builder = new AlertDialog.Builder(PersonInfoActivity.this);
+        // 加载对话框布局
+        final View dialogLayout =
+                getLayoutInflater().inflate(R.layout.dialog_school,null);
+        builder.setView(dialogLayout);
+        /*  搜索栏 */
+        final AutoCompleteTextView etSearch=(AutoCompleteTextView)dialogLayout.findViewById(R.id.info_et_search);;
+        etSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // 根据关键词获取学校下拉列表
+                AsyncHttpClient client = new AsyncHttpClient();
+                String url = AppUtils.HOST + ApiUtils.API_COLLEGE_NAMELIST;
+                // 请求参数：关键词
+                RequestParams param = new RequestParams();
+                param.put("keyWord",etSearch.getText());
+                // 发送网络请求
+                client.post(url, param, new JsonHttpResponseHandler() {
+                    // 发出网络请求前绑定adapter
+                    @Override
+                    public void onStart() {
+                        super.onStart();
+                        ada = new ArrayAdapter<>(
+                                getApplicationContext(),
+                                R.layout.college_dropdown_item,
+                                collegeNameList);
+                        etSearch.setAdapter(ada);
+                        ada.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onSuccess(int i, Header[] headers, JSONObject response) {
+                        Log.e("pSUCCESS","发送成功!");
+                        // response为返回的JSON对象
+                        Log.e("pResponse:", response.toString());
+
+                        JSONObject collegeNameListJO = null;
+                        try {
+                            // 获取JSONObject
+                            collegeNameListJO = new JSONObject(response.toString());
+                            // 获取JSONArray
+                            JSONArray collegeNameListJA = collegeNameListJO.getJSONArray("datum");
+                            // 给学校名列表赋值
+                            for (int j=0; j<collegeNameListJA.length();j++){
+                                collegeNameList.add(j,collegeNameListJA.getJSONObject(j).getString("name"));
+                            }
+                            builder.setAdapter(adapter,new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    collegeName = collegeNameList.get(i).toString();
+                                    Toast.makeText(PersonInfoActivity.this,collegeName+"",Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        // 更新列表
+                        ada.notifyDataSetChanged();
+                    }
+                });
+            }
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // 获取最终学校名称
+                tvSchool.setText(etSearch.getText().toString());
+                collegeName = etSearch.getText().toString();
+                // 清除上次请求的学校
+                collegeNameList.clear();
+            }
+        });
+        // 创建并显示对话框
+        builder.create();
+        builder.show();
+        etSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // 根据学校名称，获得所选学校ID
+                AsyncHttpClient client = new AsyncHttpClient();
+                String url = AppUtils.HOST + ApiUtils.API_COLLEGE_LALO_SCENE;
+                // 请求参数：学校名称
+                RequestParams param = new RequestParams();
+                param.put("collegeName",collegeName);
+                //发送请求
+                client.post(url, param, new JsonHttpResponseHandler(){
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+
+
+                        JSONObject collegeNameJO = null;
+                        try {
+                            // 获取JSONObject
+                            collegeNameJO = new JSONObject(response.toString());
+                            // 获取JSONArray
+                            JSONArray collegeNameJA = collegeNameJO.getJSONArray("datum");
+                            // 给所选学校经纬度和ID赋值
+                            collegeId = collegeNameJA.getJSONObject(0).getInt("coid");
+                            selectCollegeId = collegeId;
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+            }
+        });
+    }
+    /**
+     * 设置专业对话框
+     */
+    private void setMajorDialog(){
+        collegeIdStr = selectCollegeId+"";
+        Toast.makeText(PersonInfoActivity.this,collegeIdStr,Toast.LENGTH_SHORT).show();
+        // 根据学校ID，发送网络请求，获得专业列表
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = AppUtils.HOST + ApiUtils.API_COLLEGE_MARJOR;
+        // 请求参数：关键词
+        RequestParams param = new RequestParams();
+        param.put("collegeId",selectCollegeId);
+        // 发送网络请求
+        client.post(url, param, new JsonHttpResponseHandler() {
+            // 发出网络请求前绑定adapter
+            @Override
+            public void onStart() {
+                super.onStart();
+                adapter = new MajorAdapter(PersonInfoActivity.this,majorNameList);
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onSuccess(int i, Header[] headers, JSONObject response) {
+                Log.e("SUCCESS","发送成功!");
+                // response为返回的JSON对象
+                Log.e("Response:", response.toString());
+
+                JSONObject majorNameListJO = null;
+                try {
+                    // 获取JSONObject
+                    majorNameListJO = new JSONObject(response.toString());
+                    // 获取JSONArray
+                    JSONArray majorNameListJA = majorNameListJO.getJSONArray("datum");
+                    // 给专业名列表赋值
+                    for (int j=0; j<majorNameListJA.length();j++){
+                        majorNameList.add(j,majorNameListJA.getJSONObject(j).getString("name"));
+                        majorIdList.add(j,majorNameListJA.getJSONObject(j).getString("scid"));
+                    }
+                    Log.e("MAJOR", majorNameList.toString());
+                    Log.e("MAJORID", majorIdList.toString());
+
+                    // 创建对话框 Builder
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(PersonInfoActivity.this);
+                    // 加载对话框布局
+                    final View dialogLayout =
+                            getLayoutInflater().inflate(R.layout.dialog_major,null);
+                    builder.setView(dialogLayout);
+                    Log.e("acount", adapter.getCount()+"");
+                    Log.e("aitem", adapter.getItem(1).toString());
+                    builder.setAdapter(adapter,new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            majorName = adapter.getItem(i).toString();
+                            majorId = majorIdList.get(i);
+                            Toast.makeText(PersonInfoActivity.this,majorId+"",Toast.LENGTH_SHORT).show();
+                            tvMajor.setText(majorName);
+                            AsyncHttpClient client = new AsyncHttpClient();
+                            String url = AppUtils.HOST+ ApiUtils.API_ACCOUNT_PROFILE;
+                            RequestParams param = new RequestParams();
+                            param.put("token",AppUtils.getToken(PersonInfoActivity.this));
+                            param.put("majorId",majorId);
+                            client.post(url, param, new JsonHttpResponseHandler() {
+                                @Override
+                                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                                    Toast.makeText(PersonInfoActivity.this,"成功修改专业",Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        }
+                    });
+                    // 创建并显示对话框
+                    builder.create();
+                    builder.show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
     }
 
     /**
@@ -216,13 +463,8 @@ public class PersonInfoActivity extends Activity {
         final View dialogLayout =
                 getLayoutInflater().inflate(R.layout.dialog_constellation,null);
         builder.setView(dialogLayout);
-
-        // 设置对话框标题
-        // builder.setTitle("选择星座");
-
         // 创建 adapter
         final ConstellationAdapter adapter = new ConstellationAdapter(PersonInfoActivity.this);
-
         // 设置 adapter 和 监听器
         builder.setAdapter(adapter,new DialogInterface.OnClickListener(){
             @Override
@@ -243,7 +485,6 @@ public class PersonInfoActivity extends Activity {
                 });
             }
         });
-
         // 创建并显示对话框
         builder.create();
         builder.show();
@@ -277,14 +518,12 @@ public class PersonInfoActivity extends Activity {
             }
         });
 
-        // 创建 adapter
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 tvName.setText(enrollName);
                 AsyncHttpClient client = new AsyncHttpClient();
                 String url = AppUtils.HOST+ ApiUtils.API_ACCOUNT_PROFILE;
-                // 请求参数：关键词
                 RequestParams param = new RequestParams();
                 param.put("token",AppUtils.getToken(PersonInfoActivity.this));
                 param.put("userName",enrollName);
@@ -448,7 +687,6 @@ public class PersonInfoActivity extends Activity {
         builder.show();
     }
     private void initViews() {
-        avatarImg = (CircleImageView) findViewById(R.id.avatarImg);
         avatarImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -529,16 +767,64 @@ public class PersonInfoActivity extends Activity {
         Bundle extras = picdata.getExtras();
         if (extras != null) {
             // 取得SDCard图片路径做显示
-            Bitmap photo = extras.getParcelable("data");
-            Drawable drawable = new BitmapDrawable(null, photo);
-            urlpath = FileUtil.saveFile(mContext, "temphead.jpg", photo);
-            Log.i("图片的地址！！",urlpath);
+            photo = extras.getParcelable("data");
+            drawable = new BitmapDrawable(null, photo);
+            Calendar calendar = Calendar.getInstance();
+            h = calendar.get(Calendar.HOUR);
+            m = calendar.get(Calendar.MINUTE);
+            s = calendar.get(Calendar.SECOND);
+            alterAvatar = h+"-"+m+"-"+s;
+            Log.i("alterAvatar",alterAvatar);
+            //调用saveFile的方法获取裁剪出的图片的本地路径
+            urlpath = FileUtil.saveFile(mContext,alterAvatar+".jpg",photo);
+            Log.i("裁剪出的图片的本地路径",urlpath);
+            //给头像空间set新裁剪出的图片
             avatarImg.setImageDrawable(drawable);
+            imgUrl = AppUtils.HOST+ApiUtils.API_ACCOUNT_LOAD+"?token="+getToken(PersonInfoActivity.this);
+            //创建网络请求——上传头像
+            AsyncHttpClient client = new AsyncHttpClient();
+            RequestParams params = new RequestParams();
+            File file = new File(urlpath);
+            try {
+                //放入文件
+                params.put("profile_picture", file);
+                Log.i("文件存在",urlpath);
+            } catch (Exception e) {
+                // TODO: handle exception
+                System.out.println("文件不存在----------");
+            }
+            //执行post请求
+            client.post(imgUrl,params, new JsonHttpResponseHandler() {
 
-            // 新线程后台上传服务器
-            MyAsyncTask asyncTask = new MyAsyncTask(PersonInfoActivity.this);
-            asyncTask.execute(20);
-            Log.i("!!!Token:",getToken(PersonInfoActivity.this));
+                @Override
+                public void onSuccess(int statusCode, Header[] headers,
+                                      JSONObject responseBody) {
+                    if (statusCode == 200) {
+                        Toast.makeText(getApplicationContext(), "上传成功", Toast.LENGTH_SHORT)
+                                .show();
+                        try {
+                            Log.i("responBody",responseBody.toString());
+                            JSONObject avatarUrl1 = responseBody.getJSONObject("datum");
+                            Log.i("profile_picture",avatarUrl1.getString("profile_picture"));
+                            //修改个人头像的url
+                            AsyncHttpClient client = new AsyncHttpClient();
+                            String url = HOST+API_ACCOUNT_PROFILE;//"http://10.7.82.168:8080/api/account/profile/getProfile";
+                            RequestParams param = new RequestParams();
+                            Log.i("profileImage",avatarUrl1.getString("profile_picture"));
+                            param.put("token",AppUtils.getToken(PersonInfoActivity.this));
+                            param.put("profileImage",avatarUrl1.getString("profile_picture"));
+                            client.post(url,param, new JsonHttpResponseHandler() {
+                                @Override
+                                public void onSuccess(int statusCode,Header[] headers, JSONObject response){
+                                    Toast.makeText(PersonInfoActivity.this,"已修改头像至数据库",Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        }catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            });
         }
     }
 }

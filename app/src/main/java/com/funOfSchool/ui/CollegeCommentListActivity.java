@@ -2,7 +2,6 @@ package com.funOfSchool.ui;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
@@ -27,7 +26,6 @@ public class CollegeCommentListActivity extends Activity {
 
     private ListView ccLv;
     private String ccCollegeId;
-    private String ccCollegeIdStr;
     private ArrayList<CollegeComment>  cclist = new ArrayList<CollegeComment>();
 
     @Override
@@ -42,6 +40,11 @@ public class CollegeCommentListActivity extends Activity {
 
         //  获取学校评论列表
         getCollegeCommentList();
+        // 获取空间
+        findView();
+    }
+    private void findView(){
+
     }
 
     private void getCollegeID() {
@@ -52,6 +55,7 @@ public class CollegeCommentListActivity extends Activity {
 
     private void getCollegeCommentList() {
         //  发送网络请求，得到我学校评价列表
+        //11006  split","
         AsyncHttpClient client = new AsyncHttpClient();
         String url = AppUtils.HOST + ApiUtils.API_COLLEGE_COMMENT;
         // 请求参数: collegeId
@@ -70,12 +74,12 @@ public class CollegeCommentListActivity extends Activity {
 
                     for (int i= 0 ; i<ccJA.length() ; i++){
                         cclist.add(new CollegeComment(
-                                ccJA.getJSONObject(i).getString("comment"),
-                                ccJA.getJSONObject(i).getInt("score"),
-                                ccJA.getJSONObject(i).getString("userId"),
-                                ccJA.getJSONObject(i).getString("image"),
+                                ccJA.getJSONObject(i).getString("url"),
+                                ccJA.getJSONObject(i).getString("userName"),
                                 ccJA.getJSONObject(i).getString("time"),
-                                ccJA.getJSONObject(i).getString("userName")
+                                ccJA.getJSONObject(i).getInt("score"),
+                                ccJA.getJSONObject(i).getString("comment"),
+                                ccJA.getJSONObject(i).getString("image")
                         ));
                     }
 

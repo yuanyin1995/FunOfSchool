@@ -1,17 +1,11 @@
 package com.funOfSchool.ui;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.funOfSchool.R;
 import com.funOfSchool.adapter.TravelListAdapter;
@@ -28,7 +22,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by lenovo on 2016/12/10.
@@ -92,6 +85,8 @@ public class TravelListActivity extends Activity {
                     //  获取Travel数据集合
                     for (int i=0 ; i<travelListJA.length() ; i++){
                         travelIems.add(new TravelItem(
+                                travelListJA.getJSONObject(i).getString("urlUser"),
+                                travelListJA.getJSONObject(i).getString("urlGuider"),
                                 travelListJA.getJSONObject(i).getString("userId"),
                                 travelListJA.getJSONObject(i).getString("guiderId"),
                                 travelListJA.getJSONObject(i).getString("schoolId"),

@@ -42,6 +42,14 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        JsonHttpResponseHandler handler = new JsonHttpResponseHandler(){
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+            }
+        };
+
         tvRegist = (TextView) findViewById(R.id.Regist);
         etlogin=(EditText)findViewById(R.id.Et_login);
         etlogin.addTextChangedListener(new TextWatcher() {

@@ -25,7 +25,8 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.http.Header;
-import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Created by Aiome on 2016/11/29.
@@ -44,6 +45,7 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
     private ImageView infoIv;
     private TextView titleTv;
     private RelativeLayout rlTitle;
+
 
     private String title = "";
     private boolean type;
@@ -136,8 +138,15 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
 
         mHandler = new JsonHttpResponseHandler(){
             @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
+                try {
+                    if (response.getInt("code") == 20){
+                        AppUtils.showShort(getContext(),response.getString("message"));
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         };
 
@@ -146,10 +155,10 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
             public void onClick(View v) {
                 if (type){
                     AsyncHttpMangers.userChoose(getContext(),0,getToChatWith(),mHandler);
-                    AppUtils.showShort(getContext(),"useraccept");
+                    AppUtils.showShort(getContext(),"接受");
                 }else {
                     AsyncHttpMangers.guiderChoose(getContext(),0,getToChatWith(),mHandler);
-                    AppUtils.showShort(getContext(),"guideraccept");
+                    AppUtils.showShort(getContext(),"接受");
                 }
             }
         });
@@ -158,10 +167,10 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
             public void onClick(View v) {
                 if (type){
                     AsyncHttpMangers.userChoose(getContext(),1,getToChatWith(),mHandler);
-                    AppUtils.showShort(getContext(),"useraccept");
+                    AppUtils.showShort(getContext(),"拒绝");
                 }else {
                     AsyncHttpMangers.guiderChoose(getContext(),1,getToChatWith(),mHandler);
-                    AppUtils.showShort(getContext(),"guideraccept");
+                    AppUtils.showShort(getContext(),"拒绝");
                 }
             }
         });

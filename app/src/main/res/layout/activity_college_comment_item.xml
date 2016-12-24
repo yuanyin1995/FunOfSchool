@@ -64,25 +64,34 @@
         android:text="评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容"
         style="@style/FirstText"
         android:layout_marginTop="8dp"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp">
         <ImageView
+            android:id="@+id/comment_pic1"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@mipmap/test_tx"
             android:layout_marginRight="8dp"/>
         <ImageView
+            android:id="@+id/comment_pic2"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@mipmap/test_tx"
             android:layout_marginRight="8dp"/>
         <ImageView
+            android:id="@+id/comment_pic3"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@mipmap/test_tx"
+            android:layout_marginRight="8dp"/>
+        <ImageView
+            android:id="@+id/comment_pic4"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginRight="8dp"/>
+        <ImageView
+            android:id="@+id/comment_pic5"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_marginRight="8dp"/>
     </LinearLayout>
 </LinearLayout>

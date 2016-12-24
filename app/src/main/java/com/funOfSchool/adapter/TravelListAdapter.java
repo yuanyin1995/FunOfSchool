@@ -10,10 +10,14 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.funOfSchool.R;
 import com.funOfSchool.model.TravelItem;
+import com.funOfSchool.ui.PersonInfoActivity;
 import com.funOfSchool.ui.QueryTraceActivity;
 import com.funOfSchool.ui.TravelingActivity;
+import com.funOfSchool.util.AppUtils;
+import com.funOfSchool.util.CircleImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,10 +58,13 @@ public class TravelListAdapter extends BaseAdapter {
         //  获取id
         TextView school =(TextView) convertView.findViewById(R.id.travel_list_school);
         TextView date = (TextView)convertView.findViewById(R.id.travel_list_date);
+        CircleImageView firstU = (CircleImageView)convertView.findViewById(R.id.firstU);
+        CircleImageView secondU = (CircleImageView)convertView.findViewById(R.id.secondU);
         //  设值
         school.setText(travelItems.get(position).getTravelCollege());
         date.setText(travelItems.get(position).getTravelDate());
-
+        Glide.with(context).load(AppUtils.HOST+travelItems.get(position).getUserAvatarUrl()).into(firstU);
+        Glide.with(context).load(AppUtils.HOST+travelItems.get(position).getGuideAvatarUrl()).into(secondU);
         //  路线图点击事件
         TextView tvPath = (TextView) convertView.findViewById(R.id.travel_list_path);
         tvPath.setOnClickListener(new View.OnClickListener() {
