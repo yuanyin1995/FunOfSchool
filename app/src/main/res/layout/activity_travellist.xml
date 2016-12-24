@@ -31,7 +31,8 @@
         android:background="@color/titleBottom"/>
     <ListView
         android:id="@+id/travellv"
-        android:background="#EEEEEE"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:divider="@color/bg"
+        android:dividerHeight="12px"/>
 </LinearLayout>
