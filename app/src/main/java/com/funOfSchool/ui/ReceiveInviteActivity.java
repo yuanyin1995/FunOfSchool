@@ -1,10 +1,13 @@
 package com.funOfSchool.ui;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -27,6 +30,7 @@ public class ReceiveInviteActivity extends AppCompatActivity {
     private Button receiveBtnAccept;
     private Button receiveBtnRefuse;
     private Button receiveBtnTochat;
+    private RelativeLayout rlTitle;
 
     private AsyncHttpResponseHandler mHandler;
     private String mUserId;
@@ -36,12 +40,25 @@ public class ReceiveInviteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receive_invite);
 
+        //  自适应titlebar高度
+        setTitleHeight();
         //  得到界面控件
         findView();
         //  初始化控件
         setUpView(getIntent());
         //  为各控件设置监听器
         setListener();
+    }
+    /**
+     * 设置标题栏高度
+     */
+    private void setTitleHeight() {
+        rlTitle = (RelativeLayout)findViewById(R.id.select_rl_title);
+        WindowManager wm = (WindowManager) getApplicationContext()
+                .getSystemService(Context.WINDOW_SERVICE);
+        int wHeight = wm.getDefaultDisplay().getHeight();
+        int tHeight = wHeight /11;
+        rlTitle.setMinimumHeight(tHeight);
     }
 
     private void setUpView(Intent intent) {
@@ -96,6 +113,7 @@ public class ReceiveInviteActivity extends AppCompatActivity {
                     startActivity(new Intent(ReceiveInviteActivity.this,MainActivity.class));
                     break;
                 case R.id.receive_btn_tochat:
+                    startActivity(new Intent(ReceiveInviteActivity.this,ConversationListActivity.class));
                     break;
                 default:
                     break;

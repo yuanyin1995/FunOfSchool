@@ -1,12 +1,16 @@
 package com.funOfSchool.ui;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.funOfSchool.R;
@@ -36,6 +40,11 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
     private View acceptBtn;
     private View refuseBtn;
 
+    private ImageView backIv;
+    private ImageView infoIv;
+    private TextView titleTv;
+    private RelativeLayout rlTitle;
+
     private String title = "";
     private boolean type;
 
@@ -43,9 +52,25 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_chat,container,false);
+        View view = inflater.inflate(R.layout.fragment_chat,container,false);
+        backIv = (ImageView) view.findViewById(R.id.chat_back);
+        infoIv = (ImageView) view.findViewById(R.id.chat_info);
+        titleTv = (TextView) view.findViewById(R.id.chat_name);
+        setTitleHeight(view);
+        return view;
     }
 
+    /**
+     * 设置标题栏高度
+     */
+    private void setTitleHeight(View view) {
+        rlTitle = (RelativeLayout)view.findViewById(R.id.chat_title);
+        WindowManager wm = (WindowManager) getContext()
+                .getSystemService(Context.WINDOW_SERVICE);
+        int wHeight = wm.getDefaultDisplay().getHeight();
+        int tHeight = wHeight /11;
+        rlTitle.setMinimumHeight(tHeight);
+    }
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -59,17 +84,29 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
         initChooseView();
         chooseFragment.addView(chooseView);
 
-
+        hideTitleBar();
         hideRemark();
     }
     public void setTitle( String title){
-        titleBar.setTitle(title);
+        titleTv.setText(title);
     }
 
 
     @Override
     protected void setUpView() {
         setChatFragmentListener(this);
+        backIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+        });
+        infoIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppUtils.setToken("个人资料",getContext());
+            }
+        });
         super.setUpView();
     }
 

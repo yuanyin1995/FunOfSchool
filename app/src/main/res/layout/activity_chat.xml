@@ -4,6 +4,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+
     <!--控件集装箱，用来替换聊天界面-->
     <RelativeLayout
         android:id="@+id/activity_chat"
