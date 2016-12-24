@@ -14,6 +14,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.funOfSchool.util.AppUtils;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -172,7 +173,7 @@ public class GuaGuaKa extends View {
     //解析
     private void getRemainprize(){
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.7.88.31/api/prize/getRemainPrizeList";
+        String url = AppUtils.HOST + "api/prize/getRemainPrizeList";
         RequestParams param = new RequestParams();
         client.get(url, param, new JsonHttpResponseHandler() {
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {

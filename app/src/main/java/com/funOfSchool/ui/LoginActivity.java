@@ -1,8 +1,8 @@
 package com.funOfSchool.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.method.PasswordTransformationMethod;
@@ -16,12 +16,15 @@ import android.widget.Toast;
 
 import com.funOfSchool.R;
 import com.funOfSchool.util.AppUtils;
+import com.hyphenate.EMCallBack;
+import com.hyphenate.chat.EMClient;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+import com.umeng.message.PushAgent;
+import com.umeng.message.UTrack;
 
 import org.apache.http.Header;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -102,12 +105,13 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
                 //创建网络访问的类的对象
                 AsyncHttpClient client = new AsyncHttpClient();
-                String url = "http://10.7.92.82/api/account/login";
+                String url = AppUtils.HOST + "api/account/login";
                 RequestParams param = new RequestParams();
                 param.put("loginName", login_num);
                 param.put("password", login_psd);
                 Log.e("param",param.toString());
 
+                final String psw = login_psd;
 
                 // 发送网络请求
                 client.get(url, param, new JsonHttpResponseHandler() {
@@ -121,6 +125,32 @@ public class LoginActivity extends AppCompatActivity {
                             AppUtils.setToken(JO.getString("token"),LoginActivity.this);
 
                             if (code==1) {
+                                //绑定alias
+                                PushAgent mPushAgent = PushAgent.getInstance(LoginActivity.this);
+                                mPushAgent.addAlias(response.getJSONObject("info").getString("userId"), "userId", new UTrack.ICallBack() {
+                                    @Override
+                                    public void onMessage(boolean b, String s) {
+                                        AppUtils.Log(b + "  " + s);
+                                    }
+                                });
+                                //聊天登录
+                                EMClient.getInstance().login(response.getJSONObject("info").getString("userId"), psw, new EMCallBack() {
+
+                                    @Override
+                                    public void onSuccess() {
+                                    }
+
+                                    @Override
+                                    public void onError(int i, String s) {
+
+                                    }
+
+                                    @Override
+                                    public void onProgress(int i, String s) {
+
+                                    }
+                                });
+                                AppUtils.AVATAR = AppUtils.HOST + response.getJSONObject("info").getString("profileImage");
                                 Toast toast = Toast.makeText(LoginActivity.this, "登录成功",
                                         Toast.LENGTH_SHORT);
                                 toast.show();

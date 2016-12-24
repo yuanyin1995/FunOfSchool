@@ -80,6 +80,22 @@ public class ChatActivity extends AppCompatActivity{
             AsyncHttpMangers.getGuiderRemark(getApplicationContext(),chatFragment.getToChatWith(),handler);
         }
 
+        JsonHttpResponseHandler jsonHttpResponseHandler = new JsonHttpResponseHandler(){
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                try {
+                    if (response.getInt("code") == 1){
+                        chatFragment.setTitle(response.getJSONObject("datum").getString("userName"));
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        AsyncHttpMangers.getName(chatFragment.getToChatWith(),jsonHttpResponseHandler);
+
     }
 
     private void initView() {

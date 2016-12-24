@@ -14,7 +14,7 @@ import com.loopj.android.http.RequestParams;
 
 public class AsyncHttpMangers {
     public static void getName(String userId,AsyncHttpResponseHandler handler){
-        String url = AppUtils.HOST + "api/acount/getName";
+        String url = AppUtils.HOST + "api/account/getName";
         RequestParams param = new RequestParams();
         param.put("userId",userId);
 

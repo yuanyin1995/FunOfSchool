@@ -2,8 +2,8 @@ package com.funOfSchool.ui;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -20,9 +20,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.baidu.mapapi.http.AsyncHttpClient;
 import com.funOfSchool.R;
 import com.funOfSchool.util.AppUtils;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.exceptions.HyphenateException;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
@@ -160,7 +161,7 @@ public class RegistActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //  创建网络访问的类的对象
                 com.loopj.android.http.AsyncHttpClient client = new com.loopj.android.http.AsyncHttpClient();
-                String url = "http://10.7.88.22/api/account/register";
+                String url = AppUtils.HOST + "api/account/register";
                 RequestParams param = new RequestParams();
                 param.put("loginName", Etphone.getText().toString().trim());
                 param.put("code", code.getText().toString().trim());
@@ -169,7 +170,7 @@ public class RegistActivity extends AppCompatActivity {
 // 发送网络请求
                 client.get(url, param, new JsonHttpResponseHandler() {
                     @Override
-                    public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                    public void onSuccess(int statusCode, Header[] headers, final JSONObject response) {
                         Log.e("response",response.toString());
                         try {
 
@@ -179,6 +180,25 @@ public class RegistActivity extends AppCompatActivity {
                             //AppUtils.setToken(JO.getString("token"),RegistActivity.this);
 
                             if (code1==1) {
+                                /**
+                                 * 注册成功注册环信即时聊天账号
+                                 * 请不要删除！！！！！
+                                 */
+
+                                new Thread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        try {
+                                            EMClient.getInstance().createAccount(response.getJSONObject("datum").getString("userId"),Etpsd.getText().toString().trim());
+                                            AppUtils.Log(response.getJSONObject("datum").getString("userId") + "  " + Etpsd.getText().toString().trim());
+                                        } catch (HyphenateException e) {
+                                            AppUtils.Log("注册环信失败:" + e.getMessage() + e.getErrorCode());
+                                        } catch (JSONException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                }).start();
+
                                 Toast toast = Toast.makeText(RegistActivity.this, "注册成功",
                                         Toast.LENGTH_SHORT);
                                 toast.show();

@@ -2,6 +2,7 @@ package com.hyphenate.easeui.adapter;
 
 import android.content.Context;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TextView.BufferType;
 
+import com.bumptech.glide.Glide;
 import com.hyphenate.chat.EMChatRoom;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMConversation;
@@ -27,6 +29,13 @@ import com.hyphenate.easeui.utils.EaseSmileUtils;
 import com.hyphenate.easeui.utils.EaseUserUtils;
 import com.hyphenate.easeui.widget.EaseConversationList.EaseConversationListHelper;
 import com.hyphenate.util.DateUtils;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.apache.http.Header;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -95,11 +104,13 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
             convertView.setTag(holder);
         }
         holder.list_itease_layout.setBackgroundResource(R.drawable.ease_mm_listitem);
-
+       final ViewHolder holderTemp = new ViewHolder();
+        holderTemp.name = (TextView) convertView.findViewById(R.id.name);
+        holderTemp.avatar = (ImageView) convertView.findViewById(R.id.avatar);
         // get conversation
         EMConversation conversation = getItem(position);
         // get username or group id
-        String username = conversation.getUserName();
+        final String username = conversation.getUserName();
         
         if (conversation.getType() == EMConversationType.GroupChat) {
             String groupId = conversation.getUserName();
@@ -118,8 +129,32 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
             holder.name.setText(room != null && !TextUtils.isEmpty(room.getName()) ? room.getName() : username);
             holder.motioned.setVisibility(View.GONE);
         }else {
-            EaseUserUtils.setUserAvatar(getContext(), username, holder.avatar);
-            EaseUserUtils.setUserNick(username, holder.name);
+            JsonHttpResponseHandler handler = new JsonHttpResponseHandler(){
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                    super.onSuccess(statusCode, headers, response);
+                    Log.d("response",response.toString());
+                    try {
+                        if (response.getInt("code") == 1){
+                            String name = response.getJSONObject("datum").getString("userName");
+                            String avatar = "http://192.168.1.170/" + response.getJSONObject("datum").getString("profileImage");
+                           Log.d("avatar",avatar);
+                            EaseUserUtils.setUserNick(name, holderTemp.name);
+//                            EaseUserUtils.setAvatar(getContext(), username, avatar, holderTemp.avatar);
+                            Glide.with(getContext()).load(avatar).into(holderTemp.avatar);
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            };
+            AsyncHttpClient client = new AsyncHttpClient();
+            String url = "http://192.168.1.170/api/account/getName";
+            RequestParams param = new RequestParams();
+            param.put("userId",username);
+            client.get(url,param,handler);
+//            EaseUserUtils.setUserAvatar(getContext(), username, holder.avatar);
+//            EaseUserUtils.setUserNick(username, holder.name);
             holder.motioned.setVisibility(View.GONE);
         }
 

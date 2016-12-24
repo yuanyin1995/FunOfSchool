@@ -11,7 +11,6 @@ import android.widget.TextView;
 import com.funOfSchool.R;
 import com.funOfSchool.ui.http.AsyncHttpMangers;
 import com.funOfSchool.util.AppUtils;
-import com.hyphenate.EMCallBack;
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMCmdMessageBody;
@@ -21,6 +20,8 @@ import com.hyphenate.easeui.EaseConstant;
 import com.hyphenate.easeui.ui.EaseConversationListFragment;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
+import com.umeng.message.PushAgent;
+import com.umeng.message.UTrack;
 
 import org.apache.http.Header;
 import org.json.JSONException;
@@ -209,20 +210,10 @@ public class ConversationListActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        EMClient.getInstance().logout(false, new EMCallBack() {
+        PushAgent.getInstance(ConversationListActivity.this).removeAlias(EMClient.getInstance().getCurrentUser(), "userId", new UTrack.ICallBack(){
             @Override
-            public void onSuccess() {
-                Log.e("MainActivity","退出登录");
-            }
-
-            @Override
-            public void onError(int i, String s) {
-                Log.e("MainActivity","退出失败" + i + ","+ s);
-            }
-
-            @Override
-            public void onProgress(int i, String s) {
-
+            public void onMessage(boolean isSuccess, String message) {
+                AppUtils.Log(isSuccess + "   " + message);
             }
         });
     }
