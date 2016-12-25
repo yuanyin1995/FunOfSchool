@@ -161,4 +161,15 @@ public class ConversationListFragment extends EaseConversationListFragment {
             errorText.setText(R.string.the_current_network);
         }
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Map<String, EMConversation> conversations = EMClient.getInstance().chatManager().getAllConversations();
+        for (EMConversation conversation : conversations.values()) {
+            if (conversation.getAllMessages().size() != 0) {
+                EMClient.getInstance().chatManager().deleteConversation(conversation.getUserName(),false);
+            }
+        }
+    }
 }

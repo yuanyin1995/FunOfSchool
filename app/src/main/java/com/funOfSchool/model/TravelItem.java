@@ -1,43 +1,26 @@
 package com.funOfSchool.model;
 
-import android.media.Image;
-
-import java.util.Date;
-
 /**
  * Created by lenovo on 2016/12/14.
  */
 
 public class TravelItem {
+    private String userAvatarUrl;
+    private String guideAvatarUrl;
     private String userId;
     private String guiderId;
     private String travelCollege;
     private String travelDate;
     private Boolean travelFlag;
 
-    public TravelItem(String userId, String guiderId, String travelCollege,
-                      String travelDate, Boolean travelFlag) {
+    public TravelItem(String userAvatarUrl, String guideAvatarUrl, String userId, String guiderId, String travelCollege, String travelDate, Boolean travelFlag) {
+        this.userAvatarUrl = userAvatarUrl;
+        this.guideAvatarUrl = guideAvatarUrl;
         this.userId = userId;
         this.guiderId = guiderId;
         this.travelCollege = travelCollege;
         this.travelDate = travelDate;
         this.travelFlag = travelFlag;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public String getGuiderId() {
-        return guiderId;
-    }
-
-    public void setGuiderId(String guiderId) {
-        this.guiderId = guiderId;
     }
 
     public String getTravelCollege() {
@@ -62,6 +45,14 @@ public class TravelItem {
 
     public void setTravelFlag(Boolean travelFlag) {
         this.travelFlag = travelFlag;
+    }
+
+    public String getUserAvatarUrl() {
+        return userAvatarUrl;
+    }
+
+    public String getGuideAvatarUrl() {
+        return guideAvatarUrl;
     }
 
     @Override

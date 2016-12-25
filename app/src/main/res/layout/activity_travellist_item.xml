@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#EEEEEE">
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#EEEEEE">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -18,7 +18,7 @@
             android:src="@drawable/yuan"
             android:layout_centerVertical="true"
             android:layout_marginLeft="25dp"
-        android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"/>
         <ImageView
             android:id="@+id/and"
             android:layout_width="50dp"
@@ -28,6 +28,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"/>
         <com.funOfSchool.util.CircleImageView
+            android:id="@+id/secondU"
             android:layout_toRightOf="@+id/and"
             android:layout_width="68dp"
             android:layout_height="68dp"
@@ -49,10 +50,10 @@
             android:paddingLeft="7dp"/>
     </RelativeLayout>
     <View  android:layout_height="1dp"
-        android:layout_width="match_parent"
-        android:background="#EEEEEE"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"/>
+           android:layout_width="match_parent"
+           android:background="#EEEEEE"
+           android:layout_marginStart="16dp"
+           android:layout_marginEnd="16dp"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"

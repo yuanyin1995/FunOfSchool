@@ -53,7 +53,7 @@ public class ReceiveInviteActivity extends AppCompatActivity {
      * 设置标题栏高度
      */
     private void setTitleHeight() {
-        rlTitle = (RelativeLayout)findViewById(R.id.select_rl_title);
+        rlTitle = (RelativeLayout)findViewById(R.id.receive_rl_title);
         WindowManager wm = (WindowManager) getApplicationContext()
                 .getSystemService(Context.WINDOW_SERVICE);
         int wHeight = wm.getDefaultDisplay().getHeight();
@@ -67,7 +67,7 @@ public class ReceiveInviteActivity extends AppCompatActivity {
         receiveDate.setText(bundle.getString("time"));
         receiveName.setText(bundle.getString("userName"));
         String remark = bundle.getString("remark");
-        if (remark.equals("null")){
+        if (remark.isEmpty() || remark.equals("null")){
             receiveRemark.setText("无");
         }else{
             receiveRemark.setText(remark);

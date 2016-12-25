@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <AutoCompleteTextView
+        android:id="@+id/info_et_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="  请输入你在读的大学"
+        android:background="@drawable/search_bg"
+        style="@style/SecondText"
+        android:textColorHint="@color/colorPrimary"
+        android:textColor="@color/colorPrimary"
+        android:drawableLeft="@mipmap/search_icon"/>
+</LinearLayout>
