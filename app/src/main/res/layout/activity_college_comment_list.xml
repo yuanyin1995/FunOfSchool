@@ -36,7 +36,9 @@
     <ListView
         android:id="@+id/college_comment_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:divider="@color/bg"
+        android:dividerHeight="12px">
 
     </ListView>
 </LinearLayout>

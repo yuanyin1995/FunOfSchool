@@ -87,6 +87,7 @@ public class MyprizeInfoActivity extends Activity {
                         try {
                             JSONObject usePrizeJO = new JSONObject(response.toString());
                             int code = usePrizeJO.getInt("code");
+                            Log.e("pcode",code+"");
 
                             if (code == 1){
                                 Toast.makeText(getApplicationContext(),
@@ -97,6 +98,9 @@ public class MyprizeInfoActivity extends Activity {
                                 Intent res = new Intent();
                                 res.putExtra("usePrizeId",prizeInfoId);
                                 setResult(1,res);
+                                Log.e("up",prizeInfoId);
+
+                                MyprizeInfoActivity.this.finish();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

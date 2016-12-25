@@ -103,6 +103,14 @@ public class MyPrizeActivity extends Activity {
     }
 
     @Override
+    public void onActivityReenter(int resultCode, Intent data) {
+        super.onActivityReenter(resultCode, data);
+
+        usePrizeId = data.getStringExtra("usePrizeId");
+        Log.e("useprize",usePrizeId);
+    }
+
+    /*@Override
     protected void onRestart() {
         super.onRestart();
         getMyprizeList();
@@ -112,5 +120,5 @@ public class MyPrizeActivity extends Activity {
     protected void onStart() {
         super.onStart();
         getMyprizeList();
-    }
+    }*/
 }

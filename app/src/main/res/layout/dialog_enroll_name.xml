@@ -7,17 +7,19 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    android:paddingBottom="16dp">
+    android:paddingBottom="16dp"
+    android:gravity="center">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="给自己起个新名字吧！:"
-        style="@style/FirstText"/>
+        style="@style/SecondText"/>
     <EditText
         android:id="@+id/dialog_enrollment_year_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        style="@style/FirstText"/>
 
 </LinearLayout>
