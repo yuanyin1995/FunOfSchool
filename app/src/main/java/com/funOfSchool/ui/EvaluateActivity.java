@@ -70,10 +70,9 @@ public class EvaluateActivity extends Activity{
     private int width;
     //测试 定义 token
     private String token = null;
-    private String portraiturl = null;
     private String schoolbadge = null;
-    private int collegeId ;
-    private String collegeId1 = null;
+
+    private String guiderId;
     //根据url加载图片
     public ImageView Iv ;
     public ImageView Iv2;
@@ -87,13 +86,8 @@ public class EvaluateActivity extends Activity{
         Iv2 = (ImageView)findViewById(R.id.Iv_evaluate_college);
         Ed1 = (EditText)findViewById(R.id.Et_evaluate_et1);
 
-        collegeId = getIntent().getIntExtra("collegeId",1001);
-        collegeId1 = collegeId +"";
-        Log.e("collegeid",collegeId1);
 
-        //测试获取头像
-        getPortrait();
-        getschoolbadge();
+        setAvatar();
 
         //多行输入
         Edittext_input();
@@ -210,7 +204,7 @@ public class EvaluateActivity extends Activity{
         String url = AppUtils.HOST +"api/comment/setUserComment";
         // 请求参数：关键词
         RequestParams param = new RequestParams();
-        param.put("userId","dcc2d7bf7f2a4c089f142a35af2f1318");
+        param.put("userId",guiderId);
         param.put("comment",guade_evaluate);
         param.put("score",guade_sc);
         param.put("token",token);
@@ -234,22 +228,22 @@ public class EvaluateActivity extends Activity{
 
 
     //测试：获取带领人头像url
-    private void getPortrait(){
+    private void setAvatar(){
         token = AppUtils.getToken(EvaluateActivity.this);
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = AppUtils.HOST + "api/account/profile/getProfile";
+        String url = AppUtils.HOST + "api/account/travelInfo";
         RequestParams param = new RequestParams();
         param.put("token",token);
         client.get(url, param, new JsonHttpResponseHandler(){
             public void onSuccess(int statusCode, Header[] headers, JSONObject response){
                 try {
-                    JSONObject profile = null;
-                    profile = new JSONObject(response.toString());
-                    JSONObject profile1 = profile.getJSONObject("datum");
-                    portraiturl = profile1.getString("profileImage");
-                    Log.e( "portraiturl", portraiturl);
-                    Glide.with(EvaluateActivity.this).load(AppUtils.HOST+portraiturl).into(Iv);
-                    Log.e("头像加载完毕","加载完毕");
+                    AppUtils.Log(response.toString());
+                    JSONObject datum= response.getJSONObject("datum");
+                    String urlGuider = datum.getString("urlGuider");
+                    String urlSchool = datum.getString("urlSchool");
+                    guiderId = datum.getString("guiderId");
+                    Glide.with(EvaluateActivity.this).load(AppUtils.HOST + urlGuider).into(Iv);
+                    Glide.with(EvaluateActivity.this).load(AppUtils.HOST + urlSchool).into(Iv2);
                 }catch (JSONException e) {
                     e.printStackTrace();
                 }

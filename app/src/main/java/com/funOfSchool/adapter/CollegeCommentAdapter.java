@@ -73,7 +73,7 @@ public class CollegeCommentAdapter extends BaseAdapter {
         temp = commentPicUrl.split(",");
         Log.i("评论图片",temp.toString());
 
-        for (i = 0; temp[i]!=null; i++){
+        for (i = 0; i < temp.length; i++){
             if (i==0) {
                 Glide.with(context).load(AppUtils.HOST + temp[i]).into(pic1);
             }else if(i==1){
