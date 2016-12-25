@@ -71,7 +71,6 @@ public class PersonInfoActivity extends Activity {
     private Context mContext;
     private CircleImageView avatarImg;// 头像控件
     private SelectPicPopupWindow menuWindow; // 弹出框
-    private Context c = PersonInfoActivity.this;
     private String imgUrl;//"Http://10.141.230.100:8080/api/fs/upload?token=c5b4f1079ca24e71a25e0f3b06e5de642dNRr3";
     private static final String IMAGE_FILE_NAME = "avatarImage.jpg";
     static public String urlpath="null";	//相片储存路径
@@ -111,8 +110,6 @@ public class PersonInfoActivity extends Activity {
     private String enrollName;
     // 记录用户所选星座的变量
     private String constellation;
-    //获取的手机号
-    //String userPhoneNumber="11111111111";
     //要上传的头像
     Bitmap photo;
     //drawable（头像用）
@@ -140,9 +137,10 @@ public class PersonInfoActivity extends Activity {
     private String majorId;
     // 记录用户所选学校的变量
     private String collegeName;
-    private String schoolId;
-    //获取父控件
+    //
     private View parentView;
+    //我的评价按钮
+    private RelativeLayout myComment;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personinfo);
@@ -176,6 +174,7 @@ public class PersonInfoActivity extends Activity {
         selectMajor = (RelativeLayout)findViewById(R.id.majorClick);
         avatarImg = (CircleImageView) findViewById(R.id.avatarImg);
         parentView = (View)findViewById(R.id.personinfo);
+        myComment = (RelativeLayout)findViewById(R.id.my_comment);
     }
     private void setListener(){
         Listener listener = new Listener();
@@ -187,6 +186,7 @@ public class PersonInfoActivity extends Activity {
         selectConstellation.setOnClickListener(listener);
         selectSchool.setOnClickListener(listener);
         selectMajor.setOnClickListener(listener);
+        myComment.setOnClickListener(listener);
     }
 
     private void getInfo(){
@@ -252,6 +252,11 @@ public class PersonInfoActivity extends Activity {
                     break;
                 case R.id.majorClick:
                     setMajorDialog();
+                    break;
+                case R.id.my_comment:
+                    Intent intent_comment = new Intent(PersonInfoActivity.this,CommentListActivity.class);
+                    intent_comment.putExtra("token",AppUtils.getToken(getApplicationContext()));
+                    startActivity(intent_comment);
                     break;
             }
         }
@@ -329,11 +334,18 @@ public class PersonInfoActivity extends Activity {
             }
             @Override
             public void afterTextChanged(Editable editable) {
-                // 获取最终学校名称
-                tvSchool.setText(etSearch.getText().toString());
                 collegeName = etSearch.getText().toString();
                 // 清除上次请求的学校
                 collegeNameList.clear();
+            }
+        });
+        builder.setPositiveButton("确定",new DialogInterface.OnClickListener(){
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // 获取最终学校名称
+                tvSchool.setText(etSearch.getText().toString());
+                Toast.makeText(PersonInfoActivity.this,"学校修改成功",Toast.LENGTH_SHORT).show();
             }
         });
         // 创建并显示对话框
@@ -352,8 +364,6 @@ public class PersonInfoActivity extends Activity {
                 client.post(url, param, new JsonHttpResponseHandler(){
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-
-
                         JSONObject collegeNameJO = null;
                         try {
                             // 获取JSONObject
@@ -376,7 +386,6 @@ public class PersonInfoActivity extends Activity {
      */
     private void setMajorDialog(){
         collegeIdStr = selectCollegeId+"";
-        Toast.makeText(PersonInfoActivity.this,collegeIdStr,Toast.LENGTH_SHORT).show();
         // 根据学校ID，发送网络请求，获得专业列表
         AsyncHttpClient client = new AsyncHttpClient();
         String url = AppUtils.HOST + ApiUtils.API_COLLEGE_MARJOR;
@@ -426,7 +435,6 @@ public class PersonInfoActivity extends Activity {
                         public void onClick(DialogInterface dialogInterface, int i) {
                             majorName = adapter.getItem(i).toString();
                             majorId = majorIdList.get(i);
-                            Toast.makeText(PersonInfoActivity.this,majorId+"",Toast.LENGTH_SHORT).show();
                             tvMajor.setText(majorName);
                             AsyncHttpClient client = new AsyncHttpClient();
                             String url = AppUtils.HOST+ ApiUtils.API_ACCOUNT_PROFILE;
@@ -441,6 +449,7 @@ public class PersonInfoActivity extends Activity {
                             });
                         }
                     });
+
                     // 创建并显示对话框
                     builder.create();
                     builder.show();

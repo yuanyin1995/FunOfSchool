@@ -2,7 +2,6 @@ package com.funOfSchool.ui;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,7 +12,6 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -377,6 +375,7 @@ public class SelectActivity extends Activity {
                 }
             }
         });
+        
 
         // 创建并显示对话框
         builder.create();
@@ -451,8 +450,6 @@ public class SelectActivity extends Activity {
                             selectResultMajor.setText(majorName);
                         }
                     });
-
-
                     // 创建并显示对话框
                     builder.create();
                     builder.show();
@@ -566,7 +563,7 @@ public class SelectActivity extends Activity {
 
         WheelView minAgeWheelView = (WheelView)dialogLayout.findViewById(R.id.age_wheelview_min);
         minAgeWheelView.setWheelAdapter(new ArrayWheelAdapter(SelectActivity.this));
-        minAgeWheelView.setSkin(com.wx.wheelview.widget.WheelView.Skin.Holo);
+        minAgeWheelView.setSkin(WheelView.Skin.Holo);
         minAgeWheelView.setWheelData(ageList);
         minAgeWheelView.setExtraText("最小年龄", Color.parseColor("#0288ce"), 24, -80);
         minAgeWheelView.setOnWheelItemSelectedListener(new WheelView.OnWheelItemSelectedListener() {
@@ -578,7 +575,7 @@ public class SelectActivity extends Activity {
 
         WheelView maxAgeWheelView = (WheelView)dialogLayout.findViewById(R.id.age_wheelview_max);
         maxAgeWheelView.setWheelAdapter(new ArrayWheelAdapter(SelectActivity.this));
-        maxAgeWheelView.setSkin(com.wx.wheelview.widget.WheelView.Skin.Holo);
+        maxAgeWheelView.setSkin(WheelView.Skin.Holo);
         maxAgeWheelView.setWheelData(ageList);
         maxAgeWheelView.setExtraText("最大年龄", Color.parseColor("#0288ce"), 24, -80);
         maxAgeWheelView.setOnWheelItemSelectedListener(new WheelView.OnWheelItemSelectedListener() {

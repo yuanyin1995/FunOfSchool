@@ -82,6 +82,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.ConversationListActivity" />
         <activity android:name=".ui.ChatActivity" />
+        <activity android:name=".ui.CommentListActivity"/>
+        <activity android:name=".ui.getCommentListActivity"/>
+        <activity android:name=".ui.getPersonInfoActivity"/>
         <activity android:name=".ui.GGL_Activity"/>
         <activity android:name=".ui.MainActivity">
         </activity>

@@ -99,11 +99,27 @@ public class ApiUtils {
      */
     public static final String API_COLLEGE_COMMENT = "api/comment/getCollegeComment";
     /**
-     * 查询专业
+     * 查询资料
      */
-    public static final String API_ACCOUNT_PROFILE = "api/account/profile/getprofile";
+    public static final String API_ACCOUNT_PROFILE = "api/account/profile";
+    /**
+     * 查询他人资料
+     */
+    public static final String API_ACCOUNT_USER_PROFILE = "api/account/userProfile";
     /**
      * 上传图片接口
      */
     public static final String API_ACCOUNT_LOAD ="api/fs/upload";
+    /**
+     * 登录接口
+     */
+    public static final String API_ACCOUNT_LOGIN ="api/account/login";
+
+    public static final String API_ACCOUNT_REGISTER ="api/account/register";
+
+    public static final String API_ACCOUNT_PASSWORD ="api/account/password";
+    /**
+     * 查看个人评价接口
+     */
+    public static final String API_MY_COMMENT ="api/comment/getUserComment";
 }
