@@ -1,6 +1,7 @@
 package com.funOfSchool.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -106,7 +107,9 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
         infoIv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AppUtils.setToken("个人资料",getContext());
+                Intent intent = new Intent(getActivity(),PersonInfoActivity.class);
+                intent.putExtra("userId",getToChatWith());
+                startActivity(intent);
             }
         });
         super.setUpView();
@@ -155,10 +158,10 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
             public void onClick(View v) {
                 if (type){
                     AsyncHttpMangers.userChoose(getContext(),0,getToChatWith(),mHandler);
-                    AppUtils.showShort(getContext(),"接受");
+                    AppUtils.showShort(getContext(),"拒绝");
                 }else {
                     AsyncHttpMangers.guiderChoose(getContext(),0,getToChatWith(),mHandler);
-                    AppUtils.showShort(getContext(),"接受");
+                    AppUtils.showShort(getContext(),"拒绝");
                 }
             }
         });
@@ -167,10 +170,10 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
             public void onClick(View v) {
                 if (type){
                     AsyncHttpMangers.userChoose(getContext(),1,getToChatWith(),mHandler);
-                    AppUtils.showShort(getContext(),"拒绝");
+                    AppUtils.showShort(getContext(),"接受");
                 }else {
                     AsyncHttpMangers.guiderChoose(getContext(),1,getToChatWith(),mHandler);
-                    AppUtils.showShort(getContext(),"拒绝");
+                    AppUtils.showShort(getContext(),"接受");
                 }
             }
         });
@@ -217,7 +220,9 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
 
     @Override
     public void onAvatarClick(String username) {
-
+        Intent intent = new Intent(getActivity(),PersonInfoActivity.class);
+        intent.putExtra("userId",username);
+        startActivity(intent);
     }
 
     @Override

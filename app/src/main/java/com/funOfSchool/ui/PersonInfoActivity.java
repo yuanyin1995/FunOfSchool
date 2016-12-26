@@ -11,9 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.provider.ContactsContract;
 import android.provider.MediaStore;
-import android.support.v4.widget.DrawerLayout;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -41,9 +39,7 @@ import com.funOfSchool.util.CircleImageView;
 import com.funOfSchool.util.FileUtil;
 import com.funOfSchool.util.SelectPicPopupWindow;
 import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
-import com.loopj.android.http.RequestHandle;
 import com.loopj.android.http.RequestParams;
 
 import org.apache.http.Header;
@@ -52,14 +48,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
-import static com.funOfSchool.ui.http.AsyncHttpClients.client;
 import static com.funOfSchool.util.ApiUtils.API_ACCOUNT_PROFILE;
+import static com.funOfSchool.util.ApiUtils.API_ACCOUNT_USER_PROFILE;
 import static com.funOfSchool.util.AppUtils.HOST;
 import static com.funOfSchool.util.AppUtils.getToken;
 
@@ -139,6 +133,8 @@ public class PersonInfoActivity extends Activity {
     private String collegeName;
     //
     private View parentView;
+
+    private String userId;
     //我的评价按钮
     private RelativeLayout myComment;
     protected void onCreate(Bundle savedInstanceState) {
@@ -193,7 +189,14 @@ public class PersonInfoActivity extends Activity {
         AsyncHttpClient client = new AsyncHttpClient();
         String url = HOST+API_ACCOUNT_PROFILE;//"http://10.7.82.168:8080/api/account/profile/getProfile";
         RequestParams param = new RequestParams();
-        param.put("token",AppUtils.getToken(PersonInfoActivity.this));
+        userId = getIntent().getStringExtra("userId");
+        if (userId == null){
+            param.put("token",AppUtils.getToken(PersonInfoActivity.this));
+        }else {
+            param.put("userId", userId);
+            url = HOST + API_ACCOUNT_USER_PROFILE;
+        }
+
         Log.e("url",url);
         client.get(url, param, new JsonHttpResponseHandler(){
             @Override
@@ -255,7 +258,12 @@ public class PersonInfoActivity extends Activity {
                     break;
                 case R.id.my_comment:
                     Intent intent_comment = new Intent(PersonInfoActivity.this,CommentListActivity.class);
-                    intent_comment.putExtra("token",AppUtils.getToken(getApplicationContext()));
+                    if (userId == null){
+                        intent_comment.putExtra("token",AppUtils.getToken(getApplicationContext()));
+                    }else {
+                        intent_comment.putExtra("userId",userId);
+                    }
+
                     startActivity(intent_comment);
                     break;
             }

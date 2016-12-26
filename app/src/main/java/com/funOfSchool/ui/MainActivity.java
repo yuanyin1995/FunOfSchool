@@ -18,6 +18,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
@@ -38,9 +39,11 @@ import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.map.TextureMapView;
 import com.baidu.mapapi.model.LatLng;
+import com.bumptech.glide.Glide;
 import com.funOfSchool.R;
 import com.funOfSchool.util.ApiUtils;
 import com.funOfSchool.util.AppUtils;
+import com.funOfSchool.util.CircleImageView;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -52,6 +55,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.funOfSchool.util.ApiUtils.API_ACCOUNT_PROFILE;
+import static com.funOfSchool.util.AppUtils.HOST;
 
 public class MainActivity extends Activity {
     /*  地图控件 */
@@ -110,9 +116,13 @@ public class MainActivity extends Activity {
     private ImageView btnStartTravel;
     private ImageView btnTraveling;
     private ImageView btnEndTravel;
-
     // 是否实时生成轨迹
     private boolean isNeedTrace;
+    //头像控件
+    private CircleImageView leftAvatar;
+    //登陆、注册入口
+    private TextView mainLogin;
+    private TextView mainRegist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -213,7 +223,7 @@ public class MainActivity extends Activity {
                     @Override
                     public void onStart() {
                         super.onStart();
-                        ada = new ArrayAdapter<String>(
+                        ada = new ArrayAdapter<>(
                                 getApplicationContext(),
                                 R.layout.college_dropdown_item,
                                 collegeNameList);
@@ -256,6 +266,12 @@ public class MainActivity extends Activity {
                 collegeNameList.clear();
             }
         });
+
+
+
+
+
+
 
         // 设置学校下拉列表项点击监听
         etSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -303,7 +319,7 @@ public class MainActivity extends Activity {
                             Bundle b = new Bundle();
                             b.putString("collegeInfo",
                                     collegeName+"好玩的地方有："+collegeScene
-                            +"快在这个学校找个同学带你玩吧~\n（点击可查看其它用户对此大学的评价）");
+                                            +"快在这个学校找个同学带你玩吧~\n（点击可查看其它用户对此大学的评价）");
                             // 构建MarkerOption，用于在地图上添加Marker
                             OverlayOptions option = new MarkerOptions()
                                     .position(ll)
@@ -398,6 +414,9 @@ public class MainActivity extends Activity {
         btnPrize = (LinearLayout)findViewById(R.id.me_myprize);
         btnMarket = (LinearLayout)findViewById(R.id.me_market);
         btnSet = (LinearLayout)findViewById(R.id.me_set);
+        leftAvatar = (CircleImageView)findViewById(R.id.leftavatar);
+        mainLogin = (TextView)findViewById(R.id.mainLogin);
+        mainRegist = (TextView)findViewById(R.id.mainRegist);
     }
 
     private void setListener() {
@@ -415,6 +434,9 @@ public class MainActivity extends Activity {
         btnPrize.setOnClickListener(mapListener);
         btnMarket.setOnClickListener(mapListener);
         btnSet.setOnClickListener(mapListener);
+        mainLogin.setOnClickListener(mapListener);
+        mainRegist.setOnClickListener(mapListener);
+        leftAvatar.setOnClickListener(mapListener);
     }
 
     private class MapListener implements View.OnClickListener{
@@ -424,6 +446,7 @@ public class MainActivity extends Activity {
                 case R.id.index_me:
                     drawerLayout = (DrawerLayout)findViewById(R.id.drawerlayout);
                     drawerLayout.openDrawer(Gravity.LEFT);
+                    getStarsAndPoint();
                     break;
                 case R.id.index_msg:
                     startActivity(new Intent(MainActivity.this,ConversationListActivity.class));
@@ -471,10 +494,45 @@ public class MainActivity extends Activity {
                     Intent intent_st = new Intent(MainActivity.this,SetActivity.class);
                     startActivity(intent_st);
                     break;
+                case R.id.mainLogin:
+                    Intent intent_login = new Intent(MainActivity.this,LoginActivity.class);
+                    startActivity(intent_login);
+                    break;
+                case R.id.mainRegist:
+                    Intent intent_regist = new Intent(MainActivity.this,RegistActivity.class);
+                    startActivity(intent_regist);
+                    break;
+                case R.id.leftavatar:
+                    Intent intent_wantAltarAvatar = new Intent(MainActivity.this,PersonInfoActivity.class);
+                    startActivity(intent_wantAltarAvatar);
+                    break;
             }
         }
     }
-
+    /**
+     * 获取评分与积分的网络请求
+     */
+    private void getStarsAndPoint(){
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = HOST+API_ACCOUNT_PROFILE;
+        RequestParams param = new RequestParams();
+        param.put("token",AppUtils.getToken(MainActivity.this));
+        Log.e("url",url);
+        client.get(url, param, new JsonHttpResponseHandler(){
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response){
+                try {
+                    JSONObject profile = null;
+                    profile = new JSONObject(response.toString());
+                    JSONObject profile1 = profile.getJSONObject("datum");
+                    Log.i("profileImage",profile1.getString("profileImage"));
+                    Glide.with(MainActivity.this).load(AppUtils.HOST+profile1.getString("profileImage")).into(leftAvatar);
+                }catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
     /**
      * 如果当前为可发送邀请状态，则点击按钮可发送邀请
      */

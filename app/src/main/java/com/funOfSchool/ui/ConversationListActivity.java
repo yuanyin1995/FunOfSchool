@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.funOfSchool.R;
@@ -41,6 +42,8 @@ public class ConversationListActivity extends AppCompatActivity {
     private AsyncHttpResponseHandler handler;
     private TextView mTouristTv;
     private TextView mGuiderTv;
+
+    private ImageView mBackBtn;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,6 +107,12 @@ public class ConversationListActivity extends AppCompatActivity {
     private void setUpView() {
         mTouristTv.setOnClickListener(tabListener);
         mGuiderTv.setOnClickListener(tabListener);
+        mBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         handler = new JsonHttpResponseHandler() {
             @Override
@@ -133,6 +142,7 @@ public class ConversationListActivity extends AppCompatActivity {
     private void initView() {
         mTouristTv = (TextView) findViewById(R.id.fragment_conversation_tourist);
         mGuiderTv = (TextView) findViewById(R.id.fragment_conversation_guider);
+        mBackBtn = (ImageView) findViewById(R.id.receive_back);
     }
 
     //初始化导游会话列表
