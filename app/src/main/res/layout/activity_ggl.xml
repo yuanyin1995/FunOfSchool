@@ -121,7 +121,10 @@
             android:orientation="vertical">
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:paddingLeft="16dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -129,7 +132,8 @@
                     android:paddingLeft="10dp"
                     android:layout_alignParentTop="true"
                     android:id="@+id/Tv1"
-                    android:text="@string/ggl_content1"/>
+                    android:text="@string/ggl_content1"
+                    style="@style/FirstText"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -137,7 +141,8 @@
                     android:paddingLeft="10dp"
                     android:layout_below="@+id/Tv1"
                     android:id="@+id/Tv2"
-                    android:text="@string/ggl_content2"/>
+                    android:text="@string/ggl_content2"
+                    style="@style/FirstText"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -145,7 +150,8 @@
                     android:paddingLeft="10dp"
                     android:layout_below="@+id/Tv2"
                     android:id="@+id/Tv3"
-                    android:text="@string/ggl_content3"/>
+                    android:text="@string/ggl_content3"
+                    style="@style/FirstText"/>
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>

@@ -40,13 +40,23 @@
 
         </LinearLayout>
         <TextView
+            android:id="@+id/fen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 分"
+            android:textSize="16sp"
+            android:textColor="#ffa726"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+        <TextView
             android:id="@+id/score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="5.0 分"
+            android:text="5.0"
             android:textSize="20sp"
             android:textColor="#ffa726"
-            android:layout_alignParentRight="true"
+            android:textStyle="bold"
+            android:layout_toLeftOf="@id/fen"
             android:layout_centerVertical="true"/>
     </RelativeLayout>
 

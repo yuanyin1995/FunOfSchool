@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.funOfSchool.ui.ShopActivity">
+
     <RelativeLayout
         android:id="@+id/select_rl_title"
         android:layout_width="match_parent"
@@ -31,7 +32,6 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/titleBottom"/>
-
 
     <GridView
         android:id="@+id/shop_gv"
