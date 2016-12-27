@@ -40,6 +40,15 @@
 
         </LinearLayout>
         <TextView
+            android:id="@+id/cc_fen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 分"
+            android:textSize="16sp"
+            android:textColor="#ffa726"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+        <TextView
             android:id="@+id/cc_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -49,15 +58,6 @@
             android:textStyle="bold"
             android:layout_toLeftOf="@id/cc_fen"
             android:layout_centerVertical="true"/>
-        <TextView
-            android:id="@+id/cc_fen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" 分"
-            android:textSize="16sp"
-            android:textColor="#ffa726"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true" />
     </RelativeLayout>
 
     <View

@@ -3,28 +3,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EEEEEE">
-    <LinearLayout
-        android:id="@+id/set_title_bar"
+    <RelativeLayout
+        android:id="@+id/set_rl_title"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@color/colorPrimary">
-        <ImageButton
-            android:id="@+id/back"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="16dp"
-            android:background="@mipmap/back_white"/>
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
+        <ImageView
+            android:id="@+id/set_back"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@mipmap/back_white"
+            android:layout_centerVertical="true"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="设置"
-            android:textSize="20dp"
-            android:paddingLeft="130dp"
-            android:layout_gravity="center"/>
-    </LinearLayout>
+            style="@style/TitleText"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
     <LinearLayout
-        android:layout_below="@+id/set_title_bar"
+        android:layout_below="@+id/set_rl_title"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -68,7 +70,7 @@
             android:layout_height="fill_parent"
             android:text="退出登录"
             android:textSize="14sp"
-            android:textColor="@drawable/evaluate_btn_text_style"
+            android:textColor="@color/white"
             android:layout_centerInParent="true"
             android:background="@drawable/btn_bg"/>
     </RelativeLayout>
