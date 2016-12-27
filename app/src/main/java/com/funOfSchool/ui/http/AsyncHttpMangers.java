@@ -13,6 +13,36 @@ import com.loopj.android.http.RequestParams;
  */
 
 public class AsyncHttpMangers {
+
+    /**
+     * 获取昵称
+     * @param itemId
+     * @param handler
+     */
+    public static void exChangeItem(Context context,String itemId,AsyncHttpResponseHandler handler){
+        String url = AppUtils.HOST + ApiUtils.API_MARKET_EXCHANGE_ITEM;
+        RequestParams param = new RequestParams();
+        param.put("itemId",itemId);
+        param.put("token",AppUtils.getToken(context));
+
+        AsyncHttpClients.getLocal(url,param,handler);
+    }
+
+    /**
+     * 获取所有商品
+     * @param handler
+     */
+    public static void getItem(AsyncHttpResponseHandler handler){
+        String url = AppUtils.HOST + ApiUtils.API_MARKET_ALL_ITEM;
+
+        AsyncHttpClients.getLocal(url,handler);
+    }
+
+    /**
+     * 获取昵称
+     * @param userId
+     * @param handler
+     */
     public static void getName(String userId,AsyncHttpResponseHandler handler){
         String url = AppUtils.HOST + "api/account/getName";
         RequestParams param = new RequestParams();

@@ -57,6 +57,7 @@
 
     </RelativeLayout>
     <Button
+        android:id="@+id/shop_btn"
         android:layout_width="55dp"
         android:layout_height="25dp"
         android:hint="兑换"

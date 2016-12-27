@@ -122,4 +122,13 @@ public class ApiUtils {
      * 查看个人评价接口
      */
     public static final String API_MY_COMMENT ="api/comment/getUserComment";
+
+    /**
+     * 获取所有积分商品
+     */
+    public static final String API_MARKET_ALL_ITEM ="api/market/allItem";
+    /**
+     * 兑换商品
+     */
+    public static final String API_MARKET_EXCHANGE_ITEM ="api/market/exchangeItem";
 }
