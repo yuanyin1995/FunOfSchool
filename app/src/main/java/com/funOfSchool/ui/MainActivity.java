@@ -348,8 +348,8 @@ public class MainActivity extends Activity {
                                     textInfo.setLayoutParams(new DrawerLayout.LayoutParams(
                                             DrawerLayout.LayoutParams.WRAP_CONTENT, px
                                     ));*/
-                                    textInfo.setHeight(250);
-                                    textInfo.setWidth(300);
+                                    textInfo.setHeight(300);
+                                    textInfo.setWidth(500);
                                     textInfo.setBackgroundResource(R.drawable.marker_bg);
                                     textInfo.setPadding(12, 12, 12, 12);
                                     textInfo.setTextColor(getResources().getColor(R.color.firstText));

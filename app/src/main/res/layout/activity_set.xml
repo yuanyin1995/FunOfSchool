@@ -7,14 +7,14 @@
         android:id="@+id/set_title_bar"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:background="#FFFFFF">
+        android:background="@color/colorPrimary">
         <ImageButton
             android:id="@+id/back"
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:layout_gravity="center"
             android:layout_marginLeft="16dp"
-            android:background="@mipmap/back_black"/>
+            android:background="@mipmap/back_white"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

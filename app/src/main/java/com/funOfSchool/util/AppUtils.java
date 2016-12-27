@@ -13,7 +13,7 @@ public class AppUtils {
     /**
      * 主机地址
      */
-    public static final String HOST = "http://10.7.92.42/";
+    public static final String HOST = "http://192.168.191.1/";
     /**
      * 用户头像url
      */
