@@ -248,9 +248,13 @@ public class QueryTraceActivity extends AppCompatActivity {
      */
     private void queryTrack() {
         // 设置日期
-        year = Integer.parseInt(travelDate.substring(0,3));
+        /*year = Integer.parseInt(travelDate.substring(0,3));
         month = Integer.parseInt(travelDate.substring(5,6));
-        day = Integer.parseInt(travelDate.substring(8,9));
+        day = Integer.parseInt(travelDate.substring(8,9));*/
+
+        year = 2016;
+        month = 12;
+        day = 17;
 
         String st = year + "年" + month + "月" + day + "日0时0分0秒";
         String et = year + "年" + month + "月" + day + "日23时59分59秒";

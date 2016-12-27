@@ -70,7 +70,7 @@ public class TravelListAdapter extends BaseAdapter {
         tvPath.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(context, TravelingActivity.class);
+                Intent i = new Intent(context, QueryTraceActivity.class);
                 //  不是在Activity中进行跳转，需要添加这个方法
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 //  添加日期参数
