@@ -137,7 +137,7 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
                     try {
                         if (response.getInt("code") == 1){
                             String name = response.getJSONObject("datum").getString("userName");
-                            String avatar = "http://192.168.191.1/" + response.getJSONObject("datum").getString("profileImage");
+                            String avatar = "http://192.168.178.2/" + response.getJSONObject("datum").getString("profileImage");
                            Log.d("avatar",avatar);
                             EaseUserUtils.setUserNick(name, holderTemp.name);
 //                            EaseUserUtils.setAvatar(getContext(), username, avatar, holderTemp.avatar);
@@ -149,7 +149,7 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
                 }
             };
             AsyncHttpClient client = new AsyncHttpClient();
-            String url = "http://192.168.191.1/api/account/getName";
+            String url = "http://192.168.178.2/api/account/getName";
             RequestParams param = new RequestParams();
             param.put("userId",username);
             client.get(url,param,handler);

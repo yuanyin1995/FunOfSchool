@@ -14,18 +14,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.funOfSchool.util.AppUtils;
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.JsonHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
-
-import org.apache.http.Header;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.Random;
-
 /**
  * Created by Administrator on 2016/11/24 0024.
  */
@@ -105,8 +93,7 @@ public class GuaGuaKa extends View {
      */
     private void setUpOutterPaint()
     {
-        testRandom();
-        getRemainprize();
+
         mBackPint.setTextSize(30);
         mBackPint.getTextBounds(randonText, 0, randonText.length(), mTextBound);
         mOutterPaint.setColor(Color.RED);
@@ -121,7 +108,7 @@ public class GuaGuaKa extends View {
     {
         // canvas.drawBitmap(mBackBitmap, 0, 0, null);
         //绘制奖项
-        canvas.drawText(randonText, getWidth() / 2 - mTextBound.width() / 2, getHeight() / 2 + mTextBound.height() / 2, mBackPint);
+        canvas.drawText(randonText, getWidth() / 2  - mTextBound.width() / 2, getHeight() / 2 + mTextBound.height() / 2, mBackPint);
 
         drawPath();
         canvas.drawBitmap(mBitmap, 0, 0, null);
@@ -163,43 +150,13 @@ public class GuaGuaKa extends View {
         invalidate();
         return true;
     }
-    //刮刮乐随机生成奖品操作
-    //随机生成1-3的数
-    private void testRandom(){
-        Random random=new Random();
-        randomNum = random.nextInt(3);
-    }
 
-    //解析
-    private void getRemainprize(){
-        AsyncHttpClient client = new AsyncHttpClient();
-        String url = AppUtils.HOST + "api/prize/getRemainPrizeList";
-        RequestParams param = new RequestParams();
-        client.get(url, param, new JsonHttpResponseHandler() {
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                JSONObject profile = null;
-                try {
-                    profile = new JSONObject(response.toString());
-                    JSONArray profile1 = profile.getJSONArray("datum");
-                    int iSize = profile1.length();
-                    for (int i = 0; i < iSize; i++) {
-                        if(i == randomNum) {
-                            if (profile1.getJSONObject(i).getString("prizeCount") != "0") {
-                                randonText = profile1.getJSONObject(i).getString("prizeName");
-                            }
-                            else {
-                                randonText = "谢谢惠顾";
-                            }
-                        }
-                    }
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
+
     public void setGravity(int gravity) {
         this.gravity = gravity;
+    }
+    public void setText(String randonText){
+        this.randonText = randonText;
     }
 }
