@@ -13,6 +13,17 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.funOfSchool.R;
+import com.funOfSchool.util.AppUtils;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.apache.http.Header;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Random;
 
 public class GGL_Activity extends Activity {
     private RelativeLayout RL_lottery_content;
@@ -40,6 +51,8 @@ public class GGL_Activity extends Activity {
         character();
         //按钮点击事件
         Onclick();
+
+        getRemainprize();
 
     }
     //按钮点击事件
@@ -97,6 +110,46 @@ public class GGL_Activity extends Activity {
         tp2.setFakeBoldText(true);
         TextPaint tp3 = Tv3.getPaint();
         tp3.setFakeBoldText(true);
+    }
+
+    //刮刮乐随机生成奖品操作
+    //随机生成1-3的数
+    private int prizeRandom(int size){
+        Random random=new Random();
+        return random.nextInt(size + 1);
+    }
+    //解析
+    private void getRemainprize(){
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = AppUtils.HOST + "api/prize/getRemainPrizeList";
+        RequestParams param = new RequestParams();
+        client.get(url, param, new JsonHttpResponseHandler() {
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                try {
+                    JSONArray datum = response.getJSONArray("datum");
+                    int iSize = datum.length();
+                    int randomNum = prizeRandom(iSize);
+                    if (randomNum > iSize){
+                        guaguaka.setText("谢谢惠顾"); ;
+                        AppUtils.showShort(getApplicationContext(),"下次继续努力");
+                    }else {
+                        String prize = datum.getJSONObject(randomNum).getString("prizeName");
+                        guaguaka.setText(prize);
+                        AppUtils.showShort(getApplicationContext(),"恭喜您获得  " + prize);
+                        AsyncHttpClient client = new AsyncHttpClient();
+                        String url = AppUtils.HOST + "api/prize/managePrize";
+                        RequestParams param = new RequestParams();
+                        param.put("token",AppUtils.getToken(getApplicationContext()));
+                        param.put("remainPrizeId",datum.getJSONObject(randomNum).getString("remainPrizeId"));
+                        client.get(url,param,new JsonHttpResponseHandler(){});
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
     }
 
 
