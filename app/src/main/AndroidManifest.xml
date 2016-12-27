@@ -87,16 +87,18 @@
         <activity android:name=".ui.getPersonInfoActivity"/>
         <activity android:name=".ui.GGL_Activity"/>
         <activity android:name=".ui.MainActivity">
-        </activity>
-        <activity android:name=".ui.SelectActivity" >
-        </activity>
-        <activity android:name=".ui.ReceiveInviteActivity"/>
-        <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".ui.SelectActivity" >
+        </activity>
+        <activity android:name=".ui.ReceiveInviteActivity"/>
+        <activity android:name=".ui.LoginActivity">
+
         </activity>
         <activity android:name=".ui.LoginActivityTemp"/>
         <!-- 高德地图相关 -->

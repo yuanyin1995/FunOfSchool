@@ -12,7 +12,7 @@
         android:layout_weight="1"
         android:orientation="horizontal">
         <RelativeLayout
-            android:background="#FFFFFF"
+            android:background="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageButton
@@ -22,7 +22,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_centerVertical="true"
                 android:scaleType="centerInside"
-                android:src="@mipmap/back_black"
+                android:src="@mipmap/back_white"
                 android:background="@android:color/transparent"/>
             <TextView
                 android:layout_width="wrap_content"

@@ -8,7 +8,6 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="#FFFFFF"
-        android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:layout_marginTop="16dp">
         <com.funOfSchool.util.CircleImageView
