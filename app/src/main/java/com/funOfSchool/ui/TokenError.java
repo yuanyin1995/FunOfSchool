@@ -14,6 +14,6 @@ public class TokenError {
         AppUtils.showShort(context,"登录过期,请重新登录!");
         Intent intent = new Intent(context,LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        context.startActivity(intent);
+        context.startActivity(intent);
     }
 }

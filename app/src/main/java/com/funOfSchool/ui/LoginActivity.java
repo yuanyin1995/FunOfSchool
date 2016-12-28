@@ -124,6 +124,12 @@ public class LoginActivity extends AppCompatActivity {
                 // 发送网络请求
                 client.get(url, param, new JsonHttpResponseHandler() {
                     @Override
+                    public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                        super.onFailure(statusCode, headers, throwable, errorResponse);
+                        AppUtils.showShort(getApplicationContext(),"网络连接失败");
+                    }
+
+                    @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                         Log.e("response",response.toString());
                         try {
@@ -166,7 +172,7 @@ public class LoginActivity extends AppCompatActivity {
 //                                i.setClass();
                                 startActivity(i);
                             } else {
-                                Toast toast = Toast.makeText(LoginActivity.this, "登录失败",
+                                Toast toast = Toast.makeText(LoginActivity.this, "用户名或密码错误",
                                         Toast.LENGTH_SHORT);
                                 toast.show();
                             }
