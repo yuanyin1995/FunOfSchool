@@ -11,7 +11,7 @@ android {
         }
     }
     compileSdkVersion 23
-    buildToolsVersion "24.0.1"
+    buildToolsVersion "23.0.2"
     defaultConfig {
         applicationId "com.funOfSchool"
         minSdkVersion 18

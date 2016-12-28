@@ -74,7 +74,7 @@ public class ShopAdapter extends BaseAdapter {
                         try {
                             int code = response.getInt("code");
                             AppUtils.Log(code+"");
-                            if (code == 2){
+                            if (code == 422){
                                 TokenError.Login(context);
                             }
                             if (code == 23){

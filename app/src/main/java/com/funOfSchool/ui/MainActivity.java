@@ -474,17 +474,13 @@ public class MainActivity extends Activity {
                     endTravel();
                     break;
                 case R.id.me_personinfo:
-                    Toast.makeText(MainActivity.this,"dianjilegeren",Toast.LENGTH_LONG).show();
-                    Intent intent_info = new Intent(MainActivity.this,PersonInfoActivity.class);
-                    startActivity(intent_info);
+                    goInfo();
                     break;
                 case R.id.me_trvallist:
-                    Intent intent_Tlist = new Intent(MainActivity.this,TravelListActivity.class);
-                    startActivity(intent_Tlist);
+                    goTravel();
                     break;
                 case R.id.me_myprize:
-                    Intent intent_prz = new Intent(MainActivity.this,MyPrizeActivity.class);
-                    startActivity(intent_prz);
+                    goPrize();
                     break;
                 case R.id.me_market:
                     Intent intent_mkt = new Intent(MainActivity.this,ShopActivity.class);
@@ -503,12 +499,87 @@ public class MainActivity extends Activity {
                     startActivity(intent_regist);
                     break;
                 case R.id.leftavatar:
-                    Intent intent_wantAltarAvatar = new Intent(MainActivity.this,PersonInfoActivity.class);
-                    startActivity(intent_wantAltarAvatar);
+                    goInfo();
                     break;
             }
         }
     }
+
+    private void goPrize() {
+        //  验证token是否有效
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = AppUtils.HOST + ApiUtils.API_IS_TOKEN;
+        // 请求参数
+        RequestParams param = new RequestParams();
+        param.put("token",AppUtils.getToken(getApplicationContext()));
+        Log.e("tokenparam",AppUtils.getToken(getApplicationContext()));
+        client.post(url, param, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                Log.e("tokenres",response.toString());
+
+                try {
+                    JSONObject isTokenJO = new JSONObject(response.toString());
+                    int isTokenCode = isTokenJO.getInt("code");
+                    if (isTokenCode == 1){
+                        //  跳转到选择条件页面
+                        Intent intent_prz = new Intent(MainActivity.this,MyPrizeActivity.class);
+                        startActivity(intent_prz);
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(),
+                                "请先登录 :)",
+                                Toast.LENGTH_LONG).show();
+                        //  跳转到登录页面
+                        Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                        startActivity(intent);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void goTravel() {
+        //  验证token是否有效
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = AppUtils.HOST + ApiUtils.API_IS_TOKEN;
+        // 请求参数
+        RequestParams param = new RequestParams();
+        param.put("token",AppUtils.getToken(getApplicationContext()));
+        Log.e("tokenparam",AppUtils.getToken(getApplicationContext()));
+        client.post(url, param, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                Log.e("tokenres",response.toString());
+
+                try {
+                    JSONObject isTokenJO = new JSONObject(response.toString());
+                    int isTokenCode = isTokenJO.getInt("code");
+                    if (isTokenCode == 1){
+                        //  跳转到选择条件页面
+                        Intent intent_Tlist = new Intent(MainActivity.this,TravelListActivity.class);
+                        startActivity(intent_Tlist);
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(),
+                                "请先登录 :)",
+                                Toast.LENGTH_LONG).show();
+                        //  跳转到登录页面
+                        Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                        startActivity(intent);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+    }
+
     /**
      * 获取评分与积分的网络请求
      */
@@ -537,6 +608,43 @@ public class MainActivity extends Activity {
      * 如果当前为可发送邀请状态，则点击按钮可发送邀请
      */
     private void sendInvitation() {
+        //  验证token是否有效
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = AppUtils.HOST + ApiUtils.API_IS_TOKEN;
+        // 请求参数
+        RequestParams param = new RequestParams();
+        param.put("token",AppUtils.getToken(getApplicationContext()));
+        Log.e("tokenparam",AppUtils.getToken(getApplicationContext()));
+        client.post(url, param, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                Log.e("tokenres",response.toString());
+
+                try {
+                    JSONObject isTokenJO = new JSONObject(response.toString());
+                    int isTokenCode = isTokenJO.getInt("code");
+                    if (isTokenCode == 1){
+                        //  跳转到选择条件页面
+                        Intent intent_info = new Intent(MainActivity.this,PersonInfoActivity.class);
+                        startActivity(intent_info);
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(),
+                                "请先登录 :)",
+                                Toast.LENGTH_LONG).show();
+                        //  跳转到登录页面
+                        Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                        startActivity(intent);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+    }
+    private void goInfo() {
         //  验证token是否有效
         AsyncHttpClient client = new AsyncHttpClient();
         String url = AppUtils.HOST + ApiUtils.API_IS_TOKEN;

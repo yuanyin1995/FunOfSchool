@@ -3,6 +3,8 @@ package com.funOfSchool.ui;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -242,7 +244,9 @@ public class RegistActivity extends AppCompatActivity {
                         Log.e("submit","on");
                         //提交验证码成功
                     }else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE){
-                        Log.e("git","on");
+                        Message message = new Message();
+                        message.what = 1;
+                        handler.sendMessage(message);
                         //获取验证码成功
                     }else if (event ==SMSSDK.EVENT_GET_SUPPORTED_COUNTRIES){
                         //返回支持发送验证码的国家列表
@@ -254,6 +258,13 @@ public class RegistActivity extends AppCompatActivity {
         };
         SMSSDK.registerEventHandler(eh); //注册短信回调
     }
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            Toast.makeText(RegistActivity.this,"发送验证码成功",Toast.LENGTH_SHORT).show();
+        }
+    };
     public void  findview(){
         getnum=(Button)findViewById(R.id.Getnum);
     }

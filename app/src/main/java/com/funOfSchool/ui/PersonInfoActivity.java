@@ -206,20 +206,33 @@ public class PersonInfoActivity extends Activity {
                     JSONObject profile = null;
                     profile = new JSONObject(response.toString());
                     JSONObject profile1 = profile.getJSONObject("datum");
-                    tvName.setText(profile1.getString("userName"));
-                    int sex = profile1.getInt("sex");
-                    if(sex == 0){
+                    String userName = isNull(profile1.getString("userName"));
+                    String birthday = isNull(profile1.getString("birthday"));
+                    String schoolName = isNull(profile1.getString("schoolName"));
+                    String enrollment = isNull(profile1.getString("enrollment"));
+                    String constellation = isNull(profile1.getString("constellation"));
+                    String stars = isNull(profile1.getString("stars"));
+                    String point = isNull(profile1.getString("point"));
+                    String majorName = isNull(profile1.getString("majorName"));
+
+
+                    tvName.setText(userName);
+                    String sex = isNull(profile1.getString("sex"));
+
+                    if(sex.equals("0")){
                         tvSex.setText("男");
-                    }else{
+                    }else if (sex.equals("1")){
                         tvSex.setText("女");
+                    }else {
+                        tvSex.setText(sex);
                     }
-                    tvBirthday.setText(profile1.getString("birthday"));
-                    tvSchool.setText(profile1.getString("schoolName"));
-                    tvYear.setText(profile1.getString("enrollment"));
-                    tvCollstellation.setText(profile1.getString("constellation"));
-                    tvStars.setText("评分|"+profile1.getString("stars"));
-                    tvPoint.setText("积分|"+profile1.getString("point"));
-                    tvMajor.setText(profile1.getString("majorName"));
+                    tvBirthday.setText(birthday);
+                    tvSchool.setText(schoolName);
+                    tvYear.setText(enrollment);
+                    tvCollstellation.setText(constellation);
+                    tvStars.setText(stars);
+                    tvPoint.setText("积分|"+point);
+                    tvMajor.setText(majorName);
                     Log.i("profileImage",profile1.getString("profileImage"));
                     Glide.with(PersonInfoActivity.this).load(AppUtils.HOST+profile1.getString("profileImage")).into(avatarImg);
                 }catch (JSONException e) {
@@ -228,6 +241,15 @@ public class PersonInfoActivity extends Activity {
             }
         });
     }
+
+    public String isNull(String m) {
+        if (m == null || m.equals("null") || m.isEmpty()){
+            return "未填写";
+        }else {
+            return m;
+        }
+    }
+
     private class Listener implements View.OnClickListener{
         @Override
         public void onClick(View view) {

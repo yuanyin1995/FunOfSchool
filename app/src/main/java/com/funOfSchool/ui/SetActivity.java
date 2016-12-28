@@ -5,13 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.RatingBar;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.funOfSchool.R;
 import com.funOfSchool.util.AppUtils;
@@ -24,13 +21,13 @@ public class SetActivity extends Activity {
     private int width;
     private RelativeLayout R1;
     private Button offlogin;
-    private ImageButton btnBack;
+    private ImageView btnBack;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set);
         R1 = (RelativeLayout) findViewById(R.id.RL_set_button);
         offlogin = (Button)findViewById(R.id.Bt_set_submit);
-        btnBack = (ImageButton)findViewById(R.id.back);
+        btnBack = (ImageView) findViewById(R.id.set_back);
         //设置按钮大小
         setTitlehigh();
         //设置监听
