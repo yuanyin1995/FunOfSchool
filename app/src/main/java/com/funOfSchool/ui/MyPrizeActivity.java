@@ -23,6 +23,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by lenovo on 2016/12/10.
@@ -31,6 +32,7 @@ public class MyPrizeActivity extends Activity {
     private ListView lvMyprize; //  出游列表数据集合
     final ArrayList<Myprize> myprizelIems = new ArrayList<Myprize>();
     private String usePrizeId;
+    private MyprizeAdapter adapter;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,7 +80,7 @@ public class MyPrizeActivity extends Activity {
                     Log.e("prizelist",myprizelIems.toString());
 
                     //  配置adapter
-                    final MyprizeAdapter adapter = new MyprizeAdapter(getApplicationContext(),
+                    adapter = new MyprizeAdapter(getApplicationContext(),
                             myprizelIems);
                     lvMyprize.setAdapter(adapter);
 
@@ -91,6 +93,8 @@ public class MyPrizeActivity extends Activity {
                             intent.putExtra("prize_info_name",myprizelIems.get(i).getMyprizeName());
                             intent.putExtra("prize_info_date",myprizelIems.get(i).getValidDate());
                             intent.putExtra("prize_info_id",myprizelIems.get(i).getMyprizeId());
+                            intent.putExtra("id",i+"");
+                            AppUtils.Log(i+"");
                             startActivityForResult(intent,1);
 
                         }
@@ -103,11 +107,25 @@ public class MyPrizeActivity extends Activity {
     }
 
     @Override
-    public void onActivityReenter(int resultCode, Intent data) {
-        super.onActivityReenter(resultCode, data);
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == 1){
+            int i = Integer.valueOf(data.getStringExtra("id"));
+//            myprizelIems.remove(Integer.valueOf(i));
 
-        usePrizeId = data.getStringExtra("usePrizeId");
-        Log.e("useprize",usePrizeId);
+
+            List<Myprize> list = new ArrayList<Myprize>();
+            for (int m = 0; m < myprizelIems.size(); m++){
+                if (m != i){
+                    list.add(myprizelIems.get(m));
+                }
+            }
+
+            myprizelIems.clear();
+            myprizelIems.addAll(list);
+
+            adapter.notifyDataSetChanged();
+        }
     }
 
     /*@Override

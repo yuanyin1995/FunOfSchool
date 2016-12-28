@@ -2,8 +2,6 @@ package com.funOfSchool.ui;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v4.print.PrintHelper;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,8 +21,6 @@ import org.apache.http.Header;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.security.PrivateKey;
-
 public class MyprizeInfoActivity extends Activity {
 
     private TextView tvPrizeInfoName;
@@ -35,6 +31,8 @@ public class MyprizeInfoActivity extends Activity {
     private String prizeInfoId;
     private String prizeInfoName;
     private String prizeInfoValidDate;
+
+    private String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +54,8 @@ public class MyprizeInfoActivity extends Activity {
         prizeInfoId = intent.getStringExtra("prize_info_id");
         prizeInfoName = intent.getStringExtra("prize_info_name");
         prizeInfoValidDate = intent.getStringExtra("prize_info_date");
+
+        id = intent.getStringExtra("id");
 
         tvPrizeInfoName.setText(prizeInfoName);
         tvPrizeInfoValidDate.setText(prizeInfoValidDate);
@@ -96,9 +96,8 @@ public class MyprizeInfoActivity extends Activity {
 
                                 //  返回卡券列表页要删除的奖品ID
                                 Intent res = new Intent();
-                                res.putExtra("usePrizeId",prizeInfoId);
+                                res.putExtra("id",id);
                                 setResult(1,res);
-                                Log.e("up",prizeInfoId);
 
                                 MyprizeInfoActivity.this.finish();
                             }

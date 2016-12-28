@@ -134,7 +134,7 @@ public class EvaluateActivity extends Activity{
                     public void onSuccess(int statusCode, Header[] headers,
                                           JSONObject responseBody) {
                         if (statusCode == 200) {
-                            Toast.makeText(getApplicationContext(), "上传成功", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(getApplicationContext(), "上传成功", Toast.LENGTH_SHORT).show();
                             try {
                                 String avatarurl2 = null;
                                 Log.e("responBody",responseBody.toString());

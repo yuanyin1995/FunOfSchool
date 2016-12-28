@@ -60,7 +60,7 @@ public class CommentAdapter extends BaseAdapter {
         Glide.with(context).load(AppUtils.HOST+ccItems.get(i).getUserImage()).into(cc_user_avatar);
         userName.setText(ccItems.get(i).getUserName());
         commentDate.setText(ccItems.get(i).getCommentDate());
-        score.setText(ccItems.get(i).getScore()+"分");
+        score.setText(ccItems.get(i).getScore() + "");
         comment.setText(ccItems.get(i).getComment());
         return view;
     }

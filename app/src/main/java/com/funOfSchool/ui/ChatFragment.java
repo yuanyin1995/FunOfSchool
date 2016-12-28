@@ -107,7 +107,7 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
         infoIv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),PersonInfoActivity.class);
+                Intent intent = new Intent(getActivity(),UserInfoActivity.class);
                 intent.putExtra("userId",getToChatWith());
                 startActivity(intent);
             }
@@ -220,7 +220,7 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
 
     @Override
     public void onAvatarClick(String username) {
-        Intent intent = new Intent(getActivity(),PersonInfoActivity.class);
+        Intent intent = new Intent(getActivity(),UserInfoActivity.class);
         intent.putExtra("userId",username);
         startActivity(intent);
     }

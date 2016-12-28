@@ -132,11 +132,11 @@ public class GGL_Activity extends Activity {
                     int randomNum = prizeRandom(iSize);
                     if (randomNum > iSize){
                         guaguaka.setText("谢谢惠顾"); ;
-                        AppUtils.showShort(getApplicationContext(),"下次继续努力");
+//                        AppUtils.showShort(getApplicationContext(),"下次继续努力");
                     }else {
                         String prize = datum.getJSONObject(randomNum).getString("prizeName");
                         guaguaka.setText(prize);
-                        AppUtils.showShort(getApplicationContext(),"恭喜您获得  " + prize);
+//                        AppUtils.showShort(getApplicationContext(),"恭喜您获得  " + prize);
                         AsyncHttpClient client = new AsyncHttpClient();
                         String url = AppUtils.HOST + "api/prize/managePrize";
                         RequestParams param = new RequestParams();

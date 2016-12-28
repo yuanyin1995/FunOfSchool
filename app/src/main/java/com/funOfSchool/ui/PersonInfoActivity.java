@@ -295,7 +295,7 @@ public class PersonInfoActivity extends Activity {
      * 根据用户输入的关键词获取大学列表
      */
     private void searchCollege(){
-        Toast.makeText(PersonInfoActivity.this,"点击了切换学校",Toast.LENGTH_SHORT).show();
+//        Toast.makeText(PersonInfoActivity.this,"点击了切换学校",Toast.LENGTH_SHORT).show();
         // 创建对话框 Builder
         final AlertDialog.Builder builder = new AlertDialog.Builder(PersonInfoActivity.this);
         // 加载对话框布局
@@ -839,7 +839,7 @@ public class PersonInfoActivity extends Activity {
                 public void onSuccess(int statusCode, Header[] headers,
                                       JSONObject responseBody) {
                     if (statusCode == 200) {
-                        Toast.makeText(getApplicationContext(), "上传成功", Toast.LENGTH_SHORT)
+                        Toast.makeText(getApplicationContext(), "头像上传成功", Toast.LENGTH_SHORT)
                                 .show();
                         try {
                             Log.i("responBody",responseBody.toString());
@@ -855,7 +855,7 @@ public class PersonInfoActivity extends Activity {
                             client.post(url,param, new JsonHttpResponseHandler() {
                                 @Override
                                 public void onSuccess(int statusCode,Header[] headers, JSONObject response){
-                                    Toast.makeText(PersonInfoActivity.this,"已修改头像至数据库",Toast.LENGTH_SHORT).show();
+//                                    Toast.makeText(PersonInfoActivity.this,"已修改头像至数据库",Toast.LENGTH_SHORT).show();
                                 }
                             });
                         }catch (JSONException e) {

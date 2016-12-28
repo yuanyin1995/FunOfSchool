@@ -626,8 +626,9 @@ public class MainActivity extends Activity {
                     int isTokenCode = isTokenJO.getInt("code");
                     if (isTokenCode == 1){
                         //  跳转到选择条件页面
-                        Intent intent_info = new Intent(MainActivity.this,PersonInfoActivity.class);
-                        startActivity(intent_info);
+                        Intent intent = new Intent(MainActivity.this,SelectActivity.class);
+                        intent.putExtra("scid",collegeId);
+                        startActivity(intent);
                     }
                     else{
                         Toast.makeText(getApplicationContext(),
