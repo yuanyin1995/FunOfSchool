@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
@@ -40,6 +41,8 @@ import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.map.TextureMapView;
 import com.baidu.mapapi.model.LatLng;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.funOfSchool.R;
 import com.funOfSchool.util.ApiUtils;
 import com.funOfSchool.util.AppUtils;
@@ -101,6 +104,8 @@ public class MainActivity extends Activity {
     private int flag;
     //  侧拉菜单对象
     private DrawerLayout drawerLayout;
+    /* 当前学校校徽URL */
+    private String collegeLogoUrl;
 
     //  个人资料、出游记录、卡券包、积分商城、设置
     private LinearLayout btnPersoninfo;
@@ -123,6 +128,8 @@ public class MainActivity extends Activity {
     //登陆、注册入口
     private TextView mainLogin;
     private TextView mainRegist;
+
+    private BitmapDescriptor bitmapLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -277,13 +284,15 @@ public class MainActivity extends Activity {
         etSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                // 根据学校名称，获得所选学校的经纬度和ID和景点
+                // 根据学校名称，获得所选学校的经纬度和ID和景点和校徽URL
                 AsyncHttpClient client = new AsyncHttpClient();
                 String url = AppUtils.HOST + ApiUtils.API_COLLEGE_LALO_SCENE;
                 // 请求参数：学校名称
                 RequestParams param = new RequestParams();
                 param.put("collegeName",collegeName);
                 Log.e("aaaparam",param.toString());
+
+
 
                 // 发送网络请求
                 client.post(url, param, new JsonHttpResponseHandler() {
@@ -302,33 +311,86 @@ public class MainActivity extends Activity {
                             collegeLantitude = collegeNameJA.getJSONObject(0).getDouble("lantitude");
                             collegeLongitude = collegeNameJA.getJSONObject(0).getDouble("longitude");
                             collegeScene = collegeNameJA.getJSONObject(0).getString("scene");
+                            collegeLogoUrl = collegeNameJA.getJSONObject(0).getString("schoolLogo");
+
+                            //  设置比例尺
+                            MapStatusUpdate msu =
+                                    MapStatusUpdateFactory.zoomTo(17.0f);
+                            mBaiduMap.setMapStatus(msu);
 
                             Log.e("LL:",collegeLantitude+"-"+collegeLongitude);
                             Log.e("scene:",collegeScene);
 
                             // 创建 LatLng 对象
                             LatLng ll = new LatLng(collegeLantitude, collegeLongitude);
+                            //  暂且放在客户端中：经纬度-图书馆 碎心湖 时光塔
+                            LatLng llLibrary = new LatLng(38.003403, 114.525002);
+                            LatLng llLake = new LatLng(38.001996, 114.523834);
+                            LatLng llTower = new LatLng(38.003268, 114.527248);
+
                             // 设置所选学校位置为地图中心点，并移动到定位位置
                             MapStatusUpdate u = MapStatusUpdateFactory.newLatLng(ll);
                             mBaiduMap.animateMapStatus(u);
+                            // 将比例尺改为1：100
 
-                            // 构建Marker图标
-                            BitmapDescriptor bitmapLogo = BitmapDescriptorFactory
-                                    .fromResource(R.mipmap.college_logo);
+
                             // 添加附加信息
-                            Bundle b = new Bundle();
+                            final Bundle b = new Bundle();
                             b.putString("collegeInfo",
                                     collegeName+"好玩的地方有："+collegeScene
                                             +"快在这个学校找个同学带你玩吧~\n（点击可查看其它用户对此大学的评价）");
-                            // 构建MarkerOption，用于在地图上添加Marker
-                            OverlayOptions option = new MarkerOptions()
-                                    .position(ll)
-                                    .icon(bitmapLogo)
+                            // 构建Marker图标
+//                            bitmapLogo = BitmapDescriptorFactory
+//                                    .fromResource(R.mipmap.college_logo);
+                            Glide.with(getApplicationContext()).load(AppUtils.HOST + collegeLogoUrl).asBitmap().into(new SimpleTarget<Bitmap>() {
+                                @Override
+                                public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                                    bitmapLogo = BitmapDescriptorFactory
+                                            .fromBitmap(resource);
+                                    // 构建MarkerOption，用于在地图上添加Marker
+                                    OverlayOptions option = new MarkerOptions()
+                                            .position(new LatLng(38.003403,114.525002))
+                                            .icon(bitmapLogo)
+                                            .draggable(true)
+                                            .title("大学")
+                                            .extraInfo(b);
+                                    Marker marker = (Marker) mBaiduMap.addOverlay(option);
+                                }
+                            });
+
+                            //  暂且放在客户端中：图标-图书馆 碎心湖 时光塔
+                            BitmapDescriptor bitmapLibrary = BitmapDescriptorFactory
+                                    .fromResource(R.mipmap.library);
+                            BitmapDescriptor bitmapLake = BitmapDescriptorFactory
+                                    .fromResource(R.mipmap.lake);
+                            BitmapDescriptor bitmapTower = BitmapDescriptorFactory
+                                    .fromResource(R.mipmap.tower);
+
+
+
+                            //  构建MarkerOption，用于在地图上添加景点Marker
+                            OverlayOptions optionLibrary = new MarkerOptions()
+                                    .position(llLibrary)
+                                    .icon(bitmapLibrary)
                                     .draggable(true)
-                                    .title("大学")
-                                    .extraInfo(b);
+                                    .title("图书馆");
+                            OverlayOptions optionLake = new MarkerOptions()
+                                    .position(llLake)
+                                    .icon(bitmapLake)
+                                    .draggable(true)
+                                    .title("碎心湖");
+                            OverlayOptions optionTower = new MarkerOptions()
+                                    .position(llTower)
+                                    .icon(bitmapTower)
+                                    .draggable(true)
+                                    .title("时光塔");
+
                             // 在地图上添加Marker，并显示
-                            Marker marker = (Marker) mBaiduMap.addOverlay(option);
+
+                            Marker markerLibary = (Marker) mBaiduMap.addOverlay(optionLibrary);
+                            Marker markerLake = (Marker) mBaiduMap.addOverlay(optionLake);
+                            Marker markerTower = (Marker) mBaiduMap.addOverlay(optionTower);
+
                             // 为图标设置监听器
                             mBaiduMap.setOnMarkerClickListener(new BaiduMap.OnMarkerClickListener() {
                                 @Override
@@ -348,7 +410,7 @@ public class MainActivity extends Activity {
                                     textInfo.setLayoutParams(new DrawerLayout.LayoutParams(
                                             DrawerLayout.LayoutParams.WRAP_CONTENT, px
                                     ));*/
-                                    textInfo.setHeight(300);
+                                    textInfo.setHeight(400);
                                     textInfo.setWidth(500);
                                     textInfo.setBackgroundResource(R.drawable.marker_bg);
                                     textInfo.setPadding(12, 12, 12, 12);
@@ -397,6 +459,8 @@ public class MainActivity extends Activity {
             }
         });
     }
+
+
 
 
     private void findView() {

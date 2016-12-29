@@ -53,7 +53,7 @@ public class ApiUtils {
     /**
      * 获取所选学校的经纬度和ID和景点
      */
-    public static final String API_COLLEGE_LALO_SCENE = "api/college/searchLaAndLoAndScene";
+    public static final String API_COLLEGE_LALO_SCENE = "api/college/searchLaLoandSceneandLogo";
     /**
      * 出游者发送请求
      */

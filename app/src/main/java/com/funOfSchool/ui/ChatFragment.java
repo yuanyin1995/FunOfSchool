@@ -163,6 +163,7 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
                     AsyncHttpMangers.guiderChoose(getContext(),0,getToChatWith(),mHandler);
                     AppUtils.showShort(getContext(),"拒绝");
                 }
+                hideRemark();
             }
         });
         acceptBtn.setOnClickListener(new View.OnClickListener() {
@@ -175,6 +176,7 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
                     AsyncHttpMangers.guiderChoose(getContext(),1,getToChatWith(),mHandler);
                     AppUtils.showShort(getContext(),"接受");
                 }
+                hideRemark();
             }
         });
     }
