@@ -10,7 +10,7 @@ android {
             storePassword 'mayday'
         }
     }
-    compileSdkVersion 23
+    compileSdkVersion 24
     buildToolsVersion "23.0.2"
     defaultConfig {
         applicationId "com.funOfSchool"
@@ -36,6 +36,7 @@ android {
 }
 
 dependencies {
+    compile 'com.luolc:emoji-rain:0.1.1'
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.2.0'
