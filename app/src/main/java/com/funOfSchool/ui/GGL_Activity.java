@@ -18,7 +18,6 @@ import com.funOfSchool.util.AppUtils;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
-import com.luolc.emojirain.EmojiRainLayout;
 
 import org.apache.http.Header;
 import org.json.JSONArray;
@@ -38,7 +37,7 @@ public class GGL_Activity extends Activity {
     private TextView Tv3;
     private ImageButton Ib1;
     public String result[];
-    public EmojiRainLayout  mContainer;
+//    public EmojiRainLayout  mContainer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,33 +52,33 @@ public class GGL_Activity extends Activity {
         //设置字体加粗
         character();
         //红包雨效果
-        vallid();
+//        vallid();
         getRemainprize();
         //按钮点击事件
         Onclick();
 
     }
 
-    //红包雨
-    private void vallid(){
-        // bind view
-        mContainer = (EmojiRainLayout) findViewById(R.id.group_emoji_container);
-        // add emoji sources
-        mContainer.addEmoji(R.mipmap.p1);
-        mContainer.addEmoji(R.mipmap.p2);
-        mContainer.addEmoji(R.mipmap.p3);
-        mContainer.addEmoji(R.mipmap.p4);
-        mContainer.addEmoji(R.mipmap.p5);
-        // set emojis per flow, default 6
-        mContainer.setPer(10);
-        // set total duration in milliseconds, default 8000
-        mContainer.setDuration(7200);
-        // set average drop duration in milliseconds, default 2400
-        mContainer.setDropDuration(2400);
-        // set drop frequency in milliseconds, default 500
-        mContainer.setDropFrequency(500);
-        mContainer.startDropping();
-    }
+//    //红包雨
+//    private void vallid(){
+//        // bind view
+//        mContainer = (EmojiRainLayout) findViewById(R.id.group_emoji_container);
+//        // add emoji sources
+//        mContainer.addEmoji(R.mipmap.p1);
+//        mContainer.addEmoji(R.mipmap.p2);
+//        mContainer.addEmoji(R.mipmap.p3);
+//        mContainer.addEmoji(R.mipmap.p4);
+//        mContainer.addEmoji(R.mipmap.p5);
+//        // set emojis per flow, default 6
+//        mContainer.setPer(10);
+//        // set total duration in milliseconds, default 8000
+//        mContainer.setDuration(7200);
+//        // set average drop duration in milliseconds, default 2400
+//        mContainer.setDropDuration(2400);
+//        // set drop frequency in milliseconds, default 500
+//        mContainer.setDropFrequency(500);
+//        mContainer.startDropping();
+//    }
 
     //按钮点击事件
     private void Onclick(){
