@@ -48,7 +48,7 @@
 
 <img src="https://github.com/edu2act/2014GradeProjectTraining/blob/master/image/校脸/4.jpg" width=250 height=400 />
 <img src="https://github.com/edu2act/2014GradeProjectTraining/blob/master/image/校脸/5.jpg" width=250 height=400 />
-<img src=".https://github.com/edu2act/2014GradeProjectTraining/blob/master/image/校脸/6.jpg" width=250 height=400 />
+<img src="https://github.com/edu2act/2014GradeProjectTraining/blob/master/image/校脸/6.jpg" width=250 height=400 />
 
 <img src="https://github.com/edu2act/2014GradeProjectTraining/blob/master/image/校脸/7.jpg" width=250 height=400 />
 <img src="https://github.com/edu2act/2014GradeProjectTraining/blob/master/image/校脸/8.jpg" width=250 height=400 />
