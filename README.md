@@ -25,10 +25,10 @@
 
 ### 项目成员
 
-* 袁音 (项目经理) 
+* 袁音 (产品经理) 
     * Email: <13199980@qq.com>
     * Github : [https://github.com/yuanyin1995](https://github.com/yuanyin1995)
-* 马红岩 (产品经理) 
+* 马红岩 (开发工程师) 
     * Email: <420454139@qq.com>
     * Github : [https://github.com/Aiome](https://github.com/Aiome)
 * 庄楠 (UI设计、开发工程师) 
